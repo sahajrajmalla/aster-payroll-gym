@@ -1,32 +1,237 @@
 {
-  "mean": 0.0,
-  "sample_mean": 0.0,
-  "sd": 0.0,
+  "aggregate": {
+    "n": 3,
+    "mean": 0.0,
+    "sd": 0.0
+  },
+  "complete_replicates": 3,
   "replicate_means": [
     0.0,
     0.0,
     0.0
   ],
-  "complete": 90,
-  "total": 90,
-  "observed": 90,
+  "sample_summary": {
+    "n": 90,
+    "mean": 0.0,
+    "sd": 0.0
+  },
+  "expected_samples": 90,
+  "completed_samples": 90,
   "coverage": 1.0,
-  "rankable": true,
-  "tiers": {
-    "1": 0.0,
-    "2": 0.0,
-    "3": 0.0
+  "status_counts": {
+    "complete": 90
+  },
+  "by_tier": {
+    "1": {
+      "n": 30,
+      "mean": 0.0,
+      "sd": 0.0,
+      "pass_rate": 0,
+      "exact_score_rate": 0
+    },
+    "2": {
+      "n": 30,
+      "mean": 0.0,
+      "sd": 0.0,
+      "pass_rate": 0,
+      "exact_score_rate": 0
+    },
+    "3": {
+      "n": 30,
+      "mean": 0.0,
+      "sd": 0.0,
+      "pass_rate": 0,
+      "exact_score_rate": 0
+    }
   },
   "components": {
-    "action": 0.0,
-    "exact": 0.0,
-    "fields": 0.0,
-    "format": 1.0,
-    "judge": 0.0
+    "exact": {
+      "n": 90,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "fields": {
+      "n": 90,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "action": {
+      "n": 90,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "format": {
+      "n": 90,
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    "judge": {
+      "n": 30,
+      "mean": 0.0,
+      "sd": 0.0
+    }
+  },
+  "per_task": {
+    "task-4c5d879f6853c65d4f1c": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-8af3e60200e8bcdecf77": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-16ccf44e25558cbba567": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-e078523c3769f49183b1": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-622bcc18c6aab9cac92f": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-b18556242bce68d26e76": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-c833c552b3fa6cdd1a4c": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-bebd0b9279f9479fb386": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-0e33888836c453dcb91e": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-5df3db8e2df05ed66d90": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-0ec7d48247ff1b45b74b": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-d167a405d18c1b37276f": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-b0fa0a6c57c6a969f841": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-3fbdbdfaa092d0c3cb93": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-a7ab1f49900234508230": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-7b9bd7e272281bb7a213": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-b79e03c78d468e2e7b8f": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-299315e5e138e06d2863": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-ae4b711ae3d02c6fb723": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-19b3314f712fb1128dab": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-199220f67cfd29854916": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-7176c1568771237ece01": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-c54d48a71d61650b1fa6": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-bd024fbc60247051267a": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-c568429ca2d5cffae175": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-7483470048e1f05dac08": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-b1899a5d38bca94433e6": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-d7146a7b6b76d374298b": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-ef580457f684b7c10fe8": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "task-cc6d8f204ccef2a44019": {
+      "n": 3,
+      "mean": 0.0,
+      "sd": 0.0
+    }
   },
   "cost_usd": 0,
   "confirmed_cost_usd": 0,
-  "latency_mean_s": 2.73991111018606e-05,
   "tokens": 0,
-  "operational_failures": 0
+  "latency_s": {
+    "n": 90,
+    "mean": 1.988013333023749e-05,
+    "sd": 1.0449252446108691e-05
+  },
+  "retries": 0,
+  "operational_failures": 0,
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples"
 }

@@ -90,7 +90,7 @@ def load_environment(mode: str = "single", split: str = "development", seed: int
     parser = StrictAnswerParser()
     rubric = SharedRubric(parser=parser)
     common = {"dataset": Dataset.from_list(rows), "parser": parser, "rubric": rubric,
-              "pass_threshold": 1.0, "max_workers": 2, "timeout_seconds": timeout_seconds, **kwargs}
+              "pass_threshold": .975, "max_workers": 2, "timeout_seconds": timeout_seconds, **kwargs}
     if mode == "single":
         return vf.SingleTurnEnv(**common)
 

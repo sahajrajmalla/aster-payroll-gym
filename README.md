@@ -10,7 +10,7 @@ are pending. This repository never substitutes fixture outputs for those results
 
 | Submission link | Status |
 | --- | --- |
-| GitHub repository | Replace after pushing this repository |
+| GitHub repository | [sahajrajmalla/aster-payroll-gym](https://github.com/sahajrajmalla/aster-payroll-gym) |
 | Dashboard | Replace after enabling GitHub Pages |
 | Sandbox | Replace after Render + Neon setup |
 | Loom | Replace after recording the 8–12 minute walkthrough |
@@ -134,6 +134,11 @@ Open `notebooks/aster_colab.ipynb` in Google Colab, select a GPU runtime, and fo
 setup, smoke, sweep, held-out evaluation and export cells. Enter the repository URL
 and put keys in Colab Secrets. Checkpoints stay in Google Drive or cloud storage.
 Do not send model weights back to this computer.
+
+[Open the notebook in Colab](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb).
+The notebook requires explicit free-tier confirmation and separate start flags
+for smoke training, full sweeps, and inference. It verifies GPU, storage, pinned
+dependencies and optional environment startup before starting model work.
 
 GRPO uses four sampled completions per prompt and a frozen initial reference:
 

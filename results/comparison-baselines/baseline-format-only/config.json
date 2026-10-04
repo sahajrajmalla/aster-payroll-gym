@@ -6,7 +6,7 @@
   "reward_version": "1.0",
   "schema_version": "1.0",
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "code_revision": "uncommitted-workspace",
+  "code_revision": "c207012e7960b756a2393670c8f8c6253182512e",
   "taskset_hash": "4ed24ce7d0a1ce6d41cfba7106a4eba8c36f4f4d562d4e60e06619c4517dc0a2",
   "prompt_hashes": {
     "task-4c5d879f6853c65d4f1c": "58a0ab68eb5b7cbf610864eb51e590ef3e60b2fa1835a5c25343c0f39465e3d1",
