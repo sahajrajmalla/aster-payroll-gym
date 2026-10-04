@@ -1,0 +1,32 @@
+{
+  "mean": 0.0,
+  "sample_mean": 0.0,
+  "sd": 0.0,
+  "replicate_means": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "complete": 360,
+  "total": 360,
+  "observed": 360,
+  "coverage": 1.0,
+  "rankable": true,
+  "tiers": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0
+  },
+  "components": {
+    "action": 0.0,
+    "exact": 0.0,
+    "fields": 0.0,
+    "format": 1.0,
+    "judge": 0.0
+  },
+  "cost_usd": 0,
+  "confirmed_cost_usd": 0,
+  "latency_mean_s": 1.9510683328386826e-05,
+  "tokens": 0,
+  "operational_failures": 0
+}

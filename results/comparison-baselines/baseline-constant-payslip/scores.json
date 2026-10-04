@@ -1,0 +1,5404 @@
+{
+  "records": [
+    {
+      "task_id": "task-4c5d879f6853c65d4f1c",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 0.00011487500000839646,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-4c5d879f6853c65d4f1c",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.6917000013781944e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-4c5d879f6853c65d4f1c",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.3167000108514912e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.670799995030393e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1125000102983904e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.116699988619075e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.84170000920858e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7625000054977136e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.766700006555766e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-e078523c3769f49183b1",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0375000076455763e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-e078523c3769f49183b1",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.020900001298287e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-e078523c3769f49183b1",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9916999917768408e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1290999939083122e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0624999933716026e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.041699985966261e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7625000054977136e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7500000012660166e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.754200002324069e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c833c552b3fa6cdd1a4c",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.054199990197958e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c833c552b3fa6cdd1a4c",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9999999949504854e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c833c552b3fa6cdd1a4c",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.995799993892433e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0915999812132213e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0708999954877072e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0624999933716026e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.766700006555766e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7374999970343197e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7459000218877918e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-5df3db8e2df05ed66d90",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0708999954877072e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-5df3db8e2df05ed66d90",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0040999970660778e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-5df3db8e2df05ed66d90",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.983399988603196e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.079199998661352e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0542000129353255e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.079199998661352e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7625000054977136e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7500000012660166e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.6875000028448994e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b0fa0a6c57c6a969f841",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9791000113400514e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b0fa0a6c57c6a969f841",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.033300006587524e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b0fa0a6c57c6a969f841",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.945799999703013e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.020900001298287e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.029099982792104e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.020800002355827e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7125000113082933e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7000000070765964e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.679100000728795e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7b9bd7e272281bb7a213",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.966699983313447e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7b9bd7e272281bb7a213",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9375000192667358e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7b9bd7e272281bb7a213",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.933399994413776e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0040999970660778e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0332999838501564e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.020800002355827e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7207999917445704e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 0.00011279199998170952,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.874999998108251e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-ae4b711ae3d02c6fb723",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0667000171670225e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-ae4b711ae3d02c6fb723",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9667000060508144e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-ae4b711ae3d02c6fb723",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9165999901815667e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1041999843873782e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0500000118772732e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0833000007769442e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 9.570899987920711e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.274999997098348e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.829200004976883e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7176c1568771237ece01",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.3749999854771886e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7176c1568771237ece01",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0749999976032996e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7176c1568771237ece01",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0541000139928656e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.199999994445534e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1000000060666935e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0708999954877072e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7584000033821212e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7791999880500953e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7582999817022937e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c568429ca2d5cffae175",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 0.0004061249999267602,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c568429ca2d5cffae175",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 3.85000000733271e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-c568429ca2d5cffae175",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.541699996072566e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.379099987592781e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.2416999854613096e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.212499998677231e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.9042000076296972e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.8333000070924754e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7832999901656876e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-d7146a7b6b76d374298b",
+      "tier": 1,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1000000060666935e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-d7146a7b6b76d374298b",
+      "tier": 1,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0624999933716026e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-d7146a7b6b76d374298b",
+      "tier": 1,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R11",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.0250000034138793e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1915999923294294e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1584000023722183e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.6,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "CORRECTNESS_CAP",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 2.1000000060666935e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "rollout": 0,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.804199996513489e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "rollout": 1,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7750000097294105e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    },
+    {
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "rollout": 2,
+      "status": "complete",
+      "score": 0.0,
+      "components": {
+        "exact": {
+          "score": 0.0,
+          "weight": 0.55,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "fields": {
+          "score": 0.0,
+          "weight": 0.25,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "action": {
+          "score": 0.0,
+          "weight": 0.1,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "judge": {
+          "score": 0.0,
+          "weight": 0.05,
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED"
+        },
+        "format": {
+          "score": 1.0,
+          "weight": 0.05,
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT"
+        }
+      },
+      "gate": "UNSAFE_COMPUTATION",
+      "error_code": null,
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "latency_s": 1.7790999891076353e-05,
+      "tokens": 0,
+      "cost_usd": 0,
+      "mode": "single"
+    }
+  ]
+}

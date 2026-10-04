@@ -1,0 +1,20 @@
+{
+  "transfer": {
+    "status": "pending",
+    "reason": "Needs three complete, matched 30-task generated and five-task frozen transfer model runs."
+  },
+  "judge_reliability": {
+    "status": "partial_or_pending",
+    "examples": 15,
+    "completed_three_repeat_examples": 0,
+    "human_comparisons": 0,
+    "human_exact_agreement": null,
+    "three_repeat_disagreement_fraction": null,
+    "confusion_counts": {},
+    "note": "Stability is not validity. Each repeat must bypass the production cache."
+  },
+  "human_failure_review": {
+    "reviewed_failures": 0,
+    "category_counts": {}
+  }
+}

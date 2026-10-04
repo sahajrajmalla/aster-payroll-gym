@@ -1,0 +1,24 @@
+name: lightweight-checks
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.12.19"
+      - run: uv python install 3.11
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run mypy src/aster_gym scripts
+      - run: uv run pytest -q
+      - run: uv run aster-gym validate
+      - run: uv run aster-gym report --output site
+      - name: Assert no heavyweight package installed
+        run: |
+          uv run python - <<'PY'
+          import importlib.util
+          for name in ("torch", "transformers", "trl", "peft", "accelerate"):
+              assert importlib.util.find_spec(name) is None, name
+          PY

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aster-payroll-gym"
+version = "0.1.0"
+description = "An auditable synthetic payroll gym with cloud-only RL"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "pydantic==2.11.9", "httpx==0.28.1", "fastapi==0.116.1",
+  "uvicorn==0.35.0", "sqlalchemy==2.0.43", "python-dotenv==1.1.1",
+]
+
+[project.optional-dependencies]
+environment = ["verifiers==0.1.14"]
+server = ["psycopg[binary]==3.2.10"]
+cloud = ["verifiers==0.1.14", "trl==0.26.2", "torch==2.8.0", "transformers==4.57.1", "peft==0.17.1", "accelerate==1.10.1"]
+
+[dependency-groups]
+dev = ["pytest==8.4.2", "pytest-asyncio==1.2.0", "hypothesis==6.140.2", "ruff==0.13.3", "mypy==1.18.2"]
+
+[project.scripts]
+aster-gym = "aster_gym.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aster_gym"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"rules/aster-payroll-v1.md" = "aster_gym/assets/aster-payroll-v1.md"
+"prompts/judge-v1.txt" = "aster_gym/assets/judge-v1.txt"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = ["cloud: requires explicit Colab execution, never enabled locally"]
+addopts = "-m 'not cloud'"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true

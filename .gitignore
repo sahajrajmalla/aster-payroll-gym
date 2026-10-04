@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.env
+*.db
+*.db-*
+*.sqlite*
+checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.bin
+dist/
+build/
+.DS_Store
+.coverage
+htmlcov/
+tmp/
+AI Product Operator - Niural AI Labs.pdf
+**/.run.lock
+**/.records/

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: aster-payroll-sandbox
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JUDGE_API_KEY
+        sync: false
+      - key: JUDGE_VERIFIED_FREE
+        value: "true"
+      - key: ASTER_RATE_SALT
+        generateValue: true
+      - key: ASTER_CALLER_JUDGE_LIMIT
+        value: "100"
+      - key: ASTER_GLOBAL_JUDGE_LIMIT
+        value: "500"

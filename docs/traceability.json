@@ -1,0 +1,1066 @@
+{
+  "source": "AI Product Operator - Niural AI Labs.pdf, 18 pages",
+  "status_definition": "implemented means software/doc exists, not completed external/human evidence",
+  "optional_not_selected": [
+    "A adversarial advanced track",
+    "C scaffold advanced track",
+    "D publish advanced track",
+    "sandbox driving caller agents",
+    "external runs on leaderboard"
+  ],
+  "requirements": [
+    {
+      "id": "F01",
+      "source_page": "3-6",
+      "requirement": "One narrow professional, verifiable, tool-shaped domain",
+      "implementation": "rules/aster-payroll-v1.md",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "F02",
+      "source_page": "6",
+      "requirement": "Eight phases and exactly one advanced track",
+      "implementation": "docs/architecture.md",
+      "test_or_manual_check": "docs/submission-checklist.md",
+      "evidence": "docs/submission-checklist.md",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "F03",
+      "source_page": "4,18",
+      "requirement": "Synthetic fictional data only, no real personal/customer data",
+      "implementation": "data/manifest.json",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "F04",
+      "source_page": "4,9",
+      "requirement": "Written versioned authority before implementation; prose wins disagreements",
+      "implementation": "rules/aster-payroll-v1.md",
+      "test_or_manual_check": "reviews/task-review-packet.json",
+      "evidence": "reviews/task-review-packet.json",
+      "status": "human_review_pending"
+    },
+    {
+      "id": "F05",
+      "source_page": "18",
+      "requirement": "Solo work; AI permitted with specific honest disclosure",
+      "implementation": "docs/ai-usage.md",
+      "test_or_manual_check": "docs/submission-checklist.md",
+      "evidence": "docs/submission-checklist.md",
+      "status": "implemented"
+    },
+    {
+      "id": "F06",
+      "source_page": "1,17",
+      "requirement": "Five-business-day submission window and speed scoring",
+      "implementation": "docs/submission-checklist.md",
+      "test_or_manual_check": "record actual receipt/submission dates",
+      "evidence": "record actual receipt/submission dates",
+      "status": "human_action_pending"
+    },
+    {
+      "id": "F07",
+      "source_page": "3",
+      "requirement": "Review 10-15 environments, verifiers docs, overview, Harvey architecture",
+      "implementation": "docs/background-reading.md",
+      "test_or_manual_check": "owner reading checklist",
+      "evidence": "owner reading checklist",
+      "status": "human_review_pending"
+    },
+    {
+      "id": "F08",
+      "source_page": "1,6,15",
+      "requirement": "No UI-polish or frontier-scale scope; free resources; documented mocks",
+      "implementation": "docs/assumptions-and-tradeoffs.md",
+      "test_or_manual_check": "docs/ai-usage.md",
+      "evidence": "docs/ai-usage.md",
+      "status": "implemented"
+    },
+    {
+      "id": "F09",
+      "source_page": "15,18",
+      "requirement": "Report actual spend, blockers, cuts and two-day next steps",
+      "implementation": "docs/evaluation.md",
+      "test_or_manual_check": "real experiment artifacts",
+      "evidence": "real experiment artifacts",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P01.01",
+      "source_page": "7",
+      "requirement": "Versioned programmatically validated task schema with all minimum fields",
+      "implementation": "schemas/task-v1.json",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.02",
+      "source_page": "7",
+      "requirement": "At least ten hand-checked seed tasks across all three tiers",
+      "implementation": "data/seeds.jsonl",
+      "test_or_manual_check": "reviews/task-review-packet.json",
+      "evidence": "reviews/task-review-packet.json",
+      "status": "human_review_pending"
+    },
+    {
+      "id": "P01.03",
+      "source_page": "7",
+      "requirement": "At least three genuine Tier-3 traps; confident answers never partial",
+      "implementation": "src/aster_gym/scoring.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.04",
+      "source_page": "7",
+      "requirement": "Machine-checkable ground truth for every task; no prose-only Tier1/2",
+      "implementation": "src/aster_gym/reference.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.05",
+      "source_page": "7",
+      "requirement": "One command validates entire corpus, preferably CI",
+      "implementation": "src/aster_gym/cli.py",
+      "test_or_manual_check": "uv run aster-gym validate",
+      "evidence": "uv run aster-gym validate",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.06",
+      "source_page": "7",
+      "requirement": "Prompt-only answer-leakage check and caught-findings report",
+      "implementation": "docs/edge-cases.md",
+      "test_or_manual_check": "tests/test_audit.py",
+      "evidence": "tests/test_audit.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.07",
+      "source_page": "7",
+      "requirement": "Detect near-duplicate inflation and state limited variation",
+      "implementation": "src/aster_gym/generator.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.08",
+      "source_page": "7",
+      "requirement": "Handle units, scale, locale and date ambiguity",
+      "implementation": "rules/aster-payroll-v1.md",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P01.09",
+      "source_page": "7",
+      "requirement": "Explicit schema-drift behavior",
+      "implementation": "src/aster_gym/schemas.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P02.01",
+      "source_page": "8",
+      "requirement": "Generator accepts seed/count and is deterministic",
+      "implementation": "src/aster_gym/generator.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P02.02",
+      "source_page": "8",
+      "requirement": "Independent Python ground truth, never an LLM",
+      "implementation": "src/aster_gym/reference.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P02.03",
+      "source_page": "8",
+      "requirement": "Seed recorded in each result artifact/provenance",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P02.04",
+      "source_page": "8",
+      "requirement": "Expose interacting-rule, distractor, lookup and missing-input knobs",
+      "implementation": "src/aster_gym/generator.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P02.05",
+      "source_page": "8",
+      "requirement": "100+ generated tasks with observed non-degenerate model distribution",
+      "implementation": "data/evaluation.jsonl",
+      "test_or_manual_check": "real Colab/model scores, not baselines",
+      "evidence": "real Colab/model scores, not baselines",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P02.06",
+      "source_page": "8",
+      "requirement": "Unit-test reference, caps, precedence, precision and boundaries",
+      "implementation": "src/aster_gym/reference.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P02.07",
+      "source_page": "8",
+      "requirement": "README unlimited grading and precise noncomputable limitations",
+      "implementation": "README.md",
+      "test_or_manual_check": "docs/assumptions-and-tradeoffs.md",
+      "evidence": "docs/assumptions-and-tradeoffs.md",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.01",
+      "source_page": "8",
+      "requirement": "Installable pyproject and load_environment -> vf.Environment",
+      "implementation": "src/aster_gym/environment.py",
+      "test_or_manual_check": "real optional vf smoke in Colab",
+      "evidence": "real optional vf smoke in Colab",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P03.02",
+      "source_page": "8",
+      "requirement": "Both SingleTurnEnv and ToolEnv/equivalent",
+      "implementation": "src/aster_gym/environment.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.03",
+      "source_page": "8",
+      "requirement": "2-4 real tools, sole reference source in tool mode",
+      "implementation": "src/aster_gym/tools.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.04",
+      "source_page": "8",
+      "requirement": "max_turns and per-rollout timeout",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.05",
+      "source_page": "8",
+      "requirement": "Owned strict output contract/parser",
+      "implementation": "src/aster_gym/parser.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.06",
+      "source_page": "8",
+      "requirement": "CLI model selection and arbitrary remote OpenAI-compatible endpoint",
+      "implementation": "src/aster_gym/cli.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.07",
+      "source_page": "9",
+      "requirement": "Malformed/truncated JSON handling",
+      "implementation": "src/aster_gym/parser.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.08",
+      "source_page": "9",
+      "requirement": "Invalid tool arguments and repeated loops",
+      "implementation": "src/aster_gym/tools.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.09",
+      "source_page": "9",
+      "requirement": "Tool exceptions/timeouts recorded, not silently correctness zero",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P03.10",
+      "source_page": "9",
+      "requirement": "Provider 429/5xx retry/backoff and attempt logging",
+      "implementation": "src/aster_gym/providers.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.01",
+      "source_page": "9",
+      "requirement": "Separate pinned readable authority; version each result",
+      "implementation": "rules/aster-payroll-v1.md",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.02",
+      "source_page": "9",
+      "requirement": "Faithful reference with per-rule clause citations",
+      "implementation": "src/aster_gym/reference.py",
+      "test_or_manual_check": "human fidelity audit against prose",
+      "evidence": "human fidelity audit against prose",
+      "status": "human_review_pending"
+    },
+    {
+      "id": "P04.03",
+      "source_page": "9",
+      "requirement": "LLM-free correctness verifier with justified tolerance",
+      "implementation": "src/aster_gym/scoring.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.04",
+      "source_page": "10",
+      "requirement": "Every reward component returns deciding clauses",
+      "implementation": "src/aster_gym/scoring.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.05",
+      "source_page": "10",
+      "requirement": "Document what score levels mean; 1 passes review",
+      "implementation": "docs/reward-spec.md",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.06",
+      "source_page": "10",
+      "requirement": "Gate substantive rejection to a low maximum",
+      "implementation": "src/aster_gym/scoring.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.07",
+      "source_page": "10",
+      "requirement": "Meaningful graded field/set partial credit",
+      "implementation": "src/aster_gym/scoring.py",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.08",
+      "source_page": "10",
+      "requirement": "Constrained qualitative LLM judge from rules; version prompt",
+      "implementation": "src/aster_gym/judge.py",
+      "test_or_manual_check": "tests/test_judge.py",
+      "evidence": "tests/test_judge.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.09",
+      "source_page": "10",
+      "requirement": "Judge 3 repeat ratings or 15 human labels; report agreement",
+      "implementation": "reviews/judge-review-packet.json",
+      "test_or_manual_check": "real uncached judge calls and human labels",
+      "evidence": "real uncached judge calls and human labels",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P04.10",
+      "source_page": "10",
+      "requirement": "Rule-grounded calibration; document why each trap unresolved",
+      "implementation": "data/seeds.jsonl",
+      "test_or_manual_check": "tests/test_core.py",
+      "evidence": "tests/test_core.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.11",
+      "source_page": "10",
+      "requirement": "Hand-check >=10 generated tasks and report divergence",
+      "implementation": "reviews/task-review-packet.json",
+      "test_or_manual_check": "human independent calculations",
+      "evidence": "human independent calculations",
+      "status": "human_review_pending"
+    },
+    {
+      "id": "P04.12",
+      "source_page": "10",
+      "requirement": "Document and defend weights",
+      "implementation": "docs/reward-spec.md",
+      "test_or_manual_check": "reward tests and review",
+      "evidence": "reward tests and review",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.13",
+      "source_page": "11-13",
+      "requirement": "Three handwritten adversarial baselines, measured on same tasks",
+      "implementation": "src/aster_gym/cli.py",
+      "test_or_manual_check": "results/baseline-*",
+      "evidence": "results/baseline-*",
+      "status": "implemented"
+    },
+    {
+      "id": "P04.14",
+      "source_page": "17",
+      "requirement": "Attack reward and preserve fixes/evidence",
+      "implementation": "docs/edge-cases.md",
+      "test_or_manual_check": "tests/test_core.py and RL transcripts",
+      "evidence": "tests/test_core.py and RL transcripts",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P05.01",
+      "source_page": "10",
+      "requirement": "One-command evaluation with model/tier/rollouts/seed/cost",
+      "implementation": "src/aster_gym/cli.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.02",
+      "source_page": "10",
+      "requirement": "Three real model configs incl frontier and small/cheap",
+      "implementation": "configs/eval.json",
+      "test_or_manual_check": "real API and Colab runs",
+      "evidence": "real API and Colab runs",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P05.03",
+      "source_page": "10",
+      "requirement": "3+ nonzero-temperature rollouts and mean +/- SD",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py and real runs",
+      "evidence": "tests/test_harness.py and real runs",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P05.04",
+      "source_page": "10",
+      "requirement": "config.json includes model, seed, versions and prompt hashes",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.05",
+      "source_page": "10",
+      "requirement": "transcript.jsonl includes full messages/tool calls",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.06",
+      "source_page": "10",
+      "requirement": "metrics.json includes tokens, latency, costs and tool counts",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.07",
+      "source_page": "10",
+      "requirement": "scores.json task/reward breakdown",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.08",
+      "source_page": "10",
+      "requirement": "Hard cost abort, partial results, bounded concurrency, actual spend",
+      "implementation": "src/aster_gym/providers.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.09",
+      "source_page": "10",
+      "requirement": "Crash resume without repeating completed paid work",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.10",
+      "source_page": "10",
+      "requirement": "Provider outage isolation",
+      "implementation": "src/aster_gym/eval.py",
+      "test_or_manual_check": "tests/test_harness.py",
+      "evidence": "tests/test_harness.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P05.11",
+      "source_page": "10,17",
+      "requirement": "Honest non-determinism/noise and indistinguishable rankings",
+      "implementation": "docs/evaluation.md",
+      "test_or_manual_check": "real replicate statistics",
+      "evidence": "real replicate statistics",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P05.12",
+      "source_page": "6",
+      "requirement": "Committed filesystem results and no rerun on deploy",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.01",
+      "source_page": "11",
+      "requirement": "Live dashboard with real saved results",
+      "implementation": "site/index.html",
+      "test_or_manual_check": "GitHub Pages public smoke",
+      "evidence": "GitHub Pages public smoke",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "P06.02",
+      "source_page": "11",
+      "requirement": "Leaderboard with error bars/SD",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.03",
+      "source_page": "11",
+      "requirement": "Tier and reward breakdowns",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.04",
+      "source_page": "11",
+      "requirement": "Task-by-model failure heatmap",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.05",
+      "source_page": "11",
+      "requirement": "Clickable saved transcript viewer",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.06",
+      "source_page": "11",
+      "requirement": "Adversarial baselines on same leaderboard",
+      "implementation": "results/baseline-*",
+      "test_or_manual_check": "site/index.html",
+      "evidence": "site/index.html",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.07",
+      "source_page": "11",
+      "requirement": "Cost and latency per model",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P06.08",
+      "source_page": "12",
+      "requirement": "All five actual RL curves visible on dashboard",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "real training_metrics.jsonl",
+      "evidence": "real training_metrics.jsonl",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.01",
+      "source_page": "11",
+      "requirement": "Online policy-gradient RL from shared Phase04 reward",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "actual Colab run",
+      "evidence": "actual Colab run",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.02",
+      "source_page": "11",
+      "requirement": "Implemented objective and algorithm justification",
+      "implementation": "README.md",
+      "test_or_manual_check": "docs/colab.md",
+      "evidence": "docs/colab.md",
+      "status": "implemented"
+    },
+    {
+      "id": "P07.03",
+      "source_page": "11",
+      "requirement": "Frozen initial reference, explicit beta/estimator, KL every step",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "reference_proof.json and actual metrics",
+      "evidence": "reference_proof.json and actual metrics",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.04",
+      "source_page": "11",
+      "requirement": "Grouped method >=4 samples and equal-reward group fraction",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "tests/test_cloud.py and actual logs",
+      "evidence": "tests/test_cloud.py and actual logs",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.05",
+      "source_page": "12",
+      "requirement": "Held-out before/after with disjoint generator seeds",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "actual heldout.json and split checks",
+      "evidence": "actual heldout.json and split checks",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.06",
+      "source_page": "12",
+      "requirement": "Reward, KL, entropy, length and tier-pass logs/plots",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "actual training_metrics.jsonl",
+      "evidence": "actual training_metrics.jsonl",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.07",
+      "source_page": "12",
+      "requirement": ">=2 beta sweep incl deliberately low beta; observed recommendation",
+      "implementation": "configs/train.json",
+      "test_or_manual_check": "actual validation and sweep artifacts",
+      "evidence": "actual validation and sweep artifacts",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.08",
+      "source_page": "12",
+      "requirement": "Gaming transcript and response or documented thorough search",
+      "implementation": "docs/rl-report.md",
+      "test_or_manual_check": "actual training completions",
+      "evidence": "actual training completions",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.09",
+      "source_page": "13",
+      "requirement": "Diagnose entropy/KL/length/format/group/leakage failures",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "actual metric/transcript review",
+      "evidence": "actual metric/transcript review",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.10",
+      "source_page": "13",
+      "requirement": "Checkpoint and crash recovery",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "cloud resume smoke",
+      "evidence": "cloud resume smoke",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.11",
+      "source_page": "13,15",
+      "requirement": "Small feasible run, short completions and explicit scoping",
+      "implementation": "configs/train.json",
+      "test_or_manual_check": "Colab feasibility gate",
+      "evidence": "Colab feasibility gate",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P07.12",
+      "source_page": "17-18",
+      "requirement": "Preserve actual training transcripts; no fake rising curve",
+      "implementation": "src/aster_gym/cloud/train.py",
+      "test_or_manual_check": "genuine import bundle",
+      "evidence": "genuine import bundle",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "P08.01",
+      "source_page": "13",
+      "requirement": "Live sandbox independent of applicant laptop",
+      "implementation": "render.yaml",
+      "test_or_manual_check": "public external roundtrip",
+      "evidence": "public external roundtrip",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "P08.02",
+      "source_page": "13",
+      "requirement": "Batch fetch and externally generated answer submission",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.03",
+      "source_page": "13-14",
+      "requirement": "No oracle data across wire incl errors/debug/transcripts",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.04",
+      "source_page": "13",
+      "requirement": "Exactly shared rubric and pinned authority",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.05",
+      "source_page": "13",
+      "requirement": "Per-task score, component breakdown and clauses",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.06",
+      "source_page": "13",
+      "requirement": "Run id, private actual seed, versions and tier mix",
+      "implementation": "src/aster_gym/store.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.07",
+      "source_page": "13",
+      "requirement": "One no-clone command under two minutes",
+      "implementation": "README.md",
+      "test_or_manual_check": "docs/api-smoke.json and public smoke",
+      "evidence": "docs/api-smoke.json and public smoke",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "P08.08",
+      "source_page": "13",
+      "requirement": "Task cap, caller limits, no caller API-key storage, cost story",
+      "implementation": "src/aster_gym/store.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.09",
+      "source_page": "14",
+      "requirement": "Expected-value provenance leakage check and findings",
+      "implementation": "docs/edge-cases.md",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.10",
+      "source_page": "14",
+      "requirement": "10000 tasks/tight submit loops rejected",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.11",
+      "source_page": "14",
+      "requirement": "Safe concurrent writes",
+      "implementation": "src/aster_gym/store.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.12",
+      "source_page": "14",
+      "requirement": "Prevent silent cross-version comparisons",
+      "implementation": "src/aster_gym/reporting.py",
+      "test_or_manual_check": "tests/test_reporting.py",
+      "evidence": "tests/test_reporting.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.13",
+      "source_page": "14",
+      "requirement": "Cold starts documented and retried",
+      "implementation": "docs/deployment.md",
+      "test_or_manual_check": "scripts/quickstart.py",
+      "evidence": "scripts/quickstart.py",
+      "status": "implemented"
+    },
+    {
+      "id": "P08.14",
+      "source_page": "14",
+      "requirement": "Reviewer Tier2/3 first-try external roundtrip",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "public smoke after setup",
+      "evidence": "public smoke after setup",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "P08.15",
+      "source_page": "14",
+      "requirement": "GET /tasks POST /submit GET /runs/{id}",
+      "implementation": "src/aster_gym/api.py",
+      "test_or_manual_check": "tests/test_api.py",
+      "evidence": "tests/test_api.py",
+      "status": "implemented"
+    },
+    {
+      "id": "ADV-B",
+      "source_page": "15",
+      "requirement": "Five handwritten-distribution realistic transfer tasks with ranking findings",
+      "implementation": "data/transfer.jsonl",
+      "test_or_manual_check": "human approval plus real comparison",
+      "evidence": "human approval plus real comparison",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "D01",
+      "source_page": "16",
+      "requirement": "GitHub repo clean clone plus .env.example",
+      "implementation": "README.md",
+      "test_or_manual_check": "clean-copy evidence and public repo",
+      "evidence": "clean-copy evidence and public repo",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "D02",
+      "source_page": "16",
+      "requirement": "Deployed real-results dashboard URL",
+      "implementation": "site/index.html",
+      "test_or_manual_check": "public URL",
+      "evidence": "public URL",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "D03",
+      "source_page": "16",
+      "requirement": "Live sandbox URL and two-minute command",
+      "implementation": "render.yaml",
+      "test_or_manual_check": "public URL and smoke",
+      "evidence": "public URL and smoke",
+      "status": "deployment_pending"
+    },
+    {
+      "id": "D04",
+      "source_page": "16",
+      "requirement": "Loom 8-12min >=3min reward >=1min failure plus live sandbox",
+      "implementation": "docs/loom-outline.md",
+      "test_or_manual_check": "owner recorded video",
+      "evidence": "owner recorded video",
+      "status": "human_action_pending"
+    },
+    {
+      "id": "D05",
+      "source_page": "16",
+      "requirement": "README architecture stack schema weights run next steps",
+      "implementation": "README.md",
+      "test_or_manual_check": "documentation review",
+      "evidence": "documentation review",
+      "status": "implemented"
+    },
+    {
+      "id": "D06",
+      "source_page": "16",
+      "requirement": "Eval report real configs, variance, tiers, baselines, judge, fidelity, spend",
+      "implementation": "docs/evaluation.md",
+      "test_or_manual_check": "actual experiments and human audits",
+      "evidence": "actual experiments and human audits",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "D07",
+      "source_page": "16",
+      "requirement": "RL report five curves, heldout, beta sweep and gaming",
+      "implementation": "docs/rl-report.md",
+      "test_or_manual_check": "actual Colab artifacts",
+      "evidence": "actual Colab artifacts",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "D08",
+      "source_page": "16",
+      "requirement": "Hand-read 5-10 failed transcripts; categories and counts",
+      "implementation": "docs/failure-analysis.md",
+      "test_or_manual_check": "human signed review rows",
+      "evidence": "human signed review rows",
+      "status": "human_review_pending"
+    },
+    {
+      "id": "D09",
+      "source_page": "16",
+      "requirement": "Advanced track measured findings",
+      "implementation": "docs/advanced-track.md",
+      "test_or_manual_check": "actual transfer results",
+      "evidence": "actual transfer results",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "D10",
+      "source_page": "16",
+      "requirement": "Five actually encountered edges and responses",
+      "implementation": "docs/edge-cases.md",
+      "test_or_manual_check": "regression tests",
+      "evidence": "regression tests",
+      "status": "implemented"
+    },
+    {
+      "id": "D11",
+      "source_page": "16",
+      "requirement": "At least three explicit assumptions/tradeoffs",
+      "implementation": "docs/assumptions-and-tradeoffs.md",
+      "test_or_manual_check": "documentation review",
+      "evidence": "documentation review",
+      "status": "implemented"
+    },
+    {
+      "id": "D12",
+      "source_page": "16,18",
+      "requirement": "Specific honest AI usage disclosure",
+      "implementation": "docs/ai-usage.md",
+      "test_or_manual_check": "owner final confirmation",
+      "evidence": "owner final confirmation",
+      "status": "implemented"
+    },
+    {
+      "id": "D13",
+      "source_page": "18",
+      "requirement": "Four submission links and required email subject",
+      "implementation": "docs/submission-checklist.md",
+      "test_or_manual_check": "owner email draft; not sent automatically",
+      "evidence": "owner email draft; not sent automatically",
+      "status": "human_action_pending"
+    },
+    {
+      "id": "U01",
+      "source_page": "user",
+      "requirement": "Python-first pinned deps types logs config modules no secrets",
+      "implementation": "pyproject.toml",
+      "test_or_manual_check": "CI lint/type/startup",
+      "evidence": "CI lint/type/startup",
+      "status": "implemented"
+    },
+    {
+      "id": "U02",
+      "source_page": "user",
+      "requirement": "CI schema/determinism/reference/reward/leakage/API/startup",
+      "implementation": ".github/workflows/ci.yml",
+      "test_or_manual_check": "actual local check artifact",
+      "evidence": "actual local check artifact",
+      "status": "implemented"
+    },
+    {
+      "id": "U03",
+      "source_page": "user",
+      "requirement": "Adversarial malformed/missing/conflict/timeout/cost/provider/reward/split checks",
+      "implementation": "tests/",
+      "test_or_manual_check": "pytest result artifact",
+      "evidence": "pytest result artifact",
+      "status": "implemented"
+    },
+    {
+      "id": "U04",
+      "source_page": "user",
+      "requirement": "Vertical slice before expansion; actual outputs; requirement audit",
+      "implementation": "docs/submission-checklist.md",
+      "test_or_manual_check": "local smoke plus pending experiments",
+      "evidence": "local smoke plus pending experiments",
+      "status": "external_evidence_pending"
+    },
+    {
+      "id": "U05",
+      "source_page": "user",
+      "requirement": "No local training, inference, model downloads or heavy computation",
+      "implementation": "src/aster_gym/cloud/guard.py",
+      "test_or_manual_check": "tests/test_cloud.py",
+      "evidence": "tests/test_cloud.py",
+      "status": "implemented"
+    },
+    {
+      "id": "U06",
+      "source_page": "user",
+      "requirement": "Training blockers do not block remaining implementation",
+      "implementation": "docs/rl-report.md",
+      "test_or_manual_check": "pending/failed statuses and notebook recovery",
+      "evidence": "pending/failed statuses and notebook recovery",
+      "status": "implemented"
+    },
+    {
+      "id": "U07",
+      "source_page": "user",
+      "requirement": "Flexible Colab configuration and safe compact results handoff",
+      "implementation": "src/aster_gym/bundles.py",
+      "test_or_manual_check": "tests/test_cloud.py",
+      "evidence": "tests/test_cloud.py",
+      "status": "implemented"
+    }
+  ]
+}

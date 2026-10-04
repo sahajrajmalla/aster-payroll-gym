@@ -1,0 +1,32 @@
+{
+  "mean": 0.016666666666666666,
+  "sample_mean": 0.016666666666666666,
+  "sd": 0.0,
+  "replicate_means": [
+    0.016666666666666666,
+    0.016666666666666666,
+    0.016666666666666666
+  ],
+  "complete": 90,
+  "total": 90,
+  "observed": 90,
+  "coverage": 1.0,
+  "rankable": true,
+  "tiers": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.05
+  },
+  "components": {
+    "action": 0.0,
+    "exact": 0.0,
+    "fields": 0.06666666666666667,
+    "format": 1.0,
+    "judge": 0.0
+  },
+  "cost_usd": 0,
+  "confirmed_cost_usd": 0,
+  "latency_mean_s": 2.2534211095464545e-05,
+  "tokens": 0,
+  "operational_failures": 0
+}

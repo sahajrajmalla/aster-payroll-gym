@@ -1,0 +1,24 @@
+{
+  "status": "setup_required_no_model_runs_yet",
+  "api_key_env": "MODEL_API_KEY",
+  "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+  "rollouts": 3,
+  "temperature": 0.7,
+  "max_tokens": 512,
+  "max_turns": 6,
+  "timeout_s": 120,
+  "concurrency": 2,
+  "max_cost_usd": 0.0,
+  "models": [
+    {"name": "gemini-3.8-flash", "role": "frontier", "execution": "remote_api", "pricing": null},
+    {"name": "gemini-3.5-flash-lite", "role": "efficient", "execution": "remote_api", "pricing": null},
+    {"name": "Qwen/Qwen2.5-0.5B-Instruct", "role": "small", "execution": "colab_cuda_only", "pricing": {"input_per_million": 0, "output_per_million": 0, "verified_free": true}}
+  ],
+  "cohorts": {
+    "comparison": {"source": "evaluation", "balanced_subset": 30, "rollouts": 3, "mode": "single"},
+    "small_model_heldout": {"source": "evaluation", "n": 120, "rollouts": 3, "mode": "single"},
+    "tool_comparison": {"source": "evaluation", "balanced_subset": 12, "rollouts": 3, "mode": "tool"},
+    "transfer": {"source": "transfer", "n": 5, "rollouts": 3, "mode": "single"}
+  },
+  "pricing_note": "Remote prices intentionally unset. Verify model availability, explicit free-tier entitlement and disabled billing before supplying verified_free=true and zero prices. Unknown prices fail closed. Model IDs are setup defaults, not claims of available access or recorded results."
+}

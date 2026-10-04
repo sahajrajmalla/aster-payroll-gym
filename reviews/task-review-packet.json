@@ -1,0 +1,2354 @@
+{
+  "instructions": "Read rules first. Independently calculate without looking at reference_result. Then compare. Only the human reviewer can set reviewed=true.",
+  "seed_reviews": [
+    {
+      "task_id": "task-42a97b00e79922f22ea6",
+      "inputs": {
+        "kind": "retrieval",
+        "pay_date": "2029-06-15",
+        "query_field": "allowance_cents",
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "allowance_cents": 8000
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R11",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-695043d4180a36ad7268",
+      "inputs": {
+        "kind": "retrieval",
+        "pay_date": "2029-06-15",
+        "query_field": "annual_ceiling_cents",
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "annual_ceiling_cents": 1000000
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R11",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-9f103fd40df5f13e354f",
+      "inputs": {
+        "kind": "retrieval",
+        "pay_date": "2030-06-15",
+        "query_field": "allowance_cents",
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "allowance_cents": 10000
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R11",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-2fe32b935837950f9889",
+      "inputs": {
+        "kind": "retrieval",
+        "pay_date": "2030-06-15",
+        "query_field": "annual_ceiling_cents",
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "annual_ceiling_cents": 1200000
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R11",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-6f67507bc5cd4b6a41e5",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 300000,
+          "contribution_cents": 15000,
+          "taxable_cents": 275000,
+          "tax_cents": 17500,
+          "net_cents": 267500
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-628875642b1ebeeae532",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 500000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 1199000,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 500000,
+          "contribution_cents": 50,
+          "taxable_cents": 489950,
+          "tax_cents": 57990,
+          "net_cents": 441960
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-8b3b226b1e07bf22759e",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-04-30",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 100005
+          }
+        ],
+        "paid_days": 1,
+        "period_days": 30,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 1200000,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 3334,
+          "contribution_cents": 0,
+          "taxable_cents": 0,
+          "tax_cents": 0,
+          "net_cents": 3334
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-9d6b6f6bb1c3e75909da",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-02-28",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 600001
+          }
+        ],
+        "paid_days": 14,
+        "period_days": 28,
+        "bonus_cents": 12345,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 312346,
+          "contribution_cents": 15617,
+          "taxable_cents": 286729,
+          "tax_cents": 18673,
+          "net_cents": 278056
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-4c50aed085a2f50a5506",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ],
+        "citations": [
+          "R10",
+          "R4",
+          "R9"
+        ],
+        "explanation": "Resolve ytd_pensionable_cents using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-914dc869484673261223",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          },
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 400000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ],
+        "citations": [
+          "R10",
+          "R2",
+          "R9"
+        ],
+        "explanation": "Resolve salary_records using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-8c1140e64000efa09a58",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2031-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2031,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "NO_SCHEDULE"
+        ],
+        "missing_fields": [
+          "schedules"
+        ],
+        "citations": [
+          "R10",
+          "R8",
+          "R9"
+        ],
+        "explanation": "Resolve schedules using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-8b1ba2c83154d76865f0",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "bonus_cents"
+        ],
+        "citations": [
+          "R10",
+          "R3",
+          "R9"
+        ],
+        "explanation": "Resolve bonus_cents using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    }
+  ],
+  "fidelity_reviews": [
+    {
+      "task_id": "task-4c5d879f6853c65d4f1c",
+      "inputs": {
+        "kind": "retrieval",
+        "pay_date": "2029-12-11",
+        "salary_records": [
+          {
+            "effective": "2029-01-01",
+            "signed": true,
+            "monthly_salary_cents": 454443
+          }
+        ],
+        "period_days": 31,
+        "paid_days": 23,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 1200000,
+        "ytd_year": 2029,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ],
+        "query_field": "annual_ceiling_cents"
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "annual_ceiling_cents": 1000000
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R11",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-04-21",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 578160
+          }
+        ],
+        "period_days": 30,
+        "paid_days": 8,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 154176,
+          "contribution_cents": 7709,
+          "taxable_cents": 136467,
+          "tax_cents": 3647,
+          "net_cents": 142820
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-16ccf44e25558cbba567",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-06-23",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 596639
+          }
+        ],
+        "period_days": 30,
+        "paid_days": 29,
+        "bonus_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ],
+        "citations": [
+          "R10",
+          "R4",
+          "R9"
+        ],
+        "explanation": "Resolve ytd_pensionable_cents using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-08-02",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 202139
+          }
+        ],
+        "period_days": 31,
+        "paid_days": 19,
+        "bonus_cents": 19765,
+        "ytd_pensionable_cents": 1200000,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 143657,
+          "contribution_cents": 0,
+          "taxable_cents": 133657,
+          "tax_cents": 3366,
+          "net_cents": 140291
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-b18556242bce68d26e76",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-09-09",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 107938
+          },
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 109172
+          }
+        ],
+        "period_days": 30,
+        "paid_days": 17,
+        "bonus_cents": 14771,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ],
+        "citations": [
+          "R10",
+          "R2",
+          "R9"
+        ],
+        "explanation": "Resolve salary_records using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-bebd0b9279f9479fb386",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-04-20",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 543240
+          }
+        ],
+        "period_days": 30,
+        "paid_days": 4,
+        "bonus_cents": 26387,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 98819,
+          "contribution_cents": 4941,
+          "taxable_cents": 83878,
+          "tax_cents": 0,
+          "net_cents": 93878
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-0e33888836c453dcb91e",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2031-12-22",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 302031
+          }
+        ],
+        "period_days": 31,
+        "paid_days": 27,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 1200000,
+        "ytd_year": 2031,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "NO_SCHEDULE"
+        ],
+        "missing_fields": [
+          "schedules"
+        ],
+        "citations": [
+          "R10",
+          "R8",
+          "R9"
+        ],
+        "explanation": "Resolve schedules using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-18",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 567109
+          }
+        ],
+        "period_days": 31,
+        "paid_days": 28,
+        "bonus_cents": 10360,
+        "ytd_pensionable_cents": 1200000,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 522587,
+          "contribution_cents": 0,
+          "taxable_cents": 512587,
+          "tax_cents": 62517,
+          "net_cents": 460070
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-d167a405d18c1b37276f",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-05-10",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 546314
+          }
+        ],
+        "period_days": 31,
+        "paid_days": 23,
+        "bonus_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ],
+        "citations": [
+          "R10",
+          "R4",
+          "R9"
+        ],
+        "explanation": "Resolve ytd_pensionable_cents using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-a7ab1f49900234508230",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-10-09",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 353589
+          },
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 354823
+          }
+        ],
+        "period_days": 31,
+        "paid_days": 20,
+        "bonus_cents": 31095,
+        "ytd_pensionable_cents": 1052733,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ],
+        "citations": [
+          "R10",
+          "R2",
+          "R9"
+        ],
+        "explanation": "Resolve salary_records using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    }
+  ],
+  "transfer_reviews": [
+    {
+      "task_id": "task-4903b40f8cf2e91160c7",
+      "prompt": "Finance handover: payment is scheduled for 31 March 2030. The attendance file counts 23 paid calendar days. A bonus was approved separately. Reconcile the supplied records and prepare all five payslip lines; do not treat an informal planning note as a salary change.",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-03-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          }
+        ],
+        "paid_days": 23,
+        "period_days": 31,
+        "bonus_cents": 8765,
+        "ytd_pensionable_cents": 1177777,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 231346,
+          "contribution_cents": 1111,
+          "taxable_cents": 220235,
+          "tax_cents": 12024,
+          "net_cents": 218211
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-a68a80e6954b02407f9a",
+      "prompt": "An unsigned offer differs from two signed records. Payroll has already exceeded the year's pensionable ceiling. Read the dates and authority carefully and issue January's payslip.",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          },
+          {
+            "effective": "2030-01-15",
+            "signed": true,
+            "monthly_salary_cents": 444444
+          },
+          {
+            "effective": "2030-01-25",
+            "signed": false,
+            "monthly_salary_cents": 555555
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 1205000,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 444444,
+          "contribution_cents": 0,
+          "taxable_cents": 434444,
+          "tax_cents": 46889,
+          "net_cents": 397555
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-37d82fbf39a9ff181f00",
+      "prompt": "Two signed amendments arrived in separate attachments. Both start on the same date; neither supersedes the other. Finance requests a payslip today. State whether this can be completed and give a concrete next action using the supplied evidence.",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-01-31",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          },
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 320000
+          }
+        ],
+        "paid_days": 31,
+        "period_days": 31,
+        "bonus_cents": 0,
+        "ytd_pensionable_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ],
+        "citations": [
+          "R10",
+          "R2",
+          "R9"
+        ],
+        "explanation": "Resolve salary_records using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-4f342295828e1b788c21",
+      "prompt": "A September handover includes salary and attendance, but the prior earnings register has not arrived. A note suggests assuming zero. Determine what the rules actually permit.",
+      "inputs": {
+        "kind": "payslip",
+        "pay_date": "2030-09-30",
+        "salary_records": [
+          {
+            "effective": "2030-01-01",
+            "signed": true,
+            "monthly_salary_cents": 300000
+          }
+        ],
+        "paid_days": 30,
+        "period_days": 30,
+        "bonus_cents": 0,
+        "ytd_year": 2030,
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ],
+        "citations": [
+          "R10",
+          "R4",
+          "R9"
+        ],
+        "explanation": "Resolve ytd_pensionable_cents using authoritative evidence before calculation."
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    },
+    {
+      "task_id": "task-1de674213285b3580ed7",
+      "prompt": "For the payment dated 30 December 2029, extract only the monthly allowance from the applicable schedule. An attachment also contains next year's schedule; do not use it early.",
+      "inputs": {
+        "kind": "retrieval",
+        "pay_date": "2029-12-30",
+        "query_field": "allowance_cents",
+        "schedules": [
+          {
+            "id": "ASTER-2029",
+            "start": "2029-01-01",
+            "end": "2029-12-31",
+            "contribution_rate": "0.04",
+            "annual_ceiling_cents": 1000000,
+            "allowance_cents": 8000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          },
+          {
+            "id": "ASTER-2030",
+            "start": "2030-01-01",
+            "end": "2030-12-31",
+            "contribution_rate": "0.05",
+            "annual_ceiling_cents": 1200000,
+            "allowance_cents": 10000,
+            "bands": [
+              [
+                100000,
+                "0"
+              ],
+              [
+                300000,
+                "0.10"
+              ],
+              [
+                null,
+                "0.20"
+              ]
+            ]
+          }
+        ]
+      },
+      "reference_result": {
+        "decision": "answer",
+        "result": {
+          "allowance_cents": 8000
+        },
+        "issue_codes": [],
+        "missing_fields": [],
+        "citations": [
+          "R1",
+          "R10",
+          "R11",
+          "R8"
+        ],
+        "explanation": ""
+      },
+      "reviewed": false,
+      "human_result": null,
+      "reviewer": null,
+      "notes": ""
+    }
+  ]
+}

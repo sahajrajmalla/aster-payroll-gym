@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "seed": 20261002,
+  "train_path": "data/train.jsonl",
+  "validation_path": "data/validation.jsonl",
+  "evaluation_path": "data/evaluation.jsonl",
+  "output_dir": "/content/drive/MyDrive/aster-gym-results",
+  "beta_values": [0.001, 0.1],
+  "steps": 80,
+  "num_generations": 4,
+  "temperature": 0.8,
+  "eval_temperature": 0.7,
+  "max_completion_length": 256,
+  "max_prompt_length": 6000,
+  "learning_rate": 0.00005,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "save_steps": 20,
+  "eval_rollouts": 3
+}

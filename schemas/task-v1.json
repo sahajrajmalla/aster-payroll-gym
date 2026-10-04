@@ -1,0 +1,159 @@
+{
+  "$defs": {
+    "Answer": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "enum": [
+            "answer",
+            "needs_information"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "result": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "integer"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Result"
+        },
+        "issue_codes": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Issue Codes",
+          "type": "array"
+        },
+        "missing_fields": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Missing Fields",
+          "type": "array"
+        },
+        "citations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 11,
+          "title": "Citations",
+          "type": "array"
+        },
+        "explanation": {
+          "maxLength": 400,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "result",
+        "issue_codes",
+        "missing_fields",
+        "citations",
+        "explanation"
+      ],
+      "title": "Answer",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "slice": {
+      "const": "monthly-payroll",
+      "default": "monthly-payroll",
+      "title": "Slice",
+      "type": "string"
+    },
+    "difficulty": {
+      "maximum": 3,
+      "minimum": 1,
+      "title": "Difficulty",
+      "type": "integer"
+    },
+    "prompt": {
+      "maxLength": 8000,
+      "minLength": 1,
+      "title": "Prompt",
+      "type": "string"
+    },
+    "context_files": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Context Files",
+      "type": "object"
+    },
+    "ground_truth": {
+      "$ref": "#/$defs/Answer"
+    },
+    "verifier": {
+      "const": "aster-exact-cents-v1",
+      "default": "aster-exact-cents-v1",
+      "title": "Verifier",
+      "type": "string"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "ruleset_version": {
+      "const": "ASTER-1.0",
+      "default": "ASTER-1.0",
+      "title": "Ruleset Version",
+      "type": "string"
+    },
+    "seed": {
+      "title": "Seed",
+      "type": "integer"
+    },
+    "inputs": {
+      "additionalProperties": true,
+      "title": "Inputs",
+      "type": "object"
+    },
+    "input_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Input Hash",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "difficulty",
+    "prompt",
+    "context_files",
+    "ground_truth",
+    "tags",
+    "seed",
+    "inputs",
+    "input_hash"
+  ],
+  "title": "Task",
+  "type": "object"
+}
