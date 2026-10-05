@@ -15,7 +15,9 @@ The training and inference entrypoints independently enforce the same boundary
 before importing PyTorch. After that, CUDA must be available. There is no CPU,
 MPS, local-force flag, or notebook-only bypass.
 
-1. Put this repository in GitHub and replace the notebook's `REPO_URL` placeholder.
+1. Open the published notebook and save your own Colab copy. Its `REPO_URL` already
+   points to the public repository. Push your completed review/freeze commit first
+   and confirm Colab clones that exact version.
 2. Clone the repo in the notebook. Install the committed lockfile's `cloud` extra
    there. The laptop's default install never includes ML packages.
 3. Mount Google Drive. Keep `output_dir` on Drive so checkpoint writes survive

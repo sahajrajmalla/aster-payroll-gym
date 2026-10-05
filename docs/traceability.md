@@ -2,7 +2,7 @@
 
 implemented means software/doc exists, not completed external/human evidence.
 
-No human labels, public URLs, model scores or training curves are claimed complete.
+Repository and baseline dashboard URLs are verified. Human labels, genuine model scores, training curves and the public sandbox remain pending.
 
 | ID / PDF page | Requirement | Implementation | Test / evidence | Status |
 | --- | --- | --- | --- | --- |

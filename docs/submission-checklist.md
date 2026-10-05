@@ -1,5 +1,10 @@
 # Submission checklist
 
+For an ordered explanation of these actions, read
+[the submission walkthrough](submission-walkthrough.md). For recording and interview
+practice, use [the Loom script](loom-script.md) and
+[the project explanation](project-understanding.md).
+
 ## Implementation readiness
 
 - [x] Separate written authority, strict schemas and deterministic Python reference.

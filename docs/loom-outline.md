@@ -1,5 +1,8 @@
 # Ten-minute Loom outline
 
+Use [the full spoken script and rehearsal guide](loom-script.md) for screens,
+commands, evidence notes and recording practice.
+
 Record only after real results and public endpoints exist. Do not narrate planned
 experiments as completed findings. Required length is 8–12 minutes.
 

@@ -16,6 +16,18 @@ This repository never substitutes fixture outputs for model results.
 | Sandbox | Replace after Render + Neon setup |
 | Loom | Replace after recording the 8–12 minute walkthrough |
 
+## Understand the project and prepare your submission
+
+Start with [the simple and professional explanation](docs/project-understanding.md),
+including a worked payroll example and a walkthrough of the critical code.
+Then use [20 interview questions](docs/interview-preparation.md),
+[the interview reminder](docs/interview-cheatsheet.md),
+[the plain-English glossary](docs/glossary.md),
+[the step-by-step submission guide](docs/submission-walkthrough.md), and
+[the timed Loom script](docs/loom-script.md).
+The guides distinguish verified implementation from pending cloud experiments,
+human reviews, public sandbox deployment and recording.
+
 ## Two-minute sandbox quickstart
 
 After deployment, substitute the public URL below. No clone, provider key, or model
@@ -139,8 +151,9 @@ seeds do not make provider responses deterministic.
 ## Colab and result handoff
 
 Open `notebooks/aster_colab.ipynb` in Google Colab, select a GPU runtime, and follow its
-setup, smoke, sweep, held-out evaluation and export cells. Enter the repository URL
-and put keys in Colab Secrets. Checkpoints stay in Google Drive or cloud storage.
+setup, smoke, sweep, held-out evaluation and export cells. The repository URL is
+already filled in; confirm the cloned review commit and put keys in Colab Secrets.
+Checkpoints stay in Google Drive or cloud storage.
 Do not send model weights back to this computer.
 
 [Open the notebook in Colab](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb).

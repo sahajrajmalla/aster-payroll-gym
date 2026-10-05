@@ -139,7 +139,8 @@ def main():
                                      "external runs on leaderboard"], "requirements": rows}
     (ROOT / "docs" / "traceability.json").write_text(json.dumps(doc, indent=2) + "\n")
     text = ["# Requirement traceability matrix", "", status_definition + ".", "",
-            "No human labels, public URLs, model scores or training curves are claimed complete.", "",
+            "Repository and baseline dashboard URLs are verified. Human labels, genuine model scores, "
+            "training curves and the public sandbox remain pending.", "",
             "| ID / PDF page | Requirement | Implementation | Test / evidence | Status |",
             "| --- | --- | --- | --- | --- |"]
     for row in rows:
