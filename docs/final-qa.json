@@ -104,10 +104,10 @@
       "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
     }
   },
-  "clean_clone_checks_passed": null,
-  "github_ci": "pending_latest_push",
+  "clean_clone_checks_passed": 8,
+  "github_ci": "passed",
   "dashboard_http_status": 200,
-  "ci_url": null,
+  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37293715252",
   "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856",
   "lint": "passed",
   "type_checks": "passed_32_source_files",
@@ -116,5 +116,7 @@
   "neon_storage_evidence": "docs/neon-persistence-smoke.json",
   "local_training_runs": 0,
   "local_model_calls": 0,
-  "model_downloads": 0
+  "model_downloads": 0,
+  "code_revision_tested": "95f879020c76e99fabf7aabb35769f320f0c7482",
+  "ci_evidence_scope": "Recorded source revision; subsequent documentation-only commits have the same implementation hash."
 }

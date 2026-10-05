@@ -11,5 +11,6 @@
   "model_calls": 0,
   "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856",
   "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716997",
-  "sandbox": "pending Render and Neon account access"
+  "sandbox": "pending user-managed Render deployment and permanent Neon project; local API with real Neon storage passed restart check",
+  "sandbox_storage_evidence": "docs/neon-persistence-smoke.json"
 }
