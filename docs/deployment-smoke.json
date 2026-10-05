@@ -1,14 +1,15 @@
 {
-  "date": "2026-10-04T22:02:49.428680+00:00",
+  "date": "2026-10-05T03:18:00.767210+00:00",
   "url": "https://sahajrajmalla.com.np/aster-payroll-gym/",
   "http_status": 200,
   "checks": {
     "title": true,
+    "latest_frozen_corpus_hash": "ca4630a74e5e395f56d938ba1eae5e03267564ef15d8423a30dac0d79580b6af",
     "real_baselines": true,
     "pending_RL": true
   },
   "model_calls": 0,
-  "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37238281783",
-  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37238281787",
+  "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856",
+  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716997",
   "sandbox": "pending Render and Neon account access"
 }

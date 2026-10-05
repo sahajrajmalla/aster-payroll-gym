@@ -103,5 +103,10 @@
       },
       "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
     }
-  }
+  },
+  "clean_clone_checks_passed": 8,
+  "github_ci": "green",
+  "dashboard_http_status": 200,
+  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716997",
+  "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856"
 }
