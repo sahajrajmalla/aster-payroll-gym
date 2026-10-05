@@ -67,7 +67,7 @@ No human labels, public URLs, model scores or training curves are claimed comple
 | P05.10 / 10 | Provider outage isolation | src/aster_gym/eval.py | tests/test_harness.py | implemented |
 | P05.11 / 10,17 | Honest non-determinism/noise and indistinguishable rankings | docs/evaluation.md | real replicate statistics | external_evidence_pending |
 | P05.12 / 6 | Committed filesystem results and no rerun on deploy | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
-| P06.01 / 11 | Live dashboard with real saved results | site/index.html | GitHub Pages public smoke | deployment_pending |
+| P06.01 / 11 | Live dashboard with real saved results | site/index.html | docs/deployment-smoke.json; baseline evidence only, model scores pending | implemented |
 | P06.02 / 11 | Leaderboard with error bars/SD | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P06.03 / 11 | Tier and reward breakdowns | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P06.04 / 11 | Task-by-model failure heatmap | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
@@ -103,8 +103,8 @@ No human labels, public URLs, model scores or training curves are claimed comple
 | P08.14 / 14 | Reviewer Tier2/3 first-try external roundtrip | src/aster_gym/api.py | public smoke after setup | deployment_pending |
 | P08.15 / 14 | GET /tasks POST /submit GET /runs/{id} | src/aster_gym/api.py | tests/test_api.py | implemented |
 | ADV-B / 15 | Five handwritten-distribution realistic transfer tasks with ranking findings | data/transfer.jsonl | human approval plus real comparison | external_evidence_pending |
-| D01 / 16 | GitHub repo clean clone plus .env.example | README.md | clean-copy evidence and public repo | deployment_pending |
-| D02 / 16 | Deployed real-results dashboard URL | site/index.html | public URL | deployment_pending |
+| D01 / 16 | GitHub repo clean clone plus .env.example | README.md | docs/local-verification.json and public repo | implemented |
+| D02 / 16 | Deployed real-results dashboard URL | site/index.html | docs/deployment-smoke.json; saved real baselines | implemented |
 | D03 / 16 | Live sandbox URL and two-minute command | render.yaml | public URL and smoke | deployment_pending |
 | D04 / 16 | Loom 8-12min >=3min reward >=1min failure plus live sandbox | docs/loom-outline.md | owner recorded video | human_action_pending |
 | D05 / 16 | README architecture stack schema weights run next steps | README.md | documentation review | implemented |

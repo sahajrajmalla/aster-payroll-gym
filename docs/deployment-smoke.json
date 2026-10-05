@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-04T22:02:49.428680+00:00",
+  "url": "https://sahajrajmalla.com.np/aster-payroll-gym/",
+  "http_status": 200,
+  "checks": {
+    "title": true,
+    "real_baselines": true,
+    "pending_RL": true
+  },
+  "model_calls": 0,
+  "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37238281783",
+  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37238281787",
+  "sandbox": "pending Render and Neon account access"
+}

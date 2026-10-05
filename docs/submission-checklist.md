@@ -10,6 +10,8 @@
 - [x] Static dashboard, pending learning states and transcript viewer.
 - [x] Guarded Colab scripts/notebook, cloud checkpoints, safe result handoff.
 - [x] Documentation, review packets and regression tests.
+- [x] Public GitHub repository and baseline dashboard; green GitHub CI.
+- [x] Clean-clone install/startup and independent public-contract Tier-2 local smoke.
 - [ ] Actual optional verifiers and GPU startup verified in Colab.
 
 ## Submission readiness — must not be silently skipped
@@ -24,7 +26,8 @@
 - [ ] Actual reward-gaming evidence or explicit completed search with counts.
 - [ ] Your reading of 5–10 real failures and counted taxonomy.
 - [ ] Measured five-task transfer ranking agreement.
-- [ ] GitHub repo and working public dashboard/sandbox, tested externally.
+- [x] GitHub repo and public baseline dashboard, tested externally.
+- [ ] Public Render/Neon sandbox, tested externally and after restart.
 - [ ] One-command no-clone sandbox round trip including Tier2/3 correct submission.
 - [ ] 8–12 minute Loom: >=3min rewards, >=1min real failure aloud, live sandbox.
 - [ ] Four real links replace README placeholders; known limitations visible.

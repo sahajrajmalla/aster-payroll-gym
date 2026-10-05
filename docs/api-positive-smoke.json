@@ -1,0 +1,20 @@
+{
+  "status": "local_only",
+  "evidence_kind": "independent_public_contract_smoke",
+  "date": "2026-10-04T22:02:46.772222+00:00",
+  "base_url": "http://127.0.0.1:8832",
+  "tier": 2,
+  "answer_source": "Separate standard-library Decimal calculation from public documents only; no import of reference calculator",
+  "model_calls": 0,
+  "judge_calls": 0,
+  "fetch_status": 200,
+  "submit_status": 200,
+  "retrieval_status": 200,
+  "score": 1.0,
+  "run_status": "complete",
+  "elapsed_s": 0.049501832999794715,
+  "expected_answers_exposed": false,
+  "limitations": [
+    "Public Render/Neon deployment and restart/cold-start round trip still pending account access."
+  ]
+}

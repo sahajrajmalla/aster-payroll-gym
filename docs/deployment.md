@@ -1,7 +1,9 @@
 # Deployment and independent sandbox quickstart
 
-Deployment configuration is complete; public URLs are pending account setup.
-No hosted endpoint is claimed until the public quickstart is tested. Training,
+The [dashboard is deployed](https://sahajrajmalla.com.np/aster-payroll-gym/).
+The [repository is public](https://github.com/sahajrajmalla/aster-payroll-gym).
+Render/Neon account access is still needed for the live sandbox. No hosted sandbox
+endpoint is claimed until its public quickstart is tested. Training,
 inference, model weights and GPU libraries are absent from the server image.
 
 ## Local lightweight API

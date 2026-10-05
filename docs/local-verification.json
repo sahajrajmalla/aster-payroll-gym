@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-04T22:01:21.879479+00:00",
+  "evidence_kind": "clean_clone_verification",
+  "code_revision": "569c10c21eb5b197daf5d9a9dd0bcef5092d714b",
+  "checkout_path": "/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-check-whd6bqok/repo",
+  "status": "passed",
+  "checks": [
+    {
+      "command": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "/Users/sahajrajmalla/Documents/NeurlAI",
+        "/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-check-whd6bqok/repo"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "uv",
+        "sync",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "output": "warning: `VIRTUAL_ENV=/Users/sahajrajmalla/Documents/NeurlAI/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nUsing CPython 3.11.12 interpreter at: /opt/homebrew/opt/python@3.11/bin/python3.11\nCreating virtual environment at: .venv\nResolved 148 packages in 3ms\n   Building aster-payroll-gym @ file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-check-whd6bqok/repo\n      Built aster-payroll-gym @ file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-check-whd6bqok/repo\nPrepared 1 package in 553ms\nInstalled 31 packages in 83ms\n + annotated-types==0.8.0\n + anyio==4.15.1\n + aster-payroll-gym==0.1.0 (from file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-check-whd6bqok/repo)\n + attrs==26.1.0\n + certifi==2026.7.22\n + click==8.5.0\n + fastapi==0.116.1\n + h11==0.16.0\n + httpcore==1.0.9\n + httpx==0.28.1\n + hypothesis==6.140.2\n + idna==3.20\n + iniconfig==2.3.0\n + mypy==1.18.2\n + mypy-extensions==1.1.0\n + packaging==26.3\n + pathspec==1.1.1\n + pluggy==1.6.0\n + pydantic==2.11.9\n + pydantic-core==2.33.2\n + pygments==2.21.0\n + pytest==8.4.2\n + pytest-asyncio==1.2.0\n + python-dotenv==1.1.1\n + ruff==0.13.3\n + sortedcontainers==2.4.0\n + sqlalchemy==2.0.43\n + starlette==0.47.3\n + typing-extensions==4.16.0\n + typing-inspection==0.4.4\n + uvicorn==0.35.0\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\nwarning: `VIRTUAL_ENV=/Users/sahajrajmalla/Documents/NeurlAI/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "mypy",
+        "src/aster_gym",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "output": "Success: no issues found in 30 source files\nwarning: `VIRTUAL_ENV=/Users/sahajrajmalla/Documents/NeurlAI/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "........................................................................ [ 40%]\n........................................................................ [ 81%]\n................................                                         [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.11/site-packages/starlette/testclient.py:51\n  /private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-check-whd6bqok/repo/.venv/lib/python3.11/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n176 passed, 1 warning in 4.04s\nwarning: `VIRTUAL_ENV=/Users/sahajrajmalla/Documents/NeurlAI/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "aster-gym",
+        "validate"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"partitions\": {\n    \"seeds\": {\n      \"tasks\": 12,\n      \"tiers\": {\n        \"1\": 4,\n        \"2\": 4,\n        \"3\": 4\n      },\n      \"taskset_hash\": \"a6ad6688daff14c7b1308b45e18ccbc2315d5d1aec0403338a132633d8fbe005\"\n    },\n    \"train\": {\n      \"tasks\": 30,\n      \"tiers\": {\n        \"1\": 10,\n        \"2\": 10,\n        \"3\": 10\n      },\n      \"taskset_hash\": \"0c7745437043a184711d845822ed68d107a90e652db4d96008fd76137bc143bf\"\n    },\n    \"validation\": {\n      \"tasks\": 15,\n      \"tiers\": {\n        \"1\": 5,\n        \"2\": 5,\n        \"3\": 5\n      },\n      \"taskset_hash\": \"ed565f805231c10d037988ac55b258e010d8f0f14efcd66659ed0badc8cf0b08\"\n    },\n    \"evaluation\": {\n      \"tasks\": 120,\n      \"tiers\": {\n        \"1\": 40,\n        \"2\": 40,\n        \"3\": 40\n      },\n      \"taskset_hash\": \"8133946b0dde9c1d9d6a69886e9c637f70e2491734f7575fa099ad8076b74572\"\n    },\n    \"transfer\": {\n      \"tasks\": 5,\n      \"tiers\": {\n        \"1\": 1,\n        \"2\": 2,\n        \"3\": 2\n      },\n      \"taskset_hash\": \"68a4c7fd5398d4aa99deb55cafb4b990560fd4f5b2ccf8003cd284d0987cc6ea\"\n    }\n  },\n  \"splits\": {\n    \"status\": \"disjoint\",\n    \"partitions\": {\n      \"seeds\": 12,\n      \"train\": 30,\n      \"validation\": 15,\n      \"evaluation\": 120,\n      \"transfer\": 5\n    }\n  }\n}\nwarning: `VIRTUAL_ENV=/Users/sahajrajmalla/Documents/NeurlAI/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "build",
+        "--wheel"
+      ],
+      "exit_code": 0,
+      "output": "Building wheel...\nSuccessfully built dist/aster_payroll_gym-0.1.0-py3-none-any.whl\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-c",
+        "import importlib.util; import aster_gym.api; assert all(importlib.util.find_spec(n) is None for n in ('torch','transformers','trl','peft','accelerate')); from aster_gym.versions import rules_text; assert 'R11' in rules_text(); print('Lightweight startup and packaged authority passed')"
+      ],
+      "exit_code": 0,
+      "output": "Lightweight startup and packaged authority passed\nwarning: `VIRTUAL_ENV=/Users/sahajrajmalla/Documents/NeurlAI/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    }
+  ],
+  "training_runs": 0,
+  "local_model_calls": 0,
+  "model_downloads": 0
+}

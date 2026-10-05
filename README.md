@@ -5,13 +5,14 @@ reward function for evaluation, reinforcement learning, and external submissions
 The written rule set is authoritative; Python is a testable implementation of it.
 
 **Status:** runnable local code and deterministic adversarial baseline evidence.
-Real model evaluations, Colab training, human audits, public deployment and Loom
-are pending. This repository never substitutes fixture outputs for those results.
+Real model evaluations, Colab training, human audits, public sandbox deployment
+and Loom are pending. The repository and baseline dashboard are published.
+This repository never substitutes fixture outputs for model results.
 
 | Submission link | Status |
 | --- | --- |
 | GitHub repository | [sahajrajmalla/aster-payroll-gym](https://github.com/sahajrajmalla/aster-payroll-gym) |
-| Dashboard | Replace after enabling GitHub Pages |
+| Dashboard | [Live evidence dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) |
 | Sandbox | Replace after Render + Neon setup |
 | Loom | Replace after recording the 8–12 minute walkthrough |
 
@@ -63,6 +64,13 @@ uv run aster-gym serve
 Open `site/index.html` for the saved-results dashboard. The API listens on
 `http://127.0.0.1:8000`; `python3 scripts/quickstart.py --help` explains its client.
 The API server and these tests perform small deterministic calculations only.
+
+Verified: 176 lightweight tests, Ruff, mypy, an eight-check clean Git clone,
+wheel packaging and GitHub CI. A separate Decimal client solved a public Tier-2
+task and completed fetch → submit → retrieve with score 1.0, without importing
+the reference calculator. This was a local contract smoke test, not model evidence
+or a public sandbox deployment. Records are in `docs/local-verification.json`,
+`docs/api-positive-smoke.json` and `docs/deployment-smoke.json`.
 
 **No local training or model inference is permitted.** `aster-gym train`,
 `aster-gym infer`, and cloud model entrypoints refuse local execution before model

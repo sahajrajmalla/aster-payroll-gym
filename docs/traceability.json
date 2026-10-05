@@ -563,9 +563,9 @@
       "source_page": "11",
       "requirement": "Live dashboard with real saved results",
       "implementation": "site/index.html",
-      "test_or_manual_check": "GitHub Pages public smoke",
-      "evidence": "GitHub Pages public smoke",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/deployment-smoke.json; baseline evidence only, model scores pending",
+      "evidence": "docs/deployment-smoke.json; baseline evidence only, model scores pending",
+      "status": "implemented"
     },
     {
       "id": "P06.02",
@@ -887,18 +887,18 @@
       "source_page": "16",
       "requirement": "GitHub repo clean clone plus .env.example",
       "implementation": "README.md",
-      "test_or_manual_check": "clean-copy evidence and public repo",
-      "evidence": "clean-copy evidence and public repo",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/local-verification.json and public repo",
+      "evidence": "docs/local-verification.json and public repo",
+      "status": "implemented"
     },
     {
       "id": "D02",
       "source_page": "16",
       "requirement": "Deployed real-results dashboard URL",
       "implementation": "site/index.html",
-      "test_or_manual_check": "public URL",
-      "evidence": "public URL",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/deployment-smoke.json; saved real baselines",
+      "evidence": "docs/deployment-smoke.json; saved real baselines",
+      "status": "implemented"
     },
     {
       "id": "D03",
