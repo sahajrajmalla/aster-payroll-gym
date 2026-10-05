@@ -110,6 +110,7 @@ async def _eval(args) -> None:
             max_turns=args.max_turns if args.max_turns is not None else config.get("max_turns", 6),
             max_tokens=args.max_tokens if args.max_tokens is not None else config.get("max_tokens", 512),
             temperature=args.temperature if args.temperature is not None else config.get("temperature", .7),
+            reasoning_effort=args.reasoning_effort or preset.get("reasoning_effort", config.get("reasoning_effort")),
             judge=judge, seed=args.seed if args.seed is not None else config.get("seed", 7001))
         print(json.dumps(metrics, indent=2))
     finally:
@@ -149,6 +150,7 @@ def main() -> None:
     evaluate.add_argument("--max-turns", type=int)
     evaluate.add_argument("--max-tokens", type=int)
     evaluate.add_argument("--temperature", type=float)
+    evaluate.add_argument("--reasoning-effort", choices=["none", "minimal", "low", "medium", "high"])
     evaluate.add_argument("--output", default="results/evaluation")
     dashboard = commands.add_parser("report")
     dashboard.add_argument("--results", default="results")

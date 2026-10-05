@@ -1,5 +1,5 @@
 {
-  "status": "GREEN_IMPLEMENTATION_QA",
+  "status": "IMPLEMENTATION_QA_PASSED",
   "requirements": 117,
   "required_files_checked": 25,
   "tasks": {
@@ -13,8 +13,8 @@
   "default_ML_packages_installed": false,
   "notebook_executed": false,
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "implementation_hash": "d0a191cacf1a9627dccd2cdd283c7c5d86077908f6c3d753f7679d34b01c98d4",
-  "submission_status": "PENDING_CLOUD_HUMAN_AND_SANDBOX_EVIDENCE",
+  "implementation_hash": "308d984f550a340af0ad6b07c4389ac4d37c50d3992f90e56c0b78526641e4e4",
+  "submission_status": "PENDING_CLOUD_HUMAN_AND_PUBLIC_SANDBOX_EVIDENCE",
   "pending": [
     "Genuine three-model evaluation",
     "Actual Colab RL sweeps and held-out comparisons",
@@ -24,8 +24,8 @@
     "Public Render/Neon sandbox round trip",
     "Loom recording"
   ],
-  "date": "2026-10-05T03:15:26.754221+00:00",
-  "tests_passed": 178,
+  "date": "2026-10-05T09:59:09.579442+00:00",
+  "tests_passed": 224,
   "corpus_validation": {
     "seeds": {
       "tasks": 12,
@@ -104,9 +104,17 @@
       "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
     }
   },
-  "clean_clone_checks_passed": 8,
-  "github_ci": "green",
+  "clean_clone_checks_passed": null,
+  "github_ci": "pending_latest_push",
   "dashboard_http_status": 200,
-  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716997",
-  "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856"
+  "ci_url": null,
+  "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856",
+  "lint": "passed",
+  "type_checks": "passed_32_source_files",
+  "sandbox_owner_action": "User will deploy Render and permanent Neon project using concise guide",
+  "neon_storage_test": "correct Tier2 score1.0 and process-restart persistence passed; API localhost only",
+  "neon_storage_evidence": "docs/neon-persistence-smoke.json",
+  "local_training_runs": 0,
+  "local_model_calls": 0,
+  "model_downloads": 0
 }

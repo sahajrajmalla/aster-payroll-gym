@@ -24,6 +24,25 @@ TOOL_DEFINITIONS = [
 ]
 
 
+def is_reference_read(name: str, arguments: Any, response: dict[str, Any]) -> bool:
+    """Count source evidence, excluding request echoes and irrelevant planning notes."""
+    if "error_code" in response or not isinstance(arguments, dict):
+        return False
+    if name == "lookup_rules":
+        return (response.get("pay_date") == arguments.get("pay_date")
+                and isinstance(response.get("rules"), str) and bool(response["rules"].strip()))
+    if name != "read_document":
+        return False
+    document_id = arguments.get("document_id")
+    references = {"rules.md", "schedules.json", "payroll-records.json"} | {
+        f"record-{field}.json" for field in ("salary_records", "period_days", "paid_days",
+                                            "bonus_cents", "ytd_pensionable_cents", "ytd_year")
+    }
+    return (isinstance(document_id, str) and document_id in references
+            and response.get("document_id") == document_id
+            and isinstance(response.get("content"), str) and bool(response["content"].strip()))
+
+
 def calculate(expression: str) -> dict[str, str]:
     """Evaluate only arithmetic AST nodes; never execute Python or resolve names."""
     try:

@@ -1,21 +1,11 @@
-# AI usage disclosure
+# Tool-use disclosure
 
-Codex assisted with reading and extracting the assignment requirements, selecting
-the fictional domain, designing and writing the rule artifact, implementation,
-tests, review worksheets, deployment configuration and documentation. Specialized
-AI subagents assisted with harness, cloud workflow and sandbox/reporting code, and
-the primary agent integrated and reviewed their work. No other person collaborated.
+Codex assisted with requirements, domain/rule design, code, tests, deployment
+configuration and documentation, including specialized code-review subagents.
+No other person collaborated. Ground-truth labels are computed exclusively by the
+independent Python reference; task prose and review drafts received assistance.
 
-No LLM generated ground-truth answers. All stored task labels are computed by the
-independent Python reference implementation after the written rules. Domain prose
-and task presentations were AI-assisted; this is disclosed separately from labels.
-
-No local training, local model inference or model-weight downloads were run.
-Automated code checks and deterministic programmatic baselines are real local
-outputs. Their artifacts are not described as model evaluations or human audits.
-
-User actions still required: independent seed/rule fidelity checks, transfer-task
-approval, judge labels, reading failed model transcripts, executing Colab, signing
-into hosting providers, and recording the Loom. Only completed actions may later
-be described as personally performed. Update this disclosure with actual model
-providers, cloud runtime, experiments, spend and any additional AI tools used.
+No local model training, inference or weight downloads were performed. Model/RL
+results and independent human reviews remain pending until genuine records exist.
+Update this disclosure with the providers, cloud runtime, completed experiments
+and any additional tools actually used before submission.

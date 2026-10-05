@@ -29,7 +29,13 @@ Their exact repeated outputs have SD zero by design, not because models are stab
 Judge prompt `prompts/judge-v1.txt` is versioned and hashed. The configured remote
 model assigns only 0/1/2 labels for understandable issue/next action; Python already
 decided correctness. Cache key includes task, canonical candidate, all scoring
-versions, model and prompt hash. No alternative judge or renormalized weights are
+versions, model, endpoint, prompt hash, reasoning effort and token budget. Google
+Gemini requests use documented `low` effort and a bounded 512-token allowance for
+reasoning plus the strict label, configured through `JUDGE_MAX_TOKENS` (64–2048)
+and `JUDGE_REASONING_EFFORT`. Other endpoints omit effort unless explicitly set.
+These settings are hashed in evaluation/training resumes, private sandbox state
+and reliability studies, and recorded in each judge ledger. A changed setting
+requires a fresh experiment or blocker-task run. No alternative judge or renormalized weights are
 used on outages. Pending scores are excluded from mean rewards and counted in coverage.
 
 Judge reliability remains pending. Label 15 examples yourself, obtain three uncached

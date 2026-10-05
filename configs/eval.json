@@ -10,15 +10,66 @@
   "concurrency": 2,
   "max_cost_usd": 0.0,
   "models": [
-    {"name": "gemini-3.8-flash", "role": "frontier", "execution": "remote_api", "pricing": null},
-    {"name": "gemini-3.5-flash-lite", "role": "efficient", "execution": "remote_api", "pricing": null},
-    {"name": "Qwen/Qwen2.5-0.5B-Instruct", "role": "small", "execution": "colab_cuda_only", "pricing": {"input_per_million": 0, "output_per_million": 0, "verified_free": true}}
+    {
+      "name": "gemini-3.8-flash",
+      "role": "frontier",
+      "execution": "remote_api",
+      "pricing": null,
+      "reasoning_effort": "low"
+    },
+    {
+      "name": "gemini-3.5-flash-lite",
+      "role": "efficient",
+      "execution": "remote_api",
+      "pricing": null,
+      "reasoning_effort": "low"
+    },
+    {
+      "name": "Qwen/Qwen2.5-0.5B-Instruct",
+      "role": "small",
+      "execution": "colab_cuda_only",
+      "pricing": {
+        "input_per_million": 0,
+        "output_per_million": 0,
+        "verified_free": true
+      }
+    }
   ],
   "cohorts": {
-    "comparison": {"source": "evaluation", "balanced_subset": 30, "rollouts": 3, "mode": "single"},
-    "small_model_heldout": {"source": "evaluation", "n": 120, "rollouts": 3, "mode": "single"},
-    "tool_comparison": {"source": "evaluation", "balanced_subset": 12, "rollouts": 3, "mode": "tool"},
-    "transfer": {"source": "transfer", "n": 5, "rollouts": 3, "mode": "single"}
+    "comparison": {
+      "source": "evaluation",
+      "balanced_subset": 30,
+      "rollouts": 3,
+      "mode": "single"
+    },
+    "small_model_heldout": {
+      "source": "evaluation",
+      "n": 120,
+      "rollouts": 3,
+      "mode": "single"
+    },
+    "tool_comparison": {
+      "source": "evaluation",
+      "balanced_subset": 12,
+      "rollouts": 3,
+      "mode": "tool"
+    },
+    "transfer": {
+      "source": "transfer",
+      "n": 5,
+      "rollouts": 3,
+      "mode": "single"
+    }
   },
-  "pricing_note": "Remote prices intentionally unset. Verify model availability, explicit free-tier entitlement and disabled billing before supplying verified_free=true and zero prices. Unknown prices fail closed. Model IDs are setup defaults, not claims of available access or recorded results."
+  "pricing_note": "Remote prices intentionally unset. Verify model availability, explicit free-tier entitlement and disabled billing before supplying verified_free=true and zero prices. Unknown prices fail closed. Model IDs are setup defaults, not claims of available access or recorded results.",
+  "model_sources": {
+    "checked_on": "2026-10-05",
+    "frontier_model": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+    "frontier_selection_evidence": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+    "efficient_model": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite",
+    "pricing": "https://ai.google.dev/gemini-api/docs/pricing",
+    "account_access_verified": false,
+    "note": "Official model IDs and published standard free-tier prices were checked. User account access, quotas, region, and disabled billing still require verification. Frontier role is a selection inference from vendor benchmark evidence, not a measured result in this gym.",
+    "openai_compatibility": "https://ai.google.dev/gemini-api/docs/openai"
+  }
 }

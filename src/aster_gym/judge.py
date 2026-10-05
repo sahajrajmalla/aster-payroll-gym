@@ -22,8 +22,15 @@ issue and concrete next action. Never compute money or invent criteria."""
 
 class RemoteJudge:
     def __init__(self, *, model: str, base_url: str, api_key: str, verified_free: bool = False,
-                 max_calls: int = 100, budget=None, transport=None):
-        self.model, self.base_url, self.api_key = model, base_url, api_key
+                 max_calls: int = 100, budget=None, transport=None, max_tokens: int = 512,
+                 reasoning_effort: str | None = None):
+        from .providers import resolve_reasoning_effort
+
+        if type(max_tokens) is not int or not 64 <= max_tokens <= 2048:
+            raise ValueError("INVALID_JUDGE_TOKEN_LIMIT")
+        self.model, self.base_url, self.api_key = model, base_url.rstrip("/"), api_key
+        self.max_tokens = max_tokens
+        self.reasoning_effort = resolve_reasoning_effort(model, base_url, reasoning_effort)
         self.verified_free, self.max_calls = verified_free, max_calls
         self.calls = 0
         self.ledger: list[dict] = []
@@ -44,7 +51,16 @@ class RemoteJudge:
         return cls(model=os.environ.get("JUDGE_MODEL", "gemini-3.5-flash-lite"),
                    base_url=os.environ.get("JUDGE_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/"),
                    api_key=key, verified_free=os.environ.get("JUDGE_VERIFIED_FREE", "false").lower() == "true",
-                   max_calls=int(os.environ.get("JUDGE_MAX_CALLS", "100")), budget=budget)
+                   max_calls=int(os.environ.get("JUDGE_MAX_CALLS", "100")), budget=budget,
+                   max_tokens=int(os.environ.get("JUDGE_MAX_TOKENS", "512")),
+                   reasoning_effort=os.environ.get("JUDGE_REASONING_EFFORT") or None)
+
+    @property
+    def identity(self) -> dict[str, object]:
+        settings: dict[str, object] = {"model": self.model, "base_url": self.base_url,
+            "prompt_hash": self.prompt_hash, "max_tokens": self.max_tokens,
+            "reasoning_effort": self.reasoning_effort, "temperature": 0.0}
+        return {**settings, "settings_hash": stable_hash(settings)}
 
     def bind_budget(self, budget) -> None:
         if self._lock.locked():
@@ -58,7 +74,7 @@ class RemoteJudge:
 
         key = stable_hash({"task": task.input_hash, "answer": answer.model_dump(),
                            "rules": RULESET_VERSION, "reward": REWARD_VERSION,
-                           "judge": self.model, "prompt": self.prompt_hash})
+                           "judge": self.identity})
         async with self._lock:
             if key in self.cache and not bypass_cache:
                 return self.cache[key]
@@ -68,7 +84,7 @@ class RemoteJudge:
                 self._provider = AsyncOpenAIProvider(model=self.model, base_url=self.base_url,
                     api_key=self.api_key, budget=self._budget if self._budget is not None else CostBudget(0),
                     pricing=Pricing(0, 0, verified_free=self.verified_free), timeout_s=30,
-                    transport=self._transport, backoff_s=.2)
+                    transport=self._transport, backoff_s=.2, reasoning_effort=self.reasoning_effort)
             self.calls += 1
             # Never send private oracle amounts; public context and claimed blocker are sufficient.
             data = {"public_documents": task.context_files, "issue_codes": answer.issue_codes,
@@ -78,7 +94,7 @@ class RemoteJudge:
                         {"role": "user", "content": json.dumps(data, sort_keys=True)}]
             response = None
             try:
-                response = await self._provider.chat(messages, max_tokens=32, temperature=0)
+                response = await self._provider.chat(messages, max_tokens=self.max_tokens, temperature=0)
                 raw = response.message.get("content", "")
                 if not isinstance(raw, str) or len(raw.encode()) > 8192:
                     raise ValueError("invalid judge contract")
@@ -92,7 +108,8 @@ class RemoteJudge:
                 self.ledger.append({"task_id": task.id, "messages": messages, "response": response.message,
                     "attempts": response.attempts, "prompt_tokens": response.prompt_tokens,
                     "completion_tokens": response.completion_tokens, "cost_usd": response.cost_usd,
-                    "model": self.model, "prompt_hash": self.prompt_hash, "status": "complete"})
+                    "model": self.model, "prompt_hash": self.prompt_hash,
+                    "judge_settings": self.identity, "status": "complete"})
                 return result
             except (ProviderError, ValueError, TypeError, KeyError, RecursionError) as exc:
                 code = getattr(exc, "code", "JUDGE_INVALID_OUTPUT")
@@ -107,7 +124,7 @@ class RemoteJudge:
                     "cost_usd": response.cost_usd if response is not None else sum(
                         attempt.get("cost_usd", 0.0) for attempt in attempts),
                     "status": "pending", "code": code,
-                    "model": self.model, "prompt_hash": self.prompt_hash})
+                    "model": self.model, "prompt_hash": self.prompt_hash, "judge_settings": self.identity})
                 return JudgeResult(score=0, status="pending", code=code)
 
     async def aclose(self) -> None:
@@ -123,3 +140,21 @@ def _unique_pairs(items: list[tuple[str, object]]) -> dict[str, object]:
             raise ValueError("duplicate judge key")
         result[key] = value
     return result
+
+
+def judge_identity(judge: object | None) -> dict[str, object] | None:
+    """Stable, secret-free scorer provenance; fixture readiness is not a setting."""
+    if judge is None:
+        return None
+    if isinstance(judge, RemoteJudge):
+        return judge.identity
+    # Test/custom judges may expose a minimal identity, but mutable readiness is
+    # intentionally excluded so an infrastructure retry can reuse its answer.
+    settings = {key: getattr(judge, key, None) for key in
+                ("model", "base_url", "prompt_hash", "max_tokens", "reasoning_effort")}
+    return {**settings, "settings_hash": stable_hash(settings)}
+
+
+def configured_judge_identity() -> dict[str, object] | None:
+    """Resolve environment settings without provider creation or model calls."""
+    return judge_identity(RemoteJudge.from_env())

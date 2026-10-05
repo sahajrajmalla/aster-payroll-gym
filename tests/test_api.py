@@ -5,8 +5,10 @@ from concurrent.futures import ThreadPoolExecutor
 
 import pytest
 from fastapi.testclient import TestClient
+from sqlalchemy.exc import OperationalError
 
 from aster_gym.api import create_app
+from aster_gym.judge import RemoteJudge
 from aster_gym.store import RunStore, StoreError
 
 
@@ -163,3 +165,38 @@ def test_issued_tier_mix_and_transcript_persist_before_submission(client):
     assert current["transcript"]["submitted_answers"] == []
     internal = client.app.state.store.get_run(run["run_id"], run["run_token"])
     assert json.loads(internal["versions_json"])["tier_mix"] == run["tier_mix"]
+
+
+@pytest.mark.parametrize("failure", [False, True])
+def test_health_storage_outage_is_safe_and_retryable(client, monkeypatch, failure):
+    def unavailable():
+        if failure:
+            raise OperationalError("private database hostname", {}, Exception("private connection detail"))
+        return False
+
+    monkeypatch.setattr(client.app.state.store, "healthy", unavailable)
+    response = client.get("/healthz")
+    assert response.status_code == 503
+    assert response.json() == {"detail": "STORAGE_UNAVAILABLE"}
+    assert "private" not in response.text
+
+
+@pytest.mark.parametrize("tier", ["2", "3"])
+def test_judge_configuration_changes_freeze_blocker_scoring_only(tmp_path, tier):
+    database = f"sqlite:///{tmp_path / 'judge-settings.sqlite'}"
+    with TestClient(create_app(database, judge=None)) as first:
+        run = issued(first, tier=tier)
+        private = first.app.state.store.get_run(run["run_id"], run["run_token"])
+        answer = json.loads(private["tasks_json"])[0]["ground_truth"]
+        assert json.loads(private["versions_json"])["judge"] is None
+        assert "judge" not in run
+    configured = RemoteJudge(model="fixture", base_url="https://example.invalid", api_key="fixture-secret")
+    with TestClient(create_app(database, judge=configured)) as second:
+        response = second.post("/submit", json=payload(run, answer), headers=headers(run))
+        if tier == "3":
+            assert response.status_code == 409
+            assert response.json()["detail"].startswith("JUDGE_CONFIGURATION_CHANGED")
+            assert configured.calls == 0
+        else:
+            assert response.status_code == 200 and response.json()["scores"][0]["score"] == 1
+        assert "fixture-secret" not in response.text

@@ -1,157 +1,113 @@
-# Colab-only execution and return of results
+# Cloud execution and result handoff
 
-No training or open-weight inference has been run on the development computer. The
-training implementation is runnable code, but GPU compatibility and experimental
-outcomes remain **pending execution in Colab**. Local tests exercise guards,
-configuration, and safe data import only. Do not interpret passing those tests as
-successful training.
+Open the [Colab notebook](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb).
+**No training, open-weight inference or weight downloads run on the laptop.**
+The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
+There is no CPU/MPS fallback or local override. GPU acceptance and model findings
+remain pending until genuine runs succeed.
 
-## Start safely
+## Before running
 
-Open `notebooks/aster_colab.ipynb` in Google Colab and select a **GPU** runtime.
-The first cell refuses to run outside recognized hosted Colab. It checks Linux,
-`/content`, the installed `google.colab` package, and a Colab environment marker.
-The training and inference entrypoints independently enforce the same boundary
-before importing PyTorch. After that, CUDA must be available. There is no CPU,
-MPS, local-force flag, or notebook-only bypass.
+1. Complete the independent task reviews and fifteen judge labels. Freeze the five
+   transfer tasks with `uv run aster-gym freeze-transfer`, then commit and push.
+2. Save your own notebook copy. Set `REPO_REF` to that reviewed commit SHA. The
+   notebook resolves and prints `CODE_REVISION`, checks out that exact revision,
+   and refuses to overwrite tracked edits.
+3. Select **Runtime → Change runtime type → GPU** and mount Drive. Allow at least
+   5 GiB of cloud filesystem space; checkpoints remain on Drive.
+4. Add `JUDGE_API_KEY` and `MODEL_API_KEY` in Colab Secrets and enable notebook
+   access. Both may contain the same Google API key. Never paste keys into cells.
+5. Verify model access, quotas, zero-dollar pricing and disabled billing in your
+   account. Only then enable `FREE_TIER_CONFIRMED` for the judge and
+   `REMOTE_FREE_TIER_CONFIRMED` for the two comparison models. Prices fail closed
+   until confirmed. Keep the hard cost cap at zero.
 
-1. Open the published notebook and save your own Colab copy. Its `REPO_URL` already
-   points to the public repository. Push your completed review/freeze commit first
-   and confirm Colab clones that exact version.
-2. Clone the repo in the notebook. Install the committed lockfile's `cloud` extra
-   there. The laptop's default install never includes ML packages.
-3. Mount Google Drive. Keep `output_dir` on Drive so checkpoint writes survive
-   notebook disconnects. Check that there is several GB of available space.
-4. Add `JUDGE_API_KEY` to Colab Secrets. Enable notebook access. Confirm that your
-   judge model is available on a verified zero-dollar tier with billing disabled.
-   Set `JUDGE_MODEL` accordingly and `JUDGE_VERIFIED_FREE=true` only after checking.
-5. Run the guarded CUDA preflight and the explicit three-step smoke command.
-6. Inspect the smoke status, real metrics, and reference proof. An unchanged
-   adapter with all equal-reward groups is an ineffective smoke run, not an
-   invented success. Preserve its evidence.
-7. Explicitly start the two-beta sweep. Each beta begins from the pinned initial
-   model. Validation chooses the winner before final evaluation.
-8. Export only the compact JSON bundle and download it. Keep weights, optimizer,
-   scheduler, tokenizer, and RNG checkpoints in Drive.
+The notebook installs the pinned `cloud` extra only in Colab. Preflight checks CUDA,
+storage, dependency versions, both optional `verifiers` environments and frozen
+data. A failed GPU preflight blocks Qwen/RL while remote evaluation can continue.
 
-The model and tokenizer are pinned to `Qwen/Qwen2.5-0.5B-Instruct` revision
-`7ae557604adf67be50417f59c2c2f167def9a775`. This revision was resolved through the
-[official model metadata](https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct).
-No weights were downloaded to resolve it.
+## Run the phases
 
-## Commands, only inside Colab
+Every start switch defaults to `False`. Enable a phase deliberately, then run its cell:
 
-```bash
-uv run --frozen --extra cloud --no-dev python -m aster_gym.cloud.train \
-  --config configs/train.json --start-training --smoke
-uv run --frozen --extra cloud --no-dev python -m aster_gym.cloud.train \
-  --config configs/train.json --start-training
-uv run --frozen --extra cloud --no-dev python -m aster_gym.cloud.train \
-  --config configs/train.json --start-training --resume
-uv run --frozen --extra cloud --no-dev python -m aster_gym.cloud.evaluate \
-  --config configs/train.json --tasks data/evaluation.jsonl \
-  --output /content/drive/MyDrive/aster-gym-results/small-model-eval --start-inference
-```
+- `START_SMOKE`: three optimizer steps. Inspect the real metrics, failure file and
+  `reference_proof.json`. Equal-reward groups and an unchanged adapter are an
+  ineffective smoke, not evidence of learning.
+- `START_SWEEPS`: set `SMOKE_REVIEWED=True` after inspection. Run both beta values,
+  validation-only selection and held-out initial/selected comparisons.
+- `START_INFERENCE`: Qwen runs three rollouts per task on the same 30-task cohort,
+  all 120 evaluation tasks and 12 tool tasks. Five transfer tasks run only when
+  the exact human-approved freeze marker verifies.
+- `START_REMOTE_EVAL`: both configured remote models run three rollouts on the
+  same 30-task, 12-tool-task and approved five-task transfer cohorts. Temperature,
+  seed and completion budget match Qwen; the shared scorer records full evidence.
+- `START_JUDGE_STUDY`: requires fifteen independent human labels and reviewer
+  names. It saves three uncached production-scorer ratings per example in a Drive
+  copy of the review packet. An interrupted study resumes without overwriting labels.
 
-Use the frozen 30-task common cohort and five transfer tasks for additional
-small-model comparison runs. The `--tasks` flag chooses these JSONL files. The
-cloud provider uses the exact same evaluator and scorer as the remote models.
-There is no local model server or hidden inference fallback.
+Failed commands write `run_status.json`; training also saves failure/checkpoint
+evidence. They do not stop independent model evaluation or export. A command's
+zero exit status is not a claim that its experimental evidence is complete.
 
-Create the common cohort without inference:
+## Configuration and resume
 
-```bash
-uv run --frozen --extra cloud --no-dev python - <<'PY'
-from aster_gym.generator import read_taskset, write_taskset
-write_taskset(read_taskset('data/evaluation.jsonl')[:30], 'data/comparison.jsonl')
-write_taskset(read_taskset('data/evaluation.jsonl')[:12], 'data/tool-comparison.jsonl')
-PY
-```
+`configs/train.json` pins Qwen2.5-0.5B-Instruct to
+`7ae557604adf67be50417f59c2c2f167def9a775`. Defaults: LoRA rank 8/alpha 16, four
+completions, temperature 0.8, 256 completion tokens, learning rate `5e-5`, 80
+optimizer steps per beta (0.001 and 0.10), checkpoint every 20 steps, three
+evaluation rollouts. Microbatch 1 × accumulation 4 must remain divisible by four.
 
-Use `--tasks data/comparison.jsonl` for the small-model common comparison and
-`--tasks data/tool-comparison.jsonl --mode tool` for its tool comparison. Before
-the transfer run, finish your five review rows on the Mac, run
-`uv run aster-gym freeze-transfer`, and commit/sync that marker to Colab. Transfer
-scoring refuses to start without the exact approved task hash.
+If resources are insufficient, reduce **both** runs to 40 steps and select a fresh
+output directory. Record the adjustment. Resume with `RESUME=True` and unchanged
+code, model, rules, prompts, splits and configuration. A failure before the first
+checkpoint needs a new output directory. Never delete failed evidence.
 
-## Resource adjustments
+`JUDGE_MAX_CALLS` starts at 100 per process. Adjust only within verified account
+allowances. Provider errors and quota exhaustion leave scores pending; they are
+never replaced with zero or a simpler rubric. Fix the cloud issue and resume.
+The judge uses `low` reasoning effort and 512 bounded output tokens, including
+reasoning. `JUDGE_MAX_TOKENS` accepts 64–2048; settings enter every judge identity
+and cannot change silently during resume. Google's
+[compatibility guide](https://ai.google.dev/gemini-api/docs/openai) documents `low`.
+Unrelated endpoints omit effort unless explicitly configured. Real acceptance
+still requires the cloud smoke and judge study; exhausted reasoning never earns a fabricated label.
 
-`configs/train.json` controls output location, steps, microbatch, accumulation,
-completion limit, checkpoint interval, and sampling. Defaults are 80 steps per
-beta, batch 1 with accumulation 4, and four grouped completions. The effective
-batch must remain divisible by four. Reduce **both beta runs** to 40 steps if
-needed. If adjusting token length or any other setting, start both runs in a new
-output directory and report the adjustment. Resuming a changed configuration,
-rule hash, taskset, or prompt configuration is rejected.
+The frozen adapter-disabled backbone is the reference. Initial logits must agree;
+all reference parameters must remain frozen and their full hashes unchanged.
+Every step logs reward, sampled `k3` KL, beta-times-KL, entropy, length, per-tier
+pass rates, components, equal-reward fraction and actual completions. Missing-tier
+metrics are `null`, not zero. See the RL report for the objective and interpretation.
+Source compatibility was checked against the pinned
+[TRL trainer](https://github.com/huggingface/trl/blob/v0.26.2/trl/trainer/grpo_trainer.py);
+actual CUDA execution still requires the smoke test.
 
-The trainer writes an optimizer checkpoint every 20 steps and retains three.
-A successful smoke writes checkpoints every step. `--resume` uses the latest
-checkpoint and discards metric/completion rows beyond that durable step. A failed
-run before its first checkpoint needs a new output directory. Never delete the
-failed evidence just to make the results look cleaner.
+## Verified setup defaults
 
-The judge quota is a separate constraint: start conservatively; raise its call
-limit only within your verified free allowance. Judge errors or quota exhaustion
-stop a training batch without replacing rewards or training on `None`. Fix the
-external issue and resume. Training failure does not block development or other
-submission work.
+On 2026-10-05, Google's official docs listed stable
+[Gemini 3.8 Flash](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash) and
+[Gemini 3.5 Flash-Lite](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite),
+with free standard input/output in the [pricing page](https://ai.google.dev/gemini-api/docs/pricing).
+The frontier comparison role is a selection inference from Google's
+[3.8 model-card benchmarks](https://deepmind.google/models/model-cards/gemini-3-8-flash/).
+It is not a measured ranking in this gym. Account access and allowance remain unverified.
 
-## Implemented objective and evidence
+## Return results
 
-The implementation explicitly selects TRL 0.26.2's `loss_type="grpo"`, grouped
-reward scaling, one policy iteration, clipping epsilon 0.2, and positive beta.
-For completion token `t`, let `r_t = exp(log πθ − log πold)` and `A` be the
-completion's group-centered, group-standardized reward. It minimizes the negative
-clipped surrogate `min(r_t A, clip(r_t, 0.8, 1.2) A)` plus `β KL_t`, averaging
-over completion tokens and then sequences. Equal-reward groups have zero
-advantages and are retained in the audit.
+The final cell exports only validated JSON/JSONL; weights, optimizer state, code
+and pickle stay out. Partial runs remain partial. It downloads the reviewed judge
+packet separately. Keep the notebook, full logs and checkpoints on Drive.
 
-`KL_t = exp(log πref − log πθ) − (log πref − log πθ) − 1` is the sampled `k3`
-estimator; `use_bias_correction_kl=False` is explicit. The reference is the frozen
-adapter-disabled backbone. Initial enabled/disabled logits must agree on a probe;
-all non-adapter parameters must be frozen; a full parameter digest must remain
-unchanged after training. The saved proof also records whether adapter weights
-actually changed. This does not claim every prompt's logits were exhaustively
-compared; the frozen parameter hashes cover the whole reference.
-
-Source compatibility was inspected against the [pinned trainer source](https://github.com/huggingface/trl/blob/v0.26.2/trl/trainer/grpo_trainer.py)
-and [pinned configuration source](https://github.com/huggingface/trl/blob/v0.26.2/trl/trainer/grpo_config.py).
-Actual GPU execution still needs the smoke test.
-
-Logs contain reward, sampled KL, beta-times-KL, entropy, completion length,
-pass rate by tier, reward-component means, fraction of equal-reward groups,
-truncation, and full completion/score transcripts. Tier values are `null` when a
-step's group did not contain that tier. Do not plot them as zeros. Training
-completion summaries describe sampled training groups, not held-out performance.
-Validation and held-out files use three independently sampled rollouts per task.
-
-Beta selection uses highest validation mean, with the larger beta as the
-predeclared tie-breaker. Only after selection does the runner evaluate the
-initial and selected policies against the frozen evaluation split. It records
-IDs, input fingerprints, seeds, taskset hashes, prompt hashes, and rule/reward
-versions. Stop if a fingerprint or seed crosses split boundaries.
-
-## Bring back results
-
-The notebook calls `export_bundle` to produce a ZIP containing only allowlisted
-JSON and JSONL evidence. Model states never enter that ZIP. Checkpoint metadata
-contains cloud paths, byte counts, and SHA-256 hashes, not downloadable weights.
-
-On your computer run the lightweight CLI:
+On the laptop, use a new import directory:
 
 ```bash
-uv run aster-gym import-results --bundle downloaded-results.zip --output results/colab-import
+uv run aster-gym import-results --bundle aster-results.zip --output results/colab-import
+# Copy the downloaded judge-review-packet.json into reviews/ after checking its labels.
+uv run aster-gym analyze
+uv run aster-gym report
 ```
 
-The import destination must be new. The importer validates paths, member count,
-uncompressed size, compression ratio, symlinks, encryption, checksums, versions,
-JSON finite numbers and identities, transcript/score correspondence, split
-separation, and required training curves/proofs. No extraction of executable or
-pickle payloads is permitted. Fixtures are rejected by default. Aggregate
-metrics are recomputed from records using the same evaluator summarizer.
-
-Imported self-reported model outputs are evidence, not a cryptographically
-attested proof of where a model ran. Preserve the notebook and cloud logs, code
-revision, and checkpoints for reviewer inspection. After import, regenerate the
-dashboard and complete the RL, failure, and advanced-track reports with actual
-numbers. Incomplete runs stay visibly incomplete.
+Import checks versions, schemas, checksums, unsafe paths, archive limits, split
+separation, transcript identities and required metrics; it recomputes summaries.
+It never loads checkpoints. Update the evaluation, RL, failure and transfer reports
+from genuine accepted records. Imported outputs are reviewable evidence, not
+cryptographic proof of where a model ran.

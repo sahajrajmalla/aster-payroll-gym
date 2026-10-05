@@ -8,6 +8,7 @@ from typing import Any
 
 from .evidence import judge_reliability
 from .generator import read_taskset
+from .judge import judge_identity
 from .scoring import make_judge, score
 from .versions import REWARD_VERSION, RULESET_VERSION, rules_hash
 
@@ -37,7 +38,11 @@ async def run_study(packet_path: str | Path) -> dict[str, Any]:
         if packet.get("judge_prompt_hash") not in (None, judge.prompt_hash) or packet.get("judge_model") not in (
                 None, judge.model):
             raise ValueError("JUDGE_CONFIGURATION_CHANGED; prepare a new review packet")
-        packet.update(judge_prompt_hash=judge.prompt_hash, judge_model=judge.model)
+        identity = judge_identity(judge)
+        has_ratings = any(row.get("ratings") for row in examples)
+        if packet.get("judge_settings") != identity and (has_ratings or packet.get("judge_settings") is not None):
+            raise ValueError("JUDGE_CONFIGURATION_CHANGED; preserve prior ratings and prepare a new review packet")
+        packet.update(judge_prompt_hash=judge.prompt_hash, judge_model=judge.model, judge_settings=identity)
         for row in examples:
             task = tasks[row["task_id"]]
             if row["task_input_hash"] != task.input_hash:

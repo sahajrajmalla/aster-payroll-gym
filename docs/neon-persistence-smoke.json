@@ -1,0 +1,42 @@
+{
+  "status": "restart_persistence_verified",
+  "evidence_kind": "independent_public_contract_smoke",
+  "base_url": "http://127.0.0.1:8001",
+  "deployment_scope": "local_only",
+  "tier": 2,
+  "answer_source": "Independent Decimal calculation from issued public documents",
+  "agent_model_calls": 0,
+  "remote_judge_required": false,
+  "server_versions": {
+    "ruleset_version": "ASTER-1.0",
+    "reward_version": "1.0"
+  },
+  "health_status": 200,
+  "fetch_status": 200,
+  "run_id": "k1A1YT8lMnD7dpvPsiM-h-ap",
+  "submitted_answer_hash": "1bb11cd5ab9987b0c891f979405650db8a83e62074eac7cd181644b73fcd4fb8",
+  "task_context_hash": "63c463734e16a6079f7735ee781e82213c134b7877eb8ee465e9d743ac85c881",
+  "limitations": [
+    "API ran on localhost; this is not acceptance evidence for deployed Render.",
+    "Temporary Neon database must be claimed or replaced before expiry.",
+    "Tier-3 remote judge acceptance remains pending."
+  ],
+  "submit_status": 200,
+  "retrieval_status": 200,
+  "score": 1.0,
+  "run_state": "complete",
+  "completed_run_hash": "f3241c2c0098ab3e854d37a56ac75c125849319554ad232615bc11341b86bc98",
+  "restart_confirmation": "Operator explicitly confirmed service restart before this request",
+  "restart_retrieval_status": 200,
+  "post_restart_run_hash": "f3241c2c0098ab3e854d37a56ac75c125849319554ad232615bc11341b86bc98",
+  "verified_at": "2026-10-05T09:50:25.025181+00:00",
+  "elapsed_s": 1.087,
+  "storage": "real_remote_neon_postgres",
+  "api_hosted_on_render": false,
+  "database_claim_required": true,
+  "database_expires_at": "2026-10-08T09:41:02.500Z",
+  "server_process_before": 16172,
+  "server_process_after": 16293,
+  "server_restart_observed": "Both distinct uvicorn processes started and stopped; same Neon database and saved run.",
+  "client_sha256": "390085a188bc2ad4df87f9b8e938e0a036909a1726e0915d2216b4b4ca70af24"
+}

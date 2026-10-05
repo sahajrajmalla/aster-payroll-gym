@@ -9,7 +9,14 @@ import pytest
 from aster_gym.environment import final_text
 from aster_gym.eval import run_evaluation, summarize_records
 from aster_gym.generator import generate_taskset
-from aster_gym.providers import AsyncOpenAIProvider, ChatResult, CostBudget, Pricing, ProviderError
+from aster_gym.providers import (
+    AsyncOpenAIProvider,
+    ChatResult,
+    CostBudget,
+    Pricing,
+    ProviderError,
+    resolve_reasoning_effort,
+)
 from aster_gym.tools import ToolSession, calculate, parse_tool_arguments
 
 
@@ -102,6 +109,59 @@ def test_unknown_pricing_and_local_endpoint_fail_closed():
                             budget=CostBudget(0), pricing=Pricing(0, 0, True))
 
 
+@pytest.mark.parametrize("effort", [True, 1, [], "extreme", "LOW"])
+def test_invalid_reasoning_effort_rejected_before_http_client(effort):
+    with pytest.raises(ValueError, match="INVALID_REASONING_EFFORT"):
+        AsyncOpenAIProvider(model="fixture", base_url="https://example.invalid", api_key="fixture",
+                            budget=CostBudget(0), pricing=Pricing(0, 0, True), reasoning_effort=effort)
+
+
+def test_reasoning_defaults_are_scoped_to_exact_google_endpoint_and_model():
+    endpoint = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    assert resolve_reasoning_effort("gemini-3.8-flash", endpoint) == "low"
+    assert resolve_reasoning_effort("gemini-3.5-flash-lite", endpoint) == "low"
+    assert resolve_reasoning_effort("other-model", endpoint) is None
+    assert resolve_reasoning_effort("gemini-3.8-flash", "https://example.invalid/v1") is None
+    assert resolve_reasoning_effort("gemini-3.8-flash", endpoint + "different-path") is None
+    for effort in ("none", "minimal"):
+        with pytest.raises(ValueError, match="UNSUPPORTED_GEMINI"):
+            resolve_reasoning_effort("gemini-3.8-flash", endpoint, effort)
+
+
+async def test_provider_explicit_effort_is_transmitted_and_cost_accounting_preserved():
+    calls = []
+    budget = CostBudget(1)
+
+    def handler(request):
+        calls.append(json.loads(request.content))
+        return response()
+
+    provider = AsyncOpenAIProvider(model="fixture", base_url="https://example.invalid", api_key="fixture",
+        budget=budget, pricing=Pricing(1, 1), reasoning_effort="low", transport=httpx.MockTransport(handler))
+    try:
+        result = await provider.chat([{"role": "user", "content": "fixture"}], max_tokens=512)
+        assert calls[0]["reasoning_effort"] == "low" and calls[0]["max_tokens"] == 512
+        assert budget.reserved == 0 and budget.actual_spend == pytest.approx(result.cost_usd)
+    finally:
+        await provider.aclose()
+
+
+async def test_unrelated_provider_omits_unrequested_effort_field():
+    calls = []
+
+    def handler(request):
+        calls.append(json.loads(request.content))
+        return response()
+
+    provider = AsyncOpenAIProvider(model="fixture", base_url="https://example.invalid", api_key="fixture",
+        budget=CostBudget(0), pricing=Pricing(0, 0, True), transport=httpx.MockTransport(handler))
+    try:
+        await provider.chat([{"role": "user", "content": "fixture"}])
+        assert "reasoning_effort" not in calls[0]
+    finally:
+        await provider.aclose()
+
+
 @pytest.mark.parametrize("endpoint", ["https://127.0.0.2/v1", "https://0.0.0.0", "https://[::1]",
                                       "https://foo.localhost", "https://localhost./v1",
                                       "https://10.0.0.1", "https://user:secret@example.invalid"])
@@ -157,6 +217,32 @@ async def test_tool_use_required_and_provider_failures_unscored(tmp_path):
     assert result["completed_samples"] == 0
     assert result["aggregate"]["mean"] is None
     assert result["operational_failures"] == 1
+
+
+@pytest.mark.parametrize("document,expected_score", [
+    ("request.json", 0), ("unrelated-0.txt", 0), ("schedules.json", 1), ("rules.md", 1),
+])
+async def test_request_or_distractor_read_cannot_unlock_tool_reward(tmp_path, document, expected_score):
+    """Even a correct memorized fixture answer must read actual source evidence."""
+    task = generate_taskset(n=1, seed=19, tier=1)[0]
+
+    class ReadThenAnswer(FixtureProvider):
+        async def chat(self, messages, **kwargs):
+            self.calls += 1
+            message = ({"role": "assistant", "content": None, "tool_calls": [{
+                "id": "call", "function": {"name": "read_document",
+                "arguments": json.dumps({"document_id": document})}}]} if self.calls == 1
+                else {"role": "assistant", "content": task.ground_truth.model_dump_json()})
+            return ChatResult(message, [{"status": "complete", "cost_usd": 0}], 10, 2, 0, .001)
+
+    await run_evaluation([task], tmp_path, model="fixture", mode="tool", rollouts=1,
+                         evidence_kind="fixture", provider=ReadThenAnswer())
+    row = json.loads((tmp_path / "scores.json").read_text())["records"][0]
+    trace = json.loads((tmp_path / "transcript.jsonl").read_text())
+    assert row["score"] == expected_score
+    assert trace["reference_reads"] == expected_score
+    if not expected_score:
+        assert row["gate"] == "TOOLS_NOT_USED"
 
 
 async def test_real_tool_roundtrip_with_fixture_transport(tmp_path):
@@ -393,7 +479,13 @@ def test_verifiers_adapter_contract_without_optional_imports(monkeypatch):
     assert len(tool.tools) == 3
     state = {"info": {"task_id": task.id}}
     messages = [{"role": "assistant", "tool_calls": [{"id": "call", "function": {
-        "name": "read_document", "arguments": json.dumps({"document_id": next(iter(task.context_files))})}}]}]
+        "name": "read_document", "arguments": json.dumps({"document_id": "request.json"})}}]}]
+    outputs = asyncio.run(tool.env_response(messages, state))
+    assert outputs[0].role == "tool" and state.get("aster_reference_reads", 0) == 0
+    messages[0]["tool_calls"][0]["function"]["arguments"] = json.dumps({"document_id": "unrelated-0.txt"})
+    asyncio.run(tool.env_response(messages, state))
+    assert state.get("aster_reference_reads", 0) == 0
+    messages[0]["tool_calls"][0]["function"]["arguments"] = json.dumps({"document_id": "schedules.json"})
     outputs = asyncio.run(tool.env_response(messages, state))
     assert outputs[0].role == "tool" and state["aster_reference_reads"] == 1
     with pytest.raises(RuntimeError, match="JUDGE_PENDING"):
@@ -432,3 +524,21 @@ async def test_5xx_and_invalid_usage_are_accounted():
         assert budget.spent > 0 and budget.reserved == 0
     finally:
         await provider.aclose()
+
+
+async def test_evaluation_resume_rejects_changed_judge_execution_settings(tmp_path):
+    from aster_gym.judge import RemoteJudge
+
+    tasks = generate_taskset(1, seed=12, tier=2)
+    first = RemoteJudge(model="fixture", base_url="https://example.invalid", api_key="fixture", max_tokens=512)
+    changed = RemoteJudge(model="fixture", base_url="https://example.invalid", api_key="rotated-fixture", max_tokens=1024)
+    provider = FixtureProvider()
+    await run_evaluation(tasks, tmp_path, model="fixture", rollouts=3, provider=provider,
+                         evidence_kind="fixture", judge=first)
+    config = json.loads((tmp_path / "config.json").read_text())
+    assert config["judge"]["max_tokens"] == 512
+    with pytest.raises(ValueError, match="RESUME_CONFIGURATION_MISMATCH"):
+        await run_evaluation(tasks, tmp_path, model="fixture", rollouts=3, provider=provider,
+                             evidence_kind="fixture", judge=changed)
+    await first.aclose()
+    await changed.aclose()

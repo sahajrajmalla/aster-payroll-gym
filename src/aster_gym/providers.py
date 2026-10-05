@@ -88,12 +88,34 @@ class ChatResult:
     latency_s: float = 0.0
 
 
+def resolve_reasoning_effort(model: str, base_url: str, requested: str | None = None) -> str | None:
+    """Use a documented Google default; leave unrelated providers unmodified.
+
+    Other providers receive this field only when explicitly configured. Support
+    there is account/model specific and any rejection remains an operational error.
+    """
+    if requested is not None and (type(requested) is not str
+                                  or requested not in {"none", "minimal", "low", "medium", "high"}):
+        raise ValueError("INVALID_REASONING_EFFORT")
+    parsed = urlparse(base_url)
+    google = (parsed.hostname == "generativelanguage.googleapis.com"
+              and parsed.path.rstrip("/") == "/v1beta/openai" and model.startswith("gemini-"))
+    if requested is None:
+        return "low" if google else None
+    if google and requested == "none" and model.startswith(("gemini-3", "gemini-2.5-pro")):
+        raise ValueError("UNSUPPORTED_GEMINI_REASONING_EFFORT")
+    if google and requested == "minimal" and model == "gemini-3.8-flash":
+        raise ValueError("UNSUPPORTED_GEMINI_REASONING_EFFORT")
+    return requested
+
+
 class AsyncOpenAIProvider:
     """OpenAI-compatible HTTPS client. This class never loads local model weights."""
 
     def __init__(self, *, model: str, base_url: str, api_key: str, budget: CostBudget,
                  pricing: Pricing | None, timeout_s: float = 120, max_retries: int = 2,
-                 backoff_s: float = 1, transport: httpx.AsyncBaseTransport | None = None):
+                 backoff_s: float = 1, transport: httpx.AsyncBaseTransport | None = None,
+                 reasoning_effort: str | None = None):
         if pricing is None:
             raise ValueError("UNKNOWN_PRICING")
         parsed = urlparse(base_url)
@@ -111,6 +133,7 @@ class AsyncOpenAIProvider:
                 or not math.isfinite(backoff_s) or backoff_s < 0):
             raise ValueError("INVALID_PROVIDER_LIMITS")
         self.model, self.base_url, self.api_key = model, base_url.rstrip("/"), api_key
+        self.reasoning_effort = resolve_reasoning_effort(model, base_url, reasoning_effort)
         self.budget, self.pricing = budget, pricing
         self.timeout_s, self.max_retries, self.backoff_s = timeout_s, max_retries, backoff_s
         self._client = httpx.AsyncClient(timeout=timeout_s, transport=transport, follow_redirects=False)
@@ -125,6 +148,8 @@ class AsyncOpenAIProvider:
             raise ValueError("INVALID_TOKEN_LIMIT")
         payload: dict[str, Any] = {"model": self.model, "messages": messages, "max_tokens": max_tokens,
                                    "temperature": temperature}
+        if self.reasoning_effort is not None:
+            payload["reasoning_effort"] = self.reasoning_effort
         if tools:
             payload["tools"] = tools
         # UTF-8 bytes + per-message overhead upper-bounds ordinary text BPE tokenization.

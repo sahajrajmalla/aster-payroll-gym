@@ -15,8 +15,10 @@ from typing import Any
 from fastapi import FastAPI, Header, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
+from sqlalchemy.exc import SQLAlchemyError
 
 from aster_gym.generator import generate_taskset, public_task
+from aster_gym.judge import judge_identity
 from aster_gym.public import PublicIssuedRun, PublicRun, PublicScore
 from aster_gym.schemas import Task
 from aster_gym.scoring import make_judge, score
@@ -136,7 +138,11 @@ def create_app(database_url: str | None = None, judge: Any = _DEFAULT_JUDGE) -> 
 
     @app.get("/healthz")
     def health() -> dict[str, Any]:
-        if not store.healthy():
+        try:
+            healthy = store.healthy()
+        except SQLAlchemyError:
+            healthy = False
+        if not healthy:
             raise HTTPException(503, "STORAGE_UNAVAILABLE")
         return {"status": "ok", "ruleset_version": RULESET_VERSION, "reward_version": REWARD_VERSION}
 
@@ -155,7 +161,7 @@ def create_app(database_url: str | None = None, judge: Any = _DEFAULT_JUDGE) -> 
         tier_mix = {str(t): sum(task.difficulty == t for task in generated) for t in (1, 2, 3)}
         run_id, token = store.create_run(
             [task.model_dump(mode="json") for task in generated], seed,
-            {**versions, "tier_mix": tier_mix}, caller,
+            {**versions, "tier_mix": tier_mix, "judge": judge_identity(selected_judge)}, caller,
         )
         issued = {
             "run_id": run_id, "run_token": token, "seed_fingerprint": digest(str(seed)),
@@ -172,6 +178,12 @@ def create_app(database_url: str | None = None, judge: Any = _DEFAULT_JUDGE) -> 
         provided_ids = [answer.task_id for answer in payload.answers]
         if len(set(provided_ids)) != len(provided_ids) or set(provided_ids) != expected_ids:
             raise HTTPException(422, "Submit exactly one answer for every issued task")
+        # Ordinary tasks are deterministic and do not depend on the judge. Runs
+        # containing a blocker cannot mix explanation settings across retries.
+        if (row["state"] != "complete" and any(task.ground_truth.decision == "needs_information"
+                                                 for task in tasks_internal)
+                and json.loads(row["versions_json"]).get("judge") != judge_identity(selected_judge)):
+            raise HTTPException(409, "JUDGE_CONFIGURATION_CHANGED; request a new task run")
         answers = sorted([answer.model_dump(mode="json") for answer in payload.answers], key=lambda x: x["task_id"])
         try:
             row, claimed = store.claim_submission(payload.run_id, x_run_token, answers)

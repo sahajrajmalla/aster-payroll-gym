@@ -24,6 +24,7 @@ from aster_gym.cloud.common import (
     write_json,
 )
 from aster_gym.cloud.guard import require_cuda
+from aster_gym.judge import configured_judge_identity, judge_identity
 from aster_gym.versions import implementation_hash, stable_hash
 
 
@@ -41,10 +42,11 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def _experiment_hash(config: TrainConfig, beta: float, smoke: bool,
-                     manifest: dict[str, Any]) -> str:
+                     manifest: dict[str, Any], judge_settings: dict[str, object] | None = None) -> str:
     """Bind resumed training to the same configuration, rules, and sealed splits."""
     return stable_hash({"training_config": config.model_dump(), "beta": beta, "smoke": smoke,
-                        "splits": manifest, "implementation_hash": implementation_hash(), **versions()})
+                        "splits": manifest, "judge": judge_settings if judge_settings is not None
+                        else configured_judge_identity(), "implementation_hash": implementation_hash(), **versions()})
 
 
 def train_beta(config: TrainConfig, beta: float, *, explicit: bool, resume: bool = False,
@@ -68,7 +70,7 @@ def train_beta(config: TrainConfig, beta: float, *, explicit: bool, resume: bool
         raise RuntimeError("Configure the shared remote judge before training; a replacement reward is forbidden")
     destination = Path(config.output_dir) / ("smoke" if smoke else f"beta-{beta:g}")
     metadata_path = destination / "config.json"
-    fingerprint = _experiment_hash(config, beta, smoke, manifest)
+    fingerprint = _experiment_hash(config, beta, smoke, manifest, judge_identity(judge))
     if destination.exists() and not resume:
         raise FileExistsError("Run exists; resume it explicitly or choose a new cloud output directory")
     destination.mkdir(parents=True, exist_ok=True)
@@ -79,6 +81,7 @@ def train_beta(config: TrainConfig, beta: float, *, explicit: bool, resume: bool
                 "model_revision": config.model_revision, "seed": config.seed,
                 "taskset_hash": manifest["train"]["taskset_hash"], "code_revision": code_revision(),
                 "implementation_hash": implementation_hash(),
+                "judge": judge_identity(judge),
                 "prompt_hashes": {task.id: stable_hash(task_prompt(task)) for task in tasks},
                 "evidence_kind": "model_run", "status": "running", "experiment_hash": fingerprint,
                 "training_config": config.model_dump(), "beta": beta, "smoke": smoke, **versions()}

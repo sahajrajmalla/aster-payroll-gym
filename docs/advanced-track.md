@@ -5,7 +5,7 @@
 The tasks keep ASTER-1.0 rules while varying presentation: narrative handover,
 unsigned/signed evidence precedence, conflicting amendments, missing prior register,
 and next-year schedule distractor. They are manually assembled rather than sampled
-from generator templates; presentations were AI-assisted and require your approval.
+from generator templates; your independent edits/approval are required before freezing.
 
 Freeze data/transfer.jsonl before final outcomes are inspected. Evaluate the same
 three configurations with three rollouts and the same reward/judge versions.

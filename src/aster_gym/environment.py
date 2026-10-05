@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Any
 
 from aster_gym.generator import generate_taskset, task_prompt
 from aster_gym.scoring import score
-from aster_gym.tools import ToolSession, parse_tool_arguments
+from aster_gym.tools import ToolSession, is_reference_read, parse_tool_arguments
 
 if TYPE_CHECKING:
     import verifiers as vf
@@ -123,8 +123,9 @@ def load_environment(mode: str = "single", split: str = "development", seed: int
                     call_id = call.get("id", "invalid")
                 else:
                     name, arguments, call_id = call.name, call.arguments, call.id
-                result = session.call(name, parse_tool_arguments(arguments))
-                if name in {"read_document", "lookup_rules"} and "error_code" not in result:
+                parsed_arguments = parse_tool_arguments(arguments)
+                result = session.call(name, parsed_arguments)
+                if is_reference_read(name, parsed_arguments, result):
                     state["aster_reference_reads"] = state.get("aster_reference_reads", 0) + 1
                 outputs.append(ToolMessage(role="tool", content=json.dumps(result), tool_call_id=call_id))
             state["aster_tool_calls"] = session.calls

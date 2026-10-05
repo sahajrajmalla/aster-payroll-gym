@@ -1,53 +1,69 @@
-# Deployment and independent sandbox quickstart
+# Deployment and sandbox
 
-The [dashboard is deployed](https://sahajrajmalla.com.np/aster-payroll-gym/).
-The [repository is public](https://github.com/sahajrajmalla/aster-payroll-gym).
-Render/Neon account access is still needed for the live sandbox. No hosted sandbox
-endpoint is claimed until its public quickstart is tested. Training,
-inference, model weights and GPU libraries are absent from the server image.
+The [repository](https://github.com/sahajrajmalla/aster-payroll-gym) and
+[dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) are public.
+Render deployment is pending account sign-in; no public API URL is claimed.
+A correct independent Tier-2 submission scored **1.0** against real Neon Postgres
+and survived a complete API process restart. [Recorded proof](neon-persistence-smoke.json)
+uses a local API, so it does not replace the required external acceptance test.
 
-## Local lightweight API
+## Deploy on Render with Neon
+
+1. Sign into Render and Neon. Create your own **free Neon project** and copy its
+   pooled connection string. The temporary database used for the recorded check
+   expires **8 October 2026, 15:26 Nepal time**; it is not the permanent deployment
+   database. Use your own project's credentials for the sandbox.
+2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/sahajrajmalla/aster-payroll-gym).
+   Use the repository's `render.yaml`: one free Docker web service. Set secret
+   `DATABASE_URL` to your Neon pooled Postgres URL with TLS (`sslmode=require`).
+3. Create a [Gemini API key](https://ai.google.dev/gemini-api/docs/api-key) and
+   supply it privately as `JUDGE_API_KEY`. Verify account eligibility, available model
+   quota and disabled billing before setting `JUDGE_VERIFIED_FREE=true`.
+   Keep the configured model/endpoint and judge limits consistent across experiments
+   and API. Never put secrets in Git, chat, screenshots or Loom.
+4. Deploy, check `https://ACTUAL.onrender.com/healthz`, and save the actual URL.
+   The server image includes no training libraries or model weights.
+5. Run the correct external check below, restart the Render service, then verify
+   persistence. Only record a restart you actually performed. Test `--tier 3` too;
+   pending judge scoring is incomplete acceptance, even if arithmetic passes.
+
+[Render free services](https://render.com/docs/free) may sleep after inactivity;
+allow a cold start before the two-minute demo. External Neon storage preserves
+runs across Render's ephemeral container restarts. Free quotas can change.
+[Neon's temporary provisioning](https://neon.com/claimable-neon) requires an owner
+claim for lasting use. No paid resources are required by this configuration.
+
+## Correct independent acceptance
+
+This standard-library client derives the answer exclusively from public documents;
+it imports neither the project reference calculator nor model libraries.
 
 ```sh
-uv sync --frozen --no-dev
-uv run uvicorn aster_gym.api:app --host 127.0.0.1 --port 8000 --no-proxy-headers
-python scripts/quickstart.py http://127.0.0.1:8000
+python3 scripts/sandbox_smoke.py https://ACTUAL.onrender.com \
+  --receipt tmp/render-private.json --proof docs/sandbox-public-proof.json
 ```
 
-SQLite persists runs in `data/sandbox.sqlite`. This exercises scoring with a
-deliberately malformed answer and consumes no judge quota. For complete Tier-3
-explanation scores configure the shared judge credentials documented in setup.
+After an actual Render restart:
 
-## Render Free and Neon
+```sh
+python3 scripts/sandbox_smoke.py --verify-restart --restart-confirmed \
+  --receipt tmp/render-private.json --proof docs/sandbox-public-proof.json
+```
 
-1. Push this repository to GitHub; never commit `.env` or database files.
-2. Create a free Neon Postgres database. Copy the pooled connection URL with TLS
-   (`sslmode=require`) into Render's secret `DATABASE_URL`.
-3. In Render choose **New > Blueprint**, connect the repository and use
-   `render.yaml`. Supply the shared judge API key as `JUDGE_API_KEY`; the blueprint
-   generates `ASTER_RATE_SALT` to salt private caller-address hashes. Keep
-   billing disabled and the judge provider restricted to a verified free model.
-4. Deploy and open `/healthz`. Substitute the actual base URL in the example below.
-5. From a separate browser or terminal test task fetch, submission and run retrieval.
-   Repeat after a restart to verify Neon persistence. Record the actual URL/date.
-
-The API normalizes `postgres://` and `postgresql://` URLs to the psycopg driver.
-Database tables are created on startup for schema v1. Future migrations must be
-explicit; changing columns in Python does not migrate deployed data.
-
-Free Render instances may sleep; allow up to two minutes for a cold start.
-Neon stores runs independently of the ephemeral container. Free quotas and model
-availability can change: verify them in the account before claiming availability.
-One server worker is configured; SQL transactions also protect multiple workers.
+Use a different receipt/proof path with `--tier 3`. The private receipt contains
+an access token and is created with mode 600; never publish it. The proof contains
+HTTP statuses, score, versions and hashes. `--resume` retries the same immutable
+submission; it creates no new task. Pending scoring exits 2, not success.
 
 ## Two-minute no-clone quickstart
 
-This Python standard-library example works without cloning, a model, or an API key.
-Change only `BASE`. A malformed answer intentionally returns zero reward.
+This example needs Python only. Replace `BASE`; the intentionally invalid answer
+checks rejection and run retrieval. An independent solver supplies its own answer
+for a passing submission. A machine-readable contract is available at `/docs`.
 
 ```python
 import json, urllib.request
-BASE = "https://YOUR-SANDBOX.onrender.com"
+BASE = "https://ACTUAL.onrender.com"
 def call(path, body=None, token=""):
     data = None if body is None else json.dumps(body).encode()
     req = urllib.request.Request(BASE + path, data, {
@@ -61,67 +77,38 @@ print(json.dumps(s, indent=2))
 print(call("/runs/" + r["run_id"], token=r["run_token"]))
 ```
 
-An agent replaces `"{}"` with its own six-field JSON answer after reading the
-public prompt/context. API schema and interactive examples are at `/docs`.
+## Contract and limits
 
-## API contract and limits
+- `GET /tasks?tier=all&n=3`: public evidence, versions, run ID/token; `tier` accepts
+  all/1/2/3 and `n` accepts 1–10. Seed provenance stays private.
+- `POST /submit`: `run_id`, `answers: [{task_id, answer}]`, one answer per task.
+  Send `X-Run-Token`. Raw strings preserve malformed JSON for shared scoring.
+- `GET /runs/{run_id}`: token-protected status, scores, clauses and caller transcript.
+- `GET /healthz`: storage health and scorer versions; storage outages return 503.
 
-- `GET /tasks?tier=all&n=3`: one private-seed run, bearer `run_token`, public tasks,
-  versions and seed fingerprint. `tier` accepts `all`, `1`, `2`, `3`; `n` is 1–10.
-- `POST /submit`: `run_id` and `answers: [{task_id, answer}]`; exactly one answer
-  for every task. Send the token in `X-Run-Token`. A raw string preserves malformed
-  JSON for scoring; an object is also accepted.
-- `GET /runs/{run_id}`: token-protected status, tier mix, component scores, and the
-  full caller transcript (public task context, submitted answers, safe reports).
-- `GET /healthz`: storage and scorer versions.
+Expected answers, corrections, seeds, trap tags and internal inputs are excluded
+from public models. A caller's own submitted numbers can appear in its transcript.
+The first answer locks an immutable hash: identical retries resume; changed answers
+return 409. Active leases/provider failures return 202 with pending scoring, never a
+replacement rubric. Tokens cannot be recovered if lost.
 
-Tokens protect runs; they are never logged or echoed in later responses. Lost
-tokens cannot be recovered. Expected answers, numeric corrections, internal task
-inputs, generation seeds and trap tags are never public response fields. A number
-submitted by the caller can appear in its own transcript even if it coincides with
-ground truth; source provenance distinguishes that echo from an oracle disclosure.
+Limits: five runs/minute/socket caller, ten tasks/run, 64KiB body, 400-character
+explanations; judge quotas default to100/caller and 500 global/day in the deployment.
+The safe `--no-proxy-headers` default can group users behind Render's proxy into one
+conservative quota bucket. Trusted forwarded-IP configuration needs separate testing.
+Errors: 404 unknown run/token, 409 changed submission/configuration, 413 oversized body,
+422 invalid request/membership, 429 creation limit. Tables initialize on startup;
+future schema changes require explicit migrations.
 
-Five run creations per minute per direct client address; at most ten tasks per run;
-64 KiB submission body; explanation contract limited to 400 characters; judge
-quota defaults to 100 calls/caller and 500 global calls in a rolling day. Configure
-`ASTER_CALLER_JUDGE_LIMIT` and `ASTER_GLOBAL_JUDGE_LIMIT` to fit free quotas. Requests
-behind the Render reverse proxy share the conservative socket-address bucket.
-Do not trust arbitrary caller-supplied `X-Forwarded-For` headers. With the safe
-default `--no-proxy-headers`, several public users may share a proxy-address quota.
-True per-public-IP limits require the hosting provider's trusted proxy IP ranges
-to be configured and tested explicitly; the current default is conservative.
+## Local checks and dashboard
 
-The first submission locks an immutable canonical answer hash. Same-answer retries
-are idempotent; changed answers return 409. An active scoring lease returns 202.
-Pending tasks resume on an identical resubmission, preserving completed scores.
-Judging is bounded to 30 seconds per task. Provider failure/quota exhaustion gives
-202 and a pending score; weights remain unchanged and pending is never zero.
+Preserve an existing `.env`. For local SQLite: `uv sync --locked`, then
+`uv run aster-gym serve`. For a privately configured Neon connection use
+`uv sync --locked --extra server` and `uv run --extra server aster-gym serve`.
+The server extra adds the Postgres driver only. Never install cloud extras locally.
 
-HTTP errors: 404 unknown run/token; 409 changed submission; 413 body too large;
-422 invalid request or task membership; 429 run creation rate limit. Judge
-quota errors are represented as pending scoring rather than failed arithmetic.
-
-## Dashboard on GitHub Pages
-
-Run `uv run python -c "from aster_gym.reporting import build_dashboard;
-build_dashboard('results', 'site')"`. Open `site/index.html` to inspect saved
-results; no model executes. Enable GitHub Pages with **GitHub Actions** as source,
-then run the **Evidence dashboard** workflow. Only `model_run` and
-`adversarial_baseline` evidence kinds enter rankings. Fixture data is labelled and
-excluded. Missing evaluation, training and transfer evidence display pending.
-
-The generated site intentionally includes reviewer transcripts; publish only
-synthetic runs. Secrets must never enter configs or transcripts. API responses
-retain safe component diagnostics; the dashboard can contain internal saved
-scoring artifacts that are separate from the live sandbox. Keep runtime databases
-and API tokens outside Pages.
-
-## Recovery checklist
-
-- Health fails: verify TLS/database secret, Neon availability, and logs.
-- Pending judge: verify key/model quota, then resend the exact first submission.
-- Deploy failed: run frozen lightweight install/startup checks; do not install cloud extras.
-- Missing dashboard data: import the validated Colab results bundle, rebuild, publish.
-- Scoring-version mismatch: keep results visibly separate; rerun with matching rules.
-
-Record the actual deployment smoke test in `docs/submission-checklist.md`.
+Import validated results, run `uv run aster-gym report --output site`, then push.
+The GitHub Pages workflow publishes saved synthetic artifacts without model calls.
+Missing experiments remain pending. Keep runtime databases, receipts and tokens
+outside the dashboard. Update [submission checklist](submission-checklist.md)
+only after genuine public acceptance.

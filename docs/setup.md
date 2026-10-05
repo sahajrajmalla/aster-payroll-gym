@@ -6,7 +6,8 @@ and test tools. `uv run aster-gym validate` checks frozen tasksets and partition
 src/aster_gym` check code. `uv run aster-gym serve` starts the API; GET /healthz
 checks storage. Local OpenAPI documentation is /docs.
 
-Copy `.env.example` to `.env`. Do not put provider keys in source, notebook cells,
+Create `.env` from `.env.example` only if it does not already exist. Preserve
+existing database credentials. Do not put provider keys in source, notebook cells,
 git, chat, or result files. For hosted setup, configure provider/database values as
 service secrets. Caller API keys are neither requested nor stored.
 

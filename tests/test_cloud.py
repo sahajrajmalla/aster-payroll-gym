@@ -8,6 +8,7 @@ import stat
 import subprocess
 import sys
 import zipfile
+from collections.abc import Iterator
 from pathlib import Path
 
 import pytest
@@ -206,6 +207,70 @@ def test_notebook_has_no_saved_execution_or_results() -> None:
     assert all("assert COLAB_ONLY" in cell for cell in code_cells[1:])
 
 
+def test_notebook_contains_required_explicit_cloud_cohorts_and_judge_study() -> None:
+    import ast
+
+    notebook = json.loads(Path("notebooks/aster_colab.ipynb").read_text())
+    sources = ["".join(cell["source"]) for cell in notebook["cells"] if cell["cell_type"] == "code"]
+    for source in sources:
+        ast.parse(source)
+    code = "\n".join(sources)
+    for flag in ("START_SMOKE", "START_SWEEPS", "START_INFERENCE", "START_REMOTE_EVAL", "START_JUDGE_STUDY"):
+        assert f"{flag} = False" in code
+    for requirement in ("judge-study", "data/evaluation.jsonl", "data/comparison.jsonl",
+                        "data/tool-comparison.jsonl", "data/transfer.jsonl", "verify_transfer_freeze",
+                        "REMOTE_FREE_TIER_CONFIRMED = False", "CODE_REVISION", "export_bundle"):
+        assert requirement in code
+
+
+def test_cloud_workflow_refuses_local_commands_before_start(monkeypatch: pytest.MonkeyPatch,
+                                                           tmp_path: Path) -> None:
+    from aster_gym.cloud import workflow
+
+    monkeypatch.setattr("aster_gym.cloud.guard.platform.system", lambda: "Darwin")
+    monkeypatch.setattr(workflow.subprocess, "run", lambda *args, **kwargs: pytest.fail("Local command ran"))
+    with pytest.raises(CloudOnlyError):
+        workflow.run_step(["must-not-run"], label="training", status_path=tmp_path / "run_status.json",
+                          explicit=True)
+    assert not (tmp_path / "run_status.json").exists()
+
+
+def test_cloud_workflow_records_failure_and_allows_independent_steps(monkeypatch: pytest.MonkeyPatch,
+                                                                   tmp_path: Path) -> None:
+    from aster_gym.cloud import workflow
+
+    monkeypatch.setattr(workflow, "require_colab", lambda **kwargs: None)
+    monkeypatch.setattr(workflow, "code_revision", lambda: "test-only-revision")
+    returns: Iterator[subprocess.CompletedProcess[str]] = iter((subprocess.CompletedProcess([], 2),
+                                                              subprocess.CompletedProcess([], 0)))
+    monkeypatch.setattr(workflow.subprocess, "run", lambda *args, **kwargs: next(returns))
+    path = tmp_path / "run_status.json"
+    assert workflow.run_step(["test-command"], label="training", status_path=path, explicit=True) is False
+    assert workflow.run_step(["test-command"], label="independent-eval", status_path=path, explicit=True) is True
+    steps = json.loads(path.read_text())["steps"]
+    assert [row["status"] for row in steps] == ["command_failed", "command_finished"]
+    assert [row["exit_code"] for row in steps] == [2, 0]
+    assert all("score" not in row for row in steps)
+    assert "torch" not in sys.modules
+
+
+def test_cloud_workflow_records_startup_error_without_claiming_result(monkeypatch: pytest.MonkeyPatch,
+                                                                    tmp_path: Path) -> None:
+    from aster_gym.cloud import workflow
+
+    def cannot_start(*args: object, **kwargs: object) -> None:
+        raise FileNotFoundError("test-only missing command")
+
+    monkeypatch.setattr(workflow, "require_colab", lambda **kwargs: None)
+    monkeypatch.setattr(workflow, "code_revision", lambda: "test-only-revision")
+    monkeypatch.setattr(workflow.subprocess, "run", cannot_start)
+    path = tmp_path / "run_status.json"
+    assert workflow.run_step(["test-command"], label="training", status_path=path, explicit=True) is False
+    row = json.loads(path.read_text())["steps"][0]
+    assert row["status"] == "command_failed" and row["exit_code"] is None
+    assert row["error_type"] == "FileNotFoundError"
+
+
 def test_complete_evaluation_cannot_omit_or_duplicate_replicates(tmp_path: Path) -> None:
     run = sample_run(tmp_path / "run")
     payloads = {p.name: p.read_bytes() for p in run.iterdir()}
@@ -314,3 +379,14 @@ def test_training_import_requires_every_optimizer_step_and_matching_hashes(tmp_p
     payloads["reference_proof.json"] = json.dumps(proof).encode()
     with pytest.raises(BundleError, match="parameter hashes"):
         validate_payloads(payloads)
+
+
+def test_training_fingerprint_binds_judge_execution_settings() -> None:
+    from aster_gym.cloud.train import _experiment_hash
+
+    config = TrainConfig.model_validate_json(Path("configs/train.json").read_text())
+    manifest = {"test_only": "metadata without any model execution"}
+    first = _experiment_hash(config, .001, False, manifest, {"model": "fixture", "max_tokens": 512})
+    changed = _experiment_hash(config, .001, False, manifest, {"model": "fixture", "max_tokens": 1024})
+    assert first != changed
+    assert "torch" not in sys.modules

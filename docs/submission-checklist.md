@@ -5,6 +5,18 @@ For an ordered explanation of these actions, read
 practice, use [the Loom script](loom-script.md) and
 [the project explanation](project-understanding.md).
 
+**Current state: implementation checked; submission not ready.** The public
+baseline dashboard is live. A correct Tier-2 submission and full API restart
+passed using real Neon Postgres, with the API running locally
+([proof](neon-persistence-smoke.json)). Render deployment and genuine experiments
+still need account access. This does not count as a deployed sandbox.
+
+Next, follow the [deployment guide](deployment.md): create your own free Neon
+project, sign into Render, and provide verified-free provider secrets. The temporary
+test database expires **8 October 2026, 15:26 Nepal time**; use your own project.
+Then complete the independent reviews and explicitly run the Colab workflow.
+Finish the evidence-dependent items below before recording Loom.
+
 ## Implementation readiness
 
 - [x] Separate written authority, strict schemas and deterministic Python reference.
@@ -17,6 +29,7 @@ practice, use [the Loom script](loom-script.md) and
 - [x] Documentation, review packets and regression tests.
 - [x] Public GitHub repository and baseline dashboard; green GitHub CI.
 - [x] Clean-clone install/startup and independent public-contract Tier-2 local smoke.
+- [x] Real remote Neon storage: correct Tier-2 score 1.0 and full process restart.
 - [ ] Actual optional verifiers and GPU startup verified in Colab.
 
 ## Submission readiness — must not be silently skipped

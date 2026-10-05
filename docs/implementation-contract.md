@@ -40,16 +40,6 @@ Reports: `task_id`, `status: complete|pending`, `score: float|None`,
 `versions`: RULESET_VERSION='ASTER-1.0', REWARD_VERSION='1.0', SCHEMA_VERSION='1.0';
 `rules_text()`, `rules_hash()`, `stable_hash(value)`.
 
-## Ownership
-
-Root: schemas, generator, reference, parser, scoring, judge, core tests, seed
-data, CLI composition, broad docs and requirements. Harness agent: tools.py,
-environment.py, eval.py, providers.py and corresponding tests/configs. Cloud
-agent: cloud/, bundles.py, notebooks/, configs/train.json and corresponding tests.
-Service agent: api.py, store.py, reporting.py, scripts/quickstart.py, deployment
-files, API/dashboard tests and deployment docs. Avoid editing another area until
-coordinated. All code must remain lightweight by default.
-
 ## Results interchange
 
 Each results run directory contains config.json, transcript.jsonl, metrics.json,

@@ -10,7 +10,15 @@ services:
       - key: JUDGE_API_KEY
         sync: false
       - key: JUDGE_VERIFIED_FREE
-        value: "true"
+        value: "false"
+      - key: JUDGE_MODEL
+        value: "gemini-3.5-flash-lite"
+      - key: JUDGE_BASE_URL
+        value: "https://generativelanguage.googleapis.com/v1beta/openai/"
+      - key: JUDGE_MAX_TOKENS
+        value: "512"
+      - key: JUDGE_REASONING_EFFORT
+        value: "low"
       - key: ASTER_RATE_SALT
         generateValue: true
       - key: ASTER_CALLER_JUDGE_LIMIT

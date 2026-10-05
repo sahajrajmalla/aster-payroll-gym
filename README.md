@@ -1,179 +1,104 @@
 # Aster Payroll Gym
 
-A verifiable synthetic monthly-payroll environment with one shared, clause-auditable
-reward function for evaluation, reinforcement learning, and external submissions.
-The written rule set is authoritative; Python is a testable implementation of it.
+A synthetic monthly-payroll environment with deterministic Python ground truth
+and one clause-auditable scorer shared by evaluation, reinforcement learning and
+an external submission API. The fictional rulebook defines correctness.
 
-**Status:** runnable local code and deterministic adversarial baseline evidence.
-Real model evaluations, Colab training, human audits, public sandbox deployment
-and Loom are pending. The repository and baseline dashboard are published.
-This repository never substitutes fixture outputs for model results.
+- [Repository](https://github.com/sahajrajmalla/aster-payroll-gym)
+- [Dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/)
+- [Colab notebook](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb)
+- Sandbox and Loom: see [submission checklist](docs/submission-checklist.md).
 
-| Submission link | Status |
-| --- | --- |
-| GitHub repository | [sahajrajmalla/aster-payroll-gym](https://github.com/sahajrajmalla/aster-payroll-gym) |
-| Dashboard | [Live evidence dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) |
-| Sandbox | Replace after Render + Neon setup |
-| Loom | Replace after recording the 8–12 minute walkthrough |
+Implementation and lightweight QA pass the checks recorded in
+[QA evidence](docs/final-qa.json), including tests, lint, types and clean startup.
+Deterministic adversarial
+baseline results are published. Genuine model/RL results and independent reviews
+remain pending; they are never replaced with demonstration data.
 
-## Understand the project and prepare your submission
+## Start here
 
-Start with [the simple and professional explanation](docs/project-understanding.md),
-including a worked payroll example and a walkthrough of the critical code.
-Then use [20 interview questions](docs/interview-preparation.md),
-[the interview reminder](docs/interview-cheatsheet.md),
-[the plain-English glossary](docs/glossary.md),
-[the step-by-step submission guide](docs/submission-walkthrough.md), and
-[the timed Loom script](docs/loom-script.md).
-The guides distinguish verified implementation from pending cloud experiments,
-human reviews, public sandbox deployment and recording.
+Read [the project explanation](docs/project-understanding.md), then
+[the submission walkthrough](docs/submission-walkthrough.md).
+For presentation, use [the interview guide](docs/interview-preparation.md),
+[one-page reminder](docs/interview-cheatsheet.md) and
+[ten-minute Loom script](docs/loom-script.md).
 
-## Two-minute sandbox quickstart
+## Lightweight setup
 
-After deployment, substitute the public URL below. No clone, provider key, or model
-download is needed. The trivial answer earns zero, demonstrating the round trip.
-
-```bash
-ASTER_SANDBOX_URL=https://YOUR-SANDBOX.onrender.com python3 - <<'PY'
-import json, os, time, urllib.request
-base = os.environ['ASTER_SANDBOX_URL'].rstrip('/')
-def request(path, payload=None, token=None):
-    headers = {'Content-Type':'application/json'}
-    if token: headers['X-Run-Token'] = token
-    data = json.dumps(payload).encode() if payload is not None else None
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(urllib.request.Request(base+path, data=data, headers=headers), timeout=90) as r:
-                return json.load(r)
-        except Exception:
-            if attempt == 3: raise
-            time.sleep(2)
-batch = request('/tasks?tier=2&n=1')
-result = request('/submit', {'run_id':batch['run_id'], 'answers':[
-    {'task_id':t['id'], 'answer':'{}'} for t in batch['tasks']]}, batch['run_token'])
-print(json.dumps(result, indent=2))
-PY
-```
-
-Free hosting may need approximately a minute to wake. See `docs/deployment.md` for
-exact API examples, limits, persistence and operational recovery.
-
-## Safe local setup
-
-Python 3.11 and uv are required. Default dependencies contain no ML training stack.
+Python 3.11 and uv are required:
 
 ```bash
 uv sync --locked
 uv run aster-gym validate
 uv run pytest -q
-uv run aster-gym baselines
-uv run aster-gym baselines --n 30 --output results/comparison-baselines
-uv run aster-gym analyze
+uv run ruff check .
+uv run mypy src/aster_gym scripts
 uv run aster-gym report --output site
 uv run aster-gym serve
 ```
 
-Open `site/index.html` for the saved-results dashboard. The API listens on
-`http://127.0.0.1:8000`; `python3 scripts/quickstart.py --help` explains its client.
-The API server and these tests perform small deterministic calculations only.
-
-Verified: 178 lightweight tests, Ruff, mypy, an eight-check clean Git clone,
-wheel packaging and GitHub CI. A separate Decimal client solved a public Tier-2
-task and completed fetch → submit → retrieve with score 1.0, without importing
-the reference calculator. This was a local contract smoke test, not model evidence
-or a public sandbox deployment. Records are in `docs/local-verification.json`,
-`docs/api-positive-smoke.json` and `docs/deployment-smoke.json`.
-
-**No local training or model inference is permitted.** `aster-gym train`,
-`aster-gym infer`, and cloud model entrypoints refuse local execution before model
-imports or downloads. Never run `uv sync --extra cloud` on this computer. The
-Colab notebook installs that optional stack inside its GPU runtime.
+The API runs at `http://127.0.0.1:8000`, with `/healthz` and `/docs`.
+The dashboard is `site/index.html`. Default dependencies contain no training stack.
+**Training, local inference and weight downloads are forbidden on this computer.**
+Never install `--extra cloud` locally. Cloud entrypoints require Colab and CUDA
+before model imports. Create `.env` from `.env.example` only if it does not already
+exist; preserve existing secrets. Keep keys out of Git and video recordings.
 
 ## Domain and data
 
-One fictional jurisdiction, AST currency, monthly salary, proration, one capped
-employee contribution, a monthly allowance, three marginal tax bands, and net pay.
-No actual jurisdiction or customer data is used. This is professional computation,
-not trivia or advice about real payroll law.
+ASTER-1.0 covers signed salary authority, proration, bonuses, a capped contribution,
+allowances, marginal tax and net pay. All amounts are integer fictional AST cents.
 
-The generator creates evidence, and an independent Python implementation computes
-ground truth. The prose rule artifact was written before the calculator. Every
-calculation and reward identifies its relevant clauses; disagreements with the
-written authority are bugs.
+- Tier 1: retrieve an effective schedule field.
+- Tier 2: calculate interacting payroll lines.
+- Tier 3: identify absent YTD earnings, conflicting authoritative salary records,
+  or a missing effective schedule; request the specific needed evidence.
 
-The frozen corpus contains 12 seed tasks, 30 training tasks, 15 validation tasks,
-120 evaluation tasks and 5 authored transfer tasks. Seeds and normalized business
-input fingerprints are checked across partitions. All seed/transfer human-review
-claims remain pending in `reviews/task-review-packet.json`.
+Frozen data: 12 seeds, 30 training, 15 validation, 120 evaluation and five transfer
+tasks. Disjoint seed namespaces and normalized input fingerprints prevent split
+overlap. Repeated Tier-1 rule templates remain a documented limitation.
+Track B changes presentation while retaining rules; human approval and freeze
+must precede transfer evaluation.
 
-Tier 1 retrieves a schedule field. Tier 2 computes interacting payroll lines.
-Tier 3 includes absent YTD evidence, equal-authority salary conflicts, or a pay date
-outside the available rule schedules. An agent must request clarification rather
-than confidently invent a result. Stale distractors on a solvable task are not
-grounds for abstention.
+The generator supports unlimited grading within these fictional rules. It cannot
+authenticate real documents, interpret other jurisdictions or resolve discretionary
+employment disputes.
 
-This reference implementation can generate unlimited graded homework within the
-fictional rules. It cannot establish whether real documents are truthful, interpret
-unmodeled law, or resolve discretionary employment disputes. External validity is
-deliberately limited and measured with the five-task transfer test.
+## Scoring and experiments
 
-## Evaluation and rewards
+Normal weights: correctness 60%, fields 25%, action 10%, format 5%.
+Blocked-task weights: diagnosis 55%, fields 25%, action 10%, explanation 5%, format 5%.
+Invalid answers, unsafe computation and unjustified abstention score zero.
+Substantive errors cannot exceed 0.20; formatting alone earns no reward.
+A remote judge assesses only an otherwise correct blocking explanation. Outages
+remain pending. Pass threshold: 0.975. See [reward specification](docs/reward-spec.md).
 
-The parser accepts one strict JSON object. Correct cents and clause citations are
-checked without an LLM. Graded field accuracy supplies a bounded learning signal.
-Invalid output, unsafe computation on a trap, and unnecessary abstention score
-zero. Incorrect substantive work cannot exceed 0.20. A constrained remote judge
-assesses only a verified blocking explanation; outages remain pending, never zero.
+The evaluation runner stores transcripts, component scores, retry/usage/cost
+accounting and mean±sample SD of complete rollout means. Compare three policies
+on the same 30 tasks with three rollouts; run the small model on all 120 tasks.
+Actual deterministic baselines are reported separately from model runs.
 
-Three deterministic adversarial policies have genuine programmatic artifacts:
-format-only, constant-payslip, and always-abstain. They are not model evaluations.
-See `docs/reward-spec.md` and `docs/saved-results.md`.
+All Qwen inference and GRPO training run in Colab. Defaults: Qwen2.5-0.5B-Instruct,
+LoRA, four completions per prompt, 80 steps per beta and beta 0.001/0.10. The
+reference is frozen; validation selects beta before untouched held-out comparison.
+For four sampled answers, `A_i = (R_i − mean(R)) / (std(R) + ε)`.
+The implemented token-masked, sequence-normalized objective is:
 
-Remote evaluation uses an OpenAI-compatible API. Copy `.env.example` to `.env`, add
-your own key outside version control, and verify the account's free-tier entitlement.
-Populate the selected entry's pricing in `configs/eval.json`; unset prices fail
-closed. Keep billing disabled for the zero-dollar plan.
-
-```bash
-uv run aster-gym eval --config configs/eval.json --model gemini-3.8-flash \
-  --n 30 --rollouts 3 --seed 7001 --max-cost 0 --output results/frontier
-uv run aster-gym eval --config configs/eval.json --model gemini-3.5-flash-lite \
-  --n 30 --rollouts 3 --seed 7001 --max-cost 0 --output results/efficient
-uv run aster-gym eval --config configs/eval.json --model gemini-3.8-flash \
-  --n 12 --mode tool --rollouts 3 --max-cost 0 --output results/frontier-tool
+```text
+J = E[(1/G) Σ_i (1/|o_i|) Σ_t
+      {min(ρ_it A_i, clip(ρ_it, 0.8, 1.2) A_i) − β k3_it}]
+ρ_it = πθ(o_it | context) / πold(o_it | context)
+d_it = log πref(o_it | context) − log πθ(o_it | context)
+k3_it = exp(d_it) − d_it − 1
 ```
 
-Small-model inference runs exclusively in Colab. Compare models on the same frozen
-cohort, mode and reward version. Three replicate means supply the reported sample
-SD; task and operational variability remain separately visible. Identical dataset
-seeds do not make provider responses deterministic.
+GRPO avoids a separate critic and makes the shared task reward the direct learning
+signal. Equal-reward groups have zero advantage; KL can still contribute a gradient.
+The adapter-disabled frozen backbone supplies the initial reference; its initial
+equivalence and parameter immutability are checked.
+Full settings, reference checks and recovery are in [Colab guide](docs/colab.md).
 
-## Colab and result handoff
-
-Open `notebooks/aster_colab.ipynb` in Google Colab, select a GPU runtime, and follow its
-setup, smoke, sweep, held-out evaluation and export cells. The repository URL is
-already filled in; confirm the cloned review commit and put keys in Colab Secrets.
-Checkpoints stay in Google Drive or cloud storage.
-Do not send model weights back to this computer.
-
-[Open the notebook in Colab](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb).
-The notebook requires explicit free-tier confirmation and separate start flags
-for smoke training, full sweeps, and inference. It verifies GPU, storage, pinned
-dependencies and optional environment startup before starting model work.
-
-GRPO uses four sampled completions per prompt and a frozen initial reference:
-
-`A_i = (r_i - mean(group rewards)) / (std(group rewards) + epsilon)`
-
-The actual objective is the token-masked, sequence-normalized clipped policy
-surrogate minus `beta * KL`, using
-`k3 = exp(log pi_ref - log pi_theta) - (log pi_ref - log pi_theta) - 1`.
-The sweeps use beta 0.001 and 0.10. LoRA freezes the backbone; disabling fresh
-adapters produces the reference policy, whose initial equivalence and unchanged
-weights are checked. Equal-reward groups have zero reward advantage; KL may still
-produce a gradient. See `docs/colab.md` for the executable settings and logs.
-
-After Colab execution, download only the compact JSON results bundle:
+Download only the compact cloud results bundle, then run:
 
 ```bash
 uv run aster-gym import-results --bundle /path/to/colab-results.zip
@@ -181,20 +106,28 @@ uv run aster-gym analyze
 uv run aster-gym report --output site
 ```
 
-Import validates hashes, schema, versions, finite metrics and split separation.
-It never loads checkpoints. Failed runs may be imported as failed runs; partial
-curves remain partial. Training failures do not block the other phases.
+Import checks versions, checksums, paths, sizes and split separation. Checkpoints
+stay in cloud storage. Partial/failed runs stay visibly partial/failed.
 
-## Review and submission
+## Independent sandbox
 
-Start with `docs/human-review.md`, then `docs/submission-checklist.md`. They provide
-your task audit, judge labels, failure-review worksheet and timed Loom outline.
-The traceability register is `docs/traceability.json`; the readable matrix is
-`docs/traceability.md`. Architecture, setup, edge cases, trade-offs, evaluation,
-RL, transfer, deployment and AI-disclosure documents are under `docs/`.
+After deployment, use the no-clone example in [deployment guide](docs/deployment.md)
+or `python scripts/quickstart.py https://YOUR-SANDBOX.onrender.com`.
+The quickstart deliberately submits an invalid answer; a correct external client
+must solve from public evidence. `scripts/sandbox_smoke.py` provides that correct
+independent check and a post-restart persistence check. `/tasks`, `/submit` and
+`/runs/{run_id}` share
+production scoring. Public responses exclude expected answers. Runs are persisted,
+token protected, rate limited and idempotent.
 
-Implementation readiness and submission readiness are different. Public URLs,
-three real model configurations, 100+ generated-task score distribution, actual
-RL curves/held-out evidence, your hand reviews and Loom must be completed before
-calling this a finished assignment. With two more days, prioritize additional
-held-out runs and independent fidelity checks rather than additional features.
+## Required documentation
+
+[Rules](rules/aster-payroll-v1.md) · [architecture](docs/architecture.md) ·
+[schema](docs/task-schema.md) · [evaluation](docs/evaluation.md) ·
+[RL report](docs/rl-report.md) · [failure analysis](docs/failure-analysis.md) ·
+[edge cases](docs/edge-cases.md) · [trade-offs](docs/assumptions-and-tradeoffs.md) ·
+[transfer](docs/advanced-track.md) · [human review](docs/human-review.md) ·
+[traceability](docs/traceability.md) · [tool disclosure](docs/ai-usage.md).
+
+Use the [submission checklist](docs/submission-checklist.md) as the final authority
+for readiness. Passing code checks does not establish model improvement.

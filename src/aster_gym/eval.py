@@ -18,10 +18,17 @@ from pathlib import Path
 from typing import Any
 
 from aster_gym.generator import generate_taskset, task_prompt
-from aster_gym.providers import AsyncOpenAIProvider, CostBudget, Pricing, ProviderError
+from aster_gym.judge import judge_identity
+from aster_gym.providers import (
+    AsyncOpenAIProvider,
+    CostBudget,
+    Pricing,
+    ProviderError,
+    resolve_reasoning_effort,
+)
 from aster_gym.schemas import Task
 from aster_gym.scoring import score
-from aster_gym.tools import TOOL_DEFINITIONS, ToolSession, parse_tool_arguments
+from aster_gym.tools import TOOL_DEFINITIONS, ToolSession, is_reference_read, parse_tool_arguments
 from aster_gym.versions import (
     REWARD_VERSION,
     RULESET_VERSION,
@@ -120,7 +127,8 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
                          max_cost: float = 0.0, pricing: Pricing | None = None, concurrency: int = 2,
                          timeout_s: float = 120, max_turns: int = 6, judge: Any = None,
                          provider: Any = None, evidence_kind: str = "model_run", seed: int = 7001,
-                         max_tokens: int = 512, temperature: float = 0.7) -> dict[str, Any]:
+                         max_tokens: int = 512, temperature: float = 0.7,
+                         reasoning_effort: str | None = None) -> dict[str, Any]:
     if provider is None and pricing is None:
         raise ValueError("UNKNOWN_PRICING")
     if provider is None and not api_key:
@@ -135,6 +143,10 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
             or type(max_tokens) is not int or not 1 <= max_tokens <= 4096
             or not math.isfinite(temperature) or not 0 <= temperature <= 2):
         raise ValueError("INVALID_ROLLOUT_LIMITS")
+    resolved_effort = (resolve_reasoning_effort(model, base_url, reasoning_effort) if provider is None
+                       else getattr(provider, "reasoning_effort", None))
+    if provider is not None and reasoning_effort is not None and reasoning_effort != resolved_effort:
+        raise ValueError("PROVIDER_REASONING_CONFIGURATION_MISMATCH")
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
     prompts = {task.id: task_prompt(task, mode=mode) for task in tasks}
@@ -155,9 +167,10 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
               "evidence_kind": evidence_kind, "max_cost_usd": max_cost,
               "pricing": asdict(pricing) if pricing else None, "max_turns": max_turns,
               "timeout_s": timeout_s, "max_tokens": max_tokens, "temperature": temperature,
+              "reasoning_effort": resolved_effort,
               "transfer_freeze": transfer_freeze,
               **_code_identity(),
-              "judge": {"model": getattr(judge, "model", None), "prompt_hash": getattr(judge, "prompt_hash", None)}}
+              "judge": judge_identity(judge)}
     config["run_id"] = stable_hash(config)[:20]
     config_path = output / "config.json"
     if config_path.exists():
@@ -179,7 +192,7 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
         if not api_key:
             raise ValueError("API_KEY_REQUIRED")
         provider = AsyncOpenAIProvider(model=model, base_url=base_url, api_key=api_key, budget=budget,
-                                       pricing=pricing, timeout_s=timeout_s)
+                                       pricing=pricing, timeout_s=timeout_s, reasoning_effort=resolved_effort)
     else:
         provider.budget = budget
     if judge is not None:
@@ -250,7 +263,7 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
                                 name = function.get("name", "")
                                 response = session.call(name, arguments)
                                 record["tool_calls"] += 1
-                                if name in {"read_document", "lookup_rules"} and "error_code" not in response:
+                                if is_reference_read(name, arguments, response):
                                     reference_reads += 1
                                 messages.append({"role": "tool", "tool_call_id": call.get("id", "invalid"),
                                                  "content": json.dumps(response)})
