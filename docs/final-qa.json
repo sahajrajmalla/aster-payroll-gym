@@ -13,7 +13,7 @@
   "default_ML_packages_installed": false,
   "notebook_executed": false,
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "implementation_hash": "3e02b268f832fc68fa88d9a08c624aaf64ddd24faca11a23201f85ae1e8ef6a6",
+  "implementation_hash": "d0a191cacf1a9627dccd2cdd283c7c5d86077908f6c3d753f7679d34b01c98d4",
   "submission_status": "PENDING_CLOUD_HUMAN_AND_SANDBOX_EVIDENCE",
   "pending": [
     "Genuine three-model evaluation",
@@ -23,5 +23,85 @@
     "Five transfer-task human approvals and measured ranking",
     "Public Render/Neon sandbox round trip",
     "Loom recording"
-  ]
+  ],
+  "date": "2026-10-05T03:15:26.754221+00:00",
+  "tests_passed": 178,
+  "corpus_validation": {
+    "seeds": {
+      "tasks": 12,
+      "tiers": {
+        "1": 4,
+        "2": 4,
+        "3": 4
+      },
+      "taskset_hash": "a6ad6688daff14c7b1308b45e18ccbc2315d5d1aec0403338a132633d8fbe005",
+      "retrieval_template_groups": {
+        "2029:allowance_cents": 1,
+        "2029:annual_ceiling_cents": 1,
+        "2030:allowance_cents": 1,
+        "2030:annual_ceiling_cents": 1
+      },
+      "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
+    },
+    "train": {
+      "tasks": 30,
+      "tiers": {
+        "1": 10,
+        "2": 10,
+        "3": 10
+      },
+      "taskset_hash": "ed7bc07d271a05bb8f9c95f3db25028697d0d789c3e7d6aed1a5161f46b03931",
+      "retrieval_template_groups": {
+        "2030:annual_ceiling_cents": 3,
+        "2030:allowance_cents": 3,
+        "2029:allowance_cents": 2,
+        "2029:annual_ceiling_cents": 2
+      },
+      "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
+    },
+    "validation": {
+      "tasks": 15,
+      "tiers": {
+        "1": 5,
+        "2": 5,
+        "3": 5
+      },
+      "taskset_hash": "fb6e4be33bba4c4cdbb824c3eeb11ff4a60277ffccae91abfa04d974f935bc71",
+      "retrieval_template_groups": {
+        "2029:allowance_cents": 1,
+        "2030:annual_ceiling_cents": 1,
+        "2030:allowance_cents": 3
+      },
+      "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
+    },
+    "evaluation": {
+      "tasks": 120,
+      "tiers": {
+        "1": 40,
+        "2": 40,
+        "3": 40
+      },
+      "taskset_hash": "8b4fb91aace950bf153abd368dd22ed32fbdb74166b2affd43597eecfae541b9",
+      "retrieval_template_groups": {
+        "2029:annual_ceiling_cents": 17,
+        "2030:annual_ceiling_cents": 8,
+        "2030:allowance_cents": 10,
+        "2029:allowance_cents": 5
+      },
+      "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
+    },
+    "transfer": {
+      "tasks": 5,
+      "tiers": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      },
+      "taskset_hash": "68a4c7fd5398d4aa99deb55cafb4b990560fd4f5b2ccf8003cd284d0987cc6ea",
+      "retrieval_template_groups": {
+        "2029:allowance_cents": 1
+      },
+      "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
+    }
+  }
 }

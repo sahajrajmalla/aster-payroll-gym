@@ -19,9 +19,7 @@ def record():
 
 
 def main():
-    partitions = {"train": generate_taskset(30, seed=1101, split="train"),
-                  "validation": generate_taskset(15, seed=2201, split="validation"),
-                  "evaluation": generate_taskset(120, seed=7001, split="evaluation")}
+    partitions: dict[str, list[Task]] = {}
     seeds = []
     for year in (2029, 2030):
         for field in ("allowance_cents", "annual_ceiling_cents"):
@@ -88,6 +86,10 @@ def main():
         narrative="For the payment dated 30 December 2029, extract only the monthly allowance from the "
                   "applicable schedule. An attachment also contains next year's schedule; do not use it early."))
     partitions.update(seeds=seeds, transfer=transfer)
+    excluded = {t.input_hash for t in seeds + transfer}
+    for split, count, seed in (("train", 30, 1101), ("validation", 15, 2201), ("evaluation", 120, 7001)):
+        partitions[split] = generate_taskset(count, seed=seed, split=split, exclude_fingerprints=excluded)
+        excluded.update(t.input_hash for t in partitions[split])
     validate_splits(partitions)
     for split, tasks in partitions.items():
         write_taskset(tasks, ROOT / "data" / f"{split}.jsonl")

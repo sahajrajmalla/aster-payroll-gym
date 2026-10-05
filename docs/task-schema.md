@@ -22,3 +22,9 @@ Tier 1 inherently includes repeated answer values (two fields across two schedul
 The corpus reports this small answer vocabulary honestly; varied source dates and
 lookups do not create new arithmetic capability. Exact business-input duplicates
 are rejected. Transfer layouts are separately authored but not yet human-approved.
+
+Retrieval fingerprints exclude irrelevant payroll money under R11. Changing a
+bonus or salary distractor cannot hide an identical date/field/schedule request.
+The corpus builder excludes prior partitions' fingerprints before sampling each
+later split. Validation additionally reports schedule-year/field template groups;
+four repeated Tier-1 templates are explicitly not forty distinct rule tests.

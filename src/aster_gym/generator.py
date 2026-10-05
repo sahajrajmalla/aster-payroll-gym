@@ -3,6 +3,7 @@
 import calendar
 import json
 import random
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -17,7 +18,11 @@ def input_fingerprint(inputs: dict[str, Any]) -> str:
     Reordering salary records or schedule copies must not evade split overlap
     checks. Repeated records are retained because multiplicity can be a blocker.
     """
-    normalized = dict(inputs)
+    # R11 retrieval does not consult payroll money; distractors cannot conceal an
+    # identical request across seeds/splits. Payslips retain all business inputs.
+    normalized = ({key: value for key, value in inputs.items()
+                   if key in {"kind", "pay_date", "query_field", "schedules"}}
+                  if inputs.get("kind") == "retrieval" else dict(inputs))
     for key in ("salary_records", "schedules"):
         if isinstance(normalized.get(key), list):
             normalized[key] = sorted(normalized[key], key=stable_hash)
@@ -58,7 +63,7 @@ def generate_taskset(n: int = 12, seed: int = 7, tier: str | int = "all",
                      split: str = "development", *, proration: bool = True,
                      ceiling_binding: bool = True, irrelevant_documents: int = 1,
                      missing_inputs: bool = True, interacting_rules: int = 3,
-                     lookup_count: int = 2) -> list[Task]:
+                     lookup_count: int = 2, exclude_fingerprints: set[str] | None = None) -> list[Task]:
     """Generate at most 1000 light tasks. All difficulty knobs are explicit metadata."""
     if type(n) is not int or not 1 <= n <= 1000 or type(seed) is not int:
         raise ValueError("n must be 1..1000 and seed an integer")
@@ -69,7 +74,7 @@ def generate_taskset(n: int = 12, seed: int = 7, tier: str | int = "all",
         raise ValueError("difficulty knob out of range")
     rng = random.Random(seed)
     tasks: list[Task] = []
-    seen: set[str] = set()
+    seen: set[str] = set(exclude_fingerprints or ())
     for index in range(n):
         difficulty = index % 3 + 1 if tier == "all" else int(tier)
         for _ in range(100):
@@ -185,7 +190,11 @@ def validate_taskset(tasks: list[Task]) -> dict[str, Any]:
                     raise ValueError("fragmented context differs from reference inputs")
     return {"tasks": len(tasks), "tiers": {str(tier): sum(t.difficulty == tier for t in tasks)
                                              for tier in (1, 2, 3)},
-            "taskset_hash": stable_hash([t.input_hash for t in tasks])}
+            "taskset_hash": stable_hash([t.input_hash for t in tasks]),
+            "retrieval_template_groups": dict(Counter(
+                f"{t.inputs.get('pay_date', '')[:4]}:{t.inputs.get('query_field')}" for t in tasks
+                if t.inputs.get("kind") == "retrieval")),
+            "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."}
 
 
 def validate_splits(partitions: dict[str, list[Task]]) -> dict[str, Any]:

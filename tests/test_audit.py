@@ -231,3 +231,27 @@ def test_private_oracle_sentinel_is_absent_from_api_and_public_dto(tmp_path: Pat
     with pytest.raises(ValidationError):
         PublicTask.model_validate(private_task.model_dump())
     assert PublicTask.model_validate(public_task(private_task)).context_files
+
+
+def test_irrelevant_payroll_cannot_hide_same_retrieval_across_splits():
+    original = {"kind": "retrieval", "pay_date": "2030-01-31", "query_field": "allowance_cents",
+                "schedules": authoritative_schedules(), "bonus_cents": 100}
+    other = {**original, "bonus_cents": 987654, "salary_records": []}
+    assert input_fingerprint(original) == input_fingerprint(other)
+    first = task_from_inputs(original, seed=9001, difficulty=1)
+    second = task_from_inputs(other, seed=9002, difficulty=1)
+    with pytest.raises(ValueError, match="SPLIT_INPUT_LEAKAGE"):
+        validate_splits({"train": [first], "evaluation": [second]})
+
+
+def test_generator_exclusion_is_deterministic_and_reports_template_inflation():
+    from aster_gym.generator import generate_taskset
+    first = generate_taskset(12, seed=78, tier=1)
+    excluded = {t.input_hash for t in first}
+    second = generate_taskset(12, seed=78, tier=1, exclude_fingerprints=excluded)
+    repeat = generate_taskset(12, seed=78, tier=1, exclude_fingerprints=set(reversed(sorted(excluded))))
+    assert [t.model_dump() for t in second] == [t.model_dump() for t in repeat]
+    assert not excluded & {t.input_hash for t in second}
+    report = validate_taskset(second)
+    assert sum(report["retrieval_template_groups"].values()) == 12
+    assert len(report["retrieval_template_groups"]) <= 4

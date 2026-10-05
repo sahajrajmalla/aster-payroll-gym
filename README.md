@@ -65,7 +65,7 @@ Open `site/index.html` for the saved-results dashboard. The API listens on
 `http://127.0.0.1:8000`; `python3 scripts/quickstart.py --help` explains its client.
 The API server and these tests perform small deterministic calculations only.
 
-Verified: 176 lightweight tests, Ruff, mypy, an eight-check clean Git clone,
+Verified: 178 lightweight tests, Ruff, mypy, an eight-check clean Git clone,
 wheel packaging and GitHub CI. A separate Decimal client solved a public Tier-2
 task and completed fetch → submit → retrieve with score 1.0, without importing
 the reference calculator. This was a local contract smoke test, not model evidence

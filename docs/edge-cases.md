@@ -1,4 +1,4 @@
-# Five encountered edge cases and fixes
+# Encountered edge cases and fixes
 
 These are observed development/specification issues, not invented model failures.
 
@@ -14,6 +14,12 @@ These are observed development/specification issues, not invented model failures
    or caller transcripts. Leakage checks use server-field provenance and allowlisted
    DTOs; only legitimate source documents and caller-originated answers may contain
    those values. Raw seeds and reference objects stay private.
+6. Irrelevant salary/bonus values could hide duplicate retrieval requests in input
+   hashes. R11 fingerprints now ignore those distractors, and the frozen generator
+   excludes fingerprints from every earlier split. Validation reports the four
+   repeated schedule-field template groups instead of treating them as forty
+   independent rule tests. The stronger check caught a corpus overlap during QA;
+   the corpus was regenerated before any model experiment or human review.
 
 Additional tested edges: provider outages, retry/cost exhaustion, tool loops, stale
 salary authority, period lengths, schema drift, split collisions, concurrent
