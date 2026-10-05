@@ -22,7 +22,14 @@ from aster_gym.providers import AsyncOpenAIProvider, CostBudget, Pricing, Provid
 from aster_gym.schemas import Task
 from aster_gym.scoring import score
 from aster_gym.tools import TOOL_DEFINITIONS, ToolSession, parse_tool_arguments
-from aster_gym.versions import REWARD_VERSION, RULESET_VERSION, SCHEMA_VERSION, rules_hash, stable_hash
+from aster_gym.versions import (
+    REWARD_VERSION,
+    RULESET_VERSION,
+    SCHEMA_VERSION,
+    implementation_hash,
+    rules_hash,
+    stable_hash,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -33,9 +40,7 @@ def _code_identity() -> dict[str, str]:
                                            text=True).strip()
     except (OSError, subprocess.CalledProcessError):
         revision = "uncommitted-workspace"
-    root = Path(__file__).parent
-    digest = stable_hash({str(p.relative_to(root)): p.read_text() for p in sorted(root.rglob("*.py"))})
-    return {"code_revision": revision, "implementation_hash": digest}
+    return {"code_revision": revision, "implementation_hash": implementation_hash()}
 
 
 def atomic_json(path: Path, payload: Any) -> None:

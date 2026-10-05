@@ -24,7 +24,7 @@ from aster_gym.cloud.common import (
     write_json,
 )
 from aster_gym.cloud.guard import require_cuda
-from aster_gym.versions import stable_hash
+from aster_gym.versions import implementation_hash, stable_hash
 
 
 def _hash_parameters(model: Any, *, trainable: bool, torch: Any) -> str:
@@ -44,7 +44,7 @@ def _experiment_hash(config: TrainConfig, beta: float, smoke: bool,
                      manifest: dict[str, Any]) -> str:
     """Bind resumed training to the same configuration, rules, and sealed splits."""
     return stable_hash({"training_config": config.model_dump(), "beta": beta, "smoke": smoke,
-                        "splits": manifest, **versions()})
+                        "splits": manifest, "implementation_hash": implementation_hash(), **versions()})
 
 
 def train_beta(config: TrainConfig, beta: float, *, explicit: bool, resume: bool = False,
@@ -78,6 +78,7 @@ def train_beta(config: TrainConfig, beta: float, *, explicit: bool, resume: bool
     metadata = {"run_id": destination.name, "run_type": "training", "model": config.model,
                 "model_revision": config.model_revision, "seed": config.seed,
                 "taskset_hash": manifest["train"]["taskset_hash"], "code_revision": code_revision(),
+                "implementation_hash": implementation_hash(),
                 "prompt_hashes": {task.id: stable_hash(task_prompt(task)) for task in tasks},
                 "evidence_kind": "model_run", "status": "running", "experiment_hash": fingerprint,
                 "training_config": config.model_dump(), "beta": beta, "smoke": smoke, **versions()}

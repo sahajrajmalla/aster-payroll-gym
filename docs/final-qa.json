@@ -1,0 +1,27 @@
+{
+  "status": "GREEN_IMPLEMENTATION_QA",
+  "requirements": 117,
+  "required_files_checked": 25,
+  "tasks": {
+    "seeds": 12,
+    "train": 30,
+    "validation": 15,
+    "evaluation": 120,
+    "transfer": 5
+  },
+  "split_status": "disjoint",
+  "default_ML_packages_installed": false,
+  "notebook_executed": false,
+  "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
+  "implementation_hash": "3e02b268f832fc68fa88d9a08c624aaf64ddd24faca11a23201f85ae1e8ef6a6",
+  "submission_status": "PENDING_CLOUD_HUMAN_AND_SANDBOX_EVIDENCE",
+  "pending": [
+    "Genuine three-model evaluation",
+    "Actual Colab RL sweeps and held-out comparisons",
+    "Judge reliability calls and human labels",
+    "Human rule fidelity and failure reviews",
+    "Five transfer-task human approvals and measured ranking",
+    "Public Render/Neon sandbox round trip",
+    "Loom recording"
+  ]
+}

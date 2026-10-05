@@ -24,3 +24,8 @@ def rules_text() -> str:
 
 def rules_hash() -> str:
     return hashlib.sha256(rules_text().encode()).hexdigest()
+
+
+def implementation_hash() -> str:
+    root = Path(__file__).parent
+    return stable_hash({str(p.relative_to(root)): p.read_text() for p in sorted(root.rglob("*.py"))})
