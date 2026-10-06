@@ -100,7 +100,13 @@ and confirm the published page has the correct cohort and pending states.
 ## 5. Verify the public sandbox
 
 Follow [deployment guide](deployment.md) for Render/Neon and remote judge secrets.
-Check `/healthz`. From an independent client fetch Tier-2/3 tasks, derive a correct
+The [public sandbox](https://aster-payroll-gym.onrender.com) passed correct external
+Tier-2/3 submissions at **1.0** and retained both runs after a confirmed hosted
+restart. Eleven public API contract checks also passed.
+[Acceptance evidence](render-sandbox-acceptance.json) ·
+[Tier 2](render-tier2-proof.json) · [Tier 3](render-tier3-proof.json).
+Check [health](https://aster-payroll-gym.onrender.com/healthz).
+From an independent client fetch Tier-2/3 tasks, derive a correct
 answer from public evidence, submit it and retrieve the run. Do not import the
 private reference into the client. Responses must omit expected answers.
 
@@ -108,7 +114,7 @@ The independent acceptance client performs the correct round trip without model
 calls or private reference imports:
 
 ```bash
-python3 scripts/sandbox_smoke.py https://YOUR-SANDBOX.onrender.com
+python3 scripts/sandbox_smoke.py https://aster-payroll-gym.onrender.com
 ```
 
 Restart the Render service, then verify the same privately saved receipt:

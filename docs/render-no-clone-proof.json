@@ -1,0 +1,33 @@
+{
+  "status": "submission_verified",
+  "evidence_kind": "independent_public_contract_smoke",
+  "base_url": "https://aster-payroll-gym.onrender.com",
+  "deployment_scope": "public_endpoint",
+  "tier": 2,
+  "answer_source": "Independent Decimal calculation from issued public documents",
+  "agent_model_calls": 0,
+  "remote_judge_required": false,
+  "server_versions": {
+    "ruleset_version": "ASTER-1.0",
+    "reward_version": "1.0"
+  },
+  "health_status": 200,
+  "fetch_status": 200,
+  "run_id": "1Zi2TFi4Nqdfhzc9v3Jd833p",
+  "submitted_answer_hash": "4dcfb2d203480e0f2d4afa53d8333195663245d53a595dfb5172cc7db19f53a0",
+  "task_context_hash": "18b18b68abe4b74f85967734354da22d219b4568c72fc0bb27e5da20d12c0c42",
+  "limitations": [],
+  "submit_status": 200,
+  "retrieval_status": 200,
+  "score": 1.0,
+  "run_state": "complete",
+  "completed_run_hash": "dc597b52e9bf23d14c767971f7b5c8f3427de39b46a875c30238e39fb42e71ab",
+  "verified_at": "2026-10-06T10:11:07.286873+00:00",
+  "elapsed_s": 8.619,
+  "no_clone_verified": true,
+  "isolated_working_directory": true,
+  "source_url": "https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py",
+  "source_sha256": "390085a188bc2ad4df87f9b8e938e0a036909a1726e0915d2216b4b4ca70af24",
+  "total_download_and_run_elapsed_s": 9.367,
+  "command": "curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com"
+}

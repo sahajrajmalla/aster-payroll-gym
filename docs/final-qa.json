@@ -14,14 +14,13 @@
   "notebook_executed": false,
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
   "implementation_hash": "33037cc512436c7aa8666b0994f7ff1e89a725e78d5dd4d50a81db530f3fe8b0",
-  "submission_status": "PENDING_CLOUD_HUMAN_AND_PUBLIC_SANDBOX_EVIDENCE",
+  "submission_status": "PENDING_CLOUD_AND_HUMAN_EVIDENCE",
   "pending": [
     "Genuine three-model evaluation",
     "Actual Colab RL sweeps and held-out comparisons",
     "Judge reliability calls and human labels",
     "Human rule fidelity and failure reviews",
     "Five transfer-task human approvals and measured ranking",
-    "Public Render/Neon sandbox round trip",
     "Loom recording"
   ],
   "date": "2026-10-06T08:13:11.414328+00:00",
@@ -111,7 +110,7 @@
   "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706627",
   "lint": "passed",
   "type_checks": "passed_32_source_files",
-  "sandbox_owner_action": "User currently deploying Web Service manually; public Render URL not yet received.",
+  "sandbox_owner_action": "None for deployment: owner confirmed hosted restart; external Tier2/3 scores and persistence passed.",
   "neon_storage_test": "Permanent user-owned Neon: correct Tier2/3 scores1.0, real Gemini judge, saved runs persisted after complete local API restart.",
   "neon_storage_evidence": "docs/permanent-neon-persistence-smoke.json",
   "local_training_runs": 0,
@@ -127,5 +126,9 @@
   },
   "historical_neon_storage_evidence": "docs/neon-persistence-smoke.json",
   "remote_tool_evaluation_status": "Gemini 3.5 Flash-Lite: 14/36 complete; 22 rate-limit operational failures; partial, unranked",
-  "local_final_check": "225 tests, Ruff, mypy32, corpus/split validation, report recomputation, no ML and credential scan passed"
+  "local_final_check": "225 tests, Ruff, mypy32, corpus/split validation, report recomputation, no ML and credential scan passed",
+  "sandbox_url": "https://aster-payroll-gym.onrender.com",
+  "public_sandbox_acceptance": "PASSED_TIER2_TIER3_RESTART_CONTRACT_AND_NO_CLONE",
+  "public_sandbox_evidence": "docs/render-sandbox-acceptance.json",
+  "public_sandbox_verified_at": "2026-10-06T10:13:59.951638+00:00"
 }

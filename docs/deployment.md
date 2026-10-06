@@ -2,11 +2,13 @@
 
 The [repository](https://github.com/sahajrajmalla/aster-payroll-gym) and
 [dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) are public.
-The owner is deploying Render manually; public API acceptance is pending.
-Correct independent Tier-2 and Tier-3 submissions each scored **1.0** using your
-permanent Neon project and the real Gemini judge. Both saved runs survived a full
-API process restart. [Recorded proof](permanent-neon-persistence-smoke.json) uses a
-local API; public Render acceptance remains pending.
+The [sandbox](https://aster-payroll-gym.onrender.com) is deployed on Render.
+Correct external Tier-2 and Tier-3 submissions each scored **1.0**, including the
+real Gemini judge. Both saved runs survived a user-confirmed hosted restart and
+were confirmed in permanent Neon. Eleven public API contract checks passed.
+[Acceptance evidence](render-sandbox-acceptance.json) ·
+[Tier 2 proof](render-tier2-proof.json) · [Tier 3 proof](render-tier3-proof.json).
+Earlier [local API evidence](permanent-neon-persistence-smoke.json) is separate.
 
 ## Deploy on Render with Neon
 
@@ -16,6 +18,7 @@ local API; public Render acceptance remains pending.
 2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/sahajrajmalla/aster-payroll-gym).
    Use the repository's `render.yaml`: one free Docker web service. Set secret
    `DATABASE_URL` to your Neon pooled Postgres URL with TLS (`sslmode=require`).
+   Preserve `/neondb?sslmode=require&channel_binding=require`; omitting `?` caused the corrected Render startup incident.
 3. Supply your existing Gemini key privately as `JUDGE_API_KEY`. You confirmed disabled billing/free-tier
    access on 2026-10-06, and both configured model IDs were verified with your key.
    Set `JUDGE_VERIFIED_FREE=true` in Render; provider quotas still apply.
@@ -26,7 +29,7 @@ local API; public Render acceptance remains pending.
    Add `DATABASE_URL`, `JUDGE_API_KEY`, `JUDGE_VERIFIED_FREE=true` and a random
    `ASTER_RATE_SALT`; paste secret values without surrounding quotes. The other
    judge defaults are built into Python, or copy them from `render.yaml`.
-5. Deploy, check `https://ACTUAL.onrender.com/healthz`, and save the actual URL.
+5. Check [the deployed health endpoint](https://aster-payroll-gym.onrender.com/healthz).
    The server image includes no training libraries or model weights.
 6. Run the correct external check below, restart the Render service, then verify
    persistence. Only record a restart you actually performed. Test `--tier 3` too;
@@ -42,8 +45,22 @@ The existing permanent Neon project is ready. No paid resources are required by 
 This standard-library client derives the answer exclusively from public documents;
 it imports neither the project reference calculator nor model libraries.
 
+No clone or package installation is required; this command fetches a pinned client:
+
 ```sh
-python3 scripts/sandbox_smoke.py https://ACTUAL.onrender.com \
+curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com
+curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com --tier 3 --receipt tmp/tier3-private.json --proof tmp/tier3-proof.json
+```
+
+Equivalent pinned-source stdin checks ran from empty temporary directories without
+project imports: Tier 2 scored **1.0** in **9.367s** ([proof](render-no-clone-proof.json));
+Tier 3 scored **1.0** in **11.679s** ([proof](render-no-clone-tier3-proof.json)).
+Times include source download and the public round trip.
+
+From a clone, use the same client directly:
+
+```sh
+python3 scripts/sandbox_smoke.py https://aster-payroll-gym.onrender.com \
   --receipt tmp/render-private.json --proof docs/sandbox-public-proof.json
 ```
 
@@ -61,13 +78,13 @@ submission; it creates no new task. Pending scoring exits 2, not success.
 
 ## Two-minute no-clone quickstart
 
-This example needs Python only. Replace `BASE`; the intentionally invalid answer
+This example needs Python only. The intentionally invalid answer
 checks rejection and run retrieval. An independent solver supplies its own answer
 for a passing submission. A machine-readable contract is available at `/docs`.
 
 ```python
 import json, urllib.request
-BASE = "https://ACTUAL.onrender.com"
+BASE = "https://aster-payroll-gym.onrender.com"
 def call(path, body=None, token=""):
     data = None if body is None else json.dumps(body).encode()
     req = urllib.request.Request(BASE + path, data, {

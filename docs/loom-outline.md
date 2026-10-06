@@ -9,7 +9,9 @@ experiments as completed findings. Required length is 8–12 minutes.
 Current evidence: Gemini 3.5 Flash-Lite has 90/90 remote API samples, mean reward
 0.11444 ± 0.03845 across three rollout means. Flash and tool-use runs are partial;
 there is no completed three-model ranking. Human reviews, Colab/RL, judge
-reliability, transfer findings and public Render acceptance remain pending.
+reliability and transfer findings remain pending. External Tier-2/3 sandbox
+submissions scored **1.0** and survived a confirmed hosted restart; eleven API
+contract checks passed.
 
 0:00–1:00: professional task and deliberately narrow fictional authority; why this
 is checkable and why actual payroll claims are outside scope.
@@ -33,7 +35,9 @@ the genuine Gemini evaluation used remote APIs, not local models or Colab traini
 
 7:30–9:00: fetch Tier2/3 live tasks, submit an external answer, show score,
 component clauses and persisted run without this laptop hosting the service.
-Public hosting is pending; local API/permanent-Neon success is separate evidence.
+The [public sandbox](https://aster-payroll-gym.onrender.com) passed external Tier-2/3
+submissions and hosted restart checks. Show [acceptance evidence](render-sandbox-acceptance.json)
+and perform a fresh live request; distinguish recorded proof from the live demo.
 
 9:00–10:00: transfer ranking finding, real limitations/spend, clean reproduction,
 and next two days' highest-value work. Verify links before recording.

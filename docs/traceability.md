@@ -2,7 +2,7 @@
 
 implemented means software/doc exists, not completed external/human evidence.
 
-Repository and dashboard URLs are verified. Genuine remote results are recorded; the three-model comparison, human labels, training curves and public sandbox acceptance remain pending.
+Repository and dashboard URLs are verified. Genuine remote results are recorded; the three-model comparison, human labels and training curves remain pending. Public sandbox acceptance passed.
 
 | ID / PDF page | Requirement | Implementation | Test / evidence | Status |
 | --- | --- | --- | --- | --- |
@@ -87,25 +87,25 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P07.10 / 13 | Checkpoint and crash recovery | src/aster_gym/cloud/train.py | cloud resume smoke | external_evidence_pending |
 | P07.11 / 13,15 | Small feasible run, short completions and explicit scoping | configs/train.json | Colab feasibility gate | external_evidence_pending |
 | P07.12 / 17-18 | Preserve actual training transcripts; no fake rising curve | src/aster_gym/cloud/train.py | genuine import bundle | external_evidence_pending |
-| P08.01 / 13 | Live sandbox independent of applicant laptop | render.yaml | public external roundtrip | deployment_pending |
+| P08.01 / 13 | Live sandbox independent of applicant laptop | render.yaml | docs/render-sandbox-acceptance.json | implemented |
 | P08.02 / 13 | Batch fetch and externally generated answer submission | src/aster_gym/api.py | tests/test_api.py | implemented |
 | P08.03 / 13-14 | No oracle data across wire incl errors/debug/transcripts | src/aster_gym/api.py | tests/test_api.py | implemented |
 | P08.04 / 13 | Exactly shared rubric and pinned authority | src/aster_gym/api.py | tests/test_api.py | implemented |
 | P08.05 / 13 | Per-task score, component breakdown and clauses | src/aster_gym/api.py | tests/test_api.py | implemented |
 | P08.06 / 13 | Run id, private actual seed, versions and tier mix | src/aster_gym/store.py | tests/test_api.py | implemented |
-| P08.07 / 13 | One no-clone command under two minutes | README.md | docs/api-smoke.json and public smoke | deployment_pending |
+| P08.07 / 13 | One no-clone command under two minutes | README.md | docs/render-no-clone-proof.json; docs/render-no-clone-tier3-proof.json | implemented |
 | P08.08 / 13 | Task cap, caller limits, no caller API-key storage, cost story | src/aster_gym/store.py | tests/test_api.py | implemented |
 | P08.09 / 14 | Expected-value provenance leakage check and findings | docs/edge-cases.md | tests/test_api.py | implemented |
 | P08.10 / 14 | 10000 tasks/tight submit loops rejected | src/aster_gym/api.py | tests/test_api.py | implemented |
 | P08.11 / 14 | Safe concurrent writes | src/aster_gym/store.py | tests/test_api.py | implemented |
 | P08.12 / 14 | Prevent silent cross-version comparisons | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P08.13 / 14 | Cold starts documented and retried | docs/deployment.md | scripts/quickstart.py | implemented |
-| P08.14 / 14 | Reviewer Tier2/3 first-try external roundtrip | src/aster_gym/api.py | public smoke after setup | deployment_pending |
+| P08.14 / 14 | Reviewer Tier2/3 first-try external roundtrip | src/aster_gym/api.py | docs/render-tier2-proof.json; docs/render-tier3-proof.json | implemented |
 | P08.15 / 14 | GET /tasks POST /submit GET /runs/{id} | src/aster_gym/api.py | tests/test_api.py | implemented |
 | ADV-B / 15 | Five handwritten-distribution realistic transfer tasks with ranking findings | data/transfer.jsonl | human approval plus real comparison | external_evidence_pending |
 | D01 / 16 | GitHub repo clean clone plus .env.example | README.md | docs/local-verification.json and public repo | implemented |
-| D02 / 16 | Deployed real-results dashboard URL | site/index.html | docs/deployment-smoke.json; saved real baselines | implemented |
-| D03 / 16 | Live sandbox URL and two-minute command | render.yaml | public URL and smoke | deployment_pending |
+| D02 / 16 | Deployed real-results dashboard URL | site/index.html | docs/deployment-smoke.json; real model and baseline artifacts | implemented |
+| D03 / 16 | Live sandbox URL and two-minute command | render.yaml | docs/render-sandbox-acceptance.json | implemented |
 | D04 / 16 | Loom 8-12min >=3min reward >=1min failure plus live sandbox | docs/loom-outline.md | owner recorded video | human_action_pending |
 | D05 / 16 | README architecture stack schema weights run next steps | README.md | documentation review | implemented |
 | D06 / 16 | Eval report real configs, variance, tiers, baselines, judge, fidelity, spend | docs/evaluation.md | actual experiments and human audits | external_evidence_pending |

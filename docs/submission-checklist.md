@@ -7,12 +7,12 @@ practice, use [the Loom script](loom-script.md) and
 
 **Current state: implementation checked; submission not ready.** The public
 dashboard contains genuine remote results and programmatic baselines. Your permanent Neon project and Gemini key are
-configured privately. Correct independent Tier-2/3 answers both scored **1.0** with
-the real judge, and both persisted after a full local API restart
-([proof](permanent-neon-persistence-smoke.json)). This is not public Render acceptance.
-
-Next, deploy the **Docker Web Service** on Render using the
-[deployment guide](deployment.md), then provide its public URL for external checks.
+configured privately. The [Render sandbox](https://aster-payroll-gym.onrender.com)
+passed correct external Tier-2/3 submissions, both scoring **1.0** with the real
+judge. Both saved runs persisted after a confirmed hosted restart; eleven public
+API contract checks passed. [Acceptance evidence](render-sandbox-acceptance.json) ·
+[Tier 2](render-tier2-proof.json) · [Tier 3](render-tier3-proof.json).
+See the [deployment guide](deployment.md) for reproducing these checks.
 Independent reviews, Colab experiments and final evidence audits remain required.
 
 ## Implementation readiness
@@ -44,8 +44,8 @@ Independent reviews, Colab experiments and final evidence audits remain required
 - [ ] Your reading of 5–10 real failures and counted taxonomy.
 - [ ] Measured five-task transfer ranking agreement.
 - [x] GitHub repo and public results dashboard, tested externally.
-- [ ] Public Render/Neon sandbox, tested externally and after restart.
-- [ ] One-command no-clone sandbox round trip including Tier2/3 correct submission.
+- [x] Public Render/Neon sandbox, tested externally and after restart.
+- [x] No-clone pinned-client Tier-2/3 correct submissions from empty directories.
 - [ ] 8–12 minute Loom: >=3min rewards, >=1min real failure aloud, live sandbox.
 - [ ] Four real links replace README placeholders; known limitations visible.
 - [ ] Actual receipt/submission timestamps and total compute spend recorded.
@@ -54,13 +54,13 @@ Submission email draft (do not send automatically):
 
 Subject: AI Product Operator Assignment - [Your Name]
 
-Repository: [URL]
+Repository: https://github.com/sahajrajmalla/aster-payroll-gym
 
-Dashboard: [URL]
+Dashboard: https://sahajrajmalla.com.np/aster-payroll-gym/
 
-Sandbox: [URL]
+Sandbox: https://aster-payroll-gym.onrender.com
 
-Loom: [URL]
+Loom: [pending recording URL]
 
 Mention actual domain, strongest measured finding and any remaining limitation.
 The five-business-day deadline depends on the actual receipt date; it is not

@@ -7,13 +7,15 @@ an external submission API. The fictional rulebook defines correctness.
 - [Repository](https://github.com/sahajrajmalla/aster-payroll-gym)
 - [Dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/)
 - [Colab notebook](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb)
-- Sandbox and Loom: see [submission checklist](docs/submission-checklist.md).
+- [Sandbox](https://aster-payroll-gym.onrender.com) · [API contract](https://aster-payroll-gym.onrender.com/docs)
+- Loom: pending; see [submission checklist](docs/submission-checklist.md).
 
 Implementation and lightweight QA pass the checks recorded in
 [QA evidence](docs/final-qa.json), including tests, lint, types and clean startup.
 Deterministic baselines and a genuine 90-sample Gemini 3.5 evaluation are recorded;
-Gemini 3.8 remains rate-limited/partial. Qwen/RL, independent reviews and public
-Render acceptance remain pending. Missing evidence is never replaced with fixtures.
+Gemini 3.8 remains rate-limited/partial. Public sandbox Tier-2/3 submissions and
+hosted restart persistence passed; Qwen/RL and independent reviews remain pending.
+Missing evidence is never replaced with fixtures.
 
 ## Start here
 
@@ -111,13 +113,24 @@ stay in cloud storage. Partial/failed runs stay visibly partial/failed.
 
 ## Independent sandbox
 
-After deployment, use the no-clone example in [deployment guide](docs/deployment.md)
-or `python scripts/quickstart.py https://YOUR-SANDBOX.onrender.com`.
-The quickstart deliberately submits an invalid answer; a correct external client
-must solve from public evidence. `scripts/sandbox_smoke.py` provides that correct
-independent check and a post-restart persistence check. `/tasks`, `/submit` and
-`/runs/{run_id}` share
-production scoring. Public responses exclude expected answers. Runs are persisted,
+The [public sandbox](https://aster-payroll-gym.onrender.com) passed correct external
+Tier-2/3 submissions, each scoring **1.0**, and both saved runs survived a confirmed
+hosted restart. Eleven public contract checks also passed.
+[Acceptance evidence](docs/render-sandbox-acceptance.json) ·
+[Tier 2](docs/render-tier2-proof.json) · [Tier 3](docs/render-tier3-proof.json).
+
+Run a correct public submission without cloning:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com
+```
+
+For Tier 3, append `--tier 3 --receipt tmp/tier3-private.json --proof tmp/tier3-proof.json`.
+See [deployment guide](docs/deployment.md) for restart verification.
+The separate `python scripts/quickstart.py https://aster-payroll-gym.onrender.com`
+command deliberately submits an invalid answer.
+The acceptance client solves from public evidence. `/tasks`, `/submit` and
+`/runs/{run_id}` share production scoring. Public responses exclude expected answers. Runs are persisted,
 token protected, rate limited and idempotent.
 
 ## Required documentation

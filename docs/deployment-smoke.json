@@ -13,6 +13,7 @@
   "model_calls_during_deployment_check": 0,
   "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706627",
   "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706634",
-  "sandbox": "User is deploying the Docker Web Service manually; public Render acceptance and restart check remain pending.",
-  "sandbox_storage_evidence": "docs/permanent-neon-persistence-smoke.json"
+  "sandbox": "Hosted Render Tier2/3 score1.0, eleven API checks, confirmed hosted restart persistence and no-clone acceptance passed.",
+  "sandbox_storage_evidence": "docs/render-sandbox-acceptance.json",
+  "sandbox_url": "https://aster-payroll-gym.onrender.com"
 }

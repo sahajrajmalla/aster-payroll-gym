@@ -1,0 +1,33 @@
+{
+  "status": "restart_persistence_verified",
+  "evidence_kind": "independent_public_contract_smoke",
+  "base_url": "https://aster-payroll-gym.onrender.com",
+  "deployment_scope": "public_endpoint",
+  "tier": 3,
+  "answer_source": "Independent Decimal calculation from issued public documents",
+  "agent_model_calls": 0,
+  "remote_judge_required": true,
+  "server_versions": {
+    "ruleset_version": "ASTER-1.0",
+    "reward_version": "1.0"
+  },
+  "health_status": 200,
+  "fetch_status": 200,
+  "run_id": "lvBTrXKNYUTsjPKYKIZqYvO0",
+  "submitted_answer_hash": "9625275b3e971416ffa36a30b2c51a13617d99e1d12e28c51bcd87b06d5425bd",
+  "task_context_hash": "a5db3b5ae45d20bd448ba63cff80ce76ba2554fedc482a945123e3bcd46122e6",
+  "limitations": [
+    "Tier-3 explanation grading requires the configured remote judge"
+  ],
+  "submit_status": 200,
+  "retrieval_status": 200,
+  "score": 1.0,
+  "run_state": "complete",
+  "completed_run_hash": "d2687932d442466c2d16cfd025049ffea5bd1ef10935e8d273d0d3701aaa5bd9",
+  "restart_confirmation": "Operator explicitly confirmed service restart before this request",
+  "restart_retrieval_status": 200,
+  "post_restart_run_hash": "d2687932d442466c2d16cfd025049ffea5bd1ef10935e8d273d0d3701aaa5bd9",
+  "verified_at": "2026-10-06T10:10:16.492787+00:00",
+  "elapsed_s": 1.027,
+  "permanent_neon_record_verified": true
+}

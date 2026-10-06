@@ -1,0 +1,78 @@
+{
+  "evidence_kind": "public_API_contract_acceptance",
+  "base_url": "https://aster-payroll-gym.onrender.com",
+  "verified_at": "2026-10-06T10:08:42.050777+00:00",
+  "checks": [
+    {
+      "name": "identical_submission_retry",
+      "http_status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "public_DTO_allowlists_and_no_oracle_fields",
+      "passed": true
+    },
+    {
+      "name": "wrong_token_rejected",
+      "http_status": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "missing_token_rejected",
+      "http_status": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "changed_locked_submission_rejected",
+      "http_status": 409,
+      "expected": 409,
+      "passed": true
+    },
+    {
+      "name": "malformed_request_json",
+      "http_status": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "oversized_request",
+      "http_status": 413,
+      "expected": 413,
+      "passed": true
+    },
+    {
+      "name": "ten_task_limit",
+      "http_status": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "invalid_tier",
+      "http_status": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "public_API_documentation",
+      "http_status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "run_still_unchanged_after_negative_checks",
+      "http_status": 200,
+      "expected": 200,
+      "passed": true
+    }
+  ],
+  "ground_truth_fields_exposed": false,
+  "agent_model_calls": 0,
+  "new_tasks_issued": 0,
+  "restart_verified": true,
+  "limitations": [
+    "Observed public responses are oracle-free; adversarial source tests cover broader leakage cases."
+  ]
+}

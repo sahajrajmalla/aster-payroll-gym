@@ -743,9 +743,9 @@
       "source_page": "13",
       "requirement": "Live sandbox independent of applicant laptop",
       "implementation": "render.yaml",
-      "test_or_manual_check": "public external roundtrip",
-      "evidence": "public external roundtrip",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/render-sandbox-acceptance.json",
+      "evidence": "docs/render-sandbox-acceptance.json",
+      "status": "implemented"
     },
     {
       "id": "P08.02",
@@ -797,9 +797,9 @@
       "source_page": "13",
       "requirement": "One no-clone command under two minutes",
       "implementation": "README.md",
-      "test_or_manual_check": "docs/api-smoke.json and public smoke",
-      "evidence": "docs/api-smoke.json and public smoke",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/render-no-clone-proof.json; docs/render-no-clone-tier3-proof.json",
+      "evidence": "docs/render-no-clone-proof.json; docs/render-no-clone-tier3-proof.json",
+      "status": "implemented"
     },
     {
       "id": "P08.08",
@@ -860,9 +860,9 @@
       "source_page": "14",
       "requirement": "Reviewer Tier2/3 first-try external roundtrip",
       "implementation": "src/aster_gym/api.py",
-      "test_or_manual_check": "public smoke after setup",
-      "evidence": "public smoke after setup",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/render-tier2-proof.json; docs/render-tier3-proof.json",
+      "evidence": "docs/render-tier2-proof.json; docs/render-tier3-proof.json",
+      "status": "implemented"
     },
     {
       "id": "P08.15",
@@ -896,8 +896,8 @@
       "source_page": "16",
       "requirement": "Deployed real-results dashboard URL",
       "implementation": "site/index.html",
-      "test_or_manual_check": "docs/deployment-smoke.json; saved real baselines",
-      "evidence": "docs/deployment-smoke.json; saved real baselines",
+      "test_or_manual_check": "docs/deployment-smoke.json; real model and baseline artifacts",
+      "evidence": "docs/deployment-smoke.json; real model and baseline artifacts",
       "status": "implemented"
     },
     {
@@ -905,9 +905,9 @@
       "source_page": "16",
       "requirement": "Live sandbox URL and two-minute command",
       "implementation": "render.yaml",
-      "test_or_manual_check": "public URL and smoke",
-      "evidence": "public URL and smoke",
-      "status": "deployment_pending"
+      "test_or_manual_check": "docs/render-sandbox-acceptance.json",
+      "evidence": "docs/render-sandbox-acceptance.json",
+      "status": "implemented"
     },
     {
       "id": "D04",

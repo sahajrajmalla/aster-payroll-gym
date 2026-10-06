@@ -16,7 +16,8 @@ Current evidence: Gemini 3.5 Flash-Lite completed 90/90 remote API samples with
 reward **0.11444 ± 0.03845** across three rollout means. Gemini 3.8 Flash and the
 tool-use run are partial; they do not establish a three-model ranking. The
 independent failure packet is prepared but unreviewed. Qwen/RL, judge reliability,
-transfer findings and public Render acceptance remain pending. These API calls
+transfer findings remain pending. Public Tier-2/3 submissions scored **1.0** and
+survived a confirmed hosted restart; eleven API contract checks passed. These API calls
 were remote; no open-weight model inference or training ran on this computer.
 
 Fill the remaining slots from saved results before recording:
@@ -27,7 +28,8 @@ Fill the remaining slots from saved results before recording:
 - RL: [actual steps], selected beta [value], validation [reason], held-out
   [initial→selected means±SD], [curve observations], [gaming sample/findings].
 - Transfer: [generated/transfer rankings], [agreement], [one task failure/reversal].
-- Public sandbox: [URL], [correct round trip], [persistence-after-restart evidence].
+- Public sandbox: https://aster-payroll-gym.onrender.com; Tier-2/3 both **1.0**,
+  [hosted restart and contract evidence](render-sandbox-acceptance.json).
 - Resources: [confirmed cost], [latency], [GPU/runtime], [remaining limitations].
 
 Empty slots are pending evidence. Do not turn planned behavior into measured claims.
@@ -141,9 +143,10 @@ completion length and tier pass rate together; include equal-reward group fracti
 
 ## 7:30–9:00 — live public sandbox
 
-Public Render acceptance is pending. Record this section after the deployed
-Tier-2/3 checks and actual restart verification pass. A local API with permanent
-Neon already passed both checks; that evidence does not establish public hosting.
+The [Render sandbox](https://aster-payroll-gym.onrender.com) passed external
+Tier-2/3 submissions at **1.0**, eleven contract checks and confirmed hosted
+restart persistence. Show [recorded evidence](render-sandbox-acceptance.json), then
+perform a fresh live request for the recording.
 Screen: an independent client targeting the actual Render URL, never localhost.
 
 > “This service runs independently of my laptop. I fetch a public task, solve from
@@ -163,7 +166,7 @@ GET /runs/run_id    X-Run-Token: same token
 For the live correct submission, run:
 
 ```bash
-python3 scripts/sandbox_smoke.py https://YOUR-SANDBOX.onrender.com
+python3 scripts/sandbox_smoke.py https://aster-payroll-gym.onrender.com
 ```
 
 It solves only from public documents with independent Decimal arithmetic and prints

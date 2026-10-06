@@ -1,0 +1,35 @@
+{
+  "status": "submission_verified",
+  "evidence_kind": "independent_public_contract_smoke",
+  "base_url": "https://aster-payroll-gym.onrender.com",
+  "deployment_scope": "public_endpoint",
+  "tier": 3,
+  "answer_source": "Independent Decimal calculation from issued public documents",
+  "agent_model_calls": 0,
+  "remote_judge_required": true,
+  "server_versions": {
+    "ruleset_version": "ASTER-1.0",
+    "reward_version": "1.0"
+  },
+  "health_status": 200,
+  "fetch_status": 200,
+  "run_id": "xOFBGxOhVzERBfNMC7e3pn3l",
+  "submitted_answer_hash": "fe4edf3548fabde9c67d5e1835e147ef8b75ee02e1a4d8a86195c3a6878295b0",
+  "task_context_hash": "5d59384e5912199073c9c3410f6faa12caa9a626c0c3896dd28240f0268765f5",
+  "limitations": [
+    "Tier-3 explanation grading requires the configured remote judge"
+  ],
+  "submit_status": 200,
+  "retrieval_status": 200,
+  "score": 1.0,
+  "run_state": "complete",
+  "completed_run_hash": "71a9b68b6facba1b063f787fa1b2b5dbb37f2f47de1e3686ce4720dba6aec1cf",
+  "verified_at": "2026-10-06T10:12:41.149603+00:00",
+  "elapsed_s": 11.245,
+  "no_clone_verified": true,
+  "isolated_working_directory": true,
+  "source_url": "https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py",
+  "source_sha256": "390085a188bc2ad4df87f9b8e938e0a036909a1726e0915d2216b4b4ca70af24",
+  "total_download_and_run_elapsed_s": 11.679,
+  "command": "curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com --tier 3"
+}
