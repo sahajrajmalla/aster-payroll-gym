@@ -1,16 +1,18 @@
 {
-  "date": "2026-10-05T03:18:00.767210+00:00",
+  "date": "2026-10-06T08:15:06.994106+00:00",
   "url": "https://sahajrajmalla.com.np/aster-payroll-gym/",
   "http_status": 200,
   "checks": {
     "title": true,
-    "latest_frozen_corpus_hash": "ca4630a74e5e395f56d938ba1eae5e03267564ef15d8423a30dac0d79580b6af",
     "real_baselines": true,
+    "real_remote_model_runs": 3,
+    "complete_lite_comparison_samples": 90,
+    "partial_runs_unranked": true,
     "pending_RL": true
   },
-  "model_calls": 0,
-  "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716856",
-  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37258716997",
-  "sandbox": "pending user-managed Render deployment and permanent Neon project; local API with real Neon storage passed restart check",
-  "sandbox_storage_evidence": "docs/neon-persistence-smoke.json"
+  "model_calls_during_deployment_check": 0,
+  "workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706627",
+  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706634",
+  "sandbox": "User is deploying the Docker Web Service manually; public Render acceptance and restart check remain pending.",
+  "sandbox_storage_evidence": "docs/permanent-neon-persistence-smoke.json"
 }
