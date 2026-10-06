@@ -89,7 +89,10 @@ On 2026-10-05, Google's official docs listed stable
 with free standard input/output in the [pricing page](https://ai.google.dev/gemini-api/docs/pricing).
 The frontier comparison role is a selection inference from Google's
 [3.8 model-card benchmarks](https://deepmind.google/models/model-cards/gemini-3-8-flash/).
-It is not a measured ranking in this gym. Account access and allowance remain unverified.
+It is not a measured ranking in this gym. On 2026-10-06, the owner confirmed disabled
+billing/free-tier access; authenticated metadata and actual API calls verified both
+configured model IDs. Rate limits left some runs partial. Check current account
+quotas before another run.
 
 ## Return results
 

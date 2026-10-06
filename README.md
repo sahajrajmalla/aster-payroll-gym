@@ -19,6 +19,7 @@ Missing evidence is never replaced with fixtures.
 
 ## Start here
 
+Use [the short self-run guide](docs/setup.md) for essential files and copy-paste commands.
 Read [the project explanation](docs/project-understanding.md), then
 [the submission walkthrough](docs/submission-walkthrough.md).
 For presentation, use [the interview guide](docs/interview-preparation.md),
@@ -30,17 +31,18 @@ For presentation, use [the interview guide](docs/interview-preparation.md),
 Python 3.11 and uv are required:
 
 ```bash
-uv sync --locked
-uv run aster-gym validate
-uv run pytest -q
-uv run ruff check .
-uv run mypy src/aster_gym scripts
-uv run aster-gym report --output site
-uv run aster-gym serve
+uv sync --locked --extra server
+uv run --extra server aster-gym validate
+uv run --extra server pytest -q
+uv run --extra server ruff check .
+uv run --extra server mypy src/aster_gym scripts
+uv run --extra server aster-gym report --output site
+uv run --extra server aster-gym serve
 ```
 
 The API runs at `http://127.0.0.1:8000`, with `/healthz` and `/docs`.
-The dashboard is `site/index.html`. Default dependencies contain no training stack.
+The dashboard is `site/index.html`. The server extra adds only Postgres support;
+the default dependencies contain no training stack.
 **Training, local inference and weight downloads are forbidden on this computer.**
 Never install `--extra cloud` locally. Cloud entrypoints require Colab and CUDA
 before model imports. Create `.env` from `.env.example` only if it does not already
