@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-06T07:48:33.491650+00:00",
+  "http_status": 200,
+  "metadata_only": true,
+  "LLM_calls": 0,
+  "credentials_exposed": false,
+  "user_confirmed_billing_disabled": true,
+  "configured_access": {
+    "gemini-3.8-flash": true,
+    "gemini-3.5-flash-lite": true
+  },
+  "inference_acceptance": "Actual Tier-3 Google judge completed and scored1.0; remote policy evaluation records stored separately."
+}

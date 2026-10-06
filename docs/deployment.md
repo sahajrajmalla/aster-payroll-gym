@@ -2,36 +2,40 @@
 
 The [repository](https://github.com/sahajrajmalla/aster-payroll-gym) and
 [dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) are public.
-Render deployment is pending account sign-in; no public API URL is claimed.
-A correct independent Tier-2 submission scored **1.0** against real Neon Postgres
-and survived a complete API process restart. [Recorded proof](neon-persistence-smoke.json)
-uses a local API, so it does not replace the required external acceptance test.
+The owner is deploying Render manually; public API acceptance is pending.
+Correct independent Tier-2 and Tier-3 submissions each scored **1.0** using your
+permanent Neon project and the real Gemini judge. Both saved runs survived a full
+API process restart. [Recorded proof](permanent-neon-persistence-smoke.json) uses a
+local API; public Render acceptance remains pending.
 
 ## Deploy on Render with Neon
 
-1. Sign into Render and Neon. Create your own **free Neon project** and copy its
-   pooled connection string. The temporary database used for the recorded check
-   expires **8 October 2026, 15:26 Nepal time**; it is not the permanent deployment
-   database. Use your own project's credentials for the sandbox.
+1. Your permanent Neon project and Gemini key are configured privately in `.env`.
+   Sign into Render. Use the pooled Neon URL you supplied; do not create another
+   database. The older temporary-database proof is historical only.
 2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/sahajrajmalla/aster-payroll-gym).
    Use the repository's `render.yaml`: one free Docker web service. Set secret
    `DATABASE_URL` to your Neon pooled Postgres URL with TLS (`sslmode=require`).
-3. Create a [Gemini API key](https://ai.google.dev/gemini-api/docs/api-key) and
-   supply it privately as `JUDGE_API_KEY`. Verify account eligibility, available model
-   quota and disabled billing before setting `JUDGE_VERIFIED_FREE=true`.
+3. Supply your existing Gemini key privately as `JUDGE_API_KEY`. You confirmed disabled billing/free-tier
+   access on 2026-10-06, and both configured model IDs were verified with your key.
+   Set `JUDGE_VERIFIED_FREE=true` in Render; provider quotas still apply.
    Keep the configured model/endpoint and judge limits consistent across experiments
    and API. Never put secrets in Git, chat, screenshots or Loom.
-4. Deploy, check `https://ACTUAL.onrender.com/healthz`, and save the actual URL.
+4. If using **New → Web Service** instead of Blueprint, select **Docker** and
+   **Free**, leave Dockerfile path as `./Dockerfile`, and use health path `/healthz`.
+   Add `DATABASE_URL`, `JUDGE_API_KEY`, `JUDGE_VERIFIED_FREE=true` and a random
+   `ASTER_RATE_SALT`; paste secret values without surrounding quotes. The other
+   judge defaults are built into Python, or copy them from `render.yaml`.
+5. Deploy, check `https://ACTUAL.onrender.com/healthz`, and save the actual URL.
    The server image includes no training libraries or model weights.
-5. Run the correct external check below, restart the Render service, then verify
+6. Run the correct external check below, restart the Render service, then verify
    persistence. Only record a restart you actually performed. Test `--tier 3` too;
    pending judge scoring is incomplete acceptance, even if arithmetic passes.
 
 [Render free services](https://render.com/docs/free) may sleep after inactivity;
 allow a cold start before the two-minute demo. External Neon storage preserves
 runs across Render's ephemeral container restarts. Free quotas can change.
-[Neon's temporary provisioning](https://neon.com/claimable-neon) requires an owner
-claim for lasting use. No paid resources are required by this configuration.
+The existing permanent Neon project is ready. No paid resources are required by this configuration.
 
 ## Correct independent acceptance
 
@@ -93,7 +97,7 @@ return 409. Active leases/provider failures return 202 with pending scoring, nev
 replacement rubric. Tokens cannot be recovered if lost.
 
 Limits: five runs/minute/socket caller, ten tasks/run, 64KiB body, 400-character
-explanations; judge quotas default to100/caller and 500 global/day in the deployment.
+explanations; judge quotas default to 100/caller and 500 global/day in the deployment.
 The safe `--no-proxy-headers` default can group users behind Render's proxy into one
 conservative quota bucket. Trusted forwarded-IP configuration needs separate testing.
 Errors: 404 unknown run/token, 409 changed submission/configuration, 413 oversized body,

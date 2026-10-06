@@ -1,0 +1,140 @@
+{
+  "aggregate": {
+    "mean": null,
+    "n": 0,
+    "sd": null
+  },
+  "budget": {
+    "accounted_usd": 0.0,
+    "confirmed_usd": 0.0,
+    "maximum_usd": 0.0,
+    "reserved_usd": 0.0
+  },
+  "by_tier": {
+    "1": {
+      "exact_score_rate": 0,
+      "mean": 0.06666666666666667,
+      "n": 6,
+      "pass_rate": 0,
+      "sd": 0.10327955589886445
+    },
+    "2": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 4,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "3": {
+      "exact_score_rate": 0,
+      "mean": 0.1125,
+      "n": 4,
+      "pass_rate": 0,
+      "sd": 0.082915619758885
+    }
+  },
+  "complete_replicates": 0,
+  "completed_samples": 14,
+  "components": {
+    "action": {
+      "mean": 0.2222222222222222,
+      "n": 9,
+      "sd": 0.44095855184409843
+    },
+    "exact": {
+      "mean": 0.0,
+      "n": 9,
+      "sd": 0.0
+    },
+    "fields": {
+      "mean": 0.42592592592592593,
+      "n": 9,
+      "sd": 0.44183260334963514
+    },
+    "format": {
+      "mean": 0.5555555555555556,
+      "n": 9,
+      "sd": 0.5270462766947299
+    },
+    "judge": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    }
+  },
+  "confirmed_cost_usd": 0.0,
+  "cost_usd": 0.0,
+  "coverage": 0.3888888888888889,
+  "expected_samples": 36,
+  "latency_s": {
+    "mean": 6.296077959499978,
+    "n": 36,
+    "sd": 4.827329362795108
+  },
+  "operational_failures": 22,
+  "per_task": {
+    "task-0e33888836c453dcb91e": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    },
+    "task-16ccf44e25558cbba567": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-622bcc18c6aab9cac92f": {
+      "mean": 0.0,
+      "n": 2,
+      "sd": 0.0
+    },
+    "task-84bf67730258b67b84db": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-8af3e60200e8bcdecf77": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-a681f2646d5b2b138baa": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    },
+    "task-b18556242bce68d26e76": {
+      "mean": 0.125,
+      "n": 2,
+      "sd": 0.0
+    },
+    "task-b23f8b35a616a54a7824": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-bd6044ef3b97fc1c5b8e": {
+      "mean": 0.06666666666666667,
+      "n": 3,
+      "sd": 0.11547005383792516
+    },
+    "task-bebd0b9279f9479fb386": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    }
+  },
+  "replicate_means": [],
+  "retries": 49,
+  "sample_summary": {
+    "mean": 0.060714285714285714,
+    "n": 14,
+    "sd": 0.08754904433993078
+  },
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples",
+  "status_counts": {
+    "complete": 14,
+    "provider_error": 22
+  },
+  "tokens": 138138
+}

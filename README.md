@@ -11,9 +11,9 @@ an external submission API. The fictional rulebook defines correctness.
 
 Implementation and lightweight QA pass the checks recorded in
 [QA evidence](docs/final-qa.json), including tests, lint, types and clean startup.
-Deterministic adversarial
-baseline results are published. Genuine model/RL results and independent reviews
-remain pending; they are never replaced with demonstration data.
+Deterministic baselines and a genuine 90-sample Gemini 3.5 evaluation are recorded;
+Gemini 3.8 remains rate-limited/partial. Qwen/RL, independent reviews and public
+Render acceptance remain pending. Missing evidence is never replaced with fixtures.
 
 ## Start here
 

@@ -1,0 +1,130 @@
+{
+  "aggregate": {
+    "mean": null,
+    "n": 0,
+    "sd": null
+  },
+  "budget": {
+    "accounted_usd": 0.0,
+    "confirmed_usd": 0.0,
+    "maximum_usd": 0.0,
+    "reserved_usd": 0.0
+  },
+  "by_tier": {
+    "1": {
+      "exact_score_rate": 0,
+      "mean": 0.2,
+      "n": 4,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "2": {
+      "exact_score_rate": 0,
+      "mean": 0.025,
+      "n": 2,
+      "pass_rate": 0,
+      "sd": 0.035355339059327376
+    },
+    "3": {
+      "exact_score_rate": 0,
+      "mean": 0.1625,
+      "n": 2,
+      "pass_rate": 0,
+      "sd": 0.05303300858899107
+    }
+  },
+  "complete_replicates": 0,
+  "completed_samples": 8,
+  "components": {
+    "action": {
+      "mean": 0.625,
+      "n": 8,
+      "sd": 0.5175491695067657
+    },
+    "exact": {
+      "mean": 0.0,
+      "n": 8,
+      "sd": 0.0
+    },
+    "fields": {
+      "mean": 0.7125,
+      "n": 8,
+      "sd": 0.41896982503005425
+    },
+    "format": {
+      "mean": 0.875,
+      "n": 8,
+      "sd": 0.3535533905932738
+    },
+    "judge": {
+      "mean": 0.0,
+      "n": 2,
+      "sd": 0.0
+    }
+  },
+  "confirmed_cost_usd": 0.0,
+  "cost_usd": 0.0,
+  "coverage": 0.08888888888888889,
+  "expected_samples": 90,
+  "latency_s": {
+    "mean": 8.446016857000007,
+    "n": 51,
+    "sd": 9.415918613775814
+  },
+  "operational_failures": 43,
+  "per_task": {
+    "task-0e33888836c453dcb91e": {
+      "mean": 0.125,
+      "n": 1,
+      "sd": null
+    },
+    "task-0ec7d48247ff1b45b74b": {
+      "mean": 0.05,
+      "n": 1,
+      "sd": null
+    },
+    "task-84bf67730258b67b84db": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    },
+    "task-8af3e60200e8bcdecf77": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-b18556242bce68d26e76": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    },
+    "task-b23f8b35a616a54a7824": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    },
+    "task-b7aa12c715de9cf2cf51": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    },
+    "task-bd6044ef3b97fc1c5b8e": {
+      "mean": 0.2,
+      "n": 1,
+      "sd": null
+    }
+  },
+  "replicate_means": [],
+  "retries": 89,
+  "sample_summary": {
+    "mean": 0.146875,
+    "n": 8,
+    "sd": 0.08066409627939453
+  },
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples",
+  "status_counts": {
+    "complete": 8,
+    "provider_error": 43
+  },
+  "tokens": 16830
+}

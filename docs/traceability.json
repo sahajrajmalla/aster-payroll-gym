@@ -563,8 +563,8 @@
       "source_page": "11",
       "requirement": "Live dashboard with real saved results",
       "implementation": "site/index.html",
-      "test_or_manual_check": "docs/deployment-smoke.json; baseline evidence only, model scores pending",
-      "evidence": "docs/deployment-smoke.json; baseline evidence only, model scores pending",
+      "test_or_manual_check": "docs/deployment-smoke.json; docs/evaluation.md; real model and baseline artifacts",
+      "evidence": "docs/deployment-smoke.json; docs/evaluation.md; real model and baseline artifacts",
       "status": "implemented"
     },
     {

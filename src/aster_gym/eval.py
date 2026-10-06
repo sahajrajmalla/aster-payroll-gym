@@ -177,6 +177,15 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
         existing = json.loads(config_path.read_text())
         if existing["run_id"] != config["run_id"]:
             raise ValueError("RESUME_CONFIGURATION_MISMATCH")
+        # Published/imported result summaries omit the private atomic journal.
+        # Never silently resample completed answers if that journal was lost.
+        scores_path = output / "scores.json"
+        if scores_path.exists():
+            published_records = json.loads(scores_path.read_text())["records"]
+            for row in published_records:
+                key = stable_hash([row["task_id"], row["rollout"]])[:24]
+                if not (output / ".records" / (key + ".json")).is_file():
+                    raise ValueError("RESUME_JOURNAL_MISSING: retain the original run directory")
     config["status"] = "running"
     atomic_json(config_path, config)
     journal = output / ".records"

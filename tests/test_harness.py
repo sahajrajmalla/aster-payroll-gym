@@ -201,6 +201,22 @@ async def test_evaluation_resume_never_resamples_wrong_answer(tmp_path):
         await run_evaluation([task], tmp_path, model="other", evidence_kind="fixture", provider=provider)
 
 
+async def test_missing_resume_journal_refuses_resampling_before_mutation(tmp_path):
+    task = generate_taskset(n=1, seed=9, tier=1)[0]
+    provider = FixtureProvider()
+    await run_evaluation([task], tmp_path, model="fixture", rollouts=1,
+                         evidence_kind="fixture", provider=provider)
+    original_config = (tmp_path / "config.json").read_bytes()
+    original_scores = (tmp_path / "scores.json").read_bytes()
+    next((tmp_path / ".records").glob("*.json")).unlink()
+    with pytest.raises(ValueError, match="RESUME_JOURNAL_MISSING"):
+        await run_evaluation([task], tmp_path, model="fixture", rollouts=1,
+                             evidence_kind="fixture", provider=provider)
+    assert provider.calls == 1
+    assert (tmp_path / "config.json").read_bytes() == original_config
+    assert (tmp_path / "scores.json").read_bytes() == original_scores
+
+
 async def test_tool_use_required_and_provider_failures_unscored(tmp_path):
     task = generate_taskset(n=1, seed=9, tier=1)[0]
     provider = FixtureProvider(task.ground_truth.model_dump_json())

@@ -12,11 +12,18 @@ RL/transfer reports and public sandbox client. Use readable zoom and a quiet roo
 Warm the free hosted service before recording. Close `.env`, provider consoles,
 Colab Secrets, database credentials and tabs containing run tokens.
 
-Fill these slots from saved results before recording:
+Current evidence: Gemini 3.5 Flash-Lite completed 90/90 remote API samples with
+reward **0.11444 ± 0.03845** across three rollout means. Gemini 3.8 Flash and the
+tool-use run are partial; they do not establish a three-model ranking. The
+independent failure packet is prepared but unreviewed. Qwen/RL, judge reliability,
+transfer findings and public Render acceptance remain pending. These API calls
+were remote; no open-weight model inference or training ran on this computer.
+
+Fill the remaining slots from saved results before recording:
 
 - Three models: [names], comparison [means±SD], coverage [counts].
 - Judge: [human agreement], [repeat instability], [review disagreements].
-- Failure: [run/task/rollout ID], [response], [violated clause].
+- Failure: use the genuine `failure-02` example below; complete your own review.
 - RL: [actual steps], selected beta [value], validation [reason], held-out
   [initial→selected means±SD], [curve observations], [gaming sample/findings].
 - Transfer: [generated/transfer rankings], [agreement], [one task failure/reversal].
@@ -48,8 +55,8 @@ Screens: rulebook R2/R4/R8/R9/R10, reward spec and baseline dashboard.
 > results; an LLM does not generate ground truth. Each scoring component returns
 > clause references and diagnostics, so I can connect a penalty to its rule.”
 
-Show the ceiling example: gross320,000, remaining ceiling10,000, contribution500,
-taxable309,500, tax21,900, net297,600 cents. Then remove YTD.
+Show the ceiling example: gross 320,000, remaining ceiling 10,000, contribution 500,
+taxable 309,500, tax 21,900, net 297,600 cents. Then remove YTD.
 
 > “Without prior pensionable earnings, the contribution is unresolved. The useful
 > answer names that missing field and requests it. Guessing zero is wrong. Refusing
@@ -77,36 +84,53 @@ Explain the constrained judge and actual review evidence:
 > caching rules apply across evaluation, training and sandbox. Outages stay pending,
 > so the rubric is not silently simplified.”
 
-Read actual human agreement and three-repeat stability. Explain one disagreement,
-if observed, and show the independent rule-fidelity review count. Note that stable
-judgments can still be wrong. This section must reach at least three minutes.
+Judge reliability and independent fidelity reviews are currently pending. After
+they finish, read actual agreement and three-repeat stability, explain an observed
+disagreement and show the review count. Stable judgments can still be wrong.
+This section must reach at least three minutes.
 
 ## 4:30–5:45 — read one genuine failure
 
-Screen: a saved model transcript with run/task/rollout identifiers.
+Screen: [failure packet](../reviews/failure-review-packet.json), row `failure-02`,
+and its [saved transcript](../results/gemini-3.8-comparison/transcript.jsonl).
+Run `c697a5f3d20e737d05ae`; task `task-0ec7d48247ff1b45b74b`; rollout **0**.
+This is a completed Gemini 3.8 Flash answer, not a provider outage or fixture.
 
-Read its input and actual response aloud, then the score component and deciding
-clause. Spend at least a minute on this example.
+Read the task's request and this exact model explanation aloud:
 
-> “The model returned [actual response]. Clause [ID] requires [specific behavior].
-> The scorer recorded [actual gate/component]. This failure shows [observed issue].
-> The operational status is [complete/error/pending]; an outage is not a wrong
-> answer. My response to the failure was [actual investigation or change].”
+> “Calculated payslip for 2030-01-18 under schedule ASTER-2030: gross is 522,564
+> cents, contribution is 0 cents as YTD pensionable earnings met the 1,200,000
+> ceiling, taxable pay is 512,564 cents after 10,000 allowance, tax is 64,513
+> cents, and net pay is 458,051 cents.”
 
-Use a real model error rather than a test fixture or deterministic baseline. If
-all inspected model outputs passed, report that honestly and find a genuinely
-failed configuration/run rather than manufacturing a failure.
+Then explain the evidence:
+
+> “The reference gives gross 522,587, taxable pay 512,587, tax 62,517 and net
+> 460,070 cents. Only the zero contribution matches. R1 requires exact rounded
+> cents; R3 defines salary proration plus bonus; R5 defines taxable pay; R6 applies
+> marginal bands; R7 defines net pay. Field accuracy is 0.20. The scorer records
+> SUBSTANTIVE_MISMATCH and the CORRECTNESS_CAP gate, with final reward 0.05.
+> Valid JSON and citations cannot rescue incorrect arithmetic. Calculator-assisted
+> proration and a five-field check are proposed remedies, not measured improvements.
+> My independent reading of this packet is still required before signing the review.”
+
+Spend at least one minute reading the actual response and comparing these fields.
+After you personally complete the review, update the final sentence truthfully.
 
 ## 5:45–7:30 — cloud RL and held-out evidence
 
-Screens: five actual curves and before/after comparison.
+Current status: cloud execution pending. All open-weight inference and training
+must run in Colab with CUDA; there is no local CPU/MPS fallback. Remote Gemini API
+evaluation is separate from Colab. Show five actual curves and before/after results
+only after genuine cloud artifacts are imported.
 
-> “All model work ran in Colab. Qwen2.5-0.5B-Instruct uses LoRA and GRPO: four
+> “The cloud workflow uses Qwen2.5-0.5B-Instruct with LoRA and GRPO: four
 > sampled completions receive relative group advantages. A KL penalty discourages
-> excessive movement from the frozen initial policy. Both beta runs start from
-> the same policy; validation selects beta before untouched held-out evaluation.”
+> excessive movement from the frozen initial policy. Both planned beta runs start
+> from the same policy; validation selects beta before untouched held-out evaluation.
+> This explains the implementation; training results remain pending until executed.”
 
-Read actual completed steps, beta choice and before/after mean±SD. Show initial
+After execution, read actual completed steps, beta choice and before/after mean±SD. Show initial
 reference equivalence and unchanged parameter hashes. Explain reward, KL, entropy,
 completion length and tier pass rate together; include equal-reward group fraction.
 
@@ -117,6 +141,9 @@ completion length and tier pass rate together; include equal-reward group fracti
 
 ## 7:30–9:00 — live public sandbox
 
+Public Render acceptance is pending. Record this section after the deployed
+Tier-2/3 checks and actual restart verification pass. A local API with permanent
+Neon already passed both checks; that evidence does not establish public hosting.
 Screen: an independent client targeting the actual Render URL, never localhost.
 
 > “This service runs independently of my laptop. I fetch a public task, solve from
@@ -143,15 +170,16 @@ It solves only from public documents with independent Decimal arithmetic and pri
 a token-free proof. Keep its private receipt off screen. Show the correct score
 and the saved restart-persistence proof.
 Mention ten tasks per run, bounded payloads and caller quotas. Identical submissions
-are idempotent; changed answers receive409. A202 response is pending, not a pass.
+are idempotent; changed answers receive 409. A 202 response is pending, not a pass.
 The quickstart's empty answer is deliberately invalid and cannot replace this demo.
 
 ## 9:00–10:00 — transfer and reproduction
 
-Screens: transfer findings, cost/latency and README.
+Transfer approval, freeze and measured findings are pending. After execution,
+show the transfer findings, cost/latency and README.
 
-> “Track B changes presentation while keeping rules fixed. Five reviewed tasks
-> were frozen before outcomes. Generated ranking was [actual], transfer ranking
+> “Track B changes presentation while keeping rules fixed. [After approval and
+> execution: Five reviewed tasks were frozen before outcomes.] Generated ranking was [actual], transfer ranking
 > was [actual], with agreement [actual]. [Explain one observed task-level issue.]
 > Five tasks diagnose template dependence; they do not prove broad generalization.
 > Limits include synthetic rules, repeated retrieval templates, small transfer

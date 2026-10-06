@@ -2,7 +2,7 @@
 
 implemented means software/doc exists, not completed external/human evidence.
 
-Repository and baseline dashboard URLs are verified. Human labels, genuine model scores, training curves and the public sandbox remain pending.
+Repository and dashboard URLs are verified. Genuine remote results are recorded; the three-model comparison, human labels, training curves and public sandbox acceptance remain pending.
 
 | ID / PDF page | Requirement | Implementation | Test / evidence | Status |
 | --- | --- | --- | --- | --- |
@@ -67,7 +67,7 @@ Repository and baseline dashboard URLs are verified. Human labels, genuine model
 | P05.10 / 10 | Provider outage isolation | src/aster_gym/eval.py | tests/test_harness.py | implemented |
 | P05.11 / 10,17 | Honest non-determinism/noise and indistinguishable rankings | docs/evaluation.md | real replicate statistics | external_evidence_pending |
 | P05.12 / 6 | Committed filesystem results and no rerun on deploy | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
-| P06.01 / 11 | Live dashboard with real saved results | site/index.html | docs/deployment-smoke.json; baseline evidence only, model scores pending | implemented |
+| P06.01 / 11 | Live dashboard with real saved results | site/index.html | docs/deployment-smoke.json; docs/evaluation.md; real model and baseline artifacts | implemented |
 | P06.02 / 11 | Leaderboard with error bars/SD | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P06.03 / 11 | Tier and reward breakdowns | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P06.04 / 11 | Task-by-model failure heatmap | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |

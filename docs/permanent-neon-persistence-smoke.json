@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-06T07:56:20.703878+00:00",
+  "status": "local_api_permanent_neon_tier2_tier3_restart_verified",
+  "deployment_scope": "local_api_remote_database",
+  "public_render_verified": false,
+  "credentials_exposed": false,
+  "proofs": [
+    {
+      "status": "restart_persistence_verified",
+      "evidence_kind": "independent_public_contract_smoke",
+      "base_url": "http://127.0.0.1:8001",
+      "deployment_scope": "local_only",
+      "tier": 2,
+      "answer_source": "Independent Decimal calculation from issued public documents",
+      "agent_model_calls": 0,
+      "remote_judge_required": false,
+      "server_versions": {
+        "ruleset_version": "ASTER-1.0",
+        "reward_version": "1.0"
+      },
+      "health_status": 200,
+      "fetch_status": 200,
+      "run_id": "g5dHeAlhjGjmIR0dIfmJ7i1u",
+      "submitted_answer_hash": "f3e6c82ec494df6d2afa011bd4ba5ebaca54d0efc196dcd4f826cb4fb9aed79d",
+      "task_context_hash": "c8145323c453b3b50a0dfb0fedffac6decac8d243a51c6122edcaa8e1103a70d",
+      "limitations": [
+        "Local API with permanent remote Neon; public Render acceptance is still pending."
+      ],
+      "submit_status": 200,
+      "retrieval_status": 200,
+      "score": 1.0,
+      "run_state": "complete",
+      "completed_run_hash": "84ee3ff18b75f139a150b44dd6c72592837ef9989fe18298796ba3bfaa3ca7e4",
+      "restart_confirmation": "Operator explicitly confirmed service restart before this request",
+      "restart_retrieval_status": 200,
+      "post_restart_run_hash": "84ee3ff18b75f139a150b44dd6c72592837ef9989fe18298796ba3bfaa3ca7e4",
+      "verified_at": "2026-10-06T07:54:10.965682+00:00",
+      "elapsed_s": 1.221,
+      "storage": "user_owned_remote_neon_postgres",
+      "api_hosted_on_render": false,
+      "database_claim_required": false,
+      "server_process_before": 4549,
+      "server_process_after": 4866,
+      "implementation_hash": "308d984f550a340af0ad6b07c4389ac4d37c50d3992f90e56c0b78526641e4e4",
+      "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
+      "client_sha256": "390085a188bc2ad4df87f9b8e938e0a036909a1726e0915d2216b4b4ca70af24"
+    },
+    {
+      "status": "restart_persistence_verified",
+      "evidence_kind": "independent_public_contract_smoke",
+      "base_url": "http://127.0.0.1:8001",
+      "deployment_scope": "local_only",
+      "tier": 3,
+      "answer_source": "Independent Decimal calculation from issued public documents",
+      "agent_model_calls": 0,
+      "remote_judge_required": true,
+      "server_versions": {
+        "ruleset_version": "ASTER-1.0",
+        "reward_version": "1.0"
+      },
+      "health_status": 200,
+      "fetch_status": 200,
+      "run_id": "YwgMKMoQKKoteKbDNTNSemD0",
+      "submitted_answer_hash": "50b242aab8d394ba6c2c848b44656775e133c217934eab0c3a37651fc74fe1d8",
+      "task_context_hash": "09f9cfd46b880b48292de1066300bfa632dcac6416757481a7eeb43a9317a9fb",
+      "limitations": [
+        "Local API with permanent remote Neon; public Render acceptance is still pending."
+      ],
+      "submit_status": 200,
+      "retrieval_status": 200,
+      "score": 1.0,
+      "run_state": "complete",
+      "completed_run_hash": "f70c25dda54b0096b46d3041f8bd5b2ab610da1132768d7c2d8f46ddaaa89440",
+      "restart_confirmation": "Operator explicitly confirmed service restart before this request",
+      "restart_retrieval_status": 200,
+      "post_restart_run_hash": "f70c25dda54b0096b46d3041f8bd5b2ab610da1132768d7c2d8f46ddaaa89440",
+      "verified_at": "2026-10-06T07:54:13.508436+00:00",
+      "elapsed_s": 2.656,
+      "storage": "user_owned_remote_neon_postgres",
+      "api_hosted_on_render": false,
+      "database_claim_required": false,
+      "server_process_before": 4549,
+      "server_process_after": 4866,
+      "implementation_hash": "308d984f550a340af0ad6b07c4389ac4d37c50d3992f90e56c0b78526641e4e4",
+      "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
+      "client_sha256": "390085a188bc2ad4df87f9b8e938e0a036909a1726e0915d2216b4b4ca70af24",
+      "judge_model": "gemini-3.5-flash-lite",
+      "judge_acceptance": "Actual Google API call completed; independent client output scored1.0."
+    }
+  ]
+}

@@ -1,8 +1,54 @@
 # Evaluation harness
 
-No genuine model results are included before model calls are explicitly executed.
-Tests use `httpx.MockTransport` or named fixture providers and are not benchmark
-results. The default install cannot perform local model inference.
+Real remote results are now recorded; Qwen/GRPO and the final three-policy
+comparison remain pending Colab. Tests and fixtures are excluded from benchmarks.
+No local model inference, training or weight downloads have run.
+
+## Recorded remote comparison — 2026-10-06
+
+Both configurations use the same frozen first 30 evaluation tasks, seed 7001,
+three stochastic rollouts, temperature 0.7, 256 completion tokens and low reasoning
+effort. The same production judge uses 512 tokens and temperature 0. The owner
+confirmed free-tier access and disabled billing; authenticated model metadata and
+real inference calls were checked. Confirmed spend is $0 under explicit free
+pricing, with a hard $0 cap. Independent human judge/fidelity reviews are pending.
+
+Gemini 3.5 Flash-Lite completed **90/90** samples after bounded provider retries
+and resuming only operational failures. Its mean reward is **0.11444 ± 0.03845**
+(sample SD across three complete rollout means). Tier means are 0.00667/0.00167/
+0.33500 for tiers 1/2/3. Pass rates are 0%/0%/26.67%. Mean end-to-end latency is
+3.741s, including saved failed attempts; 208,962 usage tokens and 51 policy retry
+attempts were recorded. Wrong completed answers were never rerun or repaired.
+[Configuration](../results/gemini-3.5-comparison/config.json),
+[metrics](../results/gemini-3.5-comparison/metrics.json),
+[transcripts](../results/gemini-3.5-comparison/transcript.jsonl).
+
+Gemini 3.8 Flash remains **partial: 8/90 completed**, 43 observed operational
+failures and 39 samples not completed. Repeated 429 responses and initial 503s
+prevented progress, so the run was stopped and preserved for resume. There are no
+complete replicate means: leaderboard mean±SD is unavailable, and no ranking
+against Flash-Lite is claimed. The completed-sample mean 0.146875 is only a biased
+partial-coverage diagnostic, not the benchmark aggregate. Confirmed spend is $0.
+[Configuration](../results/gemini-3.8-comparison/config.json),
+[metrics](../results/gemini-3.8-comparison/metrics.json),
+[transcripts](../results/gemini-3.8-comparison/transcript.jsonl).
+
+The twelve-task tool-use run is **partial: 14/36 completed**, with 22
+`PROVIDER_RATE_LIMIT` failures. Saved transcripts record 94 tool calls; completed
+answers include five turn-limit failures, four invalid-contract failures and five
+substantive failures. No complete replicate exists, so no tool-versus-single
+ranking is claimed. Rule and task evidence were accessed through the public tools;
+wrong completed answers were preserved. Confirmed spend is $0.
+[Configuration](../results/gemini-3.5-tool/config.json),
+[metrics](../results/gemini-3.5-tool/metrics.json),
+[transcripts](../results/gemini-3.5-tool/transcript.jsonl).
+
+Actual failures include scalar retrieval results, truncated JSON, missing clauses
+and incorrect arithmetic. Ten exact outputs are prepared for independent reading
+in the [failure packet](../reviews/failure-review-packet.json). Strict formatting
+and substantive gates explain the low rewards; no evidence of model improvement
+or three-model superiority is claimed. The >=100-task generated distribution,
+Qwen held-out evaluation, transfer rankings and judge agreement study remain pending.
 
 ## Running
 
@@ -18,7 +64,7 @@ uv run python -m aster_gym.eval --tasks data/evaluation.jsonl \
 Set `MODEL_API_KEY`; configure the remote judge as in `.env.example`. Supply zero
 prices only after verifying the account's free-tier entitlement and disabling
 billing. Null/unknown prices are rejected. `configs/eval.json` contains three
-suggested configurations and cohort definitions; model IDs and quotas must be
+configured policies and cohort definitions; model IDs and quotas must be
 verified before experiment freeze. The small Qwen configuration runs in Colab.
 
 `run_evaluation(tasks, output_dir, model=..., provider=...)` is also the cloud
@@ -52,7 +98,11 @@ identical configuration to skip every completed response, including wrong
 answers. Infrastructure failures may retry. Pending judge scoring reuses the
 same final answer. Prior failed transcripts and costs remain in the run. Changed
 prompts, tasks, versions, pricing or sampling configuration require a new run.
-One process should own a run directory; concurrency is within that process.
+Retain the original run directory, including ignored `.records` and its pinned
+code revision, when resuming. Published/imported summaries are archival evidence;
+a missing journal raises `RESUME_JOURNAL_MISSING` before any call rather than
+resampling answers. One process should own a run directory; concurrency is within
+that process.
 
 The provider's retries fit inside the outer rollout deadline. Six tool turns,
 24 tool calls, eight calls per assistant message, bounded arguments, and bounded
@@ -83,7 +133,7 @@ run must not be ranked against another model's 30-task subset.
 The actual deterministic baselines have been run over both 120 tasks and the
 frozen first 30 balanced tasks. Read their recomputed results in
 `docs/saved-results.md`. Replicates repeat a handwritten policy and are explicitly
-not stochastic model evidence. No genuine model distribution is claimed yet.
+not stochastic model evidence. The required >=100-task model distribution remains pending; the 30-task remote comparison does not replace it.
 
 After imports, `uv run aster-gym analyze` computes Track B average-tie-rank
 Spearman agreement and task-level ranking reversals from complete matched runs.

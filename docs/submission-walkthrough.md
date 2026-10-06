@@ -1,7 +1,8 @@
 # Submission walkthrough
 
 Use [the checklist](submission-checklist.md) for current status. Repository and
-baseline dashboard are published. Code checks do not complete genuine experiments
+results dashboard are published, including the completed remote Flash-Lite run.
+Code checks do not complete the remaining experiments
 or independent human review. Keep all model work in Colab or a remote API.
 
 ## 1. Understand and review

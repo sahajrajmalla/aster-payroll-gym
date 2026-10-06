@@ -1,136 +1,949 @@
 {
-  "status": "pending_real_model_outputs_and_human_review",
-  "instructions": "Replace null fields only after reading 5\u201310 genuine failed model transcripts. Do not use fixture or adversarial policy outputs as model failures.",
+  "status": "genuine_failures_selected_human_review_pending",
+  "prepared_at": "2026-10-06T08:00:36.711963+00:00",
+  "selection": "Purposive diagnostic selection: ten completed model outputs across three tiers and two remote configurations; not a representative frequency estimate.",
+  "pass_threshold": 0.975,
+  "instructions": "Read the source task, rule clauses and exact model output before completing reviewer, reviewed, category, clause_violated, reward_caught_failure and remedy. draft_assessment is an unreviewed suggestion. Operational provider failures are excluded. rollout_or_step is zero-based. Do not label these rows human-reviewed until you actually inspect them.",
+  "source_snapshots": [
+    {
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "source_directory": "results/gemini-3.8-comparison",
+      "observed_journal_rows": 51,
+      "planned_samples": 90,
+      "completed_answer_samples": 8,
+      "completed_below_pass_threshold": 8,
+      "operational_or_pending_samples": 43,
+      "below_threshold_gate_counts": {
+        "CORRECTNESS_CAP": 7,
+        "INVALID_CONTRACT": 1
+      },
+      "note": "Snapshot only; later retries may replace operational failures, never these selected completed answers. No full-replicate model ranking is asserted."
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "source_directory": "results/gemini-3.5-comparison",
+      "observed_journal_rows": 90,
+      "planned_samples": 90,
+      "completed_answer_samples": 84,
+      "completed_below_pass_threshold": 76,
+      "operational_or_pending_samples": 6,
+      "below_threshold_gate_counts": {
+        "INVALID_CONTRACT": 59,
+        "CORRECTNESS_CAP": 17
+      },
+      "note": "Snapshot only; later retries may replace operational failures, never these selected completed answers. No full-replicate model ranking is asserted."
+    }
+  ],
   "failures": [
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-01",
+      "evidence_kind": "model_run",
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "tier": 1,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/12f24ab179680000075d9068.json",
+      "source_record_sha256": "d29db5fa3d3ef1d5b3a8cf526206df28e16fb274cfe997a033ca346f6962ab67",
+      "source_transcript": "results/gemini-3.8-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-b7aa12c715de9cf2cf51",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "fdf7e98cf707d32a6a130b28aa0f25e3617d6424147b3a25f0b818a9d0f755b0",
+      "observed_output": "{\"decision\": \"answer\", \"result\": {\"allowance_cents\": 8000}, \"issue_codes\": [], \"missing_fields\": [], \"citations\": [\"R8\", \"R11\"], \"explanation\": \"For pay date 2029-01-16, the uniquely applicable schedule is ASTER-2029 (effective 2029-01-01 to 2029-12-31), which specifies an allowance_cents of 8000.\"}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.2,
+        "gate": "CORRECTNESS_CAP",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R9"
+            ],
+            "code": "CALIBRATED_ACTION",
+            "score": 1.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R1",
+              "R10",
+              "R11",
+              "R8"
+            ],
+            "code": "SUBSTANTIVE_MISMATCH",
+            "score": 0.0,
+            "weight": 0.6
+          },
+          "fields": {
+            "clauses": [
+              "R1",
+              "R10",
+              "R11",
+              "R8"
+            ],
+            "code": "FIELD_ACCURACY",
+            "score": 1.0,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R1",
+              "R10"
+            ],
+            "code": "VALID_CONTRACT",
+            "score": 1.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "omitted_required_citations",
+        "secondary_tags": [],
+        "suggested_clauses": [
+          "R1",
+          "R10"
+        ],
+        "observation": "The requested allowance is numerically correct, but citations omit R1 and R10 required by the frozen answer.",
+        "remedy": "Enumerate applicable unit, answer-contract and retrieval clauses before emitting the final object."
+      },
+      "source_scores": "results/gemini-3.8-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-02",
+      "evidence_kind": "model_run",
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/5633ee46a7f68e746e048290.json",
+      "source_record_sha256": "e3fa2be446a6f86294db4e15d04af5d4c757794ea457a5741d2a421e7c5d64f7",
+      "source_transcript": "results/gemini-3.8-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-0ec7d48247ff1b45b74b",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "6b454fb32ed437ba7dc4f8a85443cc00d6f741d48e57ceed2f61d6092f9d7dd1",
+      "observed_output": "{\"decision\": \"answer\", \"result\": {\"contribution_cents\": 0, \"gross_cents\": 522564, \"net_cents\": 458051, \"tax_cents\": 64513, \"taxable_cents\": 512564}, \"issue_codes\": [], \"missing_fields\": [], \"citations\": [\"R1\", \"R2\", \"R3\", \"R4\", \"R5\", \"R6\", \"R7\", \"R8\", \"R10\"], \"explanation\": \"Calculated payslip for 2030-01-18 under schedule ASTER-2030: gross is 522,564 cents, contribution is 0 cents as YTD pensionable earnings met the 1,200,000 ceiling, taxable pay is 512,564 cents after 10,000 allowance, tax is 64,513 cents, and net pay is 458,051 cents.\"}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.05,
+        "gate": "CORRECTNESS_CAP",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R9"
+            ],
+            "code": "WRONG_CONTENT",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R1",
+              "R10",
+              "R2",
+              "R3",
+              "R4",
+              "R5",
+              "R6",
+              "R7",
+              "R8"
+            ],
+            "code": "SUBSTANTIVE_MISMATCH",
+            "score": 0.0,
+            "weight": 0.6
+          },
+          "fields": {
+            "clauses": [
+              "R1",
+              "R10",
+              "R2",
+              "R3",
+              "R4",
+              "R5",
+              "R6",
+              "R7",
+              "R8"
+            ],
+            "code": "FIELD_ACCURACY",
+            "score": 0.2,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R1",
+              "R10"
+            ],
+            "code": "VALID_CONTRACT",
+            "score": 1.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "payroll_arithmetic_mismatch",
+        "secondary_tags": [
+          "gross_proration",
+          "marginal_tax",
+          "net_pay"
+        ],
+        "suggested_clauses": [
+          "R1",
+          "R3",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "observation": "Only contribution_cents matches the reference; gross, taxable, tax and net differ.",
+        "remedy": "Use bounded calculator calls for proration and band arithmetic; verify all five integer-cent fields."
+      },
+      "source_scores": "results/gemini-3.8-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-03",
+      "evidence_kind": "model_run",
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/76a0bf5ca7735ea4fe3942a9.json",
+      "source_record_sha256": "6ed5133a28a962aea2c001b0dff55368fea2d6cab537c36edbf73ccb2b7c05f4",
+      "source_transcript": "results/gemini-3.8-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-8af3e60200e8bcdecf77",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "7c954f4c9d3d7263b714a657544a9224c95a65c9ddc10937934960421f429410",
+      "observed_output": "{\n  \"decision\": \"answer\",\n  \"result\": {\n    \"contribution_cents\": 7709,\n    \"gross_cents\": 154176,\n    \"net_cents\": 142820,\n    \"tax_cents\": 3647,\n    \"taxable_cents\": 136467\n  },\n  \"issue_codes\": [],\n  \"missing_fields\": [],\n  \"citations\": [\n    \"R1\",\n    \"R2\",\n    \"R3\",\n    \"R4\",\n    \"R5\",\n    \"R6\",\n    \"R7\",\n    \"R8\",\n    \"R10\"\n  ],\n  \"explanation\": \"Calculated payslip for 2030-04-21 using the ASTER-2030 schedule: gross 154,176 cents (8/30 of 578,160 salary), pension contribution 7,709 cents (5%), taxable pay 136,467 cents (",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.0,
+        "gate": "INVALID_CONTRACT",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.6
+          },
+          "fields": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "incomplete_json",
+        "secondary_tags": [
+          "completion_length_limit"
+        ],
+        "suggested_clauses": [
+          "R10"
+        ],
+        "observation": "The response ends inside its explanation string. The visible monetary fields match the reference, but the final object cannot be parsed.",
+        "remedy": "Emit compact JSON with a short explanation within the existing completion budget; retain the strict parser."
+      },
+      "source_scores": "results/gemini-3.8-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-04",
+      "evidence_kind": "model_run",
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/a1ebd38bc42320326ee210d8.json",
+      "source_record_sha256": "4e7c9ba53bad87c38fca86aa86eaa2e687fa78651ca857100180299a577ac862",
+      "source_transcript": "results/gemini-3.8-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-0e33888836c453dcb91e",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "49f9e0643d9308adc8dfd56e040d682f6fcfbe8226b58a6104793b2530f786c4",
+      "observed_output": "{\"decision\": \"needs_information\", \"result\": null, \"issue_codes\": [\"NO_SCHEDULE\"], \"missing_fields\": [\"schedule\"], \"citations\": [\"R8\", \"R9\", \"R10\"], \"explanation\": \"Pay date 2031-12-22 lacks an applicable schedule covering 2031. Neither ASTER-2029 nor ASTER-2030 covers this period, and schedules cannot be extended past their end date. Please provide the 2031 schedule.\"}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.125,
+        "gate": "CORRECTNESS_CAP",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R9"
+            ],
+            "code": "WRONG_CONTENT",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10",
+              "R8",
+              "R9"
+            ],
+            "code": "SUBSTANTIVE_MISMATCH",
+            "score": 0.0,
+            "weight": 0.55
+          },
+          "fields": {
+            "clauses": [
+              "R10",
+              "R8",
+              "R9"
+            ],
+            "code": "BLOCKER_SET_F1",
+            "score": 0.5,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R1",
+              "R10"
+            ],
+            "code": "VALID_CONTRACT",
+            "score": 1.0,
+            "weight": 0.05
+          },
+          "judge": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "noncanonical_blocker_field",
+        "secondary_tags": [],
+        "suggested_clauses": [
+          "R9",
+          "R10"
+        ],
+        "observation": "NO_SCHEDULE is correctly identified, but missing_fields contains schedule rather than the canonical input field schedules.",
+        "remedy": "Use the exact affected input field name schedules; retain zero assumed-payroll computation."
+      },
+      "source_scores": "results/gemini-3.8-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-05",
+      "evidence_kind": "model_run",
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/e0ae8fcc123d2f5fe27e6bbf.json",
+      "source_record_sha256": "3e5eb40c73c159bd778982fb92c792d213d251f7ee2f3c2129e6f2e4cab2a944",
+      "source_transcript": "results/gemini-3.8-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-b18556242bce68d26e76",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "3f6419c222bb2672ea78f86298ece980ccf6f68f363edd6fca05eaa52bc332e2",
+      "observed_output": "{\"decision\": \"needs_information\", \"result\": null, \"issue_codes\": [\"SALARY_CONFLICT\"], \"missing_fields\": [\"salary_records\"], \"citations\": [\"R2\", \"R9\"], \"explanation\": \"There are two conflicting signed salary records effective on 2030-01-01 with different amounts (107938 and 109172 cents). Please provide a clarified authoritative salary record.\"}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.2,
+        "gate": "CORRECTNESS_CAP",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R9"
+            ],
+            "code": "CALIBRATED_ACTION",
+            "score": 1.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10",
+              "R2",
+              "R9"
+            ],
+            "code": "SUBSTANTIVE_MISMATCH",
+            "score": 0.0,
+            "weight": 0.55
+          },
+          "fields": {
+            "clauses": [
+              "R10",
+              "R2",
+              "R9"
+            ],
+            "code": "BLOCKER_SET_F1",
+            "score": 1.0,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R1",
+              "R10"
+            ],
+            "code": "VALID_CONTRACT",
+            "score": 1.0,
+            "weight": 0.05
+          },
+          "judge": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "omitted_required_citations",
+        "secondary_tags": [
+          "salary_conflict"
+        ],
+        "suggested_clauses": [
+          "R10"
+        ],
+        "observation": "The salary conflict and affected field are correct; the output omits the required R10 citation.",
+        "remedy": "Cite the answer-contract clause together with the authority and abstention clauses."
+      },
+      "source_scores": "results/gemini-3.8-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-06",
+      "evidence_kind": "model_run",
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "tier": 1,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.5-comparison/.records/12f24ab179680000075d9068.json",
+      "source_record_sha256": "c825de0224d3a6296e51ae16b6ef60d523b18547f33d2edff044b4daa145e7f0",
+      "source_transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-b7aa12c715de9cf2cf51",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "fdf7e98cf707d32a6a130b28aa0f25e3617d6424147b3a25f0b818a9d0f755b0",
+      "observed_output": "{\n  \"decision\": \"answer\",\n  \"result\": 8000,\n  \"issue_codes\": [],\n  \"missing_fields\": [],\n  \"citations\": [\n    \"R8\",\n    \"R11\"\n  ],\n  \"explanation\": \"For pay date 2029-01-16, the uniquely applicable schedule is ASTER-2029 (effective 2029-01-01 to 2029-12-31). The monthly allowance for this schedule is 8,000 cents.\"\n}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.0,
+        "gate": "INVALID_CONTRACT",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.6
+          },
+          "fields": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "wrong_result_shape",
+        "secondary_tags": [
+          "omitted_required_citations"
+        ],
+        "suggested_clauses": [
+          "R10"
+        ],
+        "observation": "result is the scalar 8000 rather than an object keyed by allowance_cents, causing INVALID_CONTRACT.",
+        "remedy": "Return result as an object containing exactly the requested field and integer cents."
+      },
+      "source_scores": "results/gemini-3.5-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-07",
+      "evidence_kind": "model_run",
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "rollout_or_step": 2,
+      "source_record": "results/gemini-3.5-comparison/.records/1061f047ce14c9b7949a71a8.json",
+      "source_record_sha256": "52b98ed9f89c99e3d24bf1e24e6fe954cabfe6087cc49c22637cb23130f66e01",
+      "source_transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-3fbdbdfaa092d0c3cb93",
+        "rollout": 2
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "54473994552347c21108215d69b48436edd9670407a02d3e14b3c4815857a7a1",
+      "observed_output": "{\n  \"decision\": \"answer\",\n  \"result\": {\n    \"gross_cents\": 159187,\n    \"contribution_cents\": 7959,\n    \"taxable_cents\": 141228,\n    \"tax_cents\": 4123,\n    \"net_pay_cents\": 147105\n  },\n  \"issue_codes\": [],\n  \"missing_fields\": [],\n  \"citations\": [\n    \"R1\",\n    \"R2\",\n    \"R3\",\n    \"R4\",\n    \"R5\",\n    \"R6\",\n    \"R7\",\n    \"R8\"\n  ],\n  \"explanation\": \"Calculated payslip for pay date 2030-05-06 using ASTER-2030 schedule and valid salary record. Gross = 170898 * 24 / 31 + 41882 = 159187 cents. Contribution = 7959. Taxable = 1412",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.0,
+        "gate": "INVALID_CONTRACT",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.6
+          },
+          "fields": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "incomplete_json",
+        "secondary_tags": [
+          "wrong_result_field_name",
+          "payroll_arithmetic_mismatch"
+        ],
+        "suggested_clauses": [
+          "R10",
+          "R3",
+          "R6",
+          "R7"
+        ],
+        "observation": "The output ends inside its explanation, uses net_pay_cents rather than net_cents, and its visible arithmetic differs from the reference. The stored gate is INVALID_CONTRACT.",
+        "remedy": "Prioritize valid compact JSON and canonical result fields; then check proration and marginal tax with the calculator."
+      },
+      "source_scores": "results/gemini-3.5-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-08",
+      "evidence_kind": "model_run",
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "rollout_or_step": 2,
+      "source_record": "results/gemini-3.5-comparison/.records/2b7314a25fb9582fd1eb6705.json",
+      "source_record_sha256": "c139398bb477328f4a00fb8fce1d1ec89d7a86b77762154dc2ae5c3685496d12",
+      "source_transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-199220f67cfd29854916",
+        "rollout": 2
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "4aa895339bac47d32715575532b625c371fb85e172bbb757132f6f351f9ee524",
+      "observed_output": "```json\n{\"decision\": \"needs_information\", \"result\": null, \"issue_codes\": [\"INVALID_INPUT\"], \"missing_fields\": [\"ytd_pensionable_cents\"], \"citations\": [\"R4\", \"R9\"], \"explanation\": \"The payroll record lacks year-to-date pensionable earnings (ytd_pensionable_cents), which is required by R4 to calculate employee contribution. Please provide the YTD pensionable earnings for the 2030 tax year.\"}\n```",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.0,
+        "gate": "INVALID_CONTRACT",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.55
+          },
+          "fields": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          },
+          "judge": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "markdown_wrapped_json",
+        "secondary_tags": [
+          "incorrect_issue_code",
+          "omitted_required_citations"
+        ],
+        "suggested_clauses": [
+          "R10",
+          "R4",
+          "R9"
+        ],
+        "observation": "The model wraps its object in a markdown fence. Inside the fence it uses INVALID_INPUT for absent YTD evidence rather than MISSING_INPUT.",
+        "remedy": "Emit one bare JSON object and distinguish absent evidence from an invalid supplied value."
+      },
+      "source_scores": "results/gemini-3.5-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-09",
+      "evidence_kind": "model_run",
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "rollout_or_step": 1,
+      "source_record": "results/gemini-3.5-comparison/.records/2fb7f28239a86f984f827527.json",
+      "source_record_sha256": "5e287c4a6079a2e0a7f2ceaaf9c9ca11a44c9e65634676f4e120988fb007209e",
+      "source_transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-b18556242bce68d26e76",
+        "rollout": 1
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "3f6419c222bb2672ea78f86298ece980ccf6f68f363edd6fca05eaa52bc332e2",
+      "observed_output": "{\n  \"decision\": \"needs_information\",\n  \"result\": null,\n  \"issue_codes\": [\n    \"SALarly_CONFLICT\"\n  ],\n  \"missing_fields\": [\n    \"salary_records\"\n  ],\n  \"citations\": [\n    \"R2\",\n    \"R9\"\n  ],\n  \"explanation\": \"There are two signed salary records effective on 2030-01-01 with different monthly salary amounts (107938 and 109172 cents), creating an unresolved salary conflict under R2.\"\n}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.125,
+        "gate": "CORRECTNESS_CAP",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R9"
+            ],
+            "code": "WRONG_CONTENT",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10",
+              "R2",
+              "R9"
+            ],
+            "code": "SUBSTANTIVE_MISMATCH",
+            "score": 0.0,
+            "weight": 0.55
+          },
+          "fields": {
+            "clauses": [
+              "R10",
+              "R2",
+              "R9"
+            ],
+            "code": "BLOCKER_SET_F1",
+            "score": 0.5,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R1",
+              "R10"
+            ],
+            "code": "VALID_CONTRACT",
+            "score": 1.0,
+            "weight": 0.05
+          },
+          "judge": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "incorrect_issue_code",
+        "secondary_tags": [
+          "omitted_required_citations"
+        ],
+        "suggested_clauses": [
+          "R9",
+          "R10"
+        ],
+        "observation": "The model writes SALarly_CONFLICT instead of the defined SALARY_CONFLICT code, and omits R10.",
+        "remedy": "Copy issue codes exactly from R9 and cite R10; validate code spelling before submission."
+      },
+      "source_scores": "results/gemini-3.5-comparison/scores.json"
     },
     {
-      "run_id": null,
-      "task_id": null,
-      "rollout_or_step": null,
-      "observed_output": null,
+      "example_id": "failure-10",
+      "evidence_kind": "model_run",
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "rollout_or_step": 0,
+      "source_record": "results/gemini-3.5-comparison/.records/3077a81e75e27abc057b8eed.json",
+      "source_record_sha256": "f4b80ed0791c1998dfc07371c6f973b46d43421cc272c06fa231a53f6e22947b",
+      "source_transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "source_lookup": {
+        "task_id": "task-299315e5e138e06d2863",
+        "rollout": 0
+      },
+      "code_revision": "a39134bf359b7a48c98001ac07fe233d4bd51795",
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0",
+      "task_input_hash": "7eeab8c9a98bf120d3a14473e441d286e8ef73d6cbadf7330e0d4474996d7d23",
+      "observed_output": "{\n  \"decision\": \"needs_information\",\n  \"result\": null,\n  \"issue_codes\": [\n    \"NO_SCHEDULE\"\n  ],\n  \"missing_fields\": [\n    \"schedule\"\n  ],\n  \"citations\": [\n    \"R8\",\n    \"R9\"\n  ],\n  \"explanation\": \"No applicable schedule found for pay date 2031-12-10. Schedules provided end at 2030-12-31. Please provide a valid schedule for 2031.\"\n}",
+      "scorer_diagnostics": {
+        "status": "complete",
+        "score": 0.125,
+        "gate": "CORRECTNESS_CAP",
+        "error_code": null,
+        "components": {
+          "action": {
+            "clauses": [
+              "R9"
+            ],
+            "code": "WRONG_CONTENT",
+            "score": 0.0,
+            "weight": 0.1
+          },
+          "exact": {
+            "clauses": [
+              "R10",
+              "R8",
+              "R9"
+            ],
+            "code": "SUBSTANTIVE_MISMATCH",
+            "score": 0.0,
+            "weight": 0.55
+          },
+          "fields": {
+            "clauses": [
+              "R10",
+              "R8",
+              "R9"
+            ],
+            "code": "BLOCKER_SET_F1",
+            "score": 0.5,
+            "weight": 0.25
+          },
+          "format": {
+            "clauses": [
+              "R1",
+              "R10"
+            ],
+            "code": "VALID_CONTRACT",
+            "score": 1.0,
+            "weight": 0.05
+          },
+          "judge": {
+            "clauses": [
+              "R10"
+            ],
+            "code": "NOT_EARNED",
+            "score": 0.0,
+            "weight": 0.05
+          }
+        }
+      },
       "clause_violated": null,
       "category": null,
       "secondary_tags": [],
       "reviewer": null,
       "reviewed": false,
       "reward_caught_failure": null,
-      "remedy": null
+      "remedy": null,
+      "draft_assessment": {
+        "status": "unreviewed_suggestion",
+        "category": "noncanonical_blocker_field",
+        "secondary_tags": [
+          "omitted_required_citations"
+        ],
+        "suggested_clauses": [
+          "R9",
+          "R10"
+        ],
+        "observation": "The response identifies NO_SCHEDULE, but calls the affected field schedule instead of schedules and omits R10.",
+        "remedy": "Use the exact affected input field name schedules and cite the diagnosis contract."
+      },
+      "source_scores": "results/gemini-3.5-comparison/scores.json"
     }
-  ]
+  ],
+  "source_note": "source_record and its checksum identify the local atomic evaluation journal, which is excluded from Git. Exact output and scorer diagnostics are preserved in this committed packet. Published source_transcript and source_scores are canonical finalized artifacts, located by source_lookup task_id and zero-based rollout."
 }
