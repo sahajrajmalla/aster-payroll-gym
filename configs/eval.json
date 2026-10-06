@@ -1,5 +1,5 @@
 {
-  "status": "setup_required_no_model_runs_yet",
+  "status": "remote_credentials_configured_cloud_and_human_evidence_pending",
   "api_key_env": "MODEL_API_KEY",
   "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
   "rollouts": 3,
@@ -14,14 +14,22 @@
       "name": "gemini-3.8-flash",
       "role": "frontier",
       "execution": "remote_api",
-      "pricing": null,
+      "pricing": {
+        "input_per_million": 0,
+        "output_per_million": 0,
+        "verified_free": true
+      },
       "reasoning_effort": "low"
     },
     {
       "name": "gemini-3.5-flash-lite",
       "role": "efficient",
       "execution": "remote_api",
-      "pricing": null,
+      "pricing": {
+        "input_per_million": 0,
+        "output_per_million": 0,
+        "verified_free": true
+      },
       "reasoning_effort": "low"
     },
     {
@@ -61,15 +69,19 @@
       "mode": "single"
     }
   },
-  "pricing_note": "Remote prices intentionally unset. Verify model availability, explicit free-tier entitlement and disabled billing before supplying verified_free=true and zero prices. Unknown prices fail closed. Model IDs are setup defaults, not claims of available access or recorded results.",
+  "pricing_note": "Owner confirmed disabled billing and free-tier access on 2026-10-06. Remote costs use explicit zero pricing and hard cap0; provider quota errors remain operational failures. Qwen inference/training require Colab.",
   "model_sources": {
     "checked_on": "2026-10-05",
     "frontier_model": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
     "frontier_selection_evidence": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
     "efficient_model": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite",
     "pricing": "https://ai.google.dev/gemini-api/docs/pricing",
-    "account_access_verified": false,
+    "account_access_verified": true,
     "note": "Official model IDs and published standard free-tier prices were checked. User account access, quotas, region, and disabled billing still require verification. Frontier role is a selection inference from vendor benchmark evidence, not a measured result in this gym.",
-    "openai_compatibility": "https://ai.google.dev/gemini-api/docs/openai"
+    "openai_compatibility": "https://ai.google.dev/gemini-api/docs/openai",
+    "account_verification": {
+      "checked_on": "2026-10-06",
+      "method": "Authenticated metadata-only models listing; both configured IDs present. Owner confirmed billing disabled/free-tier access. Inference quotas are tested separately."
+    }
   }
 }
