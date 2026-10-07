@@ -3,8 +3,8 @@
 Open the [Colab notebook](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb).
 **No training, open-weight inference or weight downloads run on the laptop.**
 The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
-There is no CPU/MPS fallback or local override. GPU acceptance and model findings
-remain pending until genuine runs succeed.
+There is no CPU/MPS fallback or local override. The owner-supplied Tesla T4
+preflight passed; model findings remain pending.
 
 ## Recorded attempt and preflight rerun
 
@@ -18,6 +18,30 @@ package even on hosted Colab. The guard now checks bounded system package
 locations as well, without changing Python's import path. Explicit start, hosted
 runtime markers and CUDA remain mandatory; there is no local or CPU fallback.
 Preflight now saves structured, sanitized diagnostics instead of only an exit code.
+
+The [later rerun](colab-preflight-passed-2026-10-07.json) passed all preflight checks
+at revision `2cc6eb1b7d90c9e5e96369508ad1965cb4efeccc`. Task preparation then
+failed because the notebook passed string filenames to a writer expecting `Path`.
+The writer now accepts both. Its regression test executes the exact notebook
+command and checks that the 30/12-task cohorts retain the frozen inputs.
+
+For the already-open notebook at the older revision, replace only `cohort_code`
+in the preflight/cohort cell with the following, then rerun that cell:
+
+```python
+cohort_code = (
+    "from pathlib import Path; "
+    "from aster_gym.generator import read_taskset, write_taskset; "
+    "tasks = read_taskset('data/evaluation.jsonl'); "
+    "write_taskset(tasks[:30], Path('data/comparison.jsonl')); "
+    "write_taskset(tasks[:12], Path('data/tool-comparison.jsonl'))"
+)
+```
+
+This works without reinstalling or starting a model. A pending transfer approval
+skips only transfer tasks. After task preparation finishes, enable
+`START_INFERENCE=True` in the small-model evaluation cell; keep all API/training
+switches off in no-key mode.
 
 To retry:
 

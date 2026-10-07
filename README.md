@@ -20,8 +20,9 @@ The Colab notebook now defaults to no-API mode: Qwen inference can run on its GP
 while training, remote comparisons and judge study are explicitly skipped.
 Judge-dependent scores remain pending. This mode produces partial evidence and
 does not complete all assignment requirements; see [Colab guide](docs/colab.md).
-The [owner-supplied October 7 status](docs/colab-run-status-2026-10-07.json)
-records a failed GPU preflight and deliberate API skips, not a successful experiment.
+The [owner-supplied October 7 rerun](docs/colab-preflight-passed-2026-10-07.json)
+passed GPU/dependency/environment checks on a Tesla T4. Task preparation then
+encountered a string-path bug, now fixed; no Qwen or RL results are claimed.
 
 ## Start here
 

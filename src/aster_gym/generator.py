@@ -155,7 +155,8 @@ def public_task(task: Task, mode: str = "single") -> dict[str, Any]:
             "tools_available": ["read_document", "lookup_rules", "calculate"] if mode == "tool" else []}
 
 
-def write_taskset(tasks: list[Task], path: Path) -> None:
+def write_taskset(tasks: list[Task], path: str | Path) -> None:
+    path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("".join(t.model_dump_json() + "\n" for t in tasks), encoding="utf-8")
 

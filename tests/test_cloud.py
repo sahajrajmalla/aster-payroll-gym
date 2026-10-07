@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
 import stat
 import subprocess
 import sys
@@ -315,6 +316,35 @@ def test_notebook_has_no_saved_execution_or_results() -> None:
     code_cells = ["".join(c["source"]) for c in notebook["cells"] if c["cell_type"] == "code"]
     assert "COLAB_ONLY" in code_cells[0]
     assert all("assert COLAB_ONLY" in cell for cell in code_cells[1:])
+
+
+def test_exact_notebook_cohort_command_works_and_preserves_frozen_inputs(tmp_path: Path) -> None:
+    """Execute only deterministic task I/O, never the notebook's model/cloud commands."""
+    import ast
+
+    from aster_gym.generator import read_taskset
+
+    notebook = json.loads(Path("notebooks/aster_colab.ipynb").read_text())
+    code: str | None = None
+    for cell in notebook["cells"]:
+        if cell["cell_type"] != "code":
+            continue
+        for node in ast.parse("".join(cell["source"])).body:
+            if (isinstance(node, ast.Assign)
+                    and any(isinstance(target, ast.Name) and target.id == "cohort_code" for target in node.targets)):
+                code = ast.literal_eval(node.value)
+    assert isinstance(code, str)
+    frozen = Path("data/evaluation.jsonl")
+    (tmp_path / "data").mkdir()
+    shutil.copyfile(frozen, tmp_path / "data/evaluation.jsonl")
+    tasks = read_taskset(frozen)
+    for _ in range(2):
+        subprocess.run([sys.executable, "-c", code], cwd=tmp_path, check=True)
+        for name, count in (("comparison", 30), ("tool-comparison", 12)):
+            written = read_taskset(tmp_path / f"data/{name}.jsonl")
+            assert [task.model_dump() for task in written] == [task.model_dump() for task in tasks[:count]]
+            assert {tier: sum(task.difficulty == tier for task in written) for tier in (1, 2, 3)} == {
+                tier: count // 3 for tier in (1, 2, 3)}
 
 
 def test_notebook_contains_required_explicit_cloud_cohorts_and_judge_study() -> None:

@@ -1,7 +1,14 @@
 # RL training report
 
-**Status: Colab preflight failed; RL evidence remains pending. No training or
-model inference ran locally.**
+**Status: Colab GPU preflight passed; task preparation interrupted the rerun.
+RL evidence remains pending. No training or model inference ran locally.**
+
+The owner supplied a [successful preflight rerun](colab-preflight-passed-2026-10-07.json)
+at revision `2cc6eb1b7d90c9e5e96369508ad1965cb4efeccc`: Tesla T4, pinned dependencies
+and both environment adapters passed. The next command failed because notebook
+filenames were strings while `write_taskset` expected `Path`. The writer now accepts
+both forms; a regression test executes the exact cohort command. This is setup
+evidence, not inference or training evidence. Continue using [the Colab guide](colab.md).
 
 The owner supplied a [Colab attempt record](colab-run-status-2026-10-07.json) on
 2026-10-07, at revision `91366b4b07b60392c637ef2d615b5df58e10f4f6`.
@@ -15,8 +22,8 @@ A code audit found a probable preflight issue: the isolated `uv` environment may
 not find the native Colab package. The guard now also recognizes that package in
 bounded system locations without importing host dependencies or enabling local
 execution. A new preflight diagnostic records sanitized check outcomes. The exact
-cause of this historical failure remains unconfirmed; a successful cloud rerun is
-still required. Follow [the rerun steps](colab.md#recorded-attempt-and-preflight-rerun).
+cause of the original failure remains unconfirmed. The later rerun passed preflight;
+both attempts remain preserved.
 
 The default notebook mode, `SKIP_API_PHASES=True`, intentionally skips RL because
 judge credentials are unavailable. It can run Qwen evaluation on Colab CUDA with

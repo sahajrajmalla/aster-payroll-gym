@@ -28,8 +28,10 @@ reward **0.11444 ± 0.03845** across three rollout means. Gemini 3.8 Flash and t
 tool-use run are partial; they do not establish a three-model ranking. The
 independent failure packet is prepared but unreviewed. Qwen/RL, judge reliability,
 transfer findings remain pending. The [2026-10-07 Colab attempt](colab-run-status-2026-10-07.json)
-records failed GPU preflight and skipped API phases; it contains no model or
-training results. Public Tier-2/3 submissions scored **1.0** and
+records an initial failed GPU preflight and skipped API phases. A
+[later rerun](colab-preflight-passed-2026-10-07.json) passed on a Tesla T4, then
+task preparation failed on a string-path bug, now fixed. Neither attempt contains
+model or training results. Public Tier-2/3 submissions scored **1.0** and
 survived a confirmed hosted restart; eleven API contract checks passed. These API calls
 were remote; no open-weight model inference or training ran on this computer.
 
@@ -68,13 +70,12 @@ Do not claim three-model ranking or transfer ranking agreement without complete,
 comparable records. In the RL segment, show configuration and the pending dashboard
 instead of invented curves; explain the planned method and this limitation.
 
-Until a successful preflight rerun produces genuine evidence, also say:
+Until genuine Qwen results exist, also say:
 
-> “My Colab preflight exited with an error, so this attempt produced no Qwen or
-> training results. The recorded status does not identify the cause. A code audit
-> found and fixed a runtime-recognition issue involving the isolated environment;
-> that fix still needs successful cloud verification. I have preserved the failed
-> attempt and marked the experiments incomplete.”
+> “The initial preflight failed. After a runtime-recognition fix, my Colab Tesla T4
+> passed GPU, dependency and environment checks. Task preparation then encountered
+> a path-handling bug, which was corrected and regression-tested. These attempts
+> produced no Qwen or training results; those experiments remain incomplete.”
 
 If preflight later passes, replace this with the actual rerun status. Passing
 preflight is setup evidence, not a model benchmark or training result.

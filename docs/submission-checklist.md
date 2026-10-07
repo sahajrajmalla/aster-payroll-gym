@@ -21,7 +21,9 @@ training, remote comparison and judge reliability. It contains no Qwen/RL result
 Stderr was not supplied, so the original failure cause is unconfirmed. The isolated
 environment recognition fix and structured preflight diagnostics require a cloud
 rerun; see [the instructions](colab.md#recorded-attempt-and-preflight-rerun).
-No-key mode remains an explicitly partial submission.
+The [subsequent preflight](colab-preflight-passed-2026-10-07.json) passed on a Tesla T4.
+Cohort preparation then hit a string-path bug, now fixed and regression-tested.
+Qwen inference and RL have not yet produced evidence. No-key mode remains partial.
 
 ## Implementation readiness
 
@@ -36,7 +38,7 @@ No-key mode remains an explicitly partial submission.
 - [x] Public GitHub repository and results dashboard; green GitHub CI.
 - [x] Clean-clone install/startup and independent public-contract Tier-2 local smoke.
 - [x] Permanent remote Neon: correct Tier-2/3 scores 1.0, real judge and process restart.
-- [ ] Actual optional verifiers and GPU startup verified in Colab.
+- [x] Owner-supplied Colab preflight: optional verifiers and Tesla T4 startup passed.
 
 ## Submission readiness — must not be silently skipped
 

@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-10-07T05:42:34.994358+00:00",
+  "code_revision": "2cc6eb1b7d90c9e5e96369508ad1965cb4efeccc",
+  "status": "passed",
+  "checks": {
+    "hosted_colab": true,
+    "cuda": true,
+    "dependencies": true,
+    "environments": true
+  },
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.1",
+    "trl": "0.26.2",
+    "verifiers": "0.1.14",
+    "peft": "0.17.1",
+    "accelerate": "1.10.1"
+  },
+  "cuda_device": "Tesla T4",
+  "finished_at": "2026-10-07T05:42:55.116139+00:00"
+}
