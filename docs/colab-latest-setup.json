@@ -5,9 +5,21 @@
     "status": "passed",
     "started_at": "2026-10-07T06:02:21.515876+00:00",
     "finished_at": "2026-10-07T06:02:45.363689+00:00",
-    "checks": {"hosted_colab": true, "cuda": true, "dependencies": true, "environments": true},
+    "checks": {
+      "hosted_colab": true,
+      "cuda": true,
+      "dependencies": true,
+      "environments": true
+    },
     "cuda_device": "Tesla T4",
-    "versions": {"torch": "2.8.0", "transformers": "4.57.1", "trl": "0.26.2", "verifiers": "0.1.14", "peft": "0.17.1", "accelerate": "1.10.1"}
+    "versions": {
+      "torch": "2.8.0",
+      "transformers": "4.57.1",
+      "trl": "0.26.2",
+      "verifiers": "0.1.14",
+      "peft": "0.17.1",
+      "accelerate": "1.10.1"
+    }
   },
   "steps": {
     "gpu-preflight": "command_finished",
@@ -19,5 +31,18 @@
     "remote-model-comparison": "API_PHASES_SKIPPED",
     "judge-reliability": "API_PHASES_SKIPPED"
   },
-  "evidence_scope": "setup only; no model completions or training metrics in these records"
+  "evidence_scope": "setup only; no model completions or training metrics in these records",
+  "followup_inference": {
+    "evidence_source": "Observed existing Colab session through native browser UI",
+    "observed_at": "2026-10-07T06:40:25.788673+00:00",
+    "source_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+    "comparison_samples_completed": 90,
+    "comparison_samples_expected": 90,
+    "archive": "aster-qwen-comparison.zip",
+    "import_status": "pending local file access; not yet accepted into repository results",
+    "remaining_cohorts": "120-task evaluation running; 12-task tool comparison follows",
+    "export_status": "full compact export queued after evaluation",
+    "training_status": "skipped API_PHASES_SKIPPED",
+    "local_model_execution": false
+  }
 }
