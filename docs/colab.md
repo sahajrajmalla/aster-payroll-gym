@@ -5,7 +5,8 @@ Open the [Colab notebook](https://colab.research.google.com/github/sahajrajmalla
 The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
 There is no CPU/MPS fallback or local override. The owner-supplied Tesla T4
 preflight passed. All 486 Qwen initial-policy samples were imported; see
-[evaluation findings](evaluation.md). RL remains unexecuted.
+[evaluation findings](evaluation.md). RL remains unexecuted. The remote judge repeat study has since completed locally through
+API requests; Colab still needs explicitly enabled access to its own judge secret.
 
 ## Setup evidence
 
@@ -24,8 +25,8 @@ repository revision, select a GPU, mount Drive and run setup/preflight. Leave th
 API switches off; enable only `START_INFERENCE=True` to run Qwen. Transfer tasks
 still require independent approval and a matching freeze.
 
-The updated notebook pins tested source revision
-`03d5e082c451d84375f67b1dad8c0a8096140ab0`, uses explicit `Path` arguments and
+The updated notebook pins source revision
+`fdf06e8d3cefbd3911eeec695604fdbeedef4d0b` (256 local tests and clean installation passed), uses explicit `Path` arguments and
 records validation/cohort preparation. Inference requires both `GPU_READY` and
 `DATA_READY`. An absent transfer review is recorded as pending without a traceback.
 To evaluate approved transfer tasks later, select the exact commit containing
