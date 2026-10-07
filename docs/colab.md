@@ -6,6 +6,31 @@ The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
 There is no CPU/MPS fallback or local override. GPU acceptance and model findings
 remain pending until genuine runs succeed.
 
+## Recorded attempt and preflight rerun
+
+The [2026-10-07 attempt](colab-run-status-2026-10-07.json), revision
+`91366b4b07b60392c637ef2d615b5df58e10f4f6`, records `gpu-preflight` exit 1 and
+three deliberate `API_PHASES_SKIPPED` phases. It contains no Qwen or RL evidence.
+No stderr was supplied; this status alone does not prove a missing GPU.
+
+The code audit found that isolated `uv` Python can miss the native `google.colab`
+package even on hosted Colab. The guard now checks bounded system package
+locations as well, without changing Python's import path. Explicit start, hosted
+runtime markers and CUDA remain mandatory; there is no local or CPU fallback.
+Preflight now saves structured, sanitized diagnostics instead of only an exit code.
+
+To retry:
+
+1. Save a fresh copy of the updated notebook and select **Runtime → Change runtime
+   type → GPU**. Run its setup cells so the clone uses the updated code revision.
+2. Keep `SKIP_API_PHASES=True` and all start switches off. Mount Drive and run
+   preflight. Preserve the earlier failed attempt.
+3. Expect the preflight diagnostic to say `status: passed` and `GPU_READY=True`.
+   If it fails, share the diagnostic and preflight cell output, with secrets removed.
+4. Only after preflight passes, enable `START_INFERENCE=True` if you want Qwen
+   evaluation. Export actual artifacts afterward. API-dependent phases remain
+   skipped, and the submission remains partial.
+
 ## Continue without API keys
 
 The notebook defaults to `SKIP_API_PHASES=True`. It does not load API secrets and

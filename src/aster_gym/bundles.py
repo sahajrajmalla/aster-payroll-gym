@@ -22,7 +22,7 @@ MAX_TOTAL = 100 * 1024 * 1024
 MAX_FILES = 256
 ALLOWED = {"config.json", "scores.json", "metrics.json", "transcript.jsonl", "training_metrics.jsonl",
            "splits.json", "reference_proof.json", "heldout.json", "checkpoint_metadata.json",
-           "run_status.json", "training_completions.jsonl", "selection.json", "failure.json", "budget.json"}
+           "run_status.json", "preflight.json", "training_completions.jsonl", "selection.json", "failure.json", "budget.json"}
 REQUIRED = {"config.json", "scores.json", "metrics.json", "transcript.jsonl"}
 
 

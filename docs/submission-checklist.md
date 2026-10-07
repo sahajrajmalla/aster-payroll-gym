@@ -15,6 +15,14 @@ API contract checks passed. [Acceptance evidence](render-sandbox-acceptance.json
 See the [deployment guide](deployment.md) for reproducing these checks.
 Independent reviews, Colab experiments and final evidence audits remain required.
 
+The [2026-10-07 Colab attempt](colab-run-status-2026-10-07.json) records failed
+GPU preflight at revision `91366b4b07b60392c637ef2d615b5df58e10f4f6` and skipped
+training, remote comparison and judge reliability. It contains no Qwen/RL results.
+Stderr was not supplied, so the original failure cause is unconfirmed. The isolated
+environment recognition fix and structured preflight diagnostics require a cloud
+rerun; see [the instructions](colab.md#recorded-attempt-and-preflight-rerun).
+No-key mode remains an explicitly partial submission.
+
 ## Implementation readiness
 
 - [x] Separate written authority, strict schemas and deterministic Python reference.

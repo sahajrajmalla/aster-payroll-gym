@@ -10,6 +10,7 @@ import sys
 import zipfile
 from collections.abc import Iterator
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -63,10 +64,116 @@ def test_importing_all_cloud_entrypoints_does_not_import_ml() -> None:
     script = """import sys
 import aster_gym.cloud.train
 import aster_gym.cloud.evaluate
+import aster_gym.cloud.preflight
 import aster_gym.bundles
 assert not any(k in sys.modules for k in ('torch','transformers','trl','peft','accelerate','datasets'))
 """
     subprocess.run([sys.executable, "-c", script], check=True)
+
+
+def test_isolated_colab_recognizes_host_package_without_imports(monkeypatch: pytest.MonkeyPatch,
+                                                              tmp_path: Path) -> None:
+    from aster_gym.cloud import guard
+
+    host_file = tmp_path / "python3.12/dist-packages/google/colab/__init__.py"
+    host_file.parent.mkdir(parents=True)
+    host_file.write_text("# Test-only host package artifact; never imported.\n")
+    monkeypatch.setattr(guard, "_COLAB_SYSTEM_ROOTS", (tmp_path,))
+    monkeypatch.setattr(guard.platform, "system", lambda: "Linux")
+    monkeypatch.setattr(guard.importlib.util, "find_spec", lambda name: None)
+    original_is_dir = Path.is_dir
+    monkeypatch.setattr(Path, "is_dir", lambda path: str(path) == "/content" or original_is_dir(path))
+    monkeypatch.setenv("COLAB_RELEASE_TAG", "test-only-colab-marker")
+    original_path = list(sys.path)
+    guard.require_colab(explicit=True)
+    assert sys.path == original_path and "torch" not in sys.modules
+    host_file.unlink()
+    with pytest.raises(CloudOnlyError, match="Cloud-only"):
+        guard.require_colab(explicit=True)
+    host_file.write_text("# Test-only package.\n")
+    monkeypatch.delenv("COLAB_RELEASE_TAG", raising=False)
+    monkeypatch.delenv("COLAB_BACKEND_VERSION", raising=False)
+    with pytest.raises(CloudOnlyError, match="Cloud-only"):
+        guard.require_colab(explicit=True)
+
+
+def test_local_guard_rejects_before_host_package_scan(monkeypatch: pytest.MonkeyPatch) -> None:
+    from aster_gym.cloud import guard
+
+    monkeypatch.setattr(guard.platform, "system", lambda: "Darwin")
+    monkeypatch.setenv("COLAB_RELEASE_TAG", "test-only-spoofed-marker")
+    monkeypatch.setattr(guard, "_host_colab_package_exists", lambda: pytest.fail("Local host scan ran"))
+    with pytest.raises(CloudOnlyError):
+        guard.require_colab(explicit=True)
+    with pytest.raises(CloudOnlyError, match="Explicit"):
+        guard.require_colab(explicit=False)
+    assert "torch" not in sys.modules
+
+
+def test_cuda_still_required_without_any_cpu_fallback(monkeypatch: pytest.MonkeyPatch) -> None:
+    from aster_gym.cloud import guard
+
+    monkeypatch.setattr(guard, "require_colab", lambda **kwargs: None)
+    monkeypatch.setitem(sys.modules, "torch", SimpleNamespace(cuda=SimpleNamespace(is_available=lambda: False)))
+    with pytest.raises(CloudOnlyError, match="CPU/MPS fallback is forbidden"):
+        guard.require_cuda(explicit=True)
+
+
+def test_preflight_preserves_failure_then_success_without_sensitive_errors(monkeypatch: pytest.MonkeyPatch,
+                                                                          tmp_path: Path) -> None:
+    from aster_gym.cloud import preflight
+
+    def no_cuda(**kwargs: object) -> None:
+        raise CloudOnlyError("sensitive-fixture-text")
+
+    path = tmp_path / "preflight.json"
+    monkeypatch.setattr(preflight, "require_colab", lambda **kwargs: None)
+    monkeypatch.setattr(preflight, "require_cuda", no_cuda)
+    monkeypatch.setattr(preflight, "code_revision", lambda: "test-only-revision")
+    assert not preflight.run_preflight(path, explicit=True)
+    failed = json.loads(path.read_text())["attempts"][0]
+    assert failed["failure_code"] == "CUDA_REQUIRED" and failed["status"] == "failed"
+    monkeypatch.setattr(preflight, "require_cuda", lambda **kwargs:
+                        SimpleNamespace(cuda=SimpleNamespace(get_device_name=lambda index: "fixture-gpu")))
+    monkeypatch.setattr(preflight, "version", lambda package: preflight.EXPECTED_VERSIONS[package])
+    monkeypatch.setattr(preflight, "_check_environments", lambda: None)
+    assert preflight.run_preflight(path, explicit=True)
+    report = json.loads(path.read_text())
+    assert report["status"] == "passed" and report["attempts"][0] == failed
+    assert len(report["attempts"]) == 2
+    assert report["attempts"][1]["checks"] == {
+        "hosted_colab": True, "cuda": True, "dependencies": True, "environments": True}
+    assert "sensitive-fixture-text" not in path.read_text()
+    assert "torch" not in sys.modules
+
+
+@pytest.mark.parametrize("stage", ["dependency", "environment"])
+def test_preflight_distinguishes_setup_failures(monkeypatch: pytest.MonkeyPatch, tmp_path: Path,
+                                             stage: str) -> None:
+    from aster_gym.cloud import preflight
+
+    def bad_environment() -> None:
+        raise ValueError("sensitive-fixture-text")
+
+    monkeypatch.setattr(preflight, "require_colab", lambda **kwargs: None)
+    monkeypatch.setattr(preflight, "require_cuda", lambda **kwargs:
+                        SimpleNamespace(cuda=SimpleNamespace(get_device_name=lambda index: "fixture-gpu")))
+    monkeypatch.setattr(preflight, "version", lambda package:
+                        "wrong-version" if stage == "dependency" else preflight.EXPECTED_VERSIONS[package])
+    monkeypatch.setattr(preflight, "_check_environments", bad_environment)
+    path = tmp_path / "preflight.json"
+    assert not preflight.run_preflight(path, explicit=True)
+    code = "DEPENDENCY_MISMATCH" if stage == "dependency" else "ENVIRONMENT_STARTUP_FAILED"
+    assert json.loads(path.read_text())["attempts"][0]["failure_code"] == code
+    assert "sensitive-fixture-text" not in path.read_text() and "torch" not in sys.modules
+
+
+def test_preflight_local_cli_refuses_before_ml_or_artifact_write(tmp_path: Path) -> None:
+    path = tmp_path / "preflight.json"
+    args = [sys.executable, "-m", "aster_gym.cloud.preflight", "--start-preflight", "--output", str(path)]
+    result = subprocess.run(args, capture_output=True, text=True)
+    assert result.returncode != 0 and "Cloud-only" in result.stderr
+    assert not path.exists()
 
 
 def test_no_implicit_consent() -> None:
@@ -111,6 +218,8 @@ def test_frozen_repository_splits_pass() -> None:
 def test_data_only_roundtrip_recomputes_aggregates(tmp_path: Path) -> None:
     run = sample_run(tmp_path / "run")
     (run / "model.safetensors").write_text("must not be exported")
+    diagnostic = {"status": "failed", "attempts": [{"status": "failed", "failure_code": "CUDA_REQUIRED"}]}
+    (run / "preflight.json").write_text(json.dumps(diagnostic))
     archive = export_bundle(run, tmp_path / "results.zip")
     with zipfile.ZipFile(archive) as source:
         assert all(not name.endswith("safetensors") for name in source.namelist())
@@ -118,6 +227,7 @@ def test_data_only_roundtrip_recomputes_aggregates(tmp_path: Path) -> None:
     metrics = json.loads((result / "metrics.json").read_text())
     assert metrics["aggregate"]["mean"] == 0.5
     assert metrics["aggregate"]["sd"] == 0.5
+    assert json.loads((result / "preflight.json").read_text()) == diagnostic
     with pytest.raises(BundleError, match="already exists"):
         import_bundle(archive, result)
 
@@ -308,6 +418,8 @@ def test_notebook_no_key_mode_preserves_inference_and_records_skipped_phases() -
     setup = next(source for source in sources if "SKIP_API_PHASES = True" in source)
     assert 'os.environ.pop(name, None)' in setup
     assert "aster-gym-results-no-api" in setup
+    assert "aster_gym.cloud.preflight" in code and "--start-preflight" in code
+    assert 'files.download(str(PREFLIGHT_PATH))' in code
 
 
 def test_complete_evaluation_cannot_omit_or_duplicate_replicates(tmp_path: Path) -> None:

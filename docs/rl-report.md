@@ -1,6 +1,22 @@
 # RL training report
 
-**Status: pending Colab execution. No training or model inference ran locally.**
+**Status: Colab preflight failed; RL evidence remains pending. No training or
+model inference ran locally.**
+
+The owner supplied a [Colab attempt record](colab-run-status-2026-10-07.json) on
+2026-10-07, at revision `91366b4b07b60392c637ef2d615b5df58e10f4f6`.
+`gpu-preflight` exited 1; training, remote comparison and judge reliability were
+explicitly skipped with `API_PHASES_SKIPPED`. The record contains no Qwen outputs,
+training steps, curves or held-out scores. Its failure status is valid evidence
+of an unsuccessful attempt, not a completed experiment.
+
+The record does not include stderr, so it cannot establish whether CUDA was absent.
+A code audit found a probable preflight issue: the isolated `uv` environment may
+not find the native Colab package. The guard now also recognizes that package in
+bounded system locations without importing host dependencies or enabling local
+execution. A new preflight diagnostic records sanitized check outcomes. The exact
+cause of this historical failure remains unconfirmed; a successful cloud rerun is
+still required. Follow [the rerun steps](colab.md#recorded-attempt-and-preflight-rerun).
 
 The default notebook mode, `SKIP_API_PHASES=True`, intentionally skips RL because
 judge credentials are unavailable. It can run Qwen evaluation on Colab CUDA with

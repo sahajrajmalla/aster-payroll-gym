@@ -27,7 +27,9 @@ Current evidence: Gemini 3.5 Flash-Lite completed 90/90 remote API samples with
 reward **0.11444 ± 0.03845** across three rollout means. Gemini 3.8 Flash and the
 tool-use run are partial; they do not establish a three-model ranking. The
 independent failure packet is prepared but unreviewed. Qwen/RL, judge reliability,
-transfer findings remain pending. Public Tier-2/3 submissions scored **1.0** and
+transfer findings remain pending. The [2026-10-07 Colab attempt](colab-run-status-2026-10-07.json)
+records failed GPU preflight and skipped API phases; it contains no model or
+training results. Public Tier-2/3 submissions scored **1.0** and
 survived a confirmed hosted restart; eleven API contract checks passed. These API calls
 were remote; no open-weight model inference or training ran on this computer.
 
@@ -65,6 +67,17 @@ as training. Existing saved Gemini results remain genuine historical evidence.
 Do not claim three-model ranking or transfer ranking agreement without complete,
 comparable records. In the RL segment, show configuration and the pending dashboard
 instead of invented curves; explain the planned method and this limitation.
+
+Until a successful preflight rerun produces genuine evidence, also say:
+
+> “My Colab preflight exited with an error, so this attempt produced no Qwen or
+> training results. The recorded status does not identify the cause. A code audit
+> found and fixed a runtime-recognition issue involving the isolated environment;
+> that fix still needs successful cloud verification. I have preserved the failed
+> attempt and marked the experiments incomplete.”
+
+If preflight later passes, replace this with the actual rerun status. Passing
+preflight is setup evidence, not a model benchmark or training result.
 
 ## 0:00–1:00 — problem and scope
 
