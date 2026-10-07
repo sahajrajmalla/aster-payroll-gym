@@ -439,7 +439,7 @@ def test_notebook_no_key_mode_preserves_inference_and_records_skipped_phases() -
     code = "\n".join(sources)
     assert "SKIP_API_PHASES = True" in code
     inference = next(source for source in sources if "START_INFERENCE = False" in source)
-    assert "if START_INFERENCE and GPU_READY:" in inference
+    assert "if START_INFERENCE and GPU_READY and DATA_READY:" in inference
     assert "ready_for_judge()" not in inference
     assert "JUDGE_UNAVAILABLE" in inference
     for flag in ("START_SMOKE", "START_SWEEPS", "START_REMOTE_EVAL", "START_JUDGE_STUDY"):
@@ -450,6 +450,44 @@ def test_notebook_no_key_mode_preserves_inference_and_records_skipped_phases() -
     assert "aster-gym-results-no-api" in setup
     assert "aster_gym.cloud.preflight" in code and "--start-preflight" in code
     assert 'files.download(str(PREFLIGHT_PATH))' in code
+
+
+@pytest.mark.parametrize("dataset_ok", [False, True])
+def test_notebook_preparation_records_pending_transfer_and_blocks_invalid_data(
+        monkeypatch: pytest.MonkeyPatch, tmp_path: Path, dataset_ok: bool) -> None:
+    """Exercise notebook control flow with stubbed commands; no Colab or model execution."""
+    notebook = json.loads(Path("notebooks/aster_colab.ipynb").read_text())
+    cell = next("".join(c["source"]) for c in notebook["cells"]
+                if c["cell_type"] == "code" and "cohort_code =" in "".join(c["source"]))
+    calls, skips = [], []
+
+    def stub_step(command, *, label, **kwargs):
+        calls.append(label)
+        return dataset_ok if label == "dataset-validation" else True
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(shutil, "disk_usage", lambda path: SimpleNamespace(free=10 * 1024**3))
+    state = {"COLAB_ONLY": True, "Path": Path, "json": json, "output_root": tmp_path,
+             "STATUS_PATH": tmp_path / "run_status.json", "UV": ["stub-not-a-real-command"],
+             "run_step": stub_step, "record_skip": lambda **kwargs: skips.append(kwargs)}
+    exec(compile(cell, "notebook-preparation-test", "exec"), state)
+    assert state["GPU_READY"] is True and state["DATA_READY"] is dataset_ok
+    assert state["TRANSFER_READY"] is False
+    assert "transfer-human-freeze" not in calls  # No approved marker, no transfer execution.
+    assert ("cohort-preparation" in calls) is dataset_ok
+    expected = "HUMAN_APPROVAL_PENDING" if dataset_ok else "DATASET_NOT_READY"
+    assert any(row["label"] == "transfer-human-freeze" and row["reason_code"] == expected for row in skips)
+
+
+def test_notebook_refuses_inference_after_dataset_failure() -> None:
+    notebook = json.loads(Path("notebooks/aster_colab.ipynb").read_text())
+    cell = next("".join(c["source"]) for c in notebook["cells"]
+                if c["cell_type"] == "code" and "START_INFERENCE = False" in "".join(c["source"]))
+    cell = cell.replace("START_INFERENCE = False", "START_INFERENCE = True", 1)
+    state = {"COLAB_ONLY": True, "GPU_READY": True, "DATA_READY": False,
+             "run_step": lambda *args, **kwargs: pytest.fail("Inference command ran on invalid data")}
+    exec(compile(cell, "notebook-inference-gate-test", "exec"), state)
+    assert "torch" not in sys.modules
 
 
 def test_complete_evaluation_cannot_omit_or_duplicate_replicates(tmp_path: Path) -> None:

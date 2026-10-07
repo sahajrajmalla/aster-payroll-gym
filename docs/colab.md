@@ -63,7 +63,16 @@ repository revision, select a GPU, mount Drive and run setup/preflight. Leave th
 API switches off; enable only `START_INFERENCE=True` to run Qwen. Transfer tasks
 still require independent approval and a matching freeze.
 
-This mode writes to `/content/drive/MyDrive/aster-gym-results-no-api`. It records
+The updated notebook pins tested source revision
+`03d5e082c451d84375f67b1dad8c0a8096140ab0`, uses explicit `Path` arguments and
+records validation/cohort preparation. Inference requires both `GPU_READY` and
+`DATA_READY`. An absent transfer review is recorded as pending without a traceback.
+To evaluate approved transfer tasks later, select the exact commit containing
+their signed freeze marker.
+
+This mode writes to `/content/drive/MyDrive/aster-gym-results-no-api-<revision>`,
+using the first twelve characters of the code revision. Earlier evidence stays
+in its original directory; an unchanged rerun can resume the matching directory. It records
 training, remote comparisons and judge reliability as skipped. The same scorer
 still applies: eligible blocking explanations have `status: pending` and
 `score: null` without a judge. Other outputs receive their deterministic score.
@@ -90,7 +99,7 @@ judge study. Training remains skipped until judge access is available.
    `REMOTE_FREE_TIER_CONFIRMED` for the two comparison models. Prices fail closed
    until confirmed. Keep the hard cost cap at zero.
 
-Full mode defaults to `/content/drive/MyDrive/aster-gym-results`. Use a fresh
+Full mode defaults to `/content/drive/MyDrive/aster-gym-results-<revision>`. Use a fresh
 output directory when adding a judge or changing configuration; a no-judge run
 cannot resume under a different judge identity. Preserve its original evidence.
 
