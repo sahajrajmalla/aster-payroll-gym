@@ -1,0 +1,14 @@
+{
+  "status": "accepted",
+  "archive_sha256": "139622b89d6e0b72fa967f63eaca9886221f38a21a54486c6de5f35889ae92bb",
+  "source_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+  "cohorts": {
+    "comparison-small": "results/qwen-colab-comparison",
+    "small-model-eval": "results/qwen-colab-full",
+    "tool-small": "results/qwen-colab-tool"
+  },
+  "comparison_duplicate_check": "identical; existing accepted run retained once",
+  "validation": "checksums, JSON schemas, versions, frozen cohort identity and recomputed summary metrics",
+  "weights_imported": false,
+  "manifest": "docs/colab-final-import-manifest.json"
+}

@@ -1,0 +1,976 @@
+{
+  "records": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.655738578999717,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 473,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.109916448000149,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 543,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.224378552999951,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 648,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.133856827999807,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 511,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.329604686000039,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 639,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.725673834999725,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 657,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.054459314000269,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 557,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.789364864000163,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 657,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.9588936879999892,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 440,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.6303677609998886,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 443,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.20775322999998,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 512,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.300485124000261,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 540,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.552705686999616,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 495,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.6826799460000075,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 512,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.43647818699992,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 657,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.348812553999778,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 479,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.529970624999805,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 551,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.00819076300013,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 569,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.956645361000028,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 657,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.4193483940002807,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 495,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.405260807000104,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 520,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.59434584399969,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 568,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.2588763789999575,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 466,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.984951785000248,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 657,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.290461018000315,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 519,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.884586105999915,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 508,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 7.751021891999699,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 597,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.66128419100005,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 529,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.195897003000027,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 506,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.296570938000514,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 632,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.300701997000033,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 558,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.071669510999527,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 448,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.9602069550001033,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 497,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.948567235000155,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 532,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.5196349799998643,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 439,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "gate": "TOOLS_NOT_USED",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.9311817699999665,
+      "mode": "tool",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 537,
+      "tool_calls": 0
+    }
+  ]
+}

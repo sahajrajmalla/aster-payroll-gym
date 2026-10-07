@@ -28,10 +28,10 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P02.02 / 8 | Independent Python ground truth, never an LLM | src/aster_gym/reference.py | tests/test_core.py | implemented |
 | P02.03 / 8 | Seed recorded in each result artifact/provenance | src/aster_gym/eval.py | tests/test_harness.py | implemented |
 | P02.04 / 8 | Expose interacting-rule, distractor, lookup and missing-input knobs | src/aster_gym/generator.py | tests/test_core.py | implemented |
-| P02.05 / 8 | 100+ generated tasks with observed non-degenerate model distribution | data/evaluation.jsonl | real Colab/model scores, not baselines | external_evidence_pending |
+| P02.05 / 8 | 100+ generated tasks with observed non-degenerate model distribution | data/evaluation.jsonl | results/qwen-colab-full/metrics.json: all-zero distribution; requirement unmet | external_evidence_pending |
 | P02.06 / 8 | Unit-test reference, caps, precedence, precision and boundaries | src/aster_gym/reference.py | tests/test_core.py | implemented |
 | P02.07 / 8 | README unlimited grading and precise noncomputable limitations | README.md | docs/assumptions-and-tradeoffs.md | implemented |
-| P03.01 / 8 | Installable pyproject and load_environment -> vf.Environment | src/aster_gym/environment.py | real optional vf smoke in Colab | external_evidence_pending |
+| P03.01 / 8 | Installable pyproject and load_environment -> vf.Environment | src/aster_gym/environment.py | docs/colab-final-preflight.json: real optional vf smoke passed on T4 | implemented |
 | P03.02 / 8 | Both SingleTurnEnv and ToolEnv/equivalent | src/aster_gym/environment.py | tests/test_harness.py | implemented |
 | P03.03 / 8 | 2-4 real tools, sole reference source in tool mode | src/aster_gym/tools.py | tests/test_harness.py | implemented |
 | P03.04 / 8 | max_turns and per-rollout timeout | src/aster_gym/eval.py | tests/test_harness.py | implemented |

@@ -116,12 +116,14 @@ def test_dashboard_script_parses_when_node_available(tmp_path):
     {"judge": None}, {"judge": {"model": "judge", "prompt_hash": "changed"}},
     {"temperature": .8}, {"max_tokens": 128}, {"seed": 7002},
     {"rules_hash": "changed"}, {"reward_version": "2.0"},
+    {"prompt_hashes": {"a": "changed", "b": "original"}},
 ])
 def test_incompatible_runs_cannot_share_a_dashboard_ranking(tmp_path, changed):
     """Same tasks and scores do not make different judge/sampling contracts comparable."""
     base = {"taskset_hash": "frozen", "mode": "single", "rules_hash": "rules",
             "reward_version": "1.0", "judge": {"model": "judge", "prompt_hash": "original"},
-            "temperature": .7, "max_tokens": 256, "seed": 7001}
+            "temperature": .7, "max_tokens": 256, "seed": 7001,
+            "prompt_hashes": {"a": "original", "b": "original"}}
     rows = [{"task_id": task, "rollout": rollout, "tier": 1,
              "status": "complete", "score": .5} for task in ("a", "b") for rollout in range(3)]
     for name, settings in (("a", base), ("b", base), ("c", {**base, **changed})):

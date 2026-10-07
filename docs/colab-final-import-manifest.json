@@ -1,0 +1,73 @@
+{
+  "bundle_version": "1.0",
+  "files": {
+    "comparison-small/budget.json": {
+      "bytes": 96,
+      "sha256": "5397c4406d99e756d501a46adc88e2a4667d5c470c165786d8fb280e1f19cdb7"
+    },
+    "comparison-small/config.json": {
+      "bytes": 7290,
+      "sha256": "7986f000c94630a4d93ae352a19c3b3d904d6ca97e987f14751ebdee5087d75f"
+    },
+    "comparison-small/metrics.json": {
+      "bytes": 4518,
+      "sha256": "fdca95164fff097e876c256b0e54eda444856d5d1a3c0593c5910f1f4983e4f1"
+    },
+    "comparison-small/scores.json": {
+      "bytes": 124929,
+      "sha256": "6137eb5648c57c2fb73175d8dbdbdeaad98779e22c00d67aca83e9e8d83c072d"
+    },
+    "comparison-small/transcript.jsonl": {
+      "bytes": 757886,
+      "sha256": "0e19d5ec582d23c57ded3886805047837d40b4054c3b1980f70014b66e750c6a"
+    },
+    "preflight.json": {
+      "bytes": 636,
+      "sha256": "131c2c5d5ca9f069fadd62bcc178b680541275a16d09e0e4de655f06e5b053bb"
+    },
+    "run_status.json": {
+      "bytes": 2947,
+      "sha256": "8466646cffbdc4cca6a96cd4e7dbcedf0ad3d537bb0b13242418f99061691e9a"
+    },
+    "small-model-eval/budget.json": {
+      "bytes": 96,
+      "sha256": "5397c4406d99e756d501a46adc88e2a4667d5c470c165786d8fb280e1f19cdb7"
+    },
+    "small-model-eval/config.json": {
+      "bytes": 25831,
+      "sha256": "a94710c8d5814bb1329c117865672342e76cd9c5bc3a430b0238433f1acd104a"
+    },
+    "small-model-eval/metrics.json": {
+      "bytes": 12537,
+      "sha256": "3adf819cb6a9e41af635bd6321ab40b36c742af6004491ccf4b67e76dff30ac5"
+    },
+    "small-model-eval/scores.json": {
+      "bytes": 499321,
+      "sha256": "7c37c89abef2b2b077bcd4bde00370666125277f512f7f1dad5b4aa4ac2bdac0"
+    },
+    "small-model-eval/transcript.jsonl": {
+      "bytes": 3013129,
+      "sha256": "3615a7920bbb0933aced525c1cbf38a0e9ec729b0d3839268709ff4c46f39f6b"
+    },
+    "tool-small/budget.json": {
+      "bytes": 96,
+      "sha256": "5397c4406d99e756d501a46adc88e2a4667d5c470c165786d8fb280e1f19cdb7"
+    },
+    "tool-small/config.json": {
+      "bytes": 3608,
+      "sha256": "0cda78c0fda1a6e4030423c553bc7b6f34de497393b2e8a3f2f9b6d6aaa0c657"
+    },
+    "tool-small/metrics.json": {
+      "bytes": 2297,
+      "sha256": "8b73a9b37dad50902f5a7f3f93f160da9d411af942f1e6aa6efc068810fedd13"
+    },
+    "tool-small/scores.json": {
+      "bytes": 22817,
+      "sha256": "11bce3dd50c0877afae951947c3e4874475fc5b30a5aa74f0e1a3fbee8a3bc08"
+    },
+    "tool-small/transcript.jsonl": {
+      "bytes": 53618,
+      "sha256": "050e7f5e8107ea99d0eb7a7183197c621242c7bd52f2313e86a09b968a85f5a4"
+    }
+  }
+}

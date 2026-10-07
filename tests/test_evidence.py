@@ -63,3 +63,25 @@ def test_empty_analysis_has_explicit_pending_states(tmp_path):
     assert value["transfer"]["status"] == "pending"
     assert value["judge_reliability"]["human_exact_agreement"] is None
     assert value["human_failure_review"]["reviewed_failures"] == 0
+
+
+@pytest.mark.parametrize("changed_split", ["evaluation", "transfer"])
+def test_transfer_rankings_require_matching_prompts_within_each_cohort(tmp_path, monkeypatch, changed_split):
+    """A scaffold change must not masquerade as measured transfer of a model ranking."""
+    runs = []
+    for split, count in (("evaluation", 30), ("transfer", 5)):
+        for model, score in (("a", .9), ("b", .7), ("c", .1)):
+            ids = [f"{split}-{index}" for index in range(count)]
+            runs.append({"config": {"evidence_kind": "model_run", "status": "complete", "mode": "single",
+                "split": split, "task_count": count, "taskset_hash": split, "model": model,
+                "run_id": f"{split}-{model}", "prompt_hashes": dict.fromkeys(ids, "original")},
+                "summary": {"complete": count * 3, "total": count * 3,
+                            "replicate_means": [score] * 3, "mean": score},
+                "records": [{"task_id": task, "score": score} for task in ids for _ in range(3)]})
+    monkeypatch.setattr("aster_gym.evidence.collect_results", lambda _: {"runs": runs})
+    output = analyze_results(tmp_path / "results", tmp_path / "reviews")
+    assert json.loads(output.read_text())["transfer"][0]["spearman_rho"] == 1
+    changed = next(run for run in runs if run["config"]["split"] == changed_split)
+    changed["config"]["prompt_hashes"][f"{changed_split}-0"] = "changed"
+    output = analyze_results(tmp_path / "results", tmp_path / "reviews")
+    assert json.loads(output.read_text())["transfer"]["status"] == "pending"

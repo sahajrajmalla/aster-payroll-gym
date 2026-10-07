@@ -17,7 +17,7 @@ def comparison_identity(config: dict[str, Any]) -> str:
     """Separate scoring and sampling contracts before ranking saved experiments."""
     return stable_hash({key: config.get(key) for key in (
         "taskset_hash", "mode", "ruleset_version", "rules_hash", "reward_version",
-        "schema_version", "judge", "temperature", "max_tokens", "seed", "rollouts",
+        "schema_version", "judge", "temperature", "max_tokens", "seed", "rollouts", "prompt_hashes",
     )})
 
 

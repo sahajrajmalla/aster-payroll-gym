@@ -56,3 +56,18 @@ Removing fences alone would not correct the diagnosis or citation structure.
 The unchanged prompt already specified six properties and no Markdown. A revised
 prompt or training would require a new, separately recorded experiment; no
 improvement is inferred from this failure inspection.
+
+The full 120-task Qwen run adds 360 completed answers: 357 invalid contracts,
+two unjustified abstentions and one incorrect blocker diagnosis with reward zero.
+For example, task `task-769ac5a5d96d99333ab3`, rollout 2, refuses a solvable task
+and claims unsigned salary evidence can be authoritative. That contradicts R2;
+R9 rejects unnecessary abstention. In the 36 tool samples, every answer failed
+`TOOLS_NOT_USED`. Task `task-0e33888836c453dcb91e`, rollout 0, claims payroll
+information was obtained from documents despite zero reference reads. This is a
+fabricated evidence claim, caught by the mandatory-tool gate.
+
+[Deterministic replay](qwen-final-reward-audit.json) checked all 486 Qwen records,
+including scores, component diagnostics and tool eligibility, with zero mismatches.
+This audit does not replace the required human reading or a trained-policy gaming
+study. No Qwen output passed, so there is no high-reward wrong Qwen answer in these
+runs. The flat larger distribution is an unresolved experimental limitation.

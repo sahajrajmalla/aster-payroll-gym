@@ -4,7 +4,8 @@ Open the [Colab notebook](https://colab.research.google.com/github/sahajrajmalla
 **No training, open-weight inference or weight downloads run on the laptop.**
 The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
 There is no CPU/MPS fallback or local override. The owner-supplied Tesla T4
-preflight passed; model findings remain pending.
+preflight passed. All 486 Qwen initial-policy samples were imported; see
+[evaluation findings](evaluation.md). RL remains unexecuted.
 
 ## Setup evidence
 

@@ -1,0 +1,25 @@
+{
+  "bundle_version": "1.0",
+  "files": {
+    "budget.json": {
+      "bytes": 96,
+      "sha256": "5397c4406d99e756d501a46adc88e2a4667d5c470c165786d8fb280e1f19cdb7"
+    },
+    "config.json": {
+      "bytes": 25831,
+      "sha256": "a94710c8d5814bb1329c117865672342e76cd9c5bc3a430b0238433f1acd104a"
+    },
+    "metrics.json": {
+      "bytes": 12537,
+      "sha256": "3adf819cb6a9e41af635bd6321ab40b36c742af6004491ccf4b67e76dff30ac5"
+    },
+    "scores.json": {
+      "bytes": 499321,
+      "sha256": "7c37c89abef2b2b077bcd4bde00370666125277f512f7f1dad5b4aa4ac2bdac0"
+    },
+    "transcript.jsonl": {
+      "bytes": 3013129,
+      "sha256": "3615a7920bbb0933aced525c1cbf38a0e9ec729b0d3839268709ff4c46f39f6b"
+    }
+  }
+}

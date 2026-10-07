@@ -48,10 +48,10 @@ and incorrect arithmetic. Ten exact outputs are prepared for independent reading
 in the [failure packet](../reviews/failure-review-packet.json). Strict formatting
 and substantive gates explain the low rewards; no evidence of model improvement
 or three-model superiority is claimed. The >=100-task generated distribution,
-Qwen full evaluation, transfer rankings and judge agreement study remain pending.
+transfer rankings and judge agreement study remain pending.
 
 The dashboard separates rankings by taskset, mode, rules/schema/reward versions,
-judge identity, temperature, token limit, seed and rollout count. A no-key cloud
+judge identity, prompt hashes, temperature, token limit, seed and rollout count. A no-key cloud
 run cannot silently share a ranking with a credentialed run. Cloud records report
 API spend; GPU hosting charges require separate runtime billing verification.
 
@@ -76,8 +76,41 @@ No model weights were imported onto the Mac.
 
 Judge identity is null and sampling seed is 20261002, unlike the Gemini runs.
 The dashboard therefore presents a separate experiment group: these scores do
-not establish a controlled cross-model ranking. The 120-task evaluation and
-12-task tool cohort finished in Colab; their results remain pending archive import.
+not establish a controlled cross-model ranking.
+
+The full **120-task evaluation completed 360/360 samples**, three rollouts per
+task. Mean reward and replicate SD are **0.0 ± 0.0**, with zero passes in each
+tier. Gates: 357 `INVALID_CONTRACT`, two `UNJUSTIFIED_ABSTENTION`, one
+`CORRECTNESS_CAP` with no earned substantive credit. Mean latency was 5.420s;
+729,386 usage tokens, no operational failures and no retries were recorded.
+[Configuration](../results/qwen-colab-full/config.json),
+[metrics](../results/qwen-colab-full/metrics.json),
+[transcripts](../results/qwen-colab-full/transcript.jsonl).
+
+The **12-task tool cohort completed 36/36 samples**, reward **0.0 ± 0.0**.
+All 36 failed `TOOLS_NOT_USED`: the model did not emit an accepted tool envelope
+or obtain reference evidence. There were zero actual tool calls and no provider
+failures. Mean latency was 5.698s with 19,548 usage tokens. This measures Qwen with
+the documented `explicit-json-tool-envelope-v1` adapter; it does not show a tool
+benefit or an adapter-independent model ranking.
+[Configuration](../results/qwen-colab-tool/config.json),
+[metrics](../results/qwen-colab-tool/metrics.json),
+[transcripts](../results/qwen-colab-tool/transcript.jsonl).
+
+The [final import record](colab-final-import.json) links checked archive hashes,
+source revision and retained [cloud execution status](colab-final-run-status.json).
+Comparison duplicates were verified identical and retained once. All three Qwen
+cohorts cost $0 in model API charges; GPU hosting billing remains unverified.
+Their recorded command durations sum to approximately 45m38s, including process
+startup and artifact writes, rather than GPU generation time alone.
+
+**The required non-degenerate distribution over >=100 tasks is not satisfied:**
+the larger Qwen run is entirely zero. The smaller mixed comparison is only 30
+tasks. A stronger configured policy on the same frozen 120 tasks is the next
+experiment; do not weaken the gates or count fabricated/fixture outputs as model
+success. Flat rewards also warn that GRPO groups may have zero advantages. No
+learning or optimizer-induced reward gaming is claimed from these initial-policy
+outputs.
 
 ## Running
 
@@ -162,7 +195,8 @@ run must not be ranked against another model's 30-task subset.
 The actual deterministic baselines have been run over both 120 tasks and the
 frozen first 30 balanced tasks. Read their recomputed results in
 `docs/saved-results.md`. Replicates repeat a handwritten policy and are explicitly
-not stochastic model evidence. The required >=100-task model distribution remains pending; the 30-task remote comparison does not replace it.
+not stochastic model evidence. The >=100-task Qwen evaluation is complete, but its all-zero distribution fails
+the required non-degeneracy condition. The 30-task remote comparison does not replace it.
 
 After imports, `uv run aster-gym analyze` computes Track B average-tie-rank
 Spearman agreement and task-level ranking reversals from complete matched runs.
@@ -181,5 +215,5 @@ raises on pending judge scoring rather than converting outages to zero rewards.
 
 Adapter behavior was checked against the pinned [ToolEnv implementation](https://raw.githubusercontent.com/PrimeIntellect-ai/verifiers/v0.1.14/verifiers/envs/tool_env.py)
 and [environment interfaces](https://raw.githubusercontent.com/PrimeIntellect-ai/verifiers/v0.1.14/verifiers/envs/environment.py).
-Live optional-stack execution is a Colab acceptance check; local tests do not
-install or import that stack.
+The [T4 preflight](colab-final-preflight.json) passed real optional-stack
+construction for both environments. Local tests do not install or import that stack.

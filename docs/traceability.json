@@ -212,8 +212,8 @@
       "source_page": "8",
       "requirement": "100+ generated tasks with observed non-degenerate model distribution",
       "implementation": "data/evaluation.jsonl",
-      "test_or_manual_check": "real Colab/model scores, not baselines",
-      "evidence": "real Colab/model scores, not baselines",
+      "test_or_manual_check": "results/qwen-colab-full/metrics.json: all-zero distribution; requirement unmet",
+      "evidence": "results/qwen-colab-full/metrics.json: all-zero distribution; requirement unmet",
       "status": "external_evidence_pending"
     },
     {
@@ -239,9 +239,9 @@
       "source_page": "8",
       "requirement": "Installable pyproject and load_environment -> vf.Environment",
       "implementation": "src/aster_gym/environment.py",
-      "test_or_manual_check": "real optional vf smoke in Colab",
-      "evidence": "real optional vf smoke in Colab",
-      "status": "external_evidence_pending"
+      "test_or_manual_check": "docs/colab-final-preflight.json: real optional vf smoke passed on T4",
+      "evidence": "docs/colab-final-preflight.json: real optional vf smoke passed on T4",
+      "status": "implemented"
     },
     {
       "id": "P03.02",

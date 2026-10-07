@@ -40,8 +40,8 @@
     "comparison_samples_expected": 90,
     "archive": "aster-qwen-comparison.zip",
     "import_status": "accepted: results/qwen-colab-comparison",
-    "remaining_cohorts": "120-task evaluation and 12-task tool comparison finished in Colab; pending final archive import",
-    "export_status": "Completed and downloaded via Colab; move archive into workspace for validation",
+    "remaining_cohorts": "All three cohorts accepted: 90 comparison, 360 full evaluation and 36 tool samples",
+    "export_status": "Completed; final archive imported and validated",
     "training_status": "skipped API_PHASES_SKIPPED",
     "local_model_execution": false,
     "comparison_mean_reward": 0.001388888888888889,
@@ -54,8 +54,11 @@
       "expected_samples": 360,
       "aggregate_mean": 0.0,
       "aggregate_replicate_sd": 0.0,
-      "evidence_scope": "Observed Colab terminal; not yet imported/validated locally"
+      "evidence_scope": "Imported and summary metrics independently recomputed"
     },
-    "full_archive": "aster-results.zip"
+    "full_archive": "aster-results.zip",
+    "full_archive_import_status": "accepted",
+    "full_archive_import_record": "docs/colab-final-import.json",
+    "full_archive_sha256": "139622b89d6e0b72fa967f63eaca9886221f38a21a54486c6de5f35889ae92bb"
   }
 }

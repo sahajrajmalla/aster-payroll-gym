@@ -150,7 +150,8 @@ def analyze_results(results_dir: str | Path, review_dir: str | Path = "reviews")
         matched = sorted(set(by_split["generated"]) & set(by_split["transfer"]))
         if len(matched) < 3:
             continue
-        if any(len({by_split[s][n]["config"]["taskset_hash"] for n in matched}) != 1
+        if any(len({stable_hash([by_split[s][n]["config"]["taskset_hash"],
+                                by_split[s][n]["config"].get("prompt_hashes")]) for n in matched}) != 1
                for s in ("generated", "transfer")):
             continue
         generated = {n: by_split["generated"][n]["summary"]["mean"] for n in matched}

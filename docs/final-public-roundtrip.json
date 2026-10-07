@@ -1,0 +1,27 @@
+{
+  "status": "submission_verified",
+  "evidence_kind": "independent_public_contract_smoke",
+  "base_url": "https://aster-payroll-gym.onrender.com",
+  "deployment_scope": "public_endpoint",
+  "tier": 2,
+  "answer_source": "Independent Decimal calculation from issued public documents",
+  "agent_model_calls": 0,
+  "remote_judge_required": false,
+  "server_versions": {
+    "ruleset_version": "ASTER-1.0",
+    "reward_version": "1.0"
+  },
+  "health_status": 200,
+  "fetch_status": 200,
+  "run_id": "HVX0VDqQAG4IE84dSfej_KLl",
+  "submitted_answer_hash": "640dff23a307f3a832b5f71525ee9225cdc46474ba83af5f79c977874738a1b7",
+  "task_context_hash": "0797dd983f1679d8a7191206af1093604138205111f27b89723800fd971126f3",
+  "limitations": [],
+  "submit_status": 200,
+  "retrieval_status": 200,
+  "score": 1.0,
+  "run_state": "complete",
+  "completed_run_hash": "a25164bfc06ebac85377c7ebd7767424aa171ca0b9b45a6ec98785c07ab858ad",
+  "verified_at": "2026-10-07T07:15:10.398058+00:00",
+  "elapsed_s": 10.878
+}

@@ -13,6 +13,8 @@ its API-dependent experiments were skipped. Setup is not training evidence.
 - [x] Evaluation CLI, cost controls, transcripts and deterministic baselines.
 - [x] Genuine Gemini 3.5 and Qwen initial-policy comparisons: 30 tasks × 3 rollouts
   each, reported separately because judge/sampling settings differ.
+- [x] Qwen 120-task evaluation (360 samples) and 12-task tool cohort (36 samples),
+  imported with checksums and raw transcripts; zero passes.
 - [x] Public dashboard, Render/Neon sandbox and hosted restart persistence.
 - [x] Guarded Colab workflows, resumable cloud checkpoints and safe result import.
 - [x] Required documentation, review worksheets, CI and lightweight QA.
@@ -21,7 +23,8 @@ its API-dependent experiments were skipped. Setup is not training evidence.
 
 - [ ] Independent seed checks and >=10 generated-task rule-fidelity reviews.
 - [ ] Five transfer-task approvals/freeze and measured ranking agreement.
-- [ ] Complete three-model comparison and small-model 120-task evaluation.
+- [ ] Complete compatible three-model comparison, including a frontier policy.
+- [ ] Non-degenerate genuine model distribution over >=100 generated tasks.
 - [ ] Judge reliability measurements and independent review labels.
 - [ ] Two actual KL sweeps, all five curves and held-out initial/trained comparison.
 - [ ] Actual reward-gaming inspection with counts and transcript references.

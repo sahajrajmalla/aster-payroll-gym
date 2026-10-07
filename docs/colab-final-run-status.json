@@ -1,0 +1,87 @@
+{
+  "steps": [
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "exit_code": 0,
+      "finished_at": "2026-10-07T06:02:49.684665+00:00",
+      "label": "gpu-preflight",
+      "started_at": "2026-10-07T06:02:21.254703+00:00",
+      "status": "command_finished"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "exit_code": 0,
+      "finished_at": "2026-10-07T06:02:50.249294+00:00",
+      "label": "dataset-validation",
+      "started_at": "2026-10-07T06:02:49.751087+00:00",
+      "status": "command_finished"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "exit_code": 0,
+      "finished_at": "2026-10-07T06:02:50.520216+00:00",
+      "label": "cohort-preparation",
+      "started_at": "2026-10-07T06:02:50.266866+00:00",
+      "status": "command_finished"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "label": "transfer-human-freeze",
+      "reason_code": "HUMAN_APPROVAL_PENDING",
+      "skipped_at": "2026-10-07T06:02:50.537954+00:00",
+      "status": "skipped"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "label": "training-smoke",
+      "reason_code": "API_PHASES_SKIPPED",
+      "skipped_at": "2026-10-07T06:02:50.580001+00:00",
+      "status": "skipped"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "label": "training-two-beta-sweep",
+      "reason_code": "API_PHASES_SKIPPED",
+      "skipped_at": "2026-10-07T06:02:50.614705+00:00",
+      "status": "skipped"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "label": "remote-model-comparison",
+      "reason_code": "API_PHASES_SKIPPED",
+      "skipped_at": "2026-10-07T06:02:50.655522+00:00",
+      "status": "skipped"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "label": "judge-reliability",
+      "reason_code": "API_PHASES_SKIPPED",
+      "skipped_at": "2026-10-07T06:02:50.680288+00:00",
+      "status": "skipped"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "exit_code": 0,
+      "finished_at": "2026-10-07T06:23:34.501927+00:00",
+      "label": "comparison-small",
+      "started_at": "2026-10-07T06:14:22.823171+00:00",
+      "status": "command_finished"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "exit_code": 0,
+      "finished_at": "2026-10-07T06:56:25.473456+00:00",
+      "label": "small-model-eval",
+      "started_at": "2026-10-07T06:23:34.521076+00:00",
+      "status": "command_finished"
+    },
+    {
+      "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+      "exit_code": 0,
+      "finished_at": "2026-10-07T07:00:00.734714+00:00",
+      "label": "tool-small",
+      "started_at": "2026-10-07T06:56:25.491054+00:00",
+      "status": "command_finished"
+    }
+  ]
+}

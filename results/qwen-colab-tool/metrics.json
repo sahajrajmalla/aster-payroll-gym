@@ -1,0 +1,121 @@
+{
+  "aggregate": {
+    "mean": 0.0,
+    "n": 3,
+    "sd": 0.0
+  },
+  "by_tier": {
+    "1": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 12,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "2": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 12,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "3": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 12,
+      "pass_rate": 0,
+      "sd": 0.0
+    }
+  },
+  "complete_replicates": 3,
+  "completed_samples": 36,
+  "components": {},
+  "confirmed_cost_usd": 0,
+  "cost_usd": 0.0,
+  "coverage": 1.0,
+  "expected_samples": 36,
+  "latency_s": {
+    "mean": 5.697515078833324,
+    "n": 36,
+    "sd": 2.7629018653936694
+  },
+  "operational_failures": 0,
+  "per_task": {
+    "task-0e33888836c453dcb91e": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-0ec7d48247ff1b45b74b": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-16ccf44e25558cbba567": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-622bcc18c6aab9cac92f": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-84bf67730258b67b84db": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-8af3e60200e8bcdecf77": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-a681f2646d5b2b138baa": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b18556242bce68d26e76": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b23f8b35a616a54a7824": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-bd6044ef3b97fc1c5b8e": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-bebd0b9279f9479fb386": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-d167a405d18c1b37276f": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    }
+  },
+  "replicate_means": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "retries": 0,
+  "sample_summary": {
+    "mean": 0.0,
+    "n": 36,
+    "sd": 0.0
+  },
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples",
+  "status_counts": {
+    "complete": 36
+  },
+  "tokens": 19548
+}

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "audited_at": "2026-10-07T07:12:55.119909+00:00",
+  "scope": "Automated deterministic replay; not a human rule-fidelity audit or RL reward-gaming study",
+  "sample_count": 486,
+  "reference_recomputed_tasks": 120,
+  "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
+  "implementation_hash": "0444197634181e033865951e024d0fa5be75f5099f2004876fad47e2db737d7e",
+  "model_calls": 0,
+  "judge_calls": 0,
+  "runs": [
+    {
+      "run_id": "1ea3d177cd2375271ca1",
+      "path": "results/qwen-colab-comparison",
+      "samples": 90,
+      "gates": {
+        "INVALID_CONTRACT": 89,
+        "CORRECTNESS_CAP": 1
+      },
+      "replay_mismatches": 0,
+      "prompt_and_cohort_hashes": "matched frozen files"
+    },
+    {
+      "run_id": "33207f18f267cc15c57f",
+      "path": "results/qwen-colab-full",
+      "samples": 360,
+      "gates": {
+        "INVALID_CONTRACT": 357,
+        "CORRECTNESS_CAP": 1,
+        "UNJUSTIFIED_ABSTENTION": 2
+      },
+      "replay_mismatches": 0,
+      "prompt_and_cohort_hashes": "matched frozen files"
+    },
+    {
+      "run_id": "90264d0e1e11cd890bce",
+      "path": "results/qwen-colab-tool",
+      "samples": 36,
+      "gates": {
+        "TOOLS_NOT_USED": 36
+      },
+      "replay_mismatches": 0,
+      "prompt_and_cohort_hashes": "matched frozen files"
+    }
+  ]
+}

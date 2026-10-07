@@ -11,9 +11,11 @@ inference or weight downloads occurred.
 The default notebook mode, `SKIP_API_PHASES=True`, intentionally skips RL because
 judge credentials are unavailable. It can run Qwen evaluation on Colab CUDA with
 the unchanged scorer; this is inference, not training evidence. Eligible blocking
-explanations remain pending without a judge. Qwen initial-policy comparison artifacts have been imported (90 samples, zero
-passes); they are baseline inference evidence, not RL evidence. A partial submission must disclose that
-the required KL sweeps and held-out policy comparison are not completed.
+explanations remain pending without a judge. All 486 Qwen initial-policy samples have been imported: 90 comparison, 360 full
+evaluation and 36 tool-use answers, with zero passes. They are baseline inference
+evidence, not RL evidence. The full evaluation has all-zero rewards, warning of
+zero group-relative advantages. Smoke outputs must be inspected before committing
+to a full sweep. The required KL sweeps and held-out policy comparison are not completed.
 
 The executable cloud workflow uses Qwen2.5-0.5B-Instruct, pinned revision, LoRA and
 GRPO. See README for the implemented clipped objective and k3 KL estimator, and

@@ -10,11 +10,26 @@ ground truth and one auditable scorer shared by evaluation, cloud RL and a publi
 
 **Implementation checked; experimental submission incomplete.** The hosted sandbox
 passed correct Tier-2/3 submissions, both scoring 1.0, and persistence after restart.
-Gemini 3.5 Flash-Lite completed 90 comparison samples; Gemini 3.8 and tool runs are
-partial. Qwen completed 90 comparison samples on a Colab Tesla T4 with zero
-passing answers; full and tool cohorts finished in Colab and await bundle import. RL, judge reliability and
-independent reviews remain pending until recorded.
+Gemini 3.5 Flash-Lite completed 90 comparison samples; Gemini 3.8 and Gemini tool
+runs are partial. Qwen completed 486 samples on a Colab Tesla T4: 90 comparison,
+360 across 120 evaluation tasks and 36 tool-use answers. None passed. The larger
+run is degenerate (all rewards zero), so the required varied distribution is still
+missing. RL, judge reliability, transfer findings and independent reviews are pending.
 See [readiness checklist](docs/submission-checklist.md) and [QA evidence](docs/final-qa.json).
+
+## Try the public sandbox without cloning
+
+Python 3 is enough. This pinned client fetches a Tier-2 task, independently solves
+it from public documents, submits it and retrieves its score:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com
+```
+
+Expect `submission_verified`, `complete` and score 1.0. Render Free may need a cold
+start; the client retries bounded network failures. Ten tasks/run, caller quotas,
+bounded payloads and judge-call limits bound abuse and cost. Run tokens protect
+saved submissions; caller API keys and expected answers are never exposed.
 
 ## Run locally
 
@@ -49,6 +64,9 @@ Frozen datasets contain 12 seeds, 30 training, 15 validation, 120 evaluation and
 five transfer tasks. Seed namespaces and normalized fingerprints prevent split
 overlap. Track B changes presentation while preserving rules; human approval and
 freeze precede transfer evaluation. No real employee data is used.
+Seeded tasks can be graded indefinitely without per-task human labels. This works
+for the fictional rulebook; explanation usefulness and unwritten real-world
+judgment are not computable by the payroll reference.
 
 Normal weights: correctness 60%, fields 25%, action 10%, format 5%.
 Blocked-task weights: diagnosis 55%, fields 25%, action 10%, explanation judge 5%,

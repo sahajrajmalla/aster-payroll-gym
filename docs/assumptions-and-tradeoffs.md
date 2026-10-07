@@ -10,7 +10,7 @@
    and deployment preparation continue if training fails. Incomplete experiments
    remain visible and cannot prove learning.
 5. The explanation judge uses a free remote API, never local model weights. Its
-   influence is bounded and measured, but rate limits and version drift can interrupt
+   influence is bounded; reliability measurement remains pending. Rate limits and version drift can interrupt
    grading. Cached exact inputs and recorded identifiers reduce repeated work.
 6. Filesystem results and static reporting minimize hosting/secret complexity.
    Only the independent sandbox needs a database and live scoring server.
