@@ -4,26 +4,23 @@ The [repository](https://github.com/sahajrajmalla/aster-payroll-gym) and
 [dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) are public.
 The [sandbox](https://aster-payroll-gym.onrender.com) is deployed on Render.
 Correct external Tier-2 and Tier-3 submissions each scored **1.0**, including the
-real Gemini judge. Both saved runs survived a user-confirmed hosted restart and
+real Gemini judge. Both saved runs survived a confirmed hosted restart and
 were confirmed in permanent Neon. Eleven public API contract checks passed.
 [Acceptance evidence](render-sandbox-acceptance.json) ·
 [Tier 2 proof](render-tier2-proof.json) · [Tier 3 proof](render-tier3-proof.json).
-Earlier [local API evidence](permanent-neon-persistence-smoke.json) is separate.
-
 ## Deploy on Render with Neon
 
-1. Your permanent Neon project and Gemini key are configured privately in `.env`.
-   Sign into Render. Use the pooled Neon URL you supplied; do not create another
-   database. The older temporary-database proof is historical only.
+1. Create or select a Neon database. Set credentials only in Render's environment
+   settings. Use its pooled TLS connection URL.
 2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/sahajrajmalla/aster-payroll-gym).
    Use the repository's `render.yaml`: one free Docker web service. Set secret
    `DATABASE_URL` to your Neon pooled Postgres URL with TLS (`sslmode=require`).
    Preserve `/neondb?sslmode=require&channel_binding=require`; omitting `?` caused the corrected Render startup incident.
-3. Supply your existing Gemini key privately as `JUDGE_API_KEY`. You confirmed disabled billing/free-tier
-   access on 2026-10-06, and both configured model IDs were verified with your key.
+3. Supply a Gemini key privately as `JUDGE_API_KEY`. Confirm disabled billing and
+   free-tier access for the selected model before enabling the judge.
    Set `JUDGE_VERIFIED_FREE=true` in Render; provider quotas still apply.
    Keep the configured model/endpoint and judge limits consistent across experiments
-   and API. Never put secrets in Git, chat, screenshots or Loom.
+   and API. Keep secrets out of Git and recordings.
 4. If using **New → Web Service** instead of Blueprint, select **Docker** and
    **Free**, leave Dockerfile path as `./Dockerfile`, and use health path `/healthz`.
    Add `DATABASE_URL`, `JUDGE_API_KEY`, `JUDGE_VERIFIED_FREE=true` and a random
@@ -38,7 +35,7 @@ Earlier [local API evidence](permanent-neon-persistence-smoke.json) is separate.
 [Render free services](https://render.com/docs/free) may sleep after inactivity;
 allow a cold start before the two-minute demo. External Neon storage preserves
 runs across Render's ephemeral container restarts. Free quotas can change.
-The existing permanent Neon project is ready. No paid resources are required by this configuration.
+No paid infrastructure is required by this configuration.
 
 ## Correct independent acceptance
 

@@ -1,8 +1,8 @@
 {
   "status": "available_experiments_audited_submission_incomplete",
-  "audited_at": "2026-10-07T10:00:14.857301+00:00",
+  "audited_at": "2026-10-07T11:58:03.894879+00:00",
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "audited_implementation_hash": "b6a06f46fc12c81f74f2231a2c09e90334dde8e81ed4be072d8386562f7eb7ab",
+  "audited_implementation_hash": "a7b046eea2f0317cf7cc631f0eaa28ca49e78b00f9e73440b0dbe17ea97cef1f",
   "model_runs": [
     {
       "path": "results/gemini-3.5-comparison",
@@ -429,5 +429,11 @@
     "Recorded usage excludes unavailable provider-error usage. Three early judge 429 attempts are documented as log-recovered.",
     "The abandoned unpaced run remains separate and included in resource totals; its completed answers were not overwritten.",
     "Overall submission remains incomplete: human reviews/freeze, compatible frontier comparison, real RL sweeps/held-out evidence, trained-policy inspection and Loom."
-  ]
+  ],
+  "submission_status": "Incomplete experimental evidence",
+  "artifact_annotations": {
+    "judge_study_sha256": "554e0f60fd7e5d73670dc8ff6042b7e6e67bb167736c340c3d9aa0f896a98bc9",
+    "change": "Synthetic example provenance annotation standardized; candidate outputs, response ledgers and all model scores unchanged",
+    "original_revision": "2b96b1ed45445b13372a5c70e0c62e03f51d4ebe"
+  }
 }

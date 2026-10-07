@@ -198,7 +198,7 @@ run must not be ranked against another model's 30-task subset.
 
 The actual deterministic baselines have been run over both 120 tasks and the
 frozen first 30 balanced tasks. Read their recomputed results in
-`docs/saved-results.md`. Replicates repeat a handwritten policy and are explicitly
+the dashboard's saved baseline records. Replicates repeat a handwritten policy and are explicitly
 not stochastic model evidence. The >=100-task Qwen evaluation is complete, but its all-zero distribution fails
 the required non-degeneracy condition. The 30-task remote comparison does not replace it.
 

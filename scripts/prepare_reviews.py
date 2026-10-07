@@ -26,7 +26,7 @@ def main() -> None:
         candidate["explanation"] = explanation_variants[index // 3] or candidate["explanation"]
         examples.append({"example_id": f"review-{index + 1:02}", "task_id": task.id,
                          "task_input_hash": task.input_hash, "candidate": candidate,
-                         "provenance": "AI-assisted handwritten rubric example; not a model output",
+                         "provenance": "Synthetic rubric example; not a measured model output",
                          "human_label": None, "reviewer": None, "notes": "", "ratings": []})
     reviews = ROOT / "reviews"
     packet_path = reviews / "judge-review-packet.json"

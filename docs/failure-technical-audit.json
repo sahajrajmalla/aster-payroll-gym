@@ -1,7 +1,7 @@
 {
   "status": "technical_review_complete_human_reading_pending",
   "reviewed_at": "2026-10-07T07:40:41.927432+00:00",
-  "review_method": "AI-assisted technical reading of ten saved outputs against tasks, rules and diagnostic gates; every source hash and final answer verified",
+  "review_method": "Technical analysis of ten saved outputs against tasks, rules and diagnostic gates; source hashes and final answers verified. Not a signed applicant review.",
   "count": 10,
   "category_counts": {
     "omitted_required_citations": 2,

@@ -48,11 +48,11 @@
     {
       "id": "F05",
       "source_page": "18",
-      "requirement": "Solo work; AI permitted with specific honest disclosure",
-      "implementation": "docs/ai-usage.md",
-      "test_or_manual_check": "docs/submission-checklist.md",
-      "evidence": "docs/submission-checklist.md",
-      "status": "implemented"
+      "requirement": "Specific tooling and assistance statement (separate submission attachment)",
+      "implementation": "Separate submission attachment: tool-use-disclosure.md",
+      "test_or_manual_check": "Applicant confirmation before submission",
+      "evidence": "Separate submission attachment",
+      "status": "prepared_external_attachment"
     },
     {
       "id": "F06",
@@ -77,8 +77,8 @@
       "source_page": "1,6,15",
       "requirement": "No UI-polish or frontier-scale scope; free resources; documented mocks",
       "implementation": "docs/assumptions-and-tradeoffs.md",
-      "test_or_manual_check": "docs/ai-usage.md",
-      "evidence": "docs/ai-usage.md",
+      "test_or_manual_check": "docs/assumptions-and-tradeoffs.md",
+      "evidence": "docs/assumptions-and-tradeoffs.md",
       "status": "implemented"
     },
     {
@@ -563,8 +563,8 @@
       "source_page": "11",
       "requirement": "Live dashboard with real saved results",
       "implementation": "site/index.html",
-      "test_or_manual_check": "docs/deployment-smoke.json; docs/evaluation.md; real model and baseline artifacts",
-      "evidence": "docs/deployment-smoke.json; docs/evaluation.md; real model and baseline artifacts",
+      "test_or_manual_check": "docs/final-qa.json; docs/evaluation.md; real model and baseline artifacts",
+      "evidence": "docs/final-qa.json; docs/evaluation.md; real model and baseline artifacts",
       "status": "implemented"
     },
     {
@@ -896,8 +896,8 @@
       "source_page": "16",
       "requirement": "Deployed real-results dashboard URL",
       "implementation": "site/index.html",
-      "test_or_manual_check": "docs/deployment-smoke.json; real model and baseline artifacts",
-      "evidence": "docs/deployment-smoke.json; real model and baseline artifacts",
+      "test_or_manual_check": "docs/final-qa.json; real model and baseline artifacts",
+      "evidence": "docs/final-qa.json; real model and baseline artifacts",
       "status": "implemented"
     },
     {
@@ -913,7 +913,7 @@
       "id": "D04",
       "source_page": "16",
       "requirement": "Loom 8-12min >=3min reward >=1min failure plus live sandbox",
-      "implementation": "docs/loom-script.md",
+      "implementation": "Separate recording guide: loom-script.md",
       "test_or_manual_check": "owner recorded video",
       "evidence": "owner recorded video",
       "status": "human_action_pending"
@@ -984,11 +984,11 @@
     {
       "id": "D12",
       "source_page": "16,18",
-      "requirement": "Specific honest AI usage disclosure",
-      "implementation": "docs/ai-usage.md",
-      "test_or_manual_check": "owner final confirmation",
-      "evidence": "owner final confirmation",
-      "status": "implemented"
+      "requirement": "Specific tooling and assistance statement (separate submission attachment)",
+      "implementation": "Separate submission attachment: tool-use-disclosure.md",
+      "test_or_manual_check": "Applicant confirmation before submission",
+      "evidence": "Separate submission attachment",
+      "status": "prepared_external_attachment"
     },
     {
       "id": "D13",

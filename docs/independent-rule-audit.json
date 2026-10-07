@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "evidence_kind": "independent_automated_rule_crosscheck",
-  "checked_at": "2026-10-07T07:36:47.680099+00:00",
+  "checked_at": "2026-10-07T11:55:50.779206+00:00",
   "method": "Exact integer rational arithmetic; separate R8 constants; no production oracle imports",
   "packet_sha256": "34f540fb622f37774f476b2ddf26f9e373b62631467a5304d2ae13c5497baf46",
   "rules_sha256": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",

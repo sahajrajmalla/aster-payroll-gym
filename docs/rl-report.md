@@ -1,48 +1,44 @@
 # RL training report
 
-**Status: training not executed; RL evidence pending.** The latest
-[Colab setup](colab-latest-setup.json) passed GPU, dependency, environment, dataset
-and cohort checks on a Tesla T4. Earlier failed attempts are retained in
-[collected status](colab-run-status-2026-10-07.json) and
-[earlier preflight](colab-preflight-passed-2026-10-07.json). The runtime-recognition
-and path-handling issues were corrected and regression-tested. No local training,
-inference or weight downloads occurred.
+**Not done: no RL sweep, learning curves or held-out trained-policy results.**
+The [Colab preflight](colab-final-preflight.json) passed on a Tesla T4 with pinned
+dependencies. [Execution records](colab-final-run-status.json) show skipped training
+and completed initial-policy inference. No training, inference or weight downloads
+ran on the local development machine.
 
-The default notebook mode, `SKIP_API_PHASES=True`, skips RL until Colab judge
-credentials and Notebook access are confirmed. Remote judge access now works and
-the 45-response repeat study is saved, but Colab secret access remains unconfirmed.
-It can run Qwen evaluation on Colab CUDA with
-the unchanged scorer; this is inference, not training evidence. Eligible blocking
-explanations remain pending without a judge. All 486 Qwen initial-policy samples have been imported: 90 comparison, 360 full
-evaluation and 36 tool-use answers, with zero passes. They are baseline inference
-evidence, not RL evidence. The full evaluation has all-zero rewards, warning of
-zero group-relative advantages. Smoke outputs must be inspected before committing
-to a full sweep. The required KL sweeps and held-out policy comparison are not completed.
+## Implemented workflow
 
-The executable cloud workflow uses Qwen2.5-0.5B-Instruct, pinned revision, LoRA and
-GRPO. See README for the implemented clipped objective and k3 KL estimator, and
-docs/colab.md for configuration, GPU guard, four-completion groups, reference proof,
-checkpointing and recovery. Both beta runs start from the same initial policy.
+Qwen2.5-0.5B-Instruct uses LoRA rank 8/alpha 16 and GRPO, with four completions per
+prompt, temperature 0.8, 256 completion tokens and learning rate 5e-5. Both beta
+values (0.001 and 0.10) start from the same initial policy; default length is
+80 optimizer steps per beta, with checkpoints every 20 steps. The frozen initial
+reference is checked for equivalence and immutability. The clipped objective and
+k3 KL estimator are in the README; [Colab](colab.md) documents execution and resume.
+Validation selects beta before held-out evaluation with three rollouts per task.
 
-Required evidence to import: reward, KL (and beta×KL), policy entropy, completion
-length, tier pass rates at logged steps; equal-reward group fraction; reference
-weight hashes; changed adapters; full completion transcripts; cloud checkpoint
-locations; validation-only beta choice; final initial-versus-trained held-out
-scores with three stochastic rollouts and split fingerprints.
+Logs are designed to capture reward, KL and beta×KL, entropy, completion length,
+per-tier pass rate, reward components, equal-reward group fraction and completions.
+Checkpoints remain in cloud storage. A failed run preserves failure/resume metadata.
+The training guard requires hosted Colab and CUDA before importing model libraries.
 
-No measured improvement, collapse, spend or reward gaming is claimed yet. After
-execution fill: steps actually completed per beta, chosen beta and justification,
-before/after mean±SD by tier, raw versus penalized reward, entropy/KL/length trends,
-degenerate group fraction and uncertainty. Record the actual GPU and wall-clock time.
+## Evidence and limitations
 
-Gaming search must inspect high-reward wrong content, always-abstain behavior,
-modal payslips, copied clause lists, valid-JSON nonsense, excess length, prompt
-injection into explanations and truncation. Preserve run/task/step/transcript IDs.
-If none is found, state how many outputs and which attacks were checked; do not
-invent an exploit to fit an expected story. If found, version the reward fix and
-rescore both compared policies under that version; preserve original evidence.
+Qwen completed 486 initial-policy inference samples: 90 comparison, 360 full
+evaluation and 36 tool answers. None passed. The full evaluation's all-zero reward
+warns of flat group-relative advantages; a smoke run must establish usable reward
+variation and actual adapter updates before a full sweep. Inference is not training.
 
-Training failure does not block remaining code or deployment preparation. Export
-failed/partial metadata and last checkpoint location. Resume the same configuration
-or use an explicitly documented smaller symmetric sweep, e.g. forty steps per beta.
-Never represent smoke or partial training as a full sweep or fill missing curves.
+The remote judge repeat study completed, but Colab secret access was not confirmed
+for mixed-tier training. No replacement judge or simplified training reward is used.
+Default notebook switches leave training off until explicitly started.
+
+Missing artifacts: actual step logs and five curves, reference proof from a training
+run, saved checkpoints, validation beta selection, held-out initial/trained scores
+and trained-policy reward-gaming inspection. No improvement, collapse or trained
+policy exploit is claimed. The [975-output audit](reward-gaming-audit.json) covers
+initial policies only, not a trained policy.
+
+A follow-up should smoke-test three steps, inspect reference/update evidence, run
+both sweeps (or explicitly document equal shorter runs), compare held-out policies,
+and inspect actual high-reward outputs for abstention, citation, format, length
+and explanation hacking. Import real artifacts and regenerate the dashboard.

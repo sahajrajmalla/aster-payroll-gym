@@ -193,9 +193,8 @@ def main() -> None:
         elif args.command == "eval":
             asyncio.run(_eval(args))
         elif args.command == "report":
-            from .reporting import build_dashboard, write_summary
+            from .reporting import build_dashboard
             print(build_dashboard(args.results, args.output))
-            write_summary(args.results, "docs/saved-results.md")
         elif args.command == "serve":
             import uvicorn
             uvicorn.run("aster_gym.api:app", host=args.host, port=args.port, log_config=None)

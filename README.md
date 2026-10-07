@@ -106,17 +106,13 @@ pass rates, components and equal-reward groups. Checkpoints stay in cloud storag
 No-key mode permits GPU inference but skips RL and judge study; eligible scores
 remain pending. See [Colab instructions](docs/colab.md).
 
-## Reviewer navigation
+## Documentation
 
-Start with [project explanation](docs/project-understanding.md),
-[setup](docs/setup.md), [submission checklist](docs/submission-checklist.md) and
-[Loom script](docs/loom-script.md).
-
-Required references: [rules](rules/aster-payroll-v1.md),
-[architecture](docs/architecture.md), [schema](docs/task-schema.md),
-[reward specification](docs/reward-spec.md), [evaluation](docs/evaluation.md),
-[RL report](docs/rl-report.md), [failure analysis](docs/failure-analysis.md),
-[edge cases](docs/edge-cases.md), [trade-offs](docs/assumptions-and-tradeoffs.md),
-[transfer](docs/advanced-track.md), [human review](docs/human-review.md),
-[deployment/API](docs/deployment.md), [traceability](docs/traceability.md) and
-[tool disclosure](docs/ai-usage.md). Loom URL remains pending recording.
+Start with [setup](docs/setup.md) and the [submission status](docs/submission-checklist.md).
+Technical references: [architecture](docs/architecture.md), [schemas](docs/task-schema.md),
+[rules](rules/aster-payroll-v1.md), [reward](docs/reward-spec.md),
+[evaluation](docs/evaluation.md), [RL](docs/rl-report.md),
+[failures](docs/failure-analysis.md), [edge cases](docs/edge-cases.md),
+[trade-offs](docs/assumptions-and-tradeoffs.md), [transfer](docs/advanced-track.md),
+[deployment/API](docs/deployment.md), [Colab](docs/colab.md),
+[review procedure](docs/human-review.md) and [requirements](docs/traceability.md).

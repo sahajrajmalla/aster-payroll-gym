@@ -1,59 +1,51 @@
-# Submission checklist
+# Submission status
 
-**Implementation checked; submission incomplete.** Public Tier-2/3 answers scored
-1.0 and survived an owner-confirmed Render restart. Eleven API contract checks and
-no-clone round trips passed. [Hosted evidence](render-sandbox-acceptance.json).
-The latest owner-supplied Colab run passed GPU, dataset and cohort preparation;
-its API-dependent experiments were skipped. Setup is not training evidence.
+**Code and deployed services checked; experimental submission incomplete.**
+The sandbox accepts correct Tier-2/3 submissions with score 1.0 and retains runs
+after restart. [Hosted evidence](render-sandbox-acceptance.json).
 
 ## Completed
 
-- [x] Written rules, strict schemas, independent reference and frozen datasets.
-- [x] Single-turn/tool environments, shared scorer, gates and adversarial tests.
-- [x] Evaluation CLI, cost controls, transcripts and deterministic baselines.
-- [x] Genuine Gemini 3.5 and Qwen initial-policy comparisons: 30 tasks × 3 rollouts
-  each, reported separately because judge/sampling settings differ.
-- [x] Qwen 120-task evaluation (360 samples) and 12-task tool cohort (36 samples),
-  imported with checksums and raw transcripts; zero passes.
-- [x] Public dashboard, Render/Neon sandbox and hosted restart persistence.
-- [x] Guarded Colab workflows, resumable cloud checkpoints and safe result import.
-- [x] Required documentation, review worksheets, CI and lightweight QA.
-- [x] Independent automated numerical audit: 27 inputs, zero substantive divergences.
-- [x] Non-degenerate genuine distribution: 120 tasks × 3 rollouts, 360 answers, rewards 0–1.
-- [x] Judge repeat study: 45 responses, one malformed; 2/14 valid triples disagree.
-- [x] Initial-policy gaming inspection: 975 outputs, 41 high-reward cases, no deterministic bypass.
-- [x] Available-experiment audit, checksums, timestamps and recorded API spend ($0).
+- Written rules, schemas, deterministic ground truth and disjoint datasets.
+- Single-turn/tool environments, shared reward, hard gates and adversarial tests.
+- Resumable evaluation, transcripts, cost limits and three programmatic baselines.
+- Qwen initial-policy inference: 486 samples on Colab, zero passes.
+- Gemini full evaluation: 120 tasks × 3 rollouts, 360 answers, 32 passes;
+  reward **0.12049 ± 0.00732** across rollout means.
+- Judge repeat study: 45 responses, one malformed; 2/14 valid triples disagree.
+- Automated numerical cross-check: 27 inputs, no substantive divergences.
+- Initial-policy output audit: 975 answers, 41 high-reward cases, no deterministic bypass.
+- Dashboard, Render/Neon API, hosted persistence, clean-install checks and CI.
+- Cloud training implementation, configuration, recovery and safe artifact handoff.
 
-## Required evidence still outstanding
+## Requested evidence status
 
-- [ ] Independent seed checks and >=10 generated-task rule-fidelity reviews.
-- [ ] Five transfer-task approvals/freeze and measured ranking agreement.
-- [ ] Complete compatible three-model comparison, including a frontier policy.
-- [ ] Independent human judge labels and agreement (repeat stability is measured).
-- [ ] Two actual KL sweeps, all five curves and held-out initial/trained comparison.
-- [ ] Trained-policy reward-gaming inspection (initial-policy inspection is recorded).
-- [ ] Personal reading/classification of 5–10 genuine failures.
-- [ ] Final audit after RL/transfer; independent confirmation of Colab resource spend.
-- [ ] 8–12-minute Loom: >=3 minutes rewards, >=1 minute real failure, live sandbox.
+1. **Personal task checks, judge labels and failure reviews: NOT DONE.**
+   Numerical cross-checks and ten technical failure analyses are available; signed
+   independent applicant reviews and human judge agreement are absent.
+2. **Two RL sweeps, curves and held-out comparisons: NOT DONE.**
+   The workflow is implemented. No completed training run or learning improvement is claimed.
+3. **Compatible three-model comparison with a frontier model: NOT DONE.**
+   Qwen and Gemini runs exist but differ in judge/sampling configuration. Frontier
+   attempts are partial or operational failures; they cannot establish a controlled ranking.
+4. **Approved transfer tasks and measured transfer results: NOT DONE.**
+   Five drafts exist; approval, freeze and comparable model outcomes are absent.
+5. **Final experiment/resource-spend audit: PARTIAL.**
+   Available runs, checksums, scores, timestamps and recorded API spend ($0) are
+   audited. Overall GPU charges are unverified, and no RL/transfer audit exists.
 
-Do not check an experiment complete from a successful setup command. No-key mode
-supports partial Qwen evidence; it intentionally leaves mixed-tier RL pending.
-Remote judge repeat stability has since been measured; human labels are separate.
-Use [Colab instructions](colab.md), [human review](human-review.md) and
-[Loom script](loom-script.md). If submitting with gaps, state them clearly.
+See [evaluation](evaluation.md), [RL report](rl-report.md), [transfer](advanced-track.md)
+and [available-experiment audit](final-experiment-audit.json). These gaps must accompany
+submission. [Review procedure](human-review.md) and [Colab](colab.md) describe completion.
 
-## Final links and email draft
+## Submission links
 
-Subject: **AI Product Operator Assignment - Sahaj Raj Malla**
+- Repository: https://github.com/sahajrajmalla/aster-payroll-gym
+- Dashboard: https://sahajrajmalla.com.np/aster-payroll-gym/
+- Sandbox: https://aster-payroll-gym.onrender.com
+- Loom: add an 8–12-minute recording with ≥3 minutes on reward design,
+  ≥1 minute reading a genuine failure and a live sandbox request.
 
-Repository: https://github.com/sahajrajmalla/aster-payroll-gym
-
-Dashboard: https://sahajrajmalla.com.np/aster-payroll-gym/
-
-Sandbox: https://aster-payroll-gym.onrender.com
-
-Loom: add your reviewed recording URL.
-
-Include one measured finding and remaining limitations. Verify all four links in
-a private browser window. The deadline depends on the actual assignment receipt
-date. Send the email yourself after reviewing the evidence and recording.
+Include the separate tooling statement and verify all share links. Email subject:
+**AI Product Operator Assignment - Sahaj Raj Malla**. Submit the measured work with
+these limitations; do not mark missing experiments complete.

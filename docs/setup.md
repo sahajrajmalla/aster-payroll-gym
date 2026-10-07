@@ -18,10 +18,10 @@ Evaluation files feed the dashboard; sandbox runs stay in Neon and are retrieved
 The sandbox accepts answers; the demonstration client calculates its own answer.
 A passing demonstration proves the service works, not model performance.
 
-## 1. Prepare your Mac
+## 1. Install
 
-Your workspace already has uv and private credentials. Preserve `.env`.
-uv uses the project's pinned Python 3.11, even if `python3` is another version.
+Install uv and use Python 3.11. Copy `.env.example` to `.env` on a fresh clone,
+then configure private credentials. Preserve an existing `.env`.
 
 ```sh
 cd /Users/sahajrajmalla/Documents/NeurlAI
@@ -31,7 +31,7 @@ uv run --extra server pytest -q
 ```
 
 The `server` extra adds Postgres support. Keep both `cloud` and `environment`
-extras in Colab; never run training or Qwen inference on this Mac.
+extras in Colab; never run training or Qwen inference on the local development machine.
 
 ## 2. Run a correct answer against the live sandbox
 

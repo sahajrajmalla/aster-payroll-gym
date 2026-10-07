@@ -3,17 +3,10 @@
 Allow approximately 2–3 hours. Rows start unreviewed; automated checks do not
 replace these independent reviews.
 
-Prepared material: [27-row independent numerical check](independent-rule-audit.json),
-[ten failure notes](failure-technical-audit.json), and the
-[speaking guide](loom-script.md). These are drafts/evidence for your review;
-they do not enter your name or mark a personal check complete. Keep the original
-judge packet blind until your fifteen labels are entered. If you have already
-seen its row-level predictions, record that review as unblinded in the notes; do
-not claim blind agreement.
-
-For a natural introduction, adapt this sentence: “I wanted a small workflow where
-I could explain every score: the assistant must calculate from reliable evidence
-and ask for missing evidence before guessing.” Describe the domain as fictional.
+Prepared material: [independent numerical check](independent-rule-audit.json)
+and [ten failure notes](failure-technical-audit.json). Both support review but
+are not signed applicant checks. If judge predictions have already been seen,
+record the review as unblinded; do not claim blind agreement.
 
 1. Read the rules. In `reviews/task-review-packet.json`, independently solve the
    twelve seed rows before comparing with `reference_result`. Enter `human_result`,

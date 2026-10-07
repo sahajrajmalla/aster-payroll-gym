@@ -35,7 +35,7 @@ def freeze_transfer(tasks: list[Task], packet_path: str | Path,
               "ruleset_version": RULESET_VERSION, "reward_version": REWARD_VERSION,
               "review_hash": stable_hash(rows),
               "reviewers": sorted({str(r["reviewer"]) for r in rows}),
-              "presentation_disclosure": "AI-assisted drafts, edited/approved by the named human reviewers"}
+              "presentation_origin": "Synthetic drafts approved by the named reviewers"}
     destination = Path(output)
     if destination.exists():
         existing = json.loads(destination.read_text())

@@ -3,19 +3,18 @@
 Open the [Colab notebook](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb).
 **No training, open-weight inference or weight downloads run on the laptop.**
 The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
-There is no CPU/MPS fallback or local override. The owner-supplied Tesla T4
+There is no CPU/MPS fallback or local override. The recorded Tesla T4
 preflight passed. All 486 Qwen initial-policy samples were imported; see
 [evaluation findings](evaluation.md). RL remains unexecuted. The remote judge repeat study has since completed locally through
 API requests; Colab still needs explicitly enabled access to its own judge secret.
 
 ## Setup evidence
 
-The [latest owner-supplied run](colab-latest-setup.json) passed GPU, dataset and
-cohort preparation at revision `03d5e082c451d84375f67b1dad8c0a8096140ab0`.
-Earlier attempts exposed runtime-recognition and string-path issues, now fixed
-and regression-tested. Historical [status](colab-run-status-2026-10-07.json) and
-[preflight](colab-preflight-passed-2026-10-07.json) are preserved. Setup success
-contains no model or training results. Enable the intended experiment explicitly.
+The [preflight](colab-final-preflight.json) passed on a Tesla T4 with pinned
+model dependencies and both optional environments. [Execution records](colab-final-run-status.json)
+include dataset/cohort preparation and 486 completed initial-policy samples at
+revision `03d5e082c451d84375f67b1dad8c0a8096140ab0`. Training was skipped.
+Runtime-recognition and path-handling issues were fixed and regression-tested.
 
 ## Continue without API keys
 

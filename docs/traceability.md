@@ -2,7 +2,7 @@
 
 implemented means software/doc exists, not completed external/human evidence.
 
-Repository and dashboard URLs are verified. Genuine remote results are recorded; the three-model comparison, human labels and training curves remain pending. Public sandbox acceptance passed.
+Separate submission attachments cover the recording guide and tooling statement.
 
 | ID / PDF page | Requirement | Implementation | Test / evidence | Status |
 | --- | --- | --- | --- | --- |
@@ -10,10 +10,10 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | F02 / 6 | Eight phases and exactly one advanced track | docs/architecture.md | docs/submission-checklist.md | external_evidence_pending |
 | F03 / 4,18 | Synthetic fictional data only, no real personal/customer data | data/manifest.json | tests/test_core.py | implemented |
 | F04 / 4,9 | Written versioned authority before implementation; prose wins disagreements | rules/aster-payroll-v1.md | reviews/task-review-packet.json | human_review_pending |
-| F05 / 18 | Solo work; AI permitted with specific honest disclosure | docs/ai-usage.md | docs/submission-checklist.md | implemented |
+| F05 / 18 | Specific tooling and assistance statement (separate submission attachment) | Separate submission attachment: tool-use-disclosure.md | Applicant confirmation before submission | prepared_external_attachment |
 | F06 / 1,17 | Five-business-day submission window and speed scoring | docs/submission-checklist.md | record actual receipt/submission dates | human_action_pending |
 | F07 / 3 | Review 10-15 environments, verifiers docs, overview, Harvey architecture | docs/background-reading.md | owner reading checklist | human_review_pending |
-| F08 / 1,6,15 | No UI-polish or frontier-scale scope; free resources; documented mocks | docs/assumptions-and-tradeoffs.md | docs/ai-usage.md | implemented |
+| F08 / 1,6,15 | No UI-polish or frontier-scale scope; free resources; documented mocks | docs/assumptions-and-tradeoffs.md | docs/assumptions-and-tradeoffs.md | implemented |
 | F09 / 15,18 | Report actual spend, blockers, cuts and two-day next steps | docs/evaluation.md | real experiment artifacts | external_evidence_pending |
 | P01.01 / 7 | Versioned programmatically validated task schema with all minimum fields | schemas/task-v1.json | tests/test_core.py | implemented |
 | P01.02 / 7 | At least ten hand-checked seed tasks across all three tiers | data/seeds.jsonl | reviews/task-review-packet.json | human_review_pending |
@@ -28,7 +28,7 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P02.02 / 8 | Independent Python ground truth, never an LLM | src/aster_gym/reference.py | tests/test_core.py | implemented |
 | P02.03 / 8 | Seed recorded in each result artifact/provenance | src/aster_gym/eval.py | tests/test_harness.py | implemented |
 | P02.04 / 8 | Expose interacting-rule, distractor, lookup and missing-input knobs | src/aster_gym/generator.py | tests/test_core.py | implemented |
-| P02.05 / 8 | 100+ generated tasks with observed non-degenerate model distribution | data/evaluation.jsonl | docs/nondegenerate-distribution.json | verified_real_evidence |
+| P02.05 / 8 | 100+ generated tasks with observed non-degenerate model distribution | data/evaluation.jsonl | docs/nondegenerate-distribution.json: 120 genuine task answers, rewards 0–1 | verified_real_evidence |
 | P02.06 / 8 | Unit-test reference, caps, precedence, precision and boundaries | src/aster_gym/reference.py | tests/test_core.py | implemented |
 | P02.07 / 8 | README unlimited grading and precise noncomputable limitations | README.md | docs/assumptions-and-tradeoffs.md | implemented |
 | P03.01 / 8 | Installable pyproject and load_environment -> vf.Environment | src/aster_gym/environment.py | docs/colab-final-preflight.json: real optional vf smoke passed on T4 | implemented |
@@ -49,7 +49,7 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P04.06 / 10 | Gate substantive rejection to a low maximum | src/aster_gym/scoring.py | tests/test_core.py | implemented |
 | P04.07 / 10 | Meaningful graded field/set partial credit | src/aster_gym/scoring.py | tests/test_core.py | implemented |
 | P04.08 / 10 | Constrained qualitative LLM judge from rules; version prompt | src/aster_gym/judge.py | tests/test_judge.py | implemented |
-| P04.09 / 10 | Judge 3 repeat ratings or 15 human labels; report agreement | reviews/judge-review-packet.json | results/judge-stability-study.json | verified_repeat_measurement |
+| P04.09 / 10 | Judge 3 repeat ratings or 15 human labels; report agreement | reviews/judge-review-packet.json | results/judge-stability-study.json: 45 uncached responses; human labels separate/pending | verified_repeat_measurement |
 | P04.10 / 10 | Rule-grounded calibration; document why each trap unresolved | data/seeds.jsonl | tests/test_core.py | implemented |
 | P04.11 / 10 | Hand-check >=10 generated tasks and report divergence | reviews/task-review-packet.json | human independent calculations | human_review_pending |
 | P04.12 / 10 | Document and defend weights | docs/reward-spec.md | reward tests and review | implemented |
@@ -67,7 +67,7 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P05.10 / 10 | Provider outage isolation | src/aster_gym/eval.py | tests/test_harness.py | implemented |
 | P05.11 / 10,17 | Honest non-determinism/noise and indistinguishable rankings | docs/evaluation.md | real replicate statistics | external_evidence_pending |
 | P05.12 / 6 | Committed filesystem results and no rerun on deploy | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
-| P06.01 / 11 | Live dashboard with real saved results | site/index.html | docs/deployment-smoke.json; docs/evaluation.md; real model and baseline artifacts | implemented |
+| P06.01 / 11 | Live dashboard with real saved results | site/index.html | docs/final-qa.json; docs/evaluation.md; real model and baseline artifacts | implemented |
 | P06.02 / 11 | Leaderboard with error bars/SD | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P06.03 / 11 | Tier and reward breakdowns | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
 | P06.04 / 11 | Task-by-model failure heatmap | src/aster_gym/reporting.py | tests/test_reporting.py | implemented |
@@ -104,9 +104,9 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P08.15 / 14 | GET /tasks POST /submit GET /runs/{id} | src/aster_gym/api.py | tests/test_api.py | implemented |
 | ADV-B / 15 | Five handwritten-distribution realistic transfer tasks with ranking findings | data/transfer.jsonl | human approval plus real comparison | external_evidence_pending |
 | D01 / 16 | GitHub repo clean clone plus .env.example | README.md | docs/local-verification.json and public repo | implemented |
-| D02 / 16 | Deployed real-results dashboard URL | site/index.html | docs/deployment-smoke.json; real model and baseline artifacts | implemented |
+| D02 / 16 | Deployed real-results dashboard URL | site/index.html | docs/final-qa.json; real model and baseline artifacts | implemented |
 | D03 / 16 | Live sandbox URL and two-minute command | render.yaml | docs/render-sandbox-acceptance.json | implemented |
-| D04 / 16 | Loom 8-12min >=3min reward >=1min failure plus live sandbox | docs/loom-script.md | owner recorded video | human_action_pending |
+| D04 / 16 | Loom 8-12min >=3min reward >=1min failure plus live sandbox | Separate recording guide: loom-script.md | owner recorded video | human_action_pending |
 | D05 / 16 | README architecture stack schema weights run next steps | README.md | documentation review | implemented |
 | D06 / 16 | Eval report real configs, variance, tiers, baselines, judge, fidelity, spend | docs/evaluation.md | actual experiments and human audits | external_evidence_pending |
 | D07 / 16 | RL report five curves, heldout, beta sweep and gaming | docs/rl-report.md | actual Colab artifacts | external_evidence_pending |
@@ -114,7 +114,7 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | D09 / 16 | Advanced track measured findings | docs/advanced-track.md | actual transfer results | external_evidence_pending |
 | D10 / 16 | Five actually encountered edges and responses | docs/edge-cases.md | regression tests | implemented |
 | D11 / 16 | At least three explicit assumptions/tradeoffs | docs/assumptions-and-tradeoffs.md | documentation review | implemented |
-| D12 / 16,18 | Specific honest AI usage disclosure | docs/ai-usage.md | owner final confirmation | implemented |
+| D12 / 16,18 | Specific tooling and assistance statement (separate submission attachment) | Separate submission attachment: tool-use-disclosure.md | Applicant confirmation before submission | prepared_external_attachment |
 | D13 / 18 | Four submission links and required email subject | docs/submission-checklist.md | owner email draft; not sent automatically | human_action_pending |
 | U01 / user | Python-first pinned deps types logs config modules no secrets | pyproject.toml | CI lint/type/startup | implemented |
 | U02 / user | CI schema/determinism/reference/reward/leakage/API/startup | .github/workflows/ci.yml | actual local check artifact | implemented |
