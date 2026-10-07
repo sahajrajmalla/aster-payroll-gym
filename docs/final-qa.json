@@ -13,7 +13,7 @@
   "default_ML_packages_installed": false,
   "notebook_executed": "Owner setup passed; GPU inference started in existing Colab session; RL skipped",
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "implementation_hash": "34af634958ca4f0a76053e9924c18cbe5b31e7d425fea0186a14836d7b330dbe",
+  "implementation_hash": "57cb7a95fa49bcb2b62d3b1d285771437604fa36294cbc35dac399e97cde4bda",
   "submission_status": "PENDING_CLOUD_AND_HUMAN_EVIDENCE",
   "pending": [
     "Genuine three-model evaluation",
@@ -23,8 +23,8 @@
     "Five transfer-task human approvals and measured ranking",
     "Loom recording"
   ],
-  "date": "2026-10-07T06:19:02.883884+00:00",
-  "tests_passed": 239,
+  "date": "2026-10-07T06:37:06.456536+00:00",
+  "tests_passed": 246,
   "corpus_validation": {
     "seeds": {
       "tasks": 12,
@@ -103,10 +103,10 @@
       "variation_note": "Date/distractor variation within a schedule-field group is not independent rule coverage."
     }
   },
-  "clean_clone_checks_passed": 8,
+  "clean_clone_checks_passed": 7,
   "github_ci": "passed",
   "dashboard_http_status": 200,
-  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706634",
+  "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37581000036",
   "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706627",
   "lint": "passed",
   "type_checks": "passed_33_source_files",
@@ -116,7 +116,7 @@
   "local_training_runs": 0,
   "local_model_calls": 0,
   "model_downloads": 0,
-  "code_revision_tested": "0709d302c504390f69f65a91fb6380fb6ddce2ad",
+  "code_revision_tested": "e6f448987bc298117de56245ccafbdf73cc470f3",
   "ci_evidence_scope": "Earlier CI URL is historical; current local checks cover the present working tree.",
   "permanent_neon_storage_evidence": "docs/permanent-neon-persistence-smoke.json",
   "remote_evaluation_status": {
@@ -126,7 +126,7 @@
   },
   "historical_neon_storage_evidence": "docs/neon-persistence-smoke.json",
   "remote_tool_evaluation_status": "Gemini 3.5 Flash-Lite: 14/36 complete; 22 rate-limit operational failures; partial, unranked",
-  "local_final_check": "239 tests, Ruff, mypy33, corpus validation, documentation links, notebook syntax, credential exclusion, fresh SQLite startup and public health checks passed",
+  "local_final_check": "246 tests, Ruff, mypy33, corpus validation, documentation links, notebook syntax, credential exclusion, fresh SQLite startup and public health checks passed",
   "sandbox_url": "https://aster-payroll-gym.onrender.com",
   "public_sandbox_acceptance": "PASSED_TIER2_TIER3_RESTART_CONTRACT_AND_NO_CLONE",
   "public_sandbox_evidence": "docs/render-sandbox-acceptance.json",
@@ -134,15 +134,42 @@
   "current_public_checks": {
     "sandbox": {
       "http_status": 200,
-      "checked_at": "2026-10-07T06:18:57.913401+00:00"
+      "checked_at": "2026-10-07T06:37:04.896954+00:00"
     },
     "dashboard": {
       "http_status": 200,
-      "checked_at": "2026-10-07T06:19:01.163304+00:00"
+      "checked_at": "2026-10-07T06:37:06.107608+00:00"
     }
   },
   "documentation_links": "passed",
   "credential_exclusion": "passed",
   "fresh_sqlite_startup": "passed",
-  "colab_setup_evidence": "docs/colab-latest-setup.json"
+  "colab_setup_evidence": "docs/colab-latest-setup.json",
+  "latest_public_submission": {
+    "status": "submission_verified",
+    "evidence_kind": "independent_public_contract_smoke",
+    "base_url": "https://aster-payroll-gym.onrender.com",
+    "deployment_scope": "public_endpoint",
+    "tier": 2,
+    "answer_source": "Independent Decimal calculation from issued public documents",
+    "agent_model_calls": 0,
+    "remote_judge_required": false,
+    "server_versions": {
+      "ruleset_version": "ASTER-1.0",
+      "reward_version": "1.0"
+    },
+    "health_status": 200,
+    "fetch_status": 200,
+    "run_id": "CEv6AeH5Qv-M0JZWT4ppUwKb",
+    "submitted_answer_hash": "3e97c88b8e5b961037579c497507cb82ba408279c07ca71d42a92c10eff3cd07",
+    "task_context_hash": "63e02f9971c2fa20a4697304928dc5bafe3b6df0175419d1632283b408d1ad66",
+    "limitations": [],
+    "submit_status": 200,
+    "retrieval_status": 200,
+    "score": 1.0,
+    "run_state": "complete",
+    "completed_run_hash": "83f9cf07e6b0f05574cc74c8094c7cadb96d4f9e8475f835c5378cb6a4e6559a",
+    "verified_at": "2026-10-07T06:24:31.047318+00:00",
+    "elapsed_s": 8.553
+  }
 }

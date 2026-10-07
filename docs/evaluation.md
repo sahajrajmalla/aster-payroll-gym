@@ -50,6 +50,11 @@ and substantive gates explain the low rewards; no evidence of model improvement
 or three-model superiority is claimed. The >=100-task generated distribution,
 Qwen held-out evaluation, transfer rankings and judge agreement study remain pending.
 
+The dashboard separates rankings by taskset, mode, rules/schema/reward versions,
+judge identity, temperature, token limit, seed and rollout count. A no-key cloud
+run cannot silently share a ranking with a credentialed run. Cloud records report
+API spend; GPU hosting charges require separate runtime billing verification.
+
 ## Running
 
 Use frozen task files for reported experiments. An example remote invocation is:

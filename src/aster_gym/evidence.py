@@ -133,7 +133,9 @@ def analyze_results(results_dir: str | Path, review_dir: str | Path = "reviews")
         if split not in {"evaluation", "eval", "transfer"} or config.get("task_count") != expected:
             continue
         cohort_key = stable_hash([config.get("rules_hash"), config.get("ruleset_version"),
-                                  config.get("reward_version"), config.get("schema_version"), config.get("judge")])
+                                  config.get("reward_version"), config.get("schema_version"), config.get("judge"),
+                                  config.get("temperature"), config.get("max_tokens"),
+                                  config.get("seed"), config.get("rollouts")])
         cohorts[cohort_key][split if split == "transfer" else "generated"].append(run)
     findings = []
     for grouped in cohorts.values():

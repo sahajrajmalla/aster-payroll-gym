@@ -110,3 +110,29 @@ def test_dashboard_script_parses_when_node_available(tmp_path):
     for script in re.findall(r"<script>([\s\S]*?)</script>", page):
         result = subprocess.run([node, "--check", "-"], input=script, text=True, capture_output=True)
         assert result.returncode == 0, result.stderr
+
+
+@pytest.mark.parametrize("changed", [
+    {"judge": None}, {"judge": {"model": "judge", "prompt_hash": "changed"}},
+    {"temperature": .8}, {"max_tokens": 128}, {"seed": 7002},
+    {"rules_hash": "changed"}, {"reward_version": "2.0"},
+])
+def test_incompatible_runs_cannot_share_a_dashboard_ranking(tmp_path, changed):
+    """Same tasks and scores do not make different judge/sampling contracts comparable."""
+    base = {"taskset_hash": "frozen", "mode": "single", "rules_hash": "rules",
+            "reward_version": "1.0", "judge": {"model": "judge", "prompt_hash": "original"},
+            "temperature": .7, "max_tokens": 256, "seed": 7001}
+    rows = [{"task_id": task, "rollout": rollout, "tier": 1,
+             "status": "complete", "score": .5} for task in ("a", "b") for rollout in range(3)]
+    for name, settings in (("a", base), ("b", base), ("c", {**base, **changed})):
+        directory = tmp_path / "results" / name
+        write_evaluation(directory, rows)
+        path = directory / "config.json"
+        config = json.loads(path.read_text())
+        config.update(settings, model=name, status="complete")
+        path.write_text(json.dumps(config))
+    runs = collect_results(tmp_path / "results")["runs"]
+    keys = {run["config"]["model"]: run["comparison_key"] for run in runs}
+    assert keys["a"] == keys["b"] and keys["a"] != keys["c"]
+    page = build_dashboard(tmp_path / "results", tmp_path / "site").read_text()
+    assert "const key=r.comparison_key" in page

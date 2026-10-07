@@ -19860,6 +19860,7 @@
         "tokens": 0,
         "operational_failures": 0
       },
+      "comparison_key": "86b9034a5b1a73234bb09308cdc5f60ffe86bb5e93d305b3ba96aadeb52c42db",
       "transcripts": [
         {
           "task_id": "task-84bf67730258b67b84db",
@@ -47647,6 +47648,7 @@
         "tokens": 0,
         "operational_failures": 0
       },
+      "comparison_key": "86b9034a5b1a73234bb09308cdc5f60ffe86bb5e93d305b3ba96aadeb52c42db",
       "transcripts": [
         {
           "task_id": "task-84bf67730258b67b84db",
@@ -75434,6 +75436,7 @@
         "tokens": 0,
         "operational_failures": 0
       },
+      "comparison_key": "86b9034a5b1a73234bb09308cdc5f60ffe86bb5e93d305b3ba96aadeb52c42db",
       "transcripts": [
         {
           "task_id": "task-84bf67730258b67b84db",
@@ -86211,6 +86214,7 @@
         "tokens": 0,
         "operational_failures": 0
       },
+      "comparison_key": "773b22f8dc199ba7903662c78701aa4c6171faae72da2c6cca041d56f738143a",
       "transcripts": [
         {
           "task_id": "task-84bf67730258b67b84db",
@@ -93208,6 +93212,7 @@
         "tokens": 0,
         "operational_failures": 0
       },
+      "comparison_key": "773b22f8dc199ba7903662c78701aa4c6171faae72da2c6cca041d56f738143a",
       "transcripts": [
         {
           "task_id": "task-84bf67730258b67b84db",
@@ -100205,6 +100210,7 @@
         "tokens": 0,
         "operational_failures": 0
       },
+      "comparison_key": "773b22f8dc199ba7903662c78701aa4c6171faae72da2c6cca041d56f738143a",
       "transcripts": [
         {
           "task_id": "task-84bf67730258b67b84db",
@@ -108653,6 +108659,7 @@
         "tokens": 208962,
         "operational_failures": 0
       },
+      "comparison_key": "8fdef0e20755f006066102ace9800ddb63b7af62043fbd137cb7294a7772f47e",
       "transcripts": [
         {
           "attempts": [
@@ -114909,6 +114916,7 @@
         "tokens": 138138,
         "operational_failures": 22
       },
+      "comparison_key": "798312fd7e7016ff736b9c0eb7f7eba985cb49bcf0f0f3361adfe63a9b41de35",
       "transcripts": [
         {
           "attempts": [
@@ -121273,6 +121281,7 @@
         "tokens": 16830,
         "operational_failures": 43
       },
+      "comparison_key": "8fdef0e20755f006066102ace9800ddb63b7af62043fbd137cb7294a7772f47e",
       "transcripts": [
         {
           "attempts": [
