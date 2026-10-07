@@ -1,0 +1,23 @@
+{
+  "evidence_source": "owner-pasted Colab records in project conversation",
+  "code_revision": "03d5e082c451d84375f67b1dad8c0a8096140ab0",
+  "gpu_preflight": {
+    "status": "passed",
+    "started_at": "2026-10-07T06:02:21.515876+00:00",
+    "finished_at": "2026-10-07T06:02:45.363689+00:00",
+    "checks": {"hosted_colab": true, "cuda": true, "dependencies": true, "environments": true},
+    "cuda_device": "Tesla T4",
+    "versions": {"torch": "2.8.0", "transformers": "4.57.1", "trl": "0.26.2", "verifiers": "0.1.14", "peft": "0.17.1", "accelerate": "1.10.1"}
+  },
+  "steps": {
+    "gpu-preflight": "command_finished",
+    "dataset-validation": "command_finished",
+    "cohort-preparation": "command_finished",
+    "transfer-human-freeze": "HUMAN_APPROVAL_PENDING",
+    "training-smoke": "API_PHASES_SKIPPED",
+    "training-two-beta-sweep": "API_PHASES_SKIPPED",
+    "remote-model-comparison": "API_PHASES_SKIPPED",
+    "judge-reliability": "API_PHASES_SKIPPED"
+  },
+  "evidence_scope": "setup only; no model completions or training metrics in these records"
+}

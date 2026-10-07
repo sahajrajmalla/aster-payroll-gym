@@ -1,7 +1,7 @@
 {
   "status": "IMPLEMENTATION_QA_PASSED",
   "requirements": 117,
-  "required_files_checked": 25,
+  "required_files_checked": 23,
   "tasks": {
     "seeds": 12,
     "train": 30,
@@ -11,9 +11,9 @@
   },
   "split_status": "disjoint",
   "default_ML_packages_installed": false,
-  "notebook_executed": false,
+  "notebook_executed": "Owner setup passed; GPU inference started in existing Colab session; RL skipped",
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "implementation_hash": "33037cc512436c7aa8666b0994f7ff1e89a725e78d5dd4d50a81db530f3fe8b0",
+  "implementation_hash": "34af634958ca4f0a76053e9924c18cbe5b31e7d425fea0186a14836d7b330dbe",
   "submission_status": "PENDING_CLOUD_AND_HUMAN_EVIDENCE",
   "pending": [
     "Genuine three-model evaluation",
@@ -23,8 +23,8 @@
     "Five transfer-task human approvals and measured ranking",
     "Loom recording"
   ],
-  "date": "2026-10-06T08:13:11.414328+00:00",
-  "tests_passed": 225,
+  "date": "2026-10-07T06:19:02.883884+00:00",
+  "tests_passed": 239,
   "corpus_validation": {
     "seeds": {
       "tasks": 12,
@@ -109,15 +109,15 @@
   "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706634",
   "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37434706627",
   "lint": "passed",
-  "type_checks": "passed_32_source_files",
+  "type_checks": "passed_33_source_files",
   "sandbox_owner_action": "None for deployment: owner confirmed hosted restart; external Tier2/3 scores and persistence passed.",
   "neon_storage_test": "Permanent user-owned Neon: correct Tier2/3 scores1.0, real Gemini judge, saved runs persisted after complete local API restart.",
   "neon_storage_evidence": "docs/permanent-neon-persistence-smoke.json",
   "local_training_runs": 0,
   "local_model_calls": 0,
   "model_downloads": 0,
-  "code_revision_tested": "8c96d28abe5fe6f5bd504d96d091ee6920f040d0",
-  "ci_evidence_scope": "Recorded source revision passed CI; final metadata-only update retains its implementation hash.",
+  "code_revision_tested": "0709d302c504390f69f65a91fb6380fb6ddce2ad",
+  "ci_evidence_scope": "Earlier CI URL is historical; current local checks cover the present working tree.",
   "permanent_neon_storage_evidence": "docs/permanent-neon-persistence-smoke.json",
   "remote_evaluation_status": {
     "gemini-3.5-flash-lite": "90/90 comparison complete",
@@ -126,9 +126,23 @@
   },
   "historical_neon_storage_evidence": "docs/neon-persistence-smoke.json",
   "remote_tool_evaluation_status": "Gemini 3.5 Flash-Lite: 14/36 complete; 22 rate-limit operational failures; partial, unranked",
-  "local_final_check": "225 tests, Ruff, mypy32, corpus/split validation, report recomputation, no ML and credential scan passed",
+  "local_final_check": "239 tests, Ruff, mypy33, corpus validation, documentation links, notebook syntax, credential exclusion, fresh SQLite startup and public health checks passed",
   "sandbox_url": "https://aster-payroll-gym.onrender.com",
   "public_sandbox_acceptance": "PASSED_TIER2_TIER3_RESTART_CONTRACT_AND_NO_CLONE",
   "public_sandbox_evidence": "docs/render-sandbox-acceptance.json",
-  "public_sandbox_verified_at": "2026-10-06T10:13:59.951638+00:00"
+  "public_sandbox_verified_at": "2026-10-06T10:13:59.951638+00:00",
+  "current_public_checks": {
+    "sandbox": {
+      "http_status": 200,
+      "checked_at": "2026-10-07T06:18:57.913401+00:00"
+    },
+    "dashboard": {
+      "http_status": 200,
+      "checked_at": "2026-10-07T06:19:01.163304+00:00"
+    }
+  },
+  "documentation_links": "passed",
+  "credential_exclusion": "passed",
+  "fresh_sqlite_startup": "passed",
+  "colab_setup_evidence": "docs/colab-latest-setup.json"
 }

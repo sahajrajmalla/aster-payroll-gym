@@ -913,7 +913,7 @@
       "id": "D04",
       "source_page": "16",
       "requirement": "Loom 8-12min >=3min reward >=1min failure plus live sandbox",
-      "implementation": "docs/loom-outline.md",
+      "implementation": "docs/loom-script.md",
       "test_or_manual_check": "owner recorded video",
       "evidence": "owner recorded video",
       "status": "human_action_pending"

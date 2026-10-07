@@ -105,7 +105,7 @@ ADV-B|15|Five handwritten-distribution realistic transfer tasks with ranking fin
 D01|16|GitHub repo clean clone plus .env.example|README.md|docs/local-verification.json and public repo|implemented
 D02|16|Deployed real-results dashboard URL|site/index.html|docs/deployment-smoke.json; real model and baseline artifacts|implemented
 D03|16|Live sandbox URL and two-minute command|render.yaml|docs/render-sandbox-acceptance.json|implemented
-D04|16|Loom 8-12min >=3min reward >=1min failure plus live sandbox|docs/loom-outline.md|owner recorded video|human_action_pending
+D04|16|Loom 8-12min >=3min reward >=1min failure plus live sandbox|docs/loom-script.md|owner recorded video|human_action_pending
 D05|16|README architecture stack schema weights run next steps|README.md|documentation review|implemented
 D06|16|Eval report real configs, variance, tiers, baselines, judge, fidelity, spend|docs/evaluation.md|actual experiments and human audits|external_evidence_pending
 D07|16|RL report five curves, heldout, beta sweep and gaming|docs/rl-report.md|actual Colab artifacts|external_evidence_pending

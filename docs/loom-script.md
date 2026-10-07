@@ -1,249 +1,131 @@
-# Ten-minute Loom script
+# Ten-minute Loom recording guide
 
-Record after the [submission checklist](submission-checklist.md) has genuine
-experiment, review and public-sandbox evidence. Target 10 minutes; required range
-is 8–12. Spend at least three minutes on rewards and one minute reading a genuine
-model failure. This outline allocates 3:30 and 1:15 respectively.
+Record 8–12 minutes, including >=3 minutes on rewards, >=1 minute reading a genuine
+failure and a live public sandbox request. Use your own words; the script below
+is a speaking guide. Check your account permits a video longer than five minutes.
 
-## Prepare the screen
+## Before recording
 
-Use the Loom desktop app with screen recording and microphone; camera is optional.
-Check a 15-second test for clear audio and readable text, then do a timed rehearsal.
-The [Starter plan has a five-minute limit](https://support.atlassian.com/loom/docs/how-long-can-i-record),
-so check that your recording account supports the required 8–12-minute video.
-[Official recorder setup](https://support.atlassian.com/loom/docs/get-started-with-the-loom-desktop-app).
+Open README, rulebook, reward spec, dashboard, failure packet and public API.
+Use readable zoom; record a 15-second microphone test. Hide `.env`, Colab Secrets,
+provider consoles and private run receipts. Warm the sandbox at
+https://aster-payroll-gym.onrender.com/healthz. Rehearse once with a timer.
+Consult [the checklist](submission-checklist.md) immediately before recording;
+read only measured findings. Unexecuted experiments must be described as pending.
 
-Open the README, rulebook, reward spec, dashboard, one real failed transcript,
-RL/transfer reports and public sandbox client. Use readable zoom and a quiet room.
-Warm the free hosted service before recording. Close `.env`, provider consoles,
-Colab Secrets, database credentials and tabs containing run tokens.
+## 0:00–1:00 — what the assignment asked for
 
-Before recording, open the public `/healthz` endpoint and wait for `status: ok`.
-Use a new receipt/proof filename for each fresh take. After recording, title the
-video “Aster Payroll Gym — Niural AI Labs — [Your Name]”, review the full video,
-and test the reviewer link in a private browser window.
+> “The assignment was to build an AI training gym: tasks, tools, rewards, model
+> evaluation, a dashboard, reinforcement learning and a public sandbox. I chose
+> one fictional monthly-payroll workflow because dates, document authority,
+> arithmetic and missing evidence interact, with deterministic ground truth.
+> Tier 1 retrieves a rule, Tier 2 calculates pay and Tier 3 asks for missing or
+> conflicting evidence. No real employee data is used.”
 
-Current evidence: Gemini 3.5 Flash-Lite completed 90/90 remote API samples with
-reward **0.11444 ± 0.03845** across three rollout means. Gemini 3.8 Flash and the
-tool-use run are partial; they do not establish a three-model ranking. The
-independent failure packet is prepared but unreviewed. Qwen/RL, judge reliability,
-transfer findings remain pending. The [2026-10-07 Colab attempt](colab-run-status-2026-10-07.json)
-records an initial failed GPU preflight and skipped API phases. A
-[later rerun](colab-preflight-passed-2026-10-07.json) passed on a Tesla T4, then
-task preparation failed on a string-path bug, now fixed. Neither attempt contains
-model or training results. Public Tier-2/3 submissions scored **1.0** and
-survived a confirmed hosted restart; eleven API contract checks passed. These API calls
-were remote; no open-weight model inference or training ran on this computer.
+Show the README and one task. State the actual completion status.
 
-Fill the remaining slots from saved results before recording:
+## 1:00–4:30 — reward design (at least three minutes)
 
-- Three models: [names], comparison [means±SD], coverage [counts].
-- Judge: [human agreement], [repeat instability], [review disagreements].
-- Failure: use the genuine `failure-02` example below; complete your own review.
-- RL: [actual steps], selected beta [value], validation [reason], held-out
-  [initial→selected means±SD], [curve observations], [gaming sample/findings].
-- Transfer: [generated/transfer rankings], [agreement], [one task failure/reversal].
-- Public sandbox: https://aster-payroll-gym.onrender.com; Tier-2/3 both **1.0**,
-  [hosted restart and contract evidence](render-sandbox-acceptance.json).
-- Resources: [confirmed cost], [latency], [GPU/runtime], [remaining limitations].
+Show the rulebook and reward specification; pause to point at each component.
 
-Empty slots are pending evidence. Do not turn planned behavior into measured claims.
+> “The written rulebook is authoritative. Python computes expected answers;
+> an LLM does not generate ground truth. Every component returns diagnostic codes
+> and clause references so a penalty can be audited.”
 
-## If submitting without API credentials
+Walk through the [worked example](project-understanding.md): gross 320,000,
+contribution 500, taxable 309,500, tax 21,900, net 297,600 cents. Then remove YTD.
 
-This is a partial submission, even if its sandbox and code checks pass. Do not
-read unfinished result slots. The notebook's `SKIP_API_PHASES=True` mode permits
-Qwen inference on Colab CUDA while recording training, new remote comparisons
-and judge reliability as skipped. Keep the reward and genuine-failure sections
-and live sandbox demonstration; replace unexecuted findings with this disclosure:
+> “Without prior earnings the ceiling is unknown. The answer should request that
+> field, not guess zero. Refusing a solvable task is also wrong.”
 
-> “I could not provide judge API credentials for this Colab session. I therefore
-> skipped the RL sweeps, new remote comparisons and judge reliability study.
-> The reward has not been simplified: otherwise correct blocking explanations
-> remain pending without the judge. Those required experiments are incomplete.”
+> “Ordinary weights are correctness 60%, fields 25%, action 10% and format 5%.
+> Blocked tasks use diagnosis 55%, fields 25%, action 10%, explanation 5% and
+> format 5%. Hard gates override the sum: invalid output, unsafe computation and
+> unjustified refusal score zero. Incorrect substantive answers cannot exceed .20;
+> passing requires .975. Valid formatting alone earns no reward.”
 
-If Qwen has not run, say “Qwen evaluation is also pending.” If its accepted results
-have been imported, show their actual coverage and scores; distinguish complete
-deterministic scores from pending explanation judgments. Never describe inference
-as training. Existing saved Gemini results remain genuine historical evidence.
-Do not claim three-model ranking or transfer ranking agreement without complete,
-comparable records. In the RL segment, show configuration and the pending dashboard
-instead of invented curves; explain the planned method and this limitation.
+Show malformed-output and constant/always-abstain baseline evidence.
 
-Until genuine Qwen results exist, also say:
+> “The remote judge only assesses the usefulness of an otherwise correct blocking
+> explanation. It cannot calculate payroll or override Python rejection. Eligibility
+> and caching are shared across evaluation, training and sandbox. An outage leaves
+> scoring pending; the rubric is never silently simplified.”
 
-> “The initial preflight failed. After a runtime-recognition fix, my Colab Tesla T4
-> passed GPU, dependency and environment checks. Task preparation then encountered
-> a path-handling bug, which was corrected and regression-tested. These attempts
-> produced no Qwen or training results; those experiments remain incomplete.”
+Show reliability/fidelity results only if completed. Otherwise say:
 
-If preflight later passes, replace this with the actual rerun status. Passing
-preflight is setup evidence, not a model benchmark or training result.
+> “Repeated judge reliability and independent rule-fidelity reviews are pending.
+> The tests establish programmed behaviour, not judge accuracy.”
 
-## 0:00–1:00 — problem and scope
+## 4:30–5:45 — read a genuine failure (at least one minute)
 
-Screen: README and a task.
-
-> “Aster Payroll Gym tests an assistant on one fictional monthly-payroll workflow.
-> The assistant must read authoritative documents, calculate correctly and ask for
-> specific information when the evidence is insufficient. I chose this domain
-> because rules, dates, arithmetic and evidence gaps interact, while a synthetic
-> jurisdiction makes correctness deterministic and avoids private customer data.
-> The project connects tasks, shared scoring, model evaluation, cloud training,
-> a dashboard and an independent submission service.”
-
-Show a retrieval question, a payslip calculation and one evidence blocker. Explain
-that difficulty labels are not sent as answer hints. State actual completion status.
-
-## 1:00–4:30 — reward design
-
-Screens: rulebook R2/R4/R8/R9/R10, reward spec and baseline dashboard.
-
-> “The written rulebook is authoritative. Python independently computes expected
-> results; an LLM does not generate ground truth. Each scoring component returns
-> clause references and diagnostics, so I can connect a penalty to its rule.”
-
-Show the ceiling example: gross 320,000, remaining ceiling 10,000, contribution 500,
-taxable 309,500, tax 21,900, net 297,600 cents. Then remove YTD.
-
-> “Without prior pensionable earnings, the contribution is unresolved. The useful
-> answer names that missing field and requests it. Guessing zero is wrong. Refusing
-> a solvable task is also wrong.”
-
-Explain weights deliberately, giving each screen time:
-
-> “For ordinary work, correctness is 60%, field accuracy 25%, appropriate action
-> 10% and format 5%. For blocked work, diagnosis is 55%, fields 25%, action 10%,
-> explanation 5% and format 5%. Hard gates override the sum: invalid output,
-> unsupported computation and unnecessary refusal receive zero. Substantive
-> errors cannot exceed .20; passing requires .975. Formatting alone cannot pass.”
-
-Show a malformed output and one substantive mismatch, then actual baseline scores.
-
-> “Format-only, constant-answer and always-abstain policies test obvious shortcuts.
-> These are deterministic attack policies, not model benchmarks. Their results
-> support these particular defenses rather than proving every possible hack absent.”
-
-Explain the constrained judge and actual review evidence:
-
-> “Python first verifies blockers and citations. The remote judge only assesses
-> whether a correct explanation communicates the issue and a useful next action.
-> It cannot calculate payroll or override rejection. Identical eligibility and
-> caching rules apply across evaluation, training and sandbox. Outages stay pending,
-> so the rubric is not silently simplified.”
-
-Judge reliability and independent fidelity reviews are currently pending. After
-they finish, read actual agreement and three-repeat stability, explain an observed
-disagreement and show the review count. Stable judgments can still be wrong.
-This section must reach at least three minutes.
-
-## 4:30–5:45 — read one genuine failure
-
-Screen: [failure packet](../reviews/failure-review-packet.json), row `failure-02`,
-and its [saved transcript](../results/gemini-3.8-comparison/transcript.jsonl).
-Run `c697a5f3d20e737d05ae`; task `task-0ec7d48247ff1b45b74b`; rollout **0**.
-This is a completed Gemini 3.8 Flash answer, not a provider outage or fixture.
-
-Read the task's request and this exact model explanation aloud:
+Open [failure packet](../reviews/failure-review-packet.json), `failure-02`, and
+[actual transcript](../results/gemini-3.8-comparison/transcript.jsonl).
+Run `c697a5f3d20e737d05ae`, task `task-0ec7d48247ff1b45b74b`, rollout 0.
+Read the request and model response aloud:
 
 > “Calculated payslip for 2030-01-18 under schedule ASTER-2030: gross is 522,564
 > cents, contribution is 0 cents as YTD pensionable earnings met the 1,200,000
 > ceiling, taxable pay is 512,564 cents after 10,000 allowance, tax is 64,513
 > cents, and net pay is 458,051 cents.”
 
-Then explain the evidence:
+> “The reference gives gross 522,587, taxable 512,587, tax 62,517 and net
+> 460,070. Only contribution matches. R1 requires rounded cents, R3 proration,
+> R5 taxable pay, R6 marginal bands and R7 net pay. Field accuracy is .20;
+> the substantive-error gate produces final reward .05. JSON and citations cannot
+> rescue wrong arithmetic. Calculator-assisted proration is a proposed remedy,
+> not a measured improvement.”
 
-> “The reference gives gross 522,587, taxable pay 512,587, tax 62,517 and net
-> 460,070 cents. Only the zero contribution matches. R1 requires exact rounded
-> cents; R3 defines salary proration plus bonus; R5 defines taxable pay; R6 applies
-> marginal bands; R7 defines net pay. Field accuracy is 0.20. The scorer records
-> SUBSTANTIVE_MISMATCH and the CORRECTNESS_CAP gate, with final reward 0.05.
-> Valid JSON and citations cannot rescue incorrect arithmetic. Calculator-assisted
-> proration and a five-field check are proposed remedies, not measured improvements.
-> My independent reading of this packet is still required before signing the review.”
+Read/classify this failure yourself before signing the review packet.
 
-Spend at least one minute reading the actual response and comparing these fields.
-After you personally complete the review, update the final sentence truthfully.
+## 5:45–7:30 — evaluation and RL
 
-## 5:45–7:30 — cloud RL and held-out evidence
+Show actual model coverage, mean±SD, tiers, cost and latency. Existing complete
+Gemini 3.5 comparison: 90/90 samples, reward .11444 ± .03845 across three rollout
+means. Gemini 3.8 and tool runs are partial. Read Qwen figures only after accepted
+results are imported; setup checks are not model outcomes.
 
-Current status: cloud execution pending. All open-weight inference and training
-must run in Colab with CUDA; there is no local CPU/MPS fallback. Remote Gemini API
-evaluation is separate from Colab. Show five actual curves and before/after results
-only after genuine cloud artifacts are imported.
+> “Cloud training uses Qwen0.5B, LoRA and GRPO with four grouped completions.
+> Relative rewards provide advantages; KL limits movement from a frozen initial
+> policy. Two beta runs start identically. Validation selects beta before untouched
+> held-out evaluation. Logs include reward, KL, entropy, length and tier pass rate.”
 
-> “The cloud workflow uses Qwen2.5-0.5B-Instruct with LoRA and GRPO: four
-> sampled completions receive relative group advantages. A KL penalty discourages
-> excessive movement from the frozen initial policy. Both planned beta runs start
-> from the same policy; validation selects beta before untouched held-out evaluation.
-> This explains the implementation; training results remain pending until executed.”
+If training remains skipped, say plainly:
 
-After execution, read actual completed steps, beta choice and before/after mean±SD. Show initial
-reference equivalence and unchanged parameter hashes. Explain reward, KL, entropy,
-completion length and tier pass rate together; include equal-reward group fraction.
+> “This Colab session has no judge credentials. RL sweeps and the judge study
+> were skipped; no training improvement is claimed. GPU inference is a separate
+> experiment. Correct explanations requiring the absent judge remain pending.”
 
-> “Rising reward alone is not enough. I inspected [count] outputs for [attacks]
-> and observed [actual findings]. [Describe a negative or inconclusive result
-> honestly.] Checkpoints remain in cloud storage; checked JSON evidence drives
-> the dashboard.”
+If completed, show actual five curves, reference proof, selected beta, before/after
+results and counted reward-gaming observations. Never draw replacement curves.
 
 ## 7:30–9:00 — live public sandbox
 
-The [Render sandbox](https://aster-payroll-gym.onrender.com) passed external
-Tier-2/3 submissions at **1.0**, eleven contract checks and confirmed hosted
-restart persistence. Show [recorded evidence](render-sandbox-acceptance.json), then
-perform a fresh live request for the recording.
-Screen: an independent client targeting the actual Render URL, never localhost.
+> “The service runs independently of my laptop. I fetch a task, solve from public
+> evidence, submit an answer and retrieve its persisted score. The shared scorer
+> returns components and clauses without exposing expected answers.”
 
-> “This service runs independently of my laptop. I fetch a public task, solve from
-> its evidence, submit my answer and retrieve its persisted score. The response
-> includes components and clauses without expected answers. Scoring is shared
-> with evaluation and training.”
+Run in a terminal, using fresh filenames for each take:
 
-Show requests in order:
-
-```text
-GET /healthz
-GET /tasks?tier=2&n=1
-POST /submit        X-Run-Token: issued token
-GET /runs/run_id    X-Run-Token: same token
-```
-
-For the live correct submission, run:
-
-```bash
+```sh
 cd /Users/sahajrajmalla/Documents/NeurlAI
 uv run --extra server python scripts/sandbox_smoke.py https://aster-payroll-gym.onrender.com --receipt tmp/loom-take1-private.json --proof tmp/loom-take1-proof.json
 ```
 
-For another fresh recording, change both paths to `loom-take2` (or another unused
-name). `--resume` reuses the earlier task; do not describe that as a new task fetch.
-It solves only from public documents with independent Decimal arithmetic and prints
-a token-free proof. Keep its private receipt off screen. Show the correct score
-and the saved restart-persistence proof.
-Mention ten tasks per run, bounded payloads and caller quotas. Identical submissions
-are idempotent; changed answers receive 409. A 202 response is pending, not a pass.
-The quickstart's empty answer is deliberately invalid and cannot replace this demo.
+Show `submission_verified`, `complete` and score 1.0. This client uses independent
+Decimal arithmetic, not an LLM. Explain `GET /tasks`, `POST /submit` and
+`GET /runs/{run_id}` with the issued token. Keep private receipts off screen.
+Show [restart proof](render-sandbox-acceptance.json): correct Tier-2/3 submissions
+survived an actual hosted restart. Mention ten tasks per run, quotas, bounded
+payloads and idempotency. Pending HTTP 202 is not a completed score.
 
-## 9:00–10:00 — transfer and reproduction
+## 9:00–10:00 — transfer, limits and reproduction
 
-Transfer approval, freeze and measured findings are pending. After execution,
-show the transfer findings, cost/latency and README.
+> “Track B changes presentation while preserving rules. Five tasks need independent
+> approval and freezing before outcomes. Without comparable completed runs I cannot
+> claim ranking agreement. Synthetic rules, repeated retrieval templates and a
+> five-task transfer sample limit generalization.”
 
-> “Track B changes presentation while keeping rules fixed. [After approval and
-> execution: Five reviewed tasks were frozen before outcomes.] Generated ranking was [actual], transfer ranking
-> was [actual], with agreement [actual]. [Explain one observed task-level issue.]
-> Five tasks diagnose template dependence; they do not prove broad generalization.
-> Limits include synthetic rules, repeated retrieval templates, small transfer
-> sample and judge error. Costs and coverage are reported alongside scores.”
-
-Show clean setup and the four submission links. State the highest-value next work,
-such as additional held-out runs or independent fidelity checks, rather than new
-features. Finish within the required time range.
-
-## Rehearsal
-
-Do one timed practice and one private recording. Check readable text, audio, hidden
-secrets, correct links, genuine measurements and both timing minima. Use your own
-words. If the live endpoint fails, fix it before the final recording; a saved run
-must be labeled replayed and does not replace a live request.
+Show actual transfer findings if available, otherwise its pending report. Show
+setup commands, repository/dashboard/sandbox links and honest outstanding work.
+End within 8–12 minutes. Review the recording and test its share link in a private
+browser window before adding it to the checklist and submission email.
