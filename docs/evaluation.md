@@ -77,7 +77,7 @@ No model weights were imported onto the Mac.
 Judge identity is null and sampling seed is 20261002, unlike the Gemini runs.
 The dashboard therefore presents a separate experiment group: these scores do
 not establish a controlled cross-model ranking. The 120-task evaluation and
-12-task tool cohort are still running/queued; their results remain pending import.
+12-task tool cohort finished in Colab; their results remain pending archive import.
 
 ## Running
 

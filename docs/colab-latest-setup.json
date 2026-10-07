@@ -40,14 +40,22 @@
     "comparison_samples_expected": 90,
     "archive": "aster-qwen-comparison.zip",
     "import_status": "accepted: results/qwen-colab-comparison",
-    "remaining_cohorts": "120-task evaluation running; 12-task tool comparison follows",
-    "export_status": "full compact export queued after evaluation",
+    "remaining_cohorts": "120-task evaluation and 12-task tool comparison finished in Colab; pending final archive import",
+    "export_status": "Completed and downloaded via Colab; move archive into workspace for validation",
     "training_status": "skipped API_PHASES_SKIPPED",
     "local_model_execution": false,
     "comparison_mean_reward": 0.001388888888888889,
     "comparison_replicate_sd": 0.0024056261216234406,
     "comparison_passes": 0,
-    "full_evaluation_last_observed_records": 323,
-    "archive_sha256": "3fa76079b3275a509d4bd6a26becf3355d7183ff9640aa0cdf067fc6a3f6c978"
+    "full_evaluation_last_observed_records": 360,
+    "archive_sha256": "3fa76079b3275a509d4bd6a26becf3355d7183ff9640aa0cdf067fc6a3f6c978",
+    "full_evaluation_observed_metrics": {
+      "completed_samples": 360,
+      "expected_samples": 360,
+      "aggregate_mean": 0.0,
+      "aggregate_replicate_sd": 0.0,
+      "evidence_scope": "Observed Colab terminal; not yet imported/validated locally"
+    },
+    "full_archive": "aster-results.zip"
   }
 }
