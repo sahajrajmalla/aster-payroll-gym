@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-07T06:36:38.803018+00:00",
+  "date": "2026-10-07T07:18:25.994285+00:00",
   "evidence_kind": "clean_clone_verification",
-  "code_revision": "e6f448987bc298117de56245ccafbdf73cc470f3",
-  "scope": "Current runtime source plus reviewed documentation working tree; isolated default/server environment",
+  "code_revision": "635349085b475ebcc50ccabdd8eee8480c9d90ff",
+  "scope": "Current tracked source and documentation; isolated default/server environment",
   "status": "passed",
   "checks": [
     {
@@ -14,7 +14,7 @@
         "server"
       ],
       "exit_code": 0,
-      "output_tail": "Using CPython 3.11.12 interpreter at: /opt/homebrew/opt/python@3.11/bin/python3.11\nCreating virtual environment at: .venv\n   Building aster-payroll-gym @ file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-_9r_122v/repo\n      Built aster-payroll-gym @ file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-_9r_122v/repo\nPrepared 1 package in 893ms\nInstalled 33 packages in 210ms\n + annotated-types==0.8.0\n + anyio==4.15.1\n + aster-payroll-gym==0.1.0 (from file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-_9r_122v/repo)\n + attrs==26.1.0\n + certifi==2026.7.22\n + click==8.5.0\n + fastapi==0.116.1\n + h11==0.16.0\n + httpcore==1.0.9\n + httpx==0.28.1\n + hypothesis==6.140.2\n + idna==3.20\n + iniconfig==2.3.0\n + mypy==1.18.2\n + mypy-extensions==1.1.0\n + packaging==26.3\n + pathspec==1.1.1\n + pluggy==1.6.0\n + psycopg==3.2.10\n + psycopg-binary==3.2.10\n + pydantic==2.11.9\n + pydantic-core==2.33.2\n + pygments==2.21.0\n + pytest==8.4.2\n + pytest-asyncio==1.2.0\n + python-dotenv==1.1.1\n + ruff==0.13.3\n + sortedcontainers==2.4.0\n + sqlalchemy==2.0.43\n + starlette==0.47.3\n + typing-extensions==4.16.0\n + typing-inspection==0.4.4\n + uvicorn==0.35.0\n"
+      "output_tail": "Using CPython 3.11.12 interpreter at: /opt/homebrew/opt/python@3.11/bin/python3.11\nCreating virtual environment at: .venv\n   Building aster-payroll-gym @ file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-pxk2s1vw/repo\n      Built aster-payroll-gym @ file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-pxk2s1vw/repo\nPrepared 1 package in 861ms\nInstalled 33 packages in 113ms\n + annotated-types==0.8.0\n + anyio==4.15.1\n + aster-payroll-gym==0.1.0 (from file:///private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-pxk2s1vw/repo)\n + attrs==26.1.0\n + certifi==2026.7.22\n + click==8.5.0\n + fastapi==0.116.1\n + h11==0.16.0\n + httpcore==1.0.9\n + httpx==0.28.1\n + hypothesis==6.140.2\n + idna==3.20\n + iniconfig==2.3.0\n + mypy==1.18.2\n + mypy-extensions==1.1.0\n + packaging==26.3\n + pathspec==1.1.1\n + pluggy==1.6.0\n + psycopg==3.2.10\n + psycopg-binary==3.2.10\n + pydantic==2.11.9\n + pydantic-core==2.33.2\n + pygments==2.21.0\n + pytest==8.4.2\n + pytest-asyncio==1.2.0\n + python-dotenv==1.1.1\n + ruff==0.13.3\n + sortedcontainers==2.4.0\n + sqlalchemy==2.0.43\n + starlette==0.47.3\n + typing-extensions==4.16.0\n + typing-inspection==0.4.4\n + uvicorn==0.35.0\n"
     },
     {
       "command": [
@@ -26,7 +26,7 @@
         "-q"
       ],
       "exit_code": 0,
-      "output_tail": "........................................................................ [ 29%]\n........................................................................ [ 58%]\n........................................................................ [ 87%]\n..............................                                           [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.11/site-packages/starlette/testclient.py:51\n  /private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-_9r_122v/repo/.venv/lib/python3.11/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n246 passed, 1 warning in 12.07s\n"
+      "output_tail": "........................................................................ [ 28%]\n........................................................................ [ 57%]\n........................................................................ [ 86%]\n.................................                                        [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.11/site-packages/starlette/testclient.py:51\n  /private/var/folders/zz/qg9mqbp56631kxmjjyl11f1h0000gn/T/aster-clean-clone-pxk2s1vw/repo/.venv/lib/python3.11/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n249 passed, 1 warning in 7.16s\n"
     },
     {
       "command": [
