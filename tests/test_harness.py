@@ -201,6 +201,36 @@ async def test_evaluation_resume_never_resamples_wrong_answer(tmp_path):
         await run_evaluation([task], tmp_path, model="other", evidence_kind="fixture", provider=provider)
 
 
+async def test_no_judge_evaluation_preserves_pending_traps_without_resampling(tmp_path):
+    """Fixture transport only: missing credentials must not rewrite the rubric or coverage."""
+    tasks = [generate_taskset(n=1, seed=9, tier=1)[0], generate_taskset(n=1, seed=10, tier=3)[0]]
+    assert tasks[1].ground_truth.decision == "needs_information"
+
+    class ExactFixture(FixtureProvider):
+        async def chat(self, messages, **kwargs):
+            task = tasks[self.calls]
+            self.calls += 1
+            return ChatResult({"role": "assistant", "content": task.ground_truth.model_dump_json()},
+                              [{"status": "complete", "cost_usd": 0}], 10, 2, 0, .001)
+
+    provider = ExactFixture()
+    metrics = await run_evaluation(tasks, tmp_path, model="fixture-no-judge", rollouts=1,
+                                   evidence_kind="fixture", provider=provider, judge=None)
+    records = json.loads((tmp_path / "scores.json").read_text())["records"]
+    ordinary = next(row for row in records if row["tier"] == 1)
+    trap = next(row for row in records if row["tier"] == 3)
+    assert ordinary["status"] == "complete" and ordinary["score"] == 1.0
+    assert trap["status"] == "pending" and trap["score"] is None
+    assert trap["error_code"] == "JUDGE_UNAVAILABLE"
+    assert metrics["coverage"] == .5 and metrics["aggregate"]["mean"] is None
+    assert json.loads((tmp_path / "config.json").read_text())["status"] == "partial"
+    trace = (tmp_path / "transcript.jsonl").read_text()
+    await run_evaluation(tasks, tmp_path, model="fixture-no-judge", rollouts=1,
+                         evidence_kind="fixture", provider=provider, judge=None)
+    assert provider.calls == 2
+    assert (tmp_path / "transcript.jsonl").read_text() == trace
+
+
 async def test_missing_resume_journal_refuses_resampling_before_mutation(tmp_path):
     task = generate_taskset(n=1, seed=9, tier=1)[0]
     provider = FixtureProvider()

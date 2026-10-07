@@ -18,6 +18,20 @@ def code_revision() -> str:
         return "uncommitted"
 
 
+def record_skip(*, label: str, reason_code: str, status_path: str | Path, explicit: bool) -> None:
+    """Preserve a deliberate skipped phase without running a command or inventing scores."""
+    require_colab(explicit=explicit)
+    path = Path(status_path)
+    report = json.loads(path.read_text()) if path.exists() else {"steps": []}
+    report["steps"].append({"label": label, "status": "skipped", "reason_code": reason_code,
+                            "code_revision": code_revision(), "skipped_at": datetime.now(UTC).isoformat()})
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    temporary.replace(path)
+    print(f"{label}: skipped ({reason_code}); experimental evidence remains pending")
+
+
 def run_step(command: list[str], *, label: str, status_path: str | Path, explicit: bool) -> bool:
     """Record command outcomes without turning a failed experiment into a result.
 

@@ -271,6 +271,45 @@ def test_cloud_workflow_records_startup_error_without_claiming_result(monkeypatc
     assert row["error_type"] == "FileNotFoundError"
 
 
+def test_cloud_skip_is_guarded_and_never_runs_a_command(monkeypatch: pytest.MonkeyPatch,
+                                                       tmp_path: Path) -> None:
+    from aster_gym.cloud import workflow
+
+    path = tmp_path / "run_status.json"
+    monkeypatch.setattr("aster_gym.cloud.guard.platform.system", lambda: "Darwin")
+    monkeypatch.setattr(workflow.subprocess, "run", lambda *args, **kwargs: pytest.fail("Command ran"))
+    with pytest.raises(CloudOnlyError):
+        workflow.record_skip(label="training", reason_code="API_PHASES_SKIPPED",
+                             status_path=path, explicit=True)
+    assert not path.exists()
+    monkeypatch.setattr(workflow, "require_colab", lambda **kwargs: None)
+    monkeypatch.setattr(workflow, "code_revision", lambda: "test-only-revision")
+    for label in ("training", "judge-study"):
+        workflow.record_skip(label=label, reason_code="API_PHASES_SKIPPED", status_path=path, explicit=True)
+    steps = json.loads(path.read_text())["steps"]
+    assert [row["label"] for row in steps] == ["training", "judge-study"]
+    assert all(row["status"] == "skipped" and row["reason_code"] == "API_PHASES_SKIPPED" for row in steps)
+    assert all("score" not in row and "exit_code" not in row for row in steps)
+    assert "torch" not in sys.modules
+
+
+def test_notebook_no_key_mode_preserves_inference_and_records_skipped_phases() -> None:
+    notebook = json.loads(Path("notebooks/aster_colab.ipynb").read_text())
+    sources = ["".join(cell["source"]) for cell in notebook["cells"] if cell["cell_type"] == "code"]
+    code = "\n".join(sources)
+    assert "SKIP_API_PHASES = True" in code
+    inference = next(source for source in sources if "START_INFERENCE = False" in source)
+    assert "if START_INFERENCE and GPU_READY:" in inference
+    assert "ready_for_judge()" not in inference
+    assert "JUDGE_UNAVAILABLE" in inference
+    for flag in ("START_SMOKE", "START_SWEEPS", "START_REMOTE_EVAL", "START_JUDGE_STUDY"):
+        cell = next(source for source in sources if f"{flag} = False" in source)
+        assert "if SKIP_API_PHASES:" in cell and "record_skip(" in cell
+    setup = next(source for source in sources if "SKIP_API_PHASES = True" in source)
+    assert 'os.environ.pop(name, None)' in setup
+    assert "aster-gym-results-no-api" in setup
+
+
 def test_complete_evaluation_cannot_omit_or_duplicate_replicates(tmp_path: Path) -> None:
     run = sample_run(tmp_path / "run")
     payloads = {p.name: p.read_bytes() for p in run.iterdir()}

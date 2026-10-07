@@ -45,6 +45,27 @@ Fill the remaining slots from saved results before recording:
 
 Empty slots are pending evidence. Do not turn planned behavior into measured claims.
 
+## If submitting without API credentials
+
+This is a partial submission, even if its sandbox and code checks pass. Do not
+read unfinished result slots. The notebook's `SKIP_API_PHASES=True` mode permits
+Qwen inference on Colab CUDA while recording training, new remote comparisons
+and judge reliability as skipped. Keep the reward and genuine-failure sections
+and live sandbox demonstration; replace unexecuted findings with this disclosure:
+
+> “I could not provide judge API credentials for this Colab session. I therefore
+> skipped the RL sweeps, new remote comparisons and judge reliability study.
+> The reward has not been simplified: otherwise correct blocking explanations
+> remain pending without the judge. Those required experiments are incomplete.”
+
+If Qwen has not run, say “Qwen evaluation is also pending.” If its accepted results
+have been imported, show their actual coverage and scores; distinguish complete
+deterministic scores from pending explanation judgments. Never describe inference
+as training. Existing saved Gemini results remain genuine historical evidence.
+Do not claim three-model ranking or transfer ranking agreement without complete,
+comparable records. In the RL segment, show configuration and the pending dashboard
+instead of invented curves; explain the planned method and this limitation.
+
 ## 0:00–1:00 — problem and scope
 
 Screen: README and a task.

@@ -2,6 +2,13 @@
 
 **Status: pending Colab execution. No training or model inference ran locally.**
 
+The default notebook mode, `SKIP_API_PHASES=True`, intentionally skips RL because
+judge credentials are unavailable. It can run Qwen evaluation on Colab CUDA with
+the unchanged scorer; this is inference, not training evidence. Eligible blocking
+explanations remain pending without a judge. No Qwen results are claimed before
+its artifacts are executed and imported. A partial submission must disclose that
+the required KL sweeps and held-out policy comparison are not completed.
+
 The executable cloud workflow uses Qwen2.5-0.5B-Instruct, pinned revision, LoRA and
 GRPO. See README for the implemented clipped objective and k3 KL estimator, and
 docs/colab.md for configuration, GPU guard, four-completion groups, reference proof,

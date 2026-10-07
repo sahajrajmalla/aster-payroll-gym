@@ -6,7 +6,26 @@ The notebook and entrypoints require hosted Colab; Qwen also requires CUDA.
 There is no CPU/MPS fallback or local override. GPU acceptance and model findings
 remain pending until genuine runs succeed.
 
-## Before running
+## Continue without API keys
+
+The notebook defaults to `SKIP_API_PHASES=True`. It does not load API secrets and
+clears their environment variables. Use a fresh notebook copy with the updated
+repository revision, select a GPU, mount Drive and run setup/preflight. Leave the
+API switches off; enable only `START_INFERENCE=True` to run Qwen. Transfer tasks
+still require independent approval and a matching freeze.
+
+This mode writes to `/content/drive/MyDrive/aster-gym-results-no-api`. It records
+training, remote comparisons and judge reliability as skipped. The same scorer
+still applies: eligible blocking explanations have `status: pending` and
+`score: null` without a judge. Other outputs receive their deterministic score.
+No weights are removed, no missing ratings become zero, and incomplete coverage
+cannot establish a complete ranking. Qwen results exist only after execution.
+
+Export and import the genuine evidence using the commands below. This can support
+a clearly disclosed partial submission; it does not complete the required RL or
+judge study. Training remains skipped until judge access is available.
+
+## Full workflow when keys are available
 
 1. Complete the independent task reviews and fifteen judge labels. Freeze the five
    transfer tasks with `uv run --extra server aster-gym freeze-transfer`, then commit and push.
@@ -15,12 +34,16 @@ remain pending until genuine runs succeed.
    and refuses to overwrite tracked edits.
 3. Select **Runtime → Change runtime type → GPU** and mount Drive. Allow at least
    5 GiB of cloud filesystem space; checkpoints remain on Drive.
-4. Add `JUDGE_API_KEY` and `MODEL_API_KEY` in Colab Secrets and enable notebook
+4. Set `SKIP_API_PHASES=False`. Add `JUDGE_API_KEY` and `MODEL_API_KEY` in Colab Secrets and enable notebook
    access. Both may contain the same Google API key. Never paste keys into cells.
 5. Verify model access, quotas, zero-dollar pricing and disabled billing in your
    account. Only then enable `FREE_TIER_CONFIRMED` for the judge and
    `REMOTE_FREE_TIER_CONFIRMED` for the two comparison models. Prices fail closed
    until confirmed. Keep the hard cost cap at zero.
+
+Full mode defaults to `/content/drive/MyDrive/aster-gym-results`. Use a fresh
+output directory when adding a judge or changing configuration; a no-judge run
+cannot resume under a different judge identity. Preserve its original evidence.
 
 The notebook installs the pinned `cloud` extra only in Colab. Preflight checks CUDA,
 storage, dependency versions, both optional `verifiers` environments and frozen
@@ -37,7 +60,8 @@ Every start switch defaults to `False`. Enable a phase deliberately, then run it
   validation-only selection and held-out initial/selected comparisons.
 - `START_INFERENCE`: Qwen runs three rollouts per task on the same 30-task cohort,
   all 120 evaluation tasks and 12 tool tasks. Five transfer tasks run only when
-  the exact human-approved freeze marker verifies.
+  the exact human-approved freeze marker verifies. It needs GPU preflight but no
+  API key; no-key judge-dependent scores stay pending.
 - `START_REMOTE_EVAL`: both configured remote models run three rollouts on the
   same 30-task, 12-tool-task and approved five-task transfer cohorts. Temperature,
   seed and completion budget match Qwen; the shared scorer records full evidence.

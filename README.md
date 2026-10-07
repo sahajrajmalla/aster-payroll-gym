@@ -16,6 +16,10 @@ Deterministic baselines and a genuine 90-sample Gemini 3.5 evaluation are record
 Gemini 3.8 remains rate-limited/partial. Public sandbox Tier-2/3 submissions and
 hosted restart persistence passed; Qwen/RL and independent reviews remain pending.
 Missing evidence is never replaced with fixtures.
+The Colab notebook now defaults to no-API mode: Qwen inference can run on its GPU,
+while training, remote comparisons and judge study are explicitly skipped.
+Judge-dependent scores remain pending. This mode produces partial evidence and
+does not complete all assignment requirements; see [Colab guide](docs/colab.md).
 
 ## Start here
 
@@ -101,6 +105,10 @@ signal. Equal-reward groups have zero advantage; KL can still contribute a gradi
 The adapter-disabled frozen backbone supplies the initial reference; its initial
 equivalence and parameter immutability are checked.
 Full settings, reference checks and recovery are in [Colab guide](docs/colab.md).
+Keep `SKIP_API_PHASES=True` if you have no API keys. With a successful GPU
+preflight, enable `START_INFERENCE` to evaluate Qwen; leave the training switches
+off. To run the full workflow later, set `SKIP_API_PHASES=False`, configure verified
+judge access and use a fresh output directory. Do not mix the two scoring identities.
 
 Download only the compact cloud results bundle, then run:
 
