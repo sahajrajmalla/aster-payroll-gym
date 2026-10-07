@@ -132,5 +132,13 @@
     "approved_transfer_and_measured_results": "NOT_DONE",
     "final_experiment_resource_spend_audit": "PARTIAL: available model runs audited; overall GPU charges and unexecuted RL/transfer unverified"
   },
-  "loom": "NOT_RECORDED"
+  "loom": "NOT_RECORDED",
+  "published_checks": {
+    "revision": "cfaab9fcb7898e3de12e0c1669810a91d1e605b5",
+    "ci": "passed",
+    "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37617826743",
+    "dashboard_deployment": "passed",
+    "dashboard_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37617826799",
+    "scope": "Verified final source and notebook. Later changes only record these checks and public proof."
+  }
 }
