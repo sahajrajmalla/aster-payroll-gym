@@ -1,40 +1,36 @@
 # Aster Payroll Gym
 
-A synthetic payroll gym with a separate written rulebook, deterministic Python
-ground truth and one auditable scorer shared by evaluation, cloud RL and a public API.
+A synthetic payroll gym featuring a separate written rulebook, a deterministic Python
+ground truth, and an auditable scorer shared across evaluation, cloud reinforcement learning (RL), and a public API.
 
 [Repository](https://github.com/sahajrajmalla/aster-payroll-gym) ·
 [Dashboard](https://sahajrajmalla.com.np/aster-payroll-gym/) ·
 [Sandbox](https://aster-payroll-gym.onrender.com/docs) ·
 [Colab](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb)
 
-**Implementation checked; experimental submission incomplete.** The Render/Neon
-sandbox passed correct Tier-2/3 submissions and persistence after restart. Qwen
-completed 486 genuine Colab samples; none passed. A fresh Gemini run completed its
-three rollouts on all 120 evaluation tasks: 360 answers, reward .12049 ± .00732,
-32 passes and rewards from 0 to 1. The judge produced 45 uncached responses:
-one malformed output and 2 unstable examples among 14 complete triples. Human
-validity labels, transfer approvals/results, compatible frontier comparison and
-actual RL sweeps remain pending. See [checklist](docs/submission-checklist.md),
-[measured evidence](docs/evaluation.md) and [QA](docs/final-qa.json).
+**Implementation verified; experimental submission pending completion.** The Render/Neon
+sandbox successfully processed Tier-2/3 submissions and maintained persistence following a restart. Qwen
+completed 486 authentic Colab samples, though zero achieved a passing score. A subsequent Gemini execution completed
+three rollouts across all 120 evaluation tasks, yielding 360 answers, a reward of .12049 ± .00732,
+32 passing instances, and rewards ranging from 0 to 1. The evaluation judge returned 45 uncached responses,
+which included one malformed output and 2 unstable examples out of 14 complete triples. Human
+validity labels, transfer approvals and results, compatible frontier comparisons, and
+empirical RL sweeps remain pending. Refer to the [checklist](docs/submission-checklist.md),
+[measured evidence](docs/evaluation.md), and [QA](docs/final-qa.json) for comprehensive details.
 
-## Try the public sandbox without cloning
+## Public Sandbox Access
 
-Python 3 is enough. This pinned client fetches a Tier-2 task, independently solves
-it from public documents, submits it and retrieves its score:
+The public sandbox is accessible without cloning the repository. A Python 3 environment is required. The following pinned client script fetches a Tier-2 task, independently resolves it utilizing public documents, submits the solution, and retrieves the corresponding score:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/sahajrajmalla/aster-payroll-gym/8c96d28abe5fe6f5bd504d96d091ee6920f040d0/scripts/sandbox_smoke.py | python3 - https://aster-payroll-gym.onrender.com
 ```
 
-Expect `submission_verified`, `complete` and score 1.0. Render Free may need a cold
-start; the client retries bounded network failures. Ten tasks/run, caller quotas,
-bounded payloads and judge-call limits bound abuse and cost. Run tokens protect
-saved submissions; caller API keys and expected answers are never exposed.
+Successful execution yields a `submission_verified` and `complete` status alongside a score of 1.0. The Render Free instance may necessitate a cold start; the client automatically retries bounded network failures. System utilization and associated costs are governed by limits of ten tasks per run, caller quotas, bounded payloads, and judge-call limits. Saved submissions are secured by run tokens, ensuring caller API keys and expected answers remain unexposed.
 
-## Run locally
+## Local Execution
 
-Python 3.11 and uv are required. No model packages are installed by these commands.
+Local execution requires Python 3.11 and the `uv` package manager. The following commands initialize the environment without installing model packages:
 
 ```sh
 uv sync --locked --extra server
@@ -46,51 +42,48 @@ uv run --extra server aster-gym report --output site
 uv run --extra server aster-gym serve
 ```
 
-Open `http://127.0.0.1:8000/docs`. Use [setup](docs/setup.md) for local dashboard,
-public sandbox and result-import commands. Preserve existing `.env`; keep credentials
-and private run receipts out of Git and recordings. Install the `cloud` extra only
-in Colab. Model entrypoints require hosted Colab and CUDA before importing models.
+The API documentation is accessible at `http://127.0.0.1:8000/docs`. Refer to the [setup documentation](docs/setup.md) for instructions regarding the local dashboard, public sandbox, and result-import commands. Existing `.env` files must be preserved, and credentials along with private run receipts must be excluded from version control and recordings. The `cloud` extra package should exclusively be installed within Colab environments. Model entrypoints require hosted Colab and CUDA availability prior to model initialization.
 
-## Task and reward design
+## Task and Reward Architecture
 
 ASTER-1.0 defines document authority, proration, bonuses, capped contributions,
-allowances, marginal tax and net pay in integer fictional AST cents.
+allowances, marginal tax, and net pay evaluated in integer fictional AST cents.
 
-- Tier 1: retrieve an effective schedule field.
-- Tier 2: calculate interacting payroll lines.
-- Tier 3: request missing YTD earnings, resolve equal-authority salary conflicts,
-  or request a schedule covering the payment date.
+- Tier 1: Retrieves an effective schedule field.
+- Tier 2: Calculates interacting payroll lines.
+- Tier 3: Requests missing YTD earnings, resolves equal-authority salary conflicts,
+  or requests a schedule covering the payment date.
 
-Frozen datasets contain 12 seeds, 30 training, 15 validation, 120 evaluation and
+Frozen datasets consist of 12 seeds, 30 training, 15 validation, 120 evaluation, and
 five transfer tasks. Seed namespaces and normalized fingerprints prevent split
-overlap. Track B changes presentation while preserving rules; human approval and
-freeze precede transfer evaluation. No real employee data is used.
-Seeded tasks can be graded indefinitely without per-task human labels. This works
-for the fictional rulebook; explanation usefulness and unwritten real-world
-judgment are not computable by the payroll reference.
+overlap. Track B modifications alter presentation while preserving underlying rules; human approval and
+code freeze precede transfer evaluation. Synthetic data is strictly utilized; no real employee data is incorporated.
+Seeded tasks can be evaluated indefinitely without requiring per-task human labels. This methodology is effective
+for the fictional rulebook; explanation utility and unwritten real-world
+judgment fall outside the computable scope of the payroll reference.
 
-Normal weights: correctness 60%, fields 25%, action 10%, format 5%.
-Blocked-task weights: diagnosis 55%, fields 25%, action 10%, explanation judge 5%,
-format 5%. Invalid answers, unsafe computation and unjustified abstention score
-zero. Substantive errors cannot exceed .20; formatting alone earns no reward.
-Passing requires .975. The judge assesses only an otherwise correct blocking
-explanation. Judge outages remain pending, without a substitute score.
+Normal evaluation weights: correctness 60%, fields 25%, action 10%, format 5%.
+Blocked-task evaluation weights: diagnosis 55%, fields 25%, action 10%, explanation judge 5%,
+format 5%. Invalid answers, unsafe computations, and unjustified abstentions yield a score of
+zero. Substantive errors are capped at a .20 penalty; formatting compliance alone yields no reward.
+A passing threshold requires a score of .975. The judge evaluates solely an otherwise correct blocking
+explanation. Instances of judge outages remain pending and do not receive a substitute score.
 
-The three tools are `read_document`, `lookup_rules` and bounded `calculate`.
-The sandbox exposes `/tasks`, `/submit`, `/runs/{run_id}` and `/healthz`; public
-responses exclude expected answers. Neon persists token-protected, idempotent runs.
-Ten tasks per run, payload limits and caller quotas bound service use.
+The three available tools are `read_document`, `lookup_rules`, and a bounded `calculate` function.
+The sandbox exposes the following endpoints: `/tasks`, `/submit`, `/runs/{run_id}`, and `/healthz`; public
+responses deliberately omit expected answers. Neon ensures persistence for token-protected, idempotent runs.
+Service utilization is regulated by a limit of ten tasks per run, payload constraints, and caller quotas.
 
-## Evaluation and cloud learning
+## Evaluation and Cloud Learning
 
-Evaluation saves full transcripts, component scores, retries, tokens, cost and
-latency. The main comparison uses the same 30 tasks and three rollouts per model;
-Qwen additionally runs all 120 evaluation tasks and 12 tool tasks. Reported SD is
-sample SD across complete rollout means. Programmatic baselines are separate.
+The evaluation system records full transcripts, component scores, retries, token usage, cost, and
+latency. The primary comparative analysis employs the identical 30 tasks and three rollouts per model;
+Qwen additionally processes all 120 evaluation tasks alongside 12 tool tasks. The reported standard deviation (SD) is
+calculated as the sample SD across complete rollout means. Programmatic baselines are maintained separately.
 
-Cloud defaults: Qwen2.5-0.5B-Instruct, LoRA rank 8, four grouped completions,
-80 steps per beta (.001/.10). Validation selects beta before untouched held-out
-comparison. GRPO uses group-relative advantages without a separate critic:
+Cloud configuration defaults: Qwen2.5-0.5B-Instruct, LoRA rank 8, four grouped completions,
+and 80 steps per beta (.001/.10). The validation phase selects the optimal beta preceding the untouched held-out
+comparison. GRPO implements group-relative advantages without requiring a separate critic:
 
 ```text
 A_i = (R_i − mean(R)) / (std(R) + ε)
@@ -100,19 +93,19 @@ J = E[(1/G) Σ_i (1/|o_i|) Σ_t
 k3_it = exp(d_it) − d_it − 1
 ```
 
-The adapter-disabled frozen backbone is the initial reference; equivalence and
-immutability are checked. Logs include reward, KL/penalty, entropy, length, tier
-pass rates, components and equal-reward groups. Checkpoints stay in cloud storage.
-No-key mode permits GPU inference but skips RL and judge study; eligible scores
-remain pending. See [Colab instructions](docs/colab.md).
+The adapter-disabled frozen backbone serves as the initial reference; equivalence and
+immutability are rigorously verified. Logging metrics include reward, KL/penalty, entropy, length, tier
+pass rates, components, and equal-reward groups. Checkpoints are securely stored in cloud storage.
+No-key mode enables GPU inference while bypassing RL and judge study; eligible scores
+remain in a pending state under this mode. Refer to the [Colab instructions](docs/colab.md) for further details.
 
-## Documentation
+## Documentation Reference
 
-Start with [setup](docs/setup.md) and the [submission status](docs/submission-checklist.md).
-Technical references: [architecture](docs/architecture.md), [schemas](docs/task-schema.md),
+Initial configuration and project overview are detailed in the [setup](docs/setup.md) and [submission status](docs/submission-checklist.md) documents.
+Further technical references include: [architecture](docs/architecture.md), [schemas](docs/task-schema.md),
 [rules](rules/aster-payroll-v1.md), [reward](docs/reward-spec.md),
 [evaluation](docs/evaluation.md), [RL](docs/rl-report.md),
 [failures](docs/failure-analysis.md), [edge cases](docs/edge-cases.md),
 [trade-offs](docs/assumptions-and-tradeoffs.md), [transfer](docs/advanced-track.md),
 [deployment/API](docs/deployment.md), [Colab](docs/colab.md),
-[review procedure](docs/human-review.md) and [requirements](docs/traceability.md).
+[review procedure](docs/human-review.md), and [requirements](docs/traceability.md).
