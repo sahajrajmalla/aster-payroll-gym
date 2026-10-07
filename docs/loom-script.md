@@ -7,10 +7,21 @@ model failure. This outline allocates 3:30 and 1:15 respectively.
 
 ## Prepare the screen
 
+Use the Loom desktop app with screen recording and microphone; camera is optional.
+Check a 15-second test for clear audio and readable text, then do a timed rehearsal.
+The [Starter plan has a five-minute limit](https://support.atlassian.com/loom/docs/how-long-can-i-record),
+so check that your recording account supports the required 8–12-minute video.
+[Official recorder setup](https://support.atlassian.com/loom/docs/get-started-with-the-loom-desktop-app).
+
 Open the README, rulebook, reward spec, dashboard, one real failed transcript,
 RL/transfer reports and public sandbox client. Use readable zoom and a quiet room.
 Warm the free hosted service before recording. Close `.env`, provider consoles,
 Colab Secrets, database credentials and tabs containing run tokens.
+
+Before recording, open the public `/healthz` endpoint and wait for `status: ok`.
+Use a new receipt/proof filename for each fresh take. After recording, title the
+video “Aster Payroll Gym — Niural AI Labs — [Your Name]”, review the full video,
+and test the reviewer link in a private browser window.
 
 Current evidence: Gemini 3.5 Flash-Lite completed 90/90 remote API samples with
 reward **0.11444 ± 0.03845** across three rollout means. Gemini 3.8 Flash and the
@@ -166,9 +177,12 @@ GET /runs/run_id    X-Run-Token: same token
 For the live correct submission, run:
 
 ```bash
-python3 scripts/sandbox_smoke.py https://aster-payroll-gym.onrender.com
+cd /Users/sahajrajmalla/Documents/NeurlAI
+uv run --extra server python scripts/sandbox_smoke.py https://aster-payroll-gym.onrender.com --receipt tmp/loom-take1-private.json --proof tmp/loom-take1-proof.json
 ```
 
+For another fresh recording, change both paths to `loom-take2` (or another unused
+name). `--resume` reuses the earlier task; do not describe that as a new task fetch.
 It solves only from public documents with independent Decimal arithmetic and prints
 a token-free proof. Keep its private receipt off screen. Show the correct score
 and the saved restart-persistence proof.

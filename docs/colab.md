@@ -9,7 +9,7 @@ remain pending until genuine runs succeed.
 ## Before running
 
 1. Complete the independent task reviews and fifteen judge labels. Freeze the five
-   transfer tasks with `uv run aster-gym freeze-transfer`, then commit and push.
+   transfer tasks with `uv run --extra server aster-gym freeze-transfer`, then commit and push.
 2. Save your own notebook copy. Set `REPO_REF` to that reviewed commit SHA. The
    notebook resolves and prints `CODE_REVISION`, checks out that exact revision,
    and refuses to overwrite tracked edits.
@@ -103,10 +103,10 @@ packet separately. Keep the notebook, full logs and checkpoints on Drive.
 On the laptop, use a new import directory:
 
 ```bash
-uv run aster-gym import-results --bundle aster-results.zip --output results/colab-import
+uv run --extra server aster-gym import-results --bundle aster-results.zip --output results/colab-import
 # Copy the downloaded judge-review-packet.json into reviews/ after checking its labels.
-uv run aster-gym analyze
-uv run aster-gym report
+uv run --extra server aster-gym analyze
+uv run --extra server aster-gym report
 ```
 
 Import checks versions, schemas, checksums, unsafe paths, archive limits, split
