@@ -212,9 +212,9 @@
       "source_page": "8",
       "requirement": "100+ generated tasks with observed non-degenerate model distribution",
       "implementation": "data/evaluation.jsonl",
-      "test_or_manual_check": "results/qwen-colab-full/metrics.json: all-zero distribution; requirement unmet",
-      "evidence": "results/qwen-colab-full/metrics.json: all-zero distribution; requirement unmet",
-      "status": "external_evidence_pending"
+      "test_or_manual_check": "docs/nondegenerate-distribution.json: 120 genuine task answers, rewards 0\u20131",
+      "evidence": "docs/nondegenerate-distribution.json",
+      "status": "verified_real_evidence"
     },
     {
       "id": "P02.06",
@@ -401,9 +401,9 @@
       "source_page": "10",
       "requirement": "Judge 3 repeat ratings or 15 human labels; report agreement",
       "implementation": "reviews/judge-review-packet.json",
-      "test_or_manual_check": "real uncached judge calls and human labels",
-      "evidence": "real uncached judge calls and human labels",
-      "status": "external_evidence_pending"
+      "test_or_manual_check": "results/judge-stability-study.json: 45 uncached responses; human labels separate/pending",
+      "evidence": "results/judge-stability-study.json",
+      "status": "verified_repeat_measurement"
     },
     {
       "id": "P04.10",

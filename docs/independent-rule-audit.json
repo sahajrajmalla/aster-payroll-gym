@@ -1,0 +1,715 @@
+{
+  "status": "passed",
+  "evidence_kind": "independent_automated_rule_crosscheck",
+  "checked_at": "2026-10-07T07:36:47.680099+00:00",
+  "method": "Exact integer rational arithmetic; separate R8 constants; no production oracle imports",
+  "packet_sha256": "34f540fb622f37774f476b2ddf26f9e373b62631467a5304d2ae13c5497baf46",
+  "rules_sha256": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
+  "audit_script_sha256": "11fb06249b483a27fec42a8c65ec3be7914bd813b4e9a2efb15e65935d6a94c4",
+  "checked": 27,
+  "disagreements": 0,
+  "limitation": "Substantive outputs only. Not independent human review, citation fidelity or blind approval.",
+  "rows": [
+    {
+      "group": "seed_reviews",
+      "task_id": "task-42a97b00e79922f22ea6",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "allowance_cents": 8000
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R8",
+        "R9",
+        "R11"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-695043d4180a36ad7268",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "annual_ceiling_cents": 1000000
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R8",
+        "R9",
+        "R11"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-9f103fd40df5f13e354f",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "allowance_cents": 10000
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R8",
+        "R9",
+        "R11"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-2fe32b935837950f9889",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "annual_ceiling_cents": 1200000
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R8",
+        "R9",
+        "R11"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-6f67507bc5cd4b6a41e5",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 300000,
+          "contribution_cents": 15000,
+          "taxable_cents": 275000,
+          "tax_cents": 17500,
+          "net_cents": 267500
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-628875642b1ebeeae532",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 500000,
+          "contribution_cents": 50,
+          "taxable_cents": 489950,
+          "tax_cents": 57990,
+          "net_cents": 441960
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-8b3b226b1e07bf22759e",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 3334,
+          "contribution_cents": 0,
+          "taxable_cents": 0,
+          "tax_cents": 0,
+          "net_cents": 3334
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-9d6b6f6bb1c3e75909da",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 312346,
+          "contribution_cents": 15617,
+          "taxable_cents": 286729,
+          "tax_cents": 18673,
+          "net_cents": 278056
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-4c50aed085a2f50a5506",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-914dc869484673261223",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-8c1140e64000efa09a58",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "NO_SCHEDULE"
+        ],
+        "missing_fields": [
+          "schedules"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "seed_reviews",
+      "task_id": "task-8b1ba2c83154d76865f0",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "bonus_cents"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-84bf67730258b67b84db",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "annual_ceiling_cents": 1000000
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R8",
+        "R9",
+        "R11"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 154176,
+          "contribution_cents": 7709,
+          "taxable_cents": 136467,
+          "tax_cents": 3647,
+          "net_cents": 142820
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-16ccf44e25558cbba567",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 143657,
+          "contribution_cents": 0,
+          "taxable_cents": 133657,
+          "tax_cents": 3366,
+          "net_cents": 140291
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-b18556242bce68d26e76",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 98819,
+          "contribution_cents": 4941,
+          "taxable_cents": 83878,
+          "tax_cents": 0,
+          "net_cents": 93878
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-0e33888836c453dcb91e",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "NO_SCHEDULE"
+        ],
+        "missing_fields": [
+          "schedules"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 522587,
+          "contribution_cents": 0,
+          "taxable_cents": 512587,
+          "tax_cents": 62517,
+          "net_cents": 460070
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-d167a405d18c1b37276f",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "fidelity_reviews",
+      "task_id": "task-a7ab1f49900234508230",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "transfer_reviews",
+      "task_id": "task-4903b40f8cf2e91160c7",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 231346,
+          "contribution_cents": 1111,
+          "taxable_cents": 220235,
+          "tax_cents": 12024,
+          "net_cents": 218211
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "transfer_reviews",
+      "task_id": "task-a68a80e6954b02407f9a",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "gross_cents": 444444,
+          "contribution_cents": 0,
+          "taxable_cents": 434444,
+          "tax_cents": 46889,
+          "net_cents": 397555
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "transfer_reviews",
+      "task_id": "task-37d82fbf39a9ff181f00",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "SALARY_CONFLICT"
+        ],
+        "missing_fields": [
+          "salary_records"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "transfer_reviews",
+      "task_id": "task-4f342295828e1b788c21",
+      "independent_result": {
+        "decision": "needs_information",
+        "result": null,
+        "issue_codes": [
+          "MISSING_INPUT"
+        ],
+        "missing_fields": [
+          "ytd_pensionable_cents"
+        ]
+      },
+      "matches": true,
+      "clauses": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "human_reviewed": false
+    },
+    {
+      "group": "transfer_reviews",
+      "task_id": "task-1de674213285b3580ed7",
+      "independent_result": {
+        "decision": "answer",
+        "result": {
+          "allowance_cents": 8000
+        },
+        "issue_codes": [],
+        "missing_fields": []
+      },
+      "matches": true,
+      "clauses": [
+        "R8",
+        "R9",
+        "R11"
+      ],
+      "human_reviewed": false
+    }
+  ]
+}

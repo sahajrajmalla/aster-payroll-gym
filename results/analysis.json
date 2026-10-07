@@ -6,12 +6,17 @@
   "judge_reliability": {
     "status": "partial_or_pending",
     "examples": 15,
-    "completed_three_repeat_examples": 0,
+    "completed_three_repeat_examples": 14,
+    "repeat_measurement_status": "complete",
+    "attempted_repeats": 45,
+    "invalid_output_repeats": 1,
+    "invalid_output_fraction": 0.022222222222222223,
     "human_comparisons": 0,
     "human_exact_agreement": null,
-    "three_repeat_disagreement_fraction": null,
+    "three_repeat_disagreement_fraction": 0.1428571428571429,
+    "three_repeat_outcome_disagreement_fraction": 0.19999999999999996,
     "confusion_counts": {},
-    "note": "Stability is not validity. Each repeat must bypass the production cache."
+    "note": "Agreement/stability condition on valid labels; malformed-output fraction is separate. Stability is not validity. Each repeat must bypass the production cache."
   },
   "human_failure_review": {
     "reviewed_failures": 0,

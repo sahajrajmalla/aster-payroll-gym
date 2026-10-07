@@ -65,6 +65,34 @@ def test_empty_analysis_has_explicit_pending_states(tmp_path):
     assert value["human_failure_review"]["reviewed_failures"] == 0
 
 
+def test_analysis_joins_blind_labels_to_matching_measured_ratings(tmp_path):
+    reviews, results = tmp_path / "reviews", tmp_path / "results"
+    reviews.mkdir()
+    results.mkdir()
+    packet = json.loads(open("reviews/judge-review-packet.json").read())
+    for row in packet["examples"]:
+        row.update(human_label=2, reviewer="ephemeral test reviewer")
+    (reviews / "judge-review-packet.json").write_text(json.dumps(packet))
+    measurement = json.loads(json.dumps(packet))
+    for row in measurement["examples"]:
+        row.update(human_label=None, reviewer=None)
+        row["ratings"] = [{"repeat": repeat, "status": "complete", "label": 2} for repeat in range(3)]
+    measurement["examples"][0]["ratings"][0].update(
+        status="pending", label=None, error_code="JUDGE_INVALID_OUTPUT")
+    source = results / "judge-stability-study.json"
+    source.write_text(json.dumps(measurement))
+    value = json.loads(analyze_results(results, reviews).read_text())["judge_reliability"]
+    assert value["status"] == "complete"
+    assert value["human_comparisons"] == 44
+    assert value["human_exact_agreement"] == 1
+    assert value["invalid_output_fraction"] == pytest.approx(1 / 45)
+    assert value["three_repeat_outcome_disagreement_fraction"] == pytest.approx(1 / 15)
+    measurement["examples"][0]["candidate"]["explanation"] = "Different candidate"
+    source.write_text(json.dumps(measurement))
+    with pytest.raises(ValueError, match="MEASUREMENT_MISMATCH"):
+        analyze_results(results, reviews)
+
+
 @pytest.mark.parametrize("changed_split", ["evaluation", "transfer"])
 def test_transfer_rankings_require_matching_prompts_within_each_cohort(tmp_path, monkeypatch, changed_split):
     """A scaffold change must not masquerade as measured transfer of a model ranking."""

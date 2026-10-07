@@ -1,0 +1,38 @@
+{
+  "status": "non_degenerate_120_task_distribution_verified",
+  "checked_at": "2026-10-07T09:33:38.160933+00:00",
+  "run_id": "f44ee40097b640a3eb45",
+  "source": "results/gemini-3.5-paced-full",
+  "cohort": "Complete first stochastic rollout across all 120 held-out evaluation tasks",
+  "evaluation_status": "Three rollouts complete: 360/360",
+  "task_count": 120,
+  "completed_samples": 120,
+  "mean": 0.128125,
+  "sample_sd": 0.2855328665095191,
+  "minimum": 0.0,
+  "maximum": 1.0,
+  "zero": 80,
+  "positive": 40,
+  "passes": 11,
+  "score_levels": [
+    0.0,
+    0.05,
+    0.1,
+    0.125,
+    0.2,
+    0.975,
+    1.0
+  ],
+  "sample_hash": "b09721340c769748cd7cabc316498f87cae9a96b271e8ffde3f8062c2ee45096",
+  "api_spend_usd": 0.0,
+  "ruleset_version": "ASTER-1.0",
+  "reward_version": "1.0",
+  "ground_truth": "Independent Python reference; no LLM generation",
+  "final_three_rollout_summary": {
+    "mean": 0.12048611111111111,
+    "replicate_sd": 0.007316426217258841,
+    "completed_samples": 360,
+    "passes": 32,
+    "zero_rewards": 247
+  }
+}

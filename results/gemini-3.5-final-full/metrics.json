@@ -1,0 +1,175 @@
+{
+  "aggregate": {
+    "mean": null,
+    "n": 0,
+    "sd": null
+  },
+  "budget": {
+    "accounted_usd": 0.0,
+    "confirmed_usd": 0.0,
+    "maximum_usd": 0.0,
+    "reserved_usd": 0.0
+  },
+  "by_tier": {
+    "1": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 6,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "2": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 6,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "3": {
+      "exact_score_rate": 0.2,
+      "mean": 0.25,
+      "n": 5,
+      "pass_rate": 0.2,
+      "sd": 0.42389562394532926
+    }
+  },
+  "complete_replicates": 0,
+  "completed_samples": 17,
+  "components": {
+    "action": {
+      "mean": 0.058823529411764705,
+      "n": 17,
+      "sd": 0.24253562503633297
+    },
+    "exact": {
+      "mean": 0.058823529411764705,
+      "n": 17,
+      "sd": 0.24253562503633297
+    },
+    "fields": {
+      "mean": 0.11764705882352941,
+      "n": 17,
+      "sd": 0.28114785726919356
+    },
+    "format": {
+      "mean": 0.23529411764705882,
+      "n": 17,
+      "sd": 0.4372373160976031
+    },
+    "judge": {
+      "mean": 0.2,
+      "n": 5,
+      "sd": 0.4472135954999579
+    }
+  },
+  "confirmed_cost_usd": 0.0,
+  "cost_usd": 0.0,
+  "coverage": 0.04722222222222222,
+  "expected_samples": 360,
+  "latency_s": {
+    "mean": 3.0452792825938104,
+    "n": 32,
+    "sd": 1.5656469428114597
+  },
+  "operational_failures": 15,
+  "per_task": {
+    "task-04f13390131199f41682": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-199220f67cfd29854916": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-19b3314f712fb1128dab": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-299315e5e138e06d2863": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-3d6fc1da97df8498ba47": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-3fbdbdfaa092d0c3cb93": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-63aec589237ae37648b5": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-7483470048e1f05dac08": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-84bf67730258b67b84db": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-8af3e60200e8bcdecf77": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-a7ab1f49900234508230": {
+      "mean": 0.125,
+      "n": 1,
+      "sd": null
+    },
+    "task-b79e03c78d468e2e7b8f": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-b7aa12c715de9cf2cf51": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-bd024fbc60247051267a": {
+      "mean": 0.125,
+      "n": 1,
+      "sd": null
+    },
+    "task-c54d48a71d61650b1fa6": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-d167a405d18c1b37276f": {
+      "mean": 1.0,
+      "n": 1,
+      "sd": null
+    },
+    "task-db68cf633a2c9fb6a5b3": {
+      "mean": 0.0,
+      "n": 1,
+      "sd": null
+    }
+  },
+  "replicate_means": [],
+  "retries": 32,
+  "sample_summary": {
+    "mean": 0.07352941176470588,
+    "n": 17,
+    "sd": 0.2422986580769327
+  },
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples",
+  "status_counts": {
+    "complete": 17,
+    "provider_error": 15
+  },
+  "tokens": 38444
+}

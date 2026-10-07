@@ -13,19 +13,19 @@
   "default_ML_packages_installed": false,
   "notebook_executed": "Hosted T4 setup and 486 Qwen samples completed and accepted; RL skipped",
   "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
-  "implementation_hash": "0444197634181e033865951e024d0fa5be75f5099f2004876fad47e2db737d7e",
+  "implementation_hash": "b6a06f46fc12c81f74f2231a2c09e90334dde8e81ed4be072d8386562f7eb7ab",
   "submission_status": "PENDING_CLOUD_AND_HUMAN_EVIDENCE",
   "pending": [
-    "Genuine three-model evaluation",
-    "Non-degenerate genuine model distribution over at least 100 tasks",
-    "Actual Colab RL sweeps and held-out comparisons",
-    "Judge reliability calls and human labels",
-    "Human rule fidelity and failure reviews",
-    "Five transfer-task human approvals and measured ranking",
+    "Compatible complete three-model comparison including a frontier policy",
+    "Actual Colab RL sweeps, five curves and held-out initial/trained comparison",
+    "Independent human judge labels and validity agreement",
+    "Personal seed, generated-task fidelity and failure reviews",
+    "Five transfer-task human approvals/freeze and measured ranking",
+    "Final post-RL/transfer audit and independent Colab resource-spend confirmation",
     "Loom recording"
   ],
-  "date": "2026-10-07T07:20:09.644218+00:00",
-  "tests_passed": 249,
+  "date": "2026-10-07T10:06:57.448230+00:00",
+  "tests_passed": 256,
   "corpus_validation": {
     "seeds": {
       "tasks": 12,
@@ -110,24 +110,26 @@
   "ci_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37586421586",
   "pages_workflow_url": "https://github.com/sahajrajmalla/aster-payroll-gym/actions/runs/37586421585",
   "lint": "passed",
-  "type_checks": "passed_33_source_files",
+  "type_checks": "passed_35_source_files",
   "sandbox_owner_action": "None for deployment: owner confirmed hosted restart; external Tier2/3 scores and persistence passed.",
   "neon_storage_test": "Permanent user-owned Neon: correct Tier2/3 scores1.0, real Gemini judge, saved runs persisted after complete local API restart.",
   "neon_storage_evidence": "docs/permanent-neon-persistence-smoke.json",
   "local_training_runs": 0,
   "local_model_calls": 0,
   "model_downloads": 0,
-  "code_revision_tested": "635349085b475ebcc50ccabdd8eee8480c9d90ff",
-  "ci_evidence_scope": "Source at 6353490 passed 249 tests, lint and types in CI; seven clean-clone checks passed. This metadata-only update retains the tested implementation hash.",
+  "code_revision_tested": "af12c3ad8fa4252dd2736d5b6e0093c779b419ba",
+  "ci_evidence_scope": "Earlier CI URL is historical; current local checks cover the present working tree.",
   "permanent_neon_storage_evidence": "docs/permanent-neon-persistence-smoke.json",
   "remote_evaluation_status": {
     "gemini-3.5-flash-lite": "90/90 comparison complete",
     "gemini-3.8-flash": "8/90 scored, rate-limited partial",
-    "Qwen": "486/486 accepted: 90 comparison (.00139 \u00b1 .00241), 360 full evaluation (0 \u00b1 0), 36 tool samples (0 \u00b1 0); zero passes"
+    "Qwen": "486/486 accepted: 90 comparison (.00139 \u00b1 .00241), 360 full evaluation (0 \u00b1 0), 36 tool samples (0 \u00b1 0); zero passes",
+    "gemini-3.5-flash-lite_latest": "120 tasks \u00d7 3 rollouts: 360/360 completed, mean 0.1204861111 \u00b1 0.0073164262, 32 passes",
+    "gemini-3.8-flash_latest": "12 operational failures; 0 completed. Historical 8/90 remains partial."
   },
   "historical_neon_storage_evidence": "docs/neon-persistence-smoke.json",
   "remote_tool_evaluation_status": "Gemini 3.5 Flash-Lite: 14/36 complete; 22 rate-limit operational failures; partial, unranked",
-  "local_final_check": "249 tests, Ruff, mypy33, corpus validation, documentation links, notebook syntax, credential exclusion, fresh SQLite startup and public health checks passed",
+  "local_final_check": "256 tests, Ruff, mypy35, corpus validation, documentation links, notebook syntax, credential exclusion, fresh SQLite startup and public health checks passed",
   "sandbox_url": "https://aster-payroll-gym.onrender.com",
   "public_sandbox_acceptance": "PASSED_TIER2_TIER3_RESTART_CONTRACT_AND_NO_CLONE",
   "public_sandbox_evidence": "docs/render-sandbox-acceptance.json",
@@ -135,11 +137,11 @@
   "current_public_checks": {
     "sandbox": {
       "http_status": 200,
-      "checked_at": "2026-10-07T07:16:19.983564+00:00"
+      "checked_at": "2026-10-07T10:06:56.231905+00:00"
     },
     "dashboard": {
       "http_status": 200,
-      "checked_at": "2026-10-07T07:16:21.626902+00:00"
+      "checked_at": "2026-10-07T10:06:56.838321+00:00"
     }
   },
   "documentation_links": "passed",
@@ -182,5 +184,29 @@
     "public_qwen_artifact_http_status": 200,
     "public_qwen_samples": 486
   },
-  "qwen_reward_replay": "docs/qwen-final-reward-audit.json"
+  "qwen_reward_replay": "docs/qwen-final-reward-audit.json",
+  "judge_repeat_study": {
+    "responses": 45,
+    "valid_labels": 44,
+    "malformed": 1,
+    "valid_triples_disagree": "2/14",
+    "outcome_triples_disagree": "3/15",
+    "independent_human_labels": 0,
+    "evidence": "results/judge-stability-study.json"
+  },
+  "available_experiment_audit": {
+    "completed_answers": 975,
+    "deterministic_reward_replays": 934,
+    "tool_termination_checks": 41,
+    "discrepancies": 0,
+    "recorded_api_spend_usd": 0,
+    "total_resource_spend_usd": null,
+    "evidence": "docs/final-experiment-audit.json"
+  },
+  "independent_automated_rule_audit": {
+    "inputs": 27,
+    "substantive_divergences": 0,
+    "personal_review_complete": false,
+    "evidence": "docs/independent-rule-audit.json"
+  }
 }

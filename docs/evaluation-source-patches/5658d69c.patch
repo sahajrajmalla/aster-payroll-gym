@@ -1,0 +1,49 @@
+--- a/src/aster_gym/evidence.py
++++ b/src/aster_gym/evidence.py
+@@ -68,8 +68,12 @@
+ def judge_reliability(rows: list[dict[str, Any]]) -> dict[str, Any]:
+     """Exact human agreement over completed ratings and three-repeat stability."""
+     comparisons, consistent, completed_examples = [], 0, 0
++    attempted_repeats, malformed_repeats = 0, 0
+     confusion: Counter[str] = Counter()
+     for row in rows:
++        attempted_repeats += sum(r.get("status") == "complete" or r.get("error_code") == "JUDGE_INVALID_OUTPUT"
++                                 for r in row.get("ratings", []))
++        malformed_repeats += sum(r.get("error_code") == "JUDGE_INVALID_OUTPUT" for r in row.get("ratings", []))
+         labels = [r.get("label") for r in row.get("ratings", []) if r.get("status") == "complete"]
+         if any(type(label) is not int or label not in (0, 1, 2) for label in labels):
+             raise ValueError("INVALID_JUDGE_LABEL")
+@@ -86,6 +90,10 @@
+     return {"status": "complete" if completed_examples == len(rows) and len(rows) >= 15
+             and len(comparisons) == len(rows) * 3 else "partial_or_pending",
+             "examples": len(rows), "completed_three_repeat_examples": completed_examples,
++            "repeat_measurement_status": "complete" if len(rows) >= 15
++            and attempted_repeats == len(rows) * 3 else "partial_or_pending",
++            "attempted_repeats": attempted_repeats, "invalid_output_repeats": malformed_repeats,
++            "invalid_output_fraction": malformed_repeats / attempted_repeats if attempted_repeats else None,
+             "human_comparisons": len(comparisons),
+             "human_exact_agreement": statistics.mean(comparisons) if comparisons else None,
+             "three_repeat_disagreement_fraction": 1 - consistent / completed_examples
+--- a/src/aster_gym/judge_study.py
++++ b/src/aster_gym/judge_study.py
+@@ -48,7 +48,10 @@
+             if row["task_input_hash"] != task.input_hash:
+                 raise ValueError("JUDGE_TASK_FINGERPRINT_MISMATCH")
+             ratings = row.setdefault("ratings", [])
+-            complete_repeats = {r["repeat"] for r in ratings if r.get("status") == "complete"}
++            # A malformed judge response is an observed abstention, not a reason to
++            # sample again until a valid response conceals the reliability failure.
++            complete_repeats = {r["repeat"] for r in ratings if r.get("status") == "complete"
++                                or r.get("error_code") == "JUDGE_INVALID_OUTPUT"}
+             for repeat in range(3):
+                 if repeat in complete_repeats:
+                     continue
+@@ -62,7 +65,7 @@
+                                 "error_code": graded.error_code, "ledger": judge.ledger[began:]})
+                 packet["reliability"] = judge_reliability(examples)
+                 path.write_text(json.dumps(packet, indent=2, allow_nan=False) + "\n")
+-                if graded.status == "pending":
++                if graded.status == "pending" and graded.error_code != "JUDGE_INVALID_OUTPUT":
+                     return packet["reliability"]
+         return packet["reliability"]
+     finally:

@@ -128,7 +128,7 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
                          timeout_s: float = 120, max_turns: int = 6, judge: Any = None,
                          provider: Any = None, evidence_kind: str = "model_run", seed: int = 7001,
                          max_tokens: int = 512, temperature: float = 0.7,
-                         reasoning_effort: str | None = None) -> dict[str, Any]:
+                         reasoning_effort: str | None = None, request_interval_s: float = 0.0) -> dict[str, Any]:
     if provider is None and pricing is None:
         raise ValueError("UNKNOWN_PRICING")
     if provider is None and not api_key:
@@ -143,6 +143,8 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
             or type(max_tokens) is not int or not 1 <= max_tokens <= 4096
             or not math.isfinite(temperature) or not 0 <= temperature <= 2):
         raise ValueError("INVALID_ROLLOUT_LIMITS")
+    if not math.isfinite(request_interval_s) or not 0 <= request_interval_s <= 60:
+        raise ValueError("INVALID_REQUEST_INTERVAL")
     resolved_effort = (resolve_reasoning_effort(model, base_url, reasoning_effort) if provider is None
                        else getattr(provider, "reasoning_effort", None))
     if provider is not None and reasoning_effort is not None and reasoning_effort != resolved_effort:
@@ -168,6 +170,7 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
               "pricing": asdict(pricing) if pricing else None, "max_turns": max_turns,
               "timeout_s": timeout_s, "max_tokens": max_tokens, "temperature": temperature,
               "reasoning_effort": resolved_effort,
+              "request_interval_s": request_interval_s,
               "transfer_freeze": transfer_freeze,
               **_code_identity(),
               "judge": judge_identity(judge)}
@@ -211,6 +214,8 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
             raise ValueError("JUDGE_MUST_SHARE_COST_BUDGET")
     semaphore = asyncio.Semaphore(concurrency)
     judge_lock = asyncio.Lock()
+    request_lock = asyncio.Lock()
+    next_request_at = 0.0
     records: dict[str, dict[str, Any]] = {}
     transcripts: dict[str, dict[str, Any]] = {}
     for path in journal.glob("*.json"):
@@ -225,6 +230,7 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
         transcripts[path.stem] = saved["transcript"]
 
     async def run_one(task: Task, rollout: int) -> None:
+        nonlocal next_request_at
         key = stable_hash([task.id, rollout])[:24]
         previous = records.get(key)
         if previous and previous["status"] == "complete":
@@ -254,6 +260,11 @@ async def run_evaluation(tasks: list[Task], output_dir: str | Path, *, model: st
                 async with asyncio.timeout(timeout_s):
                     if not scoring_only:
                         for turn in range(1 if mode == "single" else max_turns):
+                            # Bound free-tier dispatch rate across concurrent rollouts.
+                            # Provider retries retain their own bounded backoff.
+                            async with request_lock:
+                                await asyncio.sleep(max(0.0, next_request_at - time.monotonic()))
+                                next_request_at = time.monotonic() + request_interval_s
                             record["model_turns"] += 1
                             result = await provider.chat(messages, tools=TOOL_DEFINITIONS if mode == "tool" else None,
                                                          max_tokens=max_tokens, temperature=temperature)

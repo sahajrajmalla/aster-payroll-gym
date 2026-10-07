@@ -8,14 +8,15 @@ ground truth and one auditable scorer shared by evaluation, cloud RL and a publi
 [Sandbox](https://aster-payroll-gym.onrender.com/docs) ·
 [Colab](https://colab.research.google.com/github/sahajrajmalla/aster-payroll-gym/blob/main/notebooks/aster_colab.ipynb)
 
-**Implementation checked; experimental submission incomplete.** The hosted sandbox
-passed correct Tier-2/3 submissions, both scoring 1.0, and persistence after restart.
-Gemini 3.5 Flash-Lite completed 90 comparison samples; Gemini 3.8 and Gemini tool
-runs are partial. Qwen completed 486 samples on a Colab Tesla T4: 90 comparison,
-360 across 120 evaluation tasks and 36 tool-use answers. None passed. The larger
-run is degenerate (all rewards zero), so the required varied distribution is still
-missing. RL, judge reliability, transfer findings and independent reviews are pending.
-See [readiness checklist](docs/submission-checklist.md) and [QA evidence](docs/final-qa.json).
+**Implementation checked; experimental submission incomplete.** The Render/Neon
+sandbox passed correct Tier-2/3 submissions and persistence after restart. Qwen
+completed 486 genuine Colab samples; none passed. A fresh Gemini run completed its
+three rollouts on all 120 evaluation tasks: 360 answers, reward .12049 ± .00732,
+32 passes and rewards from 0 to 1. The judge produced 45 uncached responses:
+one malformed output and 2 unstable examples among 14 complete triples. Human
+validity labels, transfer approvals/results, compatible frontier comparison and
+actual RL sweeps remain pending. See [checklist](docs/submission-checklist.md),
+[measured evidence](docs/evaluation.md) and [QA](docs/final-qa.json).
 
 ## Try the public sandbox without cloning
 

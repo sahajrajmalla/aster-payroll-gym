@@ -71,3 +71,25 @@ including scores, component diagnostics and tool eligibility, with zero mismatch
 This audit does not replace the required human reading or a trained-policy gaming
 study. No Qwen output passed, so there is no high-reward wrong Qwen answer in these
 runs. The flat larger distribution is an unresolved experimental limitation.
+
+## Technical review and reward-gaming audit
+
+The [technical audit](failure-technical-audit.json) reads all ten selected raw
+outputs and verifies each source hash. Primary categories: two omitted-citation
+penalties, one arithmetic mismatch, two truncated JSON objects, two noncanonical
+blocker fields, one scalar result, one Markdown wrapper and one incorrect issue
+code. These purposive counts are distinct from applicant personal review, which
+remains unsigned. Citation-only cases are contract/rubric issues, not arithmetic
+mistakes; R11's explicit citation wording is a documented ambiguity to resolve
+through the independent rule-fidelity review.
+
+The [saved-output gaming audit](reward-gaming-audit.json) checks actual completed
+initial-policy transcripts, including every high-reward answer's deterministic
+eligibility and unsafe/unjustified-abstention gate behavior. It provides counts
+and run/task/rollout references. No deterministic bypass was detected in the
+final 975-output audit (41 high-reward outputs). Scores/components replay for 934
+records and 41 tool gates, with zero discrepancies. This is a bounded initial-policy search, not evidence about
+a trained policy or proof that explanations are human-valid. The remote judge's
+nine injection ratings all returned 0; those are handcrafted attacks, not trained
+model discoveries. Rerun `uv run python scripts/audit_saved_outputs.py` after new
+results arrive; it makes no model calls.

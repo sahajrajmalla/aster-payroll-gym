@@ -1,0 +1,582 @@
+{
+  "records": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3691900829981023,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.35588116699727834,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3838050829981512,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.117227999999159,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.38270087499768124,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3643796249998559,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.42180958300014026,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.175694042001851,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 3.956600958001218,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 1.4946517090011184,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 33.592766707999544,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.417552541999612,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3762690000003204,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3760137500030396,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 46.23859595800059,
+      "mode": "single",
+      "model_turns": 2,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3505482079999638,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3822945830033859,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3795579590005218,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.1210667499981355,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "latency_s": 120.00856450000174,
+          "status": "PROVIDER_CANCELLED"
+        },
+        {
+          "attempt": 1,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 1.5332584579991817,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 3.8723676249974233,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 1.5508555410015106,
+          "status": "PROVIDER_HTTP_ERROR"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_HTTP_ERROR",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 129.98551283399865,
+      "mode": "single",
+      "model_turns": 2,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "latency_s": 120.00541570899986,
+          "status": "PROVIDER_CANCELLED"
+        },
+        {
+          "attempt": 1,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 1.9086661670007743,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 2.61211141700187,
+          "status": "PROVIDER_HTTP_ERROR"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "conservative",
+          "cost_usd": 0.0,
+          "http_status": 503,
+          "latency_s": 1.5999200000005658,
+          "status": "PROVIDER_HTTP_ERROR"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_HTTP_ERROR",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 129.1828710409991,
+      "mode": "single",
+      "model_turns": 2,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3492835000033665,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3454465419999906,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.5162422499997774,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.227211749999697,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3492089589999523,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.43552695799735375,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3968262919988774,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.1978781660000095,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.36749512499955017,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.39407212500009337,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4315388750001148,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.200093583000125,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3699506660013867,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.35227170800135355,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.42558308399748057,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.17120370900011,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.34350904199891374,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.34961041700080386,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4390334999989136,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.141809707998618,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3955572499980917,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3425470830006816,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3861173749974114,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.131569749999471,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    }
+  ]
+}

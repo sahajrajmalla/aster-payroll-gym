@@ -1,0 +1,127 @@
+--- a/src/aster_gym/cli.py
++++ b/src/aster_gym/cli.py
+@@ -111,7 +111,9 @@
+             max_tokens=args.max_tokens if args.max_tokens is not None else config.get("max_tokens", 512),
+             temperature=args.temperature if args.temperature is not None else config.get("temperature", .7),
+             reasoning_effort=args.reasoning_effort or preset.get("reasoning_effort", config.get("reasoning_effort")),
+-            judge=judge, seed=args.seed if args.seed is not None else config.get("seed", 7001))
++            judge=judge, seed=args.seed if args.seed is not None else config.get("seed", 7001),
++            request_interval_s=args.request_interval if args.request_interval is not None
++            else config.get("request_interval_s", 0.0))
+         print(json.dumps(metrics, indent=2))
+     finally:
+         if judge is not None:
+@@ -151,6 +153,7 @@
+     evaluate.add_argument("--max-tokens", type=int)
+     evaluate.add_argument("--temperature", type=float)
+     evaluate.add_argument("--reasoning-effort", choices=["none", "minimal", "low", "medium", "high"])
++    evaluate.add_argument("--request-interval", type=float, help="Minimum seconds between model dispatches")
+     evaluate.add_argument("--output", default="results/evaluation")
+     dashboard = commands.add_parser("report")
+     dashboard.add_argument("--results", default="results")
+--- a/src/aster_gym/eval.py
++++ b/src/aster_gym/eval.py
+@@ -128,7 +128,7 @@
+                          timeout_s: float = 120, max_turns: int = 6, judge: Any = None,
+                          provider: Any = None, evidence_kind: str = "model_run", seed: int = 7001,
+                          max_tokens: int = 512, temperature: float = 0.7,
+-                         reasoning_effort: str | None = None) -> dict[str, Any]:
++                         reasoning_effort: str | None = None, request_interval_s: float = 0.0) -> dict[str, Any]:
+     if provider is None and pricing is None:
+         raise ValueError("UNKNOWN_PRICING")
+     if provider is None and not api_key:
+@@ -143,6 +143,8 @@
+             or type(max_tokens) is not int or not 1 <= max_tokens <= 4096
+             or not math.isfinite(temperature) or not 0 <= temperature <= 2):
+         raise ValueError("INVALID_ROLLOUT_LIMITS")
++    if not math.isfinite(request_interval_s) or not 0 <= request_interval_s <= 60:
++        raise ValueError("INVALID_REQUEST_INTERVAL")
+     resolved_effort = (resolve_reasoning_effort(model, base_url, reasoning_effort) if provider is None
+                        else getattr(provider, "reasoning_effort", None))
+     if provider is not None and reasoning_effort is not None and reasoning_effort != resolved_effort:
+@@ -168,6 +170,7 @@
+               "pricing": asdict(pricing) if pricing else None, "max_turns": max_turns,
+               "timeout_s": timeout_s, "max_tokens": max_tokens, "temperature": temperature,
+               "reasoning_effort": resolved_effort,
++              "request_interval_s": request_interval_s,
+               "transfer_freeze": transfer_freeze,
+               **_code_identity(),
+               "judge": judge_identity(judge)}
+@@ -211,6 +214,8 @@
+             raise ValueError("JUDGE_MUST_SHARE_COST_BUDGET")
+     semaphore = asyncio.Semaphore(concurrency)
+     judge_lock = asyncio.Lock()
++    request_lock = asyncio.Lock()
++    next_request_at = 0.0
+     records: dict[str, dict[str, Any]] = {}
+     transcripts: dict[str, dict[str, Any]] = {}
+     for path in journal.glob("*.json"):
+@@ -225,6 +230,7 @@
+         transcripts[path.stem] = saved["transcript"]
+ 
+     async def run_one(task: Task, rollout: int) -> None:
++        nonlocal next_request_at
+         key = stable_hash([task.id, rollout])[:24]
+         previous = records.get(key)
+         if previous and previous["status"] == "complete":
+@@ -254,6 +260,11 @@
+                 async with asyncio.timeout(timeout_s):
+                     if not scoring_only:
+                         for turn in range(1 if mode == "single" else max_turns):
++                            # Bound free-tier dispatch rate across concurrent rollouts.
++                            # Provider retries retain their own bounded backoff.
++                            async with request_lock:
++                                await asyncio.sleep(max(0.0, next_request_at - time.monotonic()))
++                                next_request_at = time.monotonic() + request_interval_s
+                             record["model_turns"] += 1
+                             result = await provider.chat(messages, tools=TOOL_DEFINITIONS if mode == "tool" else None,
+                                                          max_tokens=max_tokens, temperature=temperature)
+--- a/src/aster_gym/evidence.py
++++ b/src/aster_gym/evidence.py
+@@ -68,8 +68,12 @@
+ def judge_reliability(rows: list[dict[str, Any]]) -> dict[str, Any]:
+     """Exact human agreement over completed ratings and three-repeat stability."""
+     comparisons, consistent, completed_examples = [], 0, 0
++    attempted_repeats, malformed_repeats = 0, 0
+     confusion: Counter[str] = Counter()
+     for row in rows:
++        attempted_repeats += sum(r.get("status") == "complete" or r.get("error_code") == "JUDGE_INVALID_OUTPUT"
++                                 for r in row.get("ratings", []))
++        malformed_repeats += sum(r.get("error_code") == "JUDGE_INVALID_OUTPUT" for r in row.get("ratings", []))
+         labels = [r.get("label") for r in row.get("ratings", []) if r.get("status") == "complete"]
+         if any(type(label) is not int or label not in (0, 1, 2) for label in labels):
+             raise ValueError("INVALID_JUDGE_LABEL")
+@@ -86,6 +90,10 @@
+     return {"status": "complete" if completed_examples == len(rows) and len(rows) >= 15
+             and len(comparisons) == len(rows) * 3 else "partial_or_pending",
+             "examples": len(rows), "completed_three_repeat_examples": completed_examples,
++            "repeat_measurement_status": "complete" if len(rows) >= 15
++            and attempted_repeats == len(rows) * 3 else "partial_or_pending",
++            "attempted_repeats": attempted_repeats, "invalid_output_repeats": malformed_repeats,
++            "invalid_output_fraction": malformed_repeats / attempted_repeats if attempted_repeats else None,
+             "human_comparisons": len(comparisons),
+             "human_exact_agreement": statistics.mean(comparisons) if comparisons else None,
+             "three_repeat_disagreement_fraction": 1 - consistent / completed_examples
+--- a/src/aster_gym/judge_study.py
++++ b/src/aster_gym/judge_study.py
+@@ -48,7 +48,10 @@
+             if row["task_input_hash"] != task.input_hash:
+                 raise ValueError("JUDGE_TASK_FINGERPRINT_MISMATCH")
+             ratings = row.setdefault("ratings", [])
+-            complete_repeats = {r["repeat"] for r in ratings if r.get("status") == "complete"}
++            # A malformed judge response is an observed abstention, not a reason to
++            # sample again until a valid response conceals the reliability failure.
++            complete_repeats = {r["repeat"] for r in ratings if r.get("status") == "complete"
++                                or r.get("error_code") == "JUDGE_INVALID_OUTPUT"}
+             for repeat in range(3):
+                 if repeat in complete_repeats:
+                     continue
+@@ -62,7 +65,7 @@
+                                 "error_code": graded.error_code, "ledger": judge.ledger[began:]})
+                 packet["reliability"] = judge_reliability(examples)
+                 path.write_text(json.dumps(packet, indent=2, allow_nan=False) + "\n")
+-                if graded.status == "pending":
++                if graded.status == "pending" and graded.error_code != "JUDGE_INVALID_OUTPUT":
+                     return packet["reliability"]
+         return packet["reliability"]
+     finally:

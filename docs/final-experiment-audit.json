@@ -1,0 +1,433 @@
+{
+  "status": "available_experiments_audited_submission_incomplete",
+  "audited_at": "2026-10-07T10:00:14.857301+00:00",
+  "rules_hash": "e0d11b31fe968b9a4df415437d37336131c9ce5d97608fb9a6c10d99ba4de8d1",
+  "audited_implementation_hash": "b6a06f46fc12c81f74f2231a2c09e90334dde8e81ed4be072d8386562f7eb7ab",
+  "model_runs": [
+    {
+      "path": "results/gemini-3.5-comparison",
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "status": "complete",
+      "summary": {
+        "mean": 0.11444444444444445,
+        "sample_mean": 0.11444444444444445,
+        "sd": 0.03845391662371602,
+        "replicate_means": [
+          0.09833333333333333,
+          0.15833333333333333,
+          0.08666666666666667
+        ],
+        "complete": 90,
+        "total": 90,
+        "observed": 90,
+        "coverage": 1.0,
+        "rankable": true,
+        "tiers": {
+          "1": 0.006666666666666667,
+          "2": 0.0016666666666666668,
+          "3": 0.335
+        },
+        "components": {
+          "action": 0.1111111111111111,
+          "exact": 0.08888888888888889,
+          "fields": 0.19666666666666666,
+          "format": 0.3,
+          "judge": 0.25
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 3.7413542467110954,
+        "tokens": 208962,
+        "operational_failures": 0
+      },
+      "checksums": {
+        "config.json": "3170d3b0044557a9f775a40f66d1a9b39ced45e8a31910b1809e8edb613d4921",
+        "scores.json": "8ae460ba26c9b9b528aa17a0b26164a98e8b5d77fa9ee7ad8b4783cdd9ed81e5",
+        "transcript.jsonl": "3c8f322cac79071ae261de74d28eb19155ade9d3ebf100d056a4dc9dfcccd337",
+        "metrics.json": "1f0e0c72125dc6a8e1a94bd6e146e97c934b3e8b91e63eff82b47e930010d60c"
+      },
+      "recorded_artifact_written_at": "2026-10-06T08:02:01.948185+00:00"
+    },
+    {
+      "path": "results/gemini-3.5-final-full",
+      "run_id": "372b11aaf75af4302fb8",
+      "model": "gemini-3.5-flash-lite",
+      "status": "partial",
+      "summary": {
+        "mean": null,
+        "sample_mean": 0.07352941176470588,
+        "sd": null,
+        "replicate_means": [],
+        "complete": 17,
+        "total": 360,
+        "observed": 32,
+        "coverage": 0.04722222222222222,
+        "rankable": false,
+        "tiers": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.25
+        },
+        "components": {
+          "action": 0.058823529411764705,
+          "exact": 0.058823529411764705,
+          "fields": 0.11764705882352941,
+          "format": 0.23529411764705882,
+          "judge": 0.2
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 3.0452792825938104,
+        "tokens": 38444,
+        "operational_failures": 15
+      },
+      "checksums": {
+        "config.json": "1d97be8a0b3de429d591e2105b6cf8ab14bce95fa54b94a7c6481ea934c7e82e",
+        "scores.json": "7e399de88042807d3d7fa75957ca43e1077ab69977022cd68425a1c5621edfa5",
+        "transcript.jsonl": "15ccc0ba2c05aff3e3f3720950da04a2a9ec59387ba076c9e8e865affe195bb8",
+        "metrics.json": "5201f4ef88323fbe11728e9663745e1f6512e8e6318a33e9f69f41f24b189269"
+      },
+      "recorded_artifact_written_at": "2026-10-07T07:39:04.265994+00:00"
+    },
+    {
+      "path": "results/gemini-3.5-paced-full",
+      "run_id": "f44ee40097b640a3eb45",
+      "model": "gemini-3.5-flash-lite",
+      "status": "complete",
+      "summary": {
+        "mean": 0.12048611111111111,
+        "sample_mean": 0.12048611111111111,
+        "sd": 0.007316426217258841,
+        "replicate_means": [
+          0.128125,
+          0.11354166666666667,
+          0.11979166666666667
+        ],
+        "complete": 360,
+        "total": 360,
+        "observed": 360,
+        "coverage": 1.0,
+        "rankable": true,
+        "tiers": {
+          "1": 0.011666666666666667,
+          "2": 0.006666666666666667,
+          "3": 0.343125
+        },
+        "components": {
+          "action": 0.1527777777777778,
+          "exact": 0.09166666666666666,
+          "fields": 0.22833333333333333,
+          "format": 0.3333333333333333,
+          "judge": 0.2625
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 5.015802661502832,
+        "tokens": 832143,
+        "operational_failures": 0
+      },
+      "checksums": {
+        "config.json": "2e76af25b65401e9c56a2621a34fcdbc36e6b50fa1e44d51a540727f729fabbe",
+        "scores.json": "8c456957432a30d74b81dd81f6b4879fbab004bc4c57d1021ad6ac8b32ee28b1",
+        "transcript.jsonl": "8c78a4786237cc29a43eb54e622f28fe98a2921ee6250aa02bbab5264b6cf9e4",
+        "metrics.json": "72261f8baba5e92104e7efbd3885ec9fa5eedaa7ea9add080cb02213eba5c499"
+      },
+      "recorded_artifact_written_at": "2026-10-07T09:51:46.920336+00:00"
+    },
+    {
+      "path": "results/gemini-3.5-tool",
+      "run_id": "a6a5d9f599626d41f0f7",
+      "model": "gemini-3.5-flash-lite",
+      "status": "partial",
+      "summary": {
+        "mean": null,
+        "sample_mean": 0.060714285714285714,
+        "sd": null,
+        "replicate_means": [],
+        "complete": 14,
+        "total": 36,
+        "observed": 36,
+        "coverage": 0.3888888888888889,
+        "rankable": false,
+        "tiers": {
+          "1": 0.06666666666666667,
+          "2": 0.0,
+          "3": 0.1125
+        },
+        "components": {
+          "action": 0.2222222222222222,
+          "exact": 0.0,
+          "fields": 0.42592592592592593,
+          "format": 0.5555555555555556,
+          "judge": 0.0
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 6.296077959499978,
+        "tokens": 138138,
+        "operational_failures": 22
+      },
+      "checksums": {
+        "config.json": "9886ddb2f10ad9defe891fb79184f1486be867d87b4be07c12e6f6c6cc49df43",
+        "scores.json": "e1682801302c2b3f3bab35789fc7ded33b5199cd5ae8abd356161b094f50e236",
+        "transcript.jsonl": "e93de92dddb66a7825f766f936166ca1f664bce61d9c2ed011ae6d48ff7d7baf",
+        "metrics.json": "046a16bddfd61ce69d4175773e017d694e5519063b36fed444da0d695b51bb0a"
+      },
+      "recorded_artifact_written_at": "2026-10-06T08:07:55.970264+00:00"
+    },
+    {
+      "path": "results/gemini-3.8-comparison",
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "status": "partial",
+      "summary": {
+        "mean": null,
+        "sample_mean": 0.146875,
+        "sd": null,
+        "replicate_means": [],
+        "complete": 8,
+        "total": 90,
+        "observed": 51,
+        "coverage": 0.08888888888888889,
+        "rankable": false,
+        "tiers": {
+          "1": 0.2,
+          "2": 0.025,
+          "3": 0.1625
+        },
+        "components": {
+          "action": 0.625,
+          "exact": 0.0,
+          "fields": 0.7125,
+          "format": 0.875,
+          "judge": 0.0
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 8.446016857000007,
+        "tokens": 16830,
+        "operational_failures": 43
+      },
+      "checksums": {
+        "config.json": "0625cc806798041c225f48fb3b411853eb6cfb88d1e8d9a7fccf30b065ad2191",
+        "scores.json": "a1983418a9179dd1be7bed449b3862dd32a9d43d14edc138ebdf0e5fd415f339",
+        "transcript.jsonl": "1a753c0b4b01ff3f365afb17cbe13832f6d3e737c13d2fd8c26d0104225ee663",
+        "metrics.json": "33fd9974e4be57da7dab7e581a57a0d03abcf88685c915a12ebd34cfab7b54be"
+      },
+      "recorded_artifact_written_at": "2026-10-06T08:00:02.160868+00:00"
+    },
+    {
+      "path": "results/gemini-3.8-final-comparison",
+      "run_id": "80dc79183256173441c1",
+      "model": "gemini-3.8-flash",
+      "status": "partial",
+      "summary": {
+        "mean": null,
+        "sample_mean": null,
+        "sd": null,
+        "replicate_means": [],
+        "complete": 0,
+        "total": 90,
+        "observed": 12,
+        "coverage": 0.0,
+        "rankable": false,
+        "tiers": {},
+        "components": {},
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 28.57422794091629,
+        "tokens": 0,
+        "operational_failures": 12
+      },
+      "checksums": {
+        "config.json": "4d7775f5e26bcbdb67a83d08afa94f571b98e320f42763713279d1722ba23d96",
+        "scores.json": "e4fd3074a22bc13988cd7f3a0ed43b2ad771e913aaddf890c43b2611e7c64443",
+        "transcript.jsonl": "aa0ea72457007cb781430901b2fa2c2c6cad302e4b17367c6513123b81446e69",
+        "metrics.json": "f8d7ad25823c1a50a1879d82a6a2058a83f243a40df540917e35a62f17951af2"
+      },
+      "recorded_artifact_written_at": "2026-10-07T09:29:58.628078+00:00"
+    },
+    {
+      "path": "results/qwen-colab-comparison",
+      "run_id": "1ea3d177cd2375271ca1",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct:initial",
+      "status": "complete",
+      "summary": {
+        "mean": 0.001388888888888889,
+        "sample_mean": 0.001388888888888889,
+        "sd": 0.0024056261216234406,
+        "replicate_means": [
+          0.0,
+          0.004166666666666667,
+          0.0
+        ],
+        "complete": 90,
+        "total": 90,
+        "observed": 90,
+        "coverage": 1.0,
+        "rankable": true,
+        "tiers": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.004166666666666667
+        },
+        "components": {
+          "action": 0.0,
+          "exact": 0.0,
+          "fields": 0.005555555555555556,
+          "format": 0.011111111111111112,
+          "judge": 0.0
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 5.809975147033333,
+        "tokens": 183477,
+        "operational_failures": 0
+      },
+      "checksums": {
+        "config.json": "7986f000c94630a4d93ae352a19c3b3d904d6ca97e987f14751ebdee5087d75f",
+        "scores.json": "6137eb5648c57c2fb73175d8dbdbdeaad98779e22c00d67aca83e9e8d83c072d",
+        "transcript.jsonl": "0e19d5ec582d23c57ded3886805047837d40b4054c3b1980f70014b66e750c6a",
+        "metrics.json": "6252e792af3b204733ca21f1340e50992bda3397863b81d637ed486568ca2d46"
+      },
+      "recorded_artifact_written_at": "2026-10-07T06:48:35.800553+00:00"
+    },
+    {
+      "path": "results/qwen-colab-full",
+      "run_id": "33207f18f267cc15c57f",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct:initial",
+      "status": "complete",
+      "summary": {
+        "mean": 0.0,
+        "sample_mean": 0.0,
+        "sd": 0.0,
+        "replicate_means": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "complete": 360,
+        "total": 360,
+        "observed": 360,
+        "coverage": 1.0,
+        "rankable": true,
+        "tiers": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        "components": {
+          "action": 0.0,
+          "exact": 0.0,
+          "fields": 0.0,
+          "format": 0.008333333333333333,
+          "judge": 0.0
+        },
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 5.420029857238895,
+        "tokens": 729386,
+        "operational_failures": 0
+      },
+      "checksums": {
+        "config.json": "a94710c8d5814bb1329c117865672342e76cd9c5bc3a430b0238433f1acd104a",
+        "scores.json": "7c37c89abef2b2b077bcd4bde00370666125277f512f7f1dad5b4aa4ac2bdac0",
+        "transcript.jsonl": "3615a7920bbb0933aced525c1cbf38a0e9ec729b0d3839268709ff4c46f39f6b",
+        "metrics.json": "72b816ba03219d983d78519bc154fc9860758676fdf5c5676565df65d4914964"
+      },
+      "recorded_artifact_written_at": "2026-10-07T07:05:44.931807+00:00"
+    },
+    {
+      "path": "results/qwen-colab-tool",
+      "run_id": "90264d0e1e11cd890bce",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct:initial",
+      "status": "complete",
+      "summary": {
+        "mean": 0.0,
+        "sample_mean": 0.0,
+        "sd": 0.0,
+        "replicate_means": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "complete": 36,
+        "total": 36,
+        "observed": 36,
+        "coverage": 1.0,
+        "rankable": true,
+        "tiers": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        "components": {},
+        "cost_usd": 0.0,
+        "confirmed_cost_usd": 0.0,
+        "latency_mean_s": 5.697515078833324,
+        "tokens": 19548,
+        "operational_failures": 0
+      },
+      "checksums": {
+        "config.json": "0cda78c0fda1a6e4030423c553bc7b6f34de497393b2e8a3f2f9b6d6aaa0c657",
+        "scores.json": "11bce3dd50c0877afae951947c3e4874475fc5b30a5aa74f0e1a3fbee8a3bc08",
+        "transcript.jsonl": "050e7f5e8107ea99d0eb7a7183197c621242c7bd52f2313e86a09b968a85f5a4",
+        "metrics.json": "453284c1f5a47f73dd1fdbd31943121108be71b41b327928d2745e41b757a55c"
+      },
+      "recorded_artifact_written_at": "2026-10-07T07:05:44.972263+00:00"
+    }
+  ],
+  "completed_model_answers": 975,
+  "model_usage_tokens": 2166928,
+  "judge_study_usage_tokens": 97049,
+  "recorded_api_spend_usd": 0.0,
+  "total_resource_spend_usd": null,
+  "gpu_billing_status": "Not independently verified; no training ran. Colab inference recorded 45m38s command duration, not exact GPU utilization.",
+  "local_model_calls": 0,
+  "local_training_runs": 0,
+  "model_weights_downloaded_to_mac": 0,
+  "new_request_intervals": {
+    "judge-study-final.log": {
+      "first_observed_request": "2026-10-07T07:35:08.727809+00:00",
+      "last_observed_request": "2026-10-07T07:35:32.111493+00:00"
+    },
+    "judge-study-resume.log": {
+      "first_observed_request": "2026-10-07T07:36:58.009237+00:00",
+      "last_observed_request": "2026-10-07T07:37:26.698759+00:00"
+    },
+    "frontier-final.log": {
+      "first_observed_request": "2026-10-07T07:39:09.303699+00:00",
+      "last_observed_request": "2026-10-07T07:39:47.395291+00:00"
+    },
+    "frontier-final-resume.log": {
+      "first_observed_request": "2026-10-07T09:27:59.258439+00:00",
+      "last_observed_request": "2026-10-07T09:29:01.102138+00:00"
+    },
+    "efficient-final.log": {
+      "first_observed_request": "2026-10-07T07:37:25.864224+00:00",
+      "last_observed_request": "2026-10-07T07:39:03.104387+00:00"
+    },
+    "efficient-paced.log": {
+      "first_observed_request": "2026-10-07T07:39:20.419152+00:00",
+      "last_observed_request": "2026-10-07T07:45:35.012943+00:00"
+    },
+    "efficient-paced-resume.log": {
+      "first_observed_request": "2026-10-07T09:27:58.699320+00:00",
+      "last_observed_request": "2026-10-07T09:51:46.661300+00:00"
+    }
+  },
+  "reward_audit": {
+    "replayed_rewards": 934,
+    "tool_gates_checked": 41,
+    "missing_judge_evidence": 0,
+    "exploit_flags": 0,
+    "high_reward_outputs_checked": 41
+  },
+  "limitations": [
+    "Metrics are recomputed from raw score records; timestamps above are HTTP observations or artifact writes, not invented generation dates.",
+    "Recorded usage excludes unavailable provider-error usage. Three early judge 429 attempts are documented as log-recovered.",
+    "The abandoned unpaced run remains separate and included in resource totals; its completed answers were not overwritten.",
+    "Overall submission remains incomplete: human reviews/freeze, compatible frontier comparison, real RL sweeps/held-out evidence, trained-policy inspection and Loom."
+  ]
+}

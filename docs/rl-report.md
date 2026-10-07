@@ -8,8 +8,10 @@ and cohort checks on a Tesla T4. Earlier failed attempts are retained in
 and path-handling issues were corrected and regression-tested. No local training,
 inference or weight downloads occurred.
 
-The default notebook mode, `SKIP_API_PHASES=True`, intentionally skips RL because
-judge credentials are unavailable. It can run Qwen evaluation on Colab CUDA with
+The default notebook mode, `SKIP_API_PHASES=True`, skips RL until Colab judge
+credentials and Notebook access are confirmed. Remote judge access now works and
+the 45-response repeat study is saved, but Colab secret access remains unconfirmed.
+It can run Qwen evaluation on Colab CUDA with
 the unchanged scorer; this is inference, not training evidence. Eligible blocking
 explanations remain pending without a judge. All 486 Qwen initial-policy samples have been imported: 90 comparison, 360 full
 evaluation and 36 tool-use answers, with zero passes. They are baseline inference

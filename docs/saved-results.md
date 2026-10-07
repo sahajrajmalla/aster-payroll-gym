@@ -61,6 +61,22 @@ Cost: $0.000000; mean latency: 3.7413542467110954 seconds.
 ## gemini-3.5-flash-lite
 
 Evidence kind: model_run.
+Completed records: 17/360.
+Mean reward: None; replicate sample SD: None.
+Tier means: {"1": 0.0, "2": 0.0, "3": 0.25}.
+Cost: $0.000000; mean latency: 3.0452792825938104 seconds.
+
+## gemini-3.5-flash-lite
+
+Evidence kind: model_run.
+Completed records: 360/360.
+Mean reward: 0.12048611111111111; replicate sample SD: 0.007316426217258841.
+Tier means: {"1": 0.011666666666666667, "2": 0.006666666666666667, "3": 0.343125}.
+Cost: $0.000000; mean latency: 5.015802661502832 seconds.
+
+## gemini-3.5-flash-lite
+
+Evidence kind: model_run.
 Completed records: 14/36.
 Mean reward: None; replicate sample SD: None.
 Tier means: {"1": 0.06666666666666667, "2": 0.0, "3": 0.1125}.
@@ -73,6 +89,14 @@ Completed records: 8/90.
 Mean reward: None; replicate sample SD: None.
 Tier means: {"1": 0.2, "2": 0.025, "3": 0.1625}.
 Cost: $0.000000; mean latency: 8.446016857000007 seconds.
+
+## gemini-3.8-flash
+
+Evidence kind: model_run.
+Completed records: 0/90.
+Mean reward: None; replicate sample SD: None.
+Tier means: {}.
+Cost: $0.000000; mean latency: 28.57422794091629 seconds.
 
 ## Qwen/Qwen2.5-0.5B-Instruct:initial
 

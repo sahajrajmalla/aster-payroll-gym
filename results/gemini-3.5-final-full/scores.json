@@ -1,0 +1,1874 @@
+{
+  "records": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 136,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.2906872499988822,
+          "prompt_tokens": 1960,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.2919874159997562,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-04f13390131199f41682",
+      "tier": 1,
+      "tokens": 2096,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3649622499997349,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3490054580015567,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4219577920011943,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.143048291000014,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-09218813592b0a568b13",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4126371669990476,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3940901669993764,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4304288330004056,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.244481084000654,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.404580000000351,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.382689958998526,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.48822908400143206,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.281380084001285,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3705122499995923,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3383483329998853,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3639137500013021,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.078812458001266,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 130,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.3532694170007744,
+          "prompt_tokens": 1931,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.3548796249997395,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "tokens": 2061,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 252,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.6348451249996288,
+          "prompt_tokens": 1948,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.6366427499997371,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "tokens": 2200,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 133,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.6995931250003196,
+          "prompt_tokens": 1951,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.704250624999986,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "tokens": 2084,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 113,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.3117481669996778,
+          "prompt_tokens": 1965,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.3129245000000083,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3d6fc1da97df8498ba47",
+      "tier": 1,
+      "tokens": 2078,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 252,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.7988407909997477,
+          "prompt_tokens": 1949,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.8006637079997745,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "tokens": 2201,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3636696670000674,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.5266640829995595,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.41210312499970314,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.3088009169987345,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 137,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.5027202500004933,
+          "prompt_tokens": 1965,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.5045162080004957,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-63aec589237ae37648b5",
+      "tier": 1,
+      "tokens": 2102,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.41560808299982455,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3752754580000328,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.46133958300015365,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.257701583001108,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-659d4ed05f371da249fe",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3687477920011588,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.36232091700003366,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.37709095799982606,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.11537295800008,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-6f5146c68c6996765cb1",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 252,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 2.088769707999745,
+          "prompt_tokens": 1951,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.0912635839995346,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "tokens": 2203,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 133,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 2.0320524589988054,
+          "prompt_tokens": 1964,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.0355136669986678,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 2097,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 252,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.696165249999467,
+          "prompt_tokens": 1944,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.6981477909994283,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 2196,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3777923749985348,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.42960300000049756,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4011663329984003,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.214306959000169,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 142,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.4839776660010102,
+          "prompt_tokens": 1990,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10",
+            "R2",
+            "R9"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10",
+            "R2",
+            "R9"
+          ],
+          "code": "BLOCKER_SET_F1",
+          "score": 0.5,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT",
+          "score": 1.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "CORRECTNESS_CAP",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.4856522499994753,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.125,
+      "status": "complete",
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "tokens": 2132,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.44964025000081165,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.43830274999891117,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4286453749991779,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.321843959000034,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.44955825000033656,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.3679520000005141,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4286599160004698,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.250445708999905,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.43057141700046486,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.38567408400012937,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.49033366599906003,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.314471707999473,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 252,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 2.3418330409986083,
+          "prompt_tokens": 1955,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.343672916000287,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "tokens": 2207,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 134,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.6864044169997214,
+          "prompt_tokens": 1965,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.6884641669985285,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "tier": 1,
+      "tokens": 2099,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 151,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.4681824590006727,
+          "prompt_tokens": 1990,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10",
+            "R2",
+            "R9"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10",
+            "R2",
+            "R9"
+          ],
+          "code": "BLOCKER_SET_F1",
+          "score": 0.5,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT",
+          "score": 1.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "CORRECTNESS_CAP",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.4698618750007881,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.125,
+      "status": "complete",
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "tokens": 2141,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.35497908300021663,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4003721669996594,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4559507920002943,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.218102709000959,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.42409608399975696,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.41946945900053834,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.40831458299908263,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.2570390830005636,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 232,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.4768798340010107,
+          "prompt_tokens": 1955,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R1",
+            "R10",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8"
+          ],
+          "code": "FIELD_ACCURACY",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT",
+          "score": 1.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "CORRECTNESS_CAP",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.4787972499998432,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "tokens": 2187,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4309479170005943,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.40644987499945273,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4001887499998702,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.2432385420015635,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "tokens": 0,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.40110270799959835,
+          "status": "PROVIDER_RATE_LIMIT",
+          "turn": 1
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.5332804999998189,
+          "status": "PROVIDER_RATE_LIMIT",
+          "turn": 1
+        },
+        {
+          "attempt": 3,
+          "completion_tokens": 147,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.9072083329992893,
+          "prompt_tokens": 1932,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R9"
+          ],
+          "code": "CALIBRATED_ACTION",
+          "score": 1.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10",
+            "R4",
+            "R9"
+          ],
+          "code": "EXACT_WITH_CLAUSES",
+          "score": 1.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10",
+            "R4",
+            "R9"
+          ],
+          "code": "BLOCKER_SET_F1",
+          "score": 1.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT",
+          "score": 1.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "JUDGE_GRADED",
+          "score": 1.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": null,
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 7.6454555000000255,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 1.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 4292,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completion_tokens": 107,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "latency_s": 1.2682347919999302,
+          "prompt_tokens": 1961,
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 1.2697982499994396,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-db68cf633a2c9fb6a5b3",
+      "tier": 1,
+      "tokens": 2068,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4071303330001683,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 2,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.5191424999993615,
+          "status": "PROVIDER_RATE_LIMIT"
+        },
+        {
+          "attempt": 3,
+          "cost_kind": "confirmed",
+          "cost_usd": 0.0,
+          "http_status": 429,
+          "latency_s": 0.4559977919998346,
+          "status": "PROVIDER_RATE_LIMIT"
+        }
+      ],
+      "components": {},
+      "confirmed_cost_usd": 0.0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": "PROVIDER_RATE_LIMIT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.38739891700061,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": null,
+      "status": "provider_error",
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "tokens": 0,
+      "tool_calls": 0
+    }
+  ]
+}

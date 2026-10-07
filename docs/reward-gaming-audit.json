@@ -1,0 +1,611 @@
+{
+  "status": "initial_policy_inspection_complete",
+  "checked_at": "2026-10-07T10:00:14.556194+00:00",
+  "scope": "Saved initial policies only; no trained policy exists",
+  "method": "Read every completed output; replay high-reward eligibility and unsafe/abstention gates without a judge",
+  "recorded_judge_replay": "Replay saved components and scores using actual recorded labels, including cache-equivalent candidates; never infer a label from a score",
+  "runs": [
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "model": "gemini-3.5-flash-lite",
+      "source": "results/gemini-3.5-comparison",
+      "run_status": "complete",
+      "counts": {
+        "observed": 90,
+        "completed": 90,
+        "reward_replayed": 90,
+        "invalid_contract": 63,
+        "high_reward_audited": 8
+      },
+      "recorded_tokens": 208962,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0.0
+    },
+    {
+      "run_id": "372b11aaf75af4302fb8",
+      "model": "gemini-3.5-flash-lite",
+      "source": "results/gemini-3.5-final-full",
+      "run_status": "partial",
+      "counts": {
+        "observed": 32,
+        "operational_or_pending": 15,
+        "completed": 17,
+        "reward_replayed": 17,
+        "invalid_contract": 13,
+        "high_reward_audited": 1
+      },
+      "recorded_tokens": 38444,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0.0
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "model": "gemini-3.5-flash-lite",
+      "source": "results/gemini-3.5-paced-full",
+      "run_status": "complete",
+      "counts": {
+        "observed": 360,
+        "completed": 360,
+        "reward_replayed": 360,
+        "invalid_contract": 240,
+        "high_reward_audited": 32
+      },
+      "recorded_tokens": 832143,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0.0
+    },
+    {
+      "run_id": "a6a5d9f599626d41f0f7",
+      "model": "gemini-3.5-flash-lite",
+      "source": "results/gemini-3.5-tool",
+      "run_status": "partial",
+      "counts": {
+        "observed": 36,
+        "operational_or_pending": 22,
+        "completed": 14,
+        "reward_replayed": 9,
+        "invalid_contract": 9,
+        "tool_gate_checked": 5
+      },
+      "recorded_tokens": 138138,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0.0
+    },
+    {
+      "run_id": "c697a5f3d20e737d05ae",
+      "model": "gemini-3.8-flash",
+      "source": "results/gemini-3.8-comparison",
+      "run_status": "partial",
+      "counts": {
+        "observed": 51,
+        "operational_or_pending": 43,
+        "completed": 8,
+        "reward_replayed": 8,
+        "invalid_contract": 1
+      },
+      "recorded_tokens": 16830,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0.0
+    },
+    {
+      "run_id": "80dc79183256173441c1",
+      "model": "gemini-3.8-flash",
+      "source": "results/gemini-3.8-final-comparison",
+      "run_status": "partial",
+      "counts": {
+        "observed": 12,
+        "operational_or_pending": 12
+      },
+      "recorded_tokens": 0,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0.0
+    },
+    {
+      "run_id": "1ea3d177cd2375271ca1",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct:initial",
+      "source": "results/qwen-colab-comparison",
+      "run_status": "complete",
+      "counts": {
+        "observed": 90,
+        "completed": 90,
+        "reward_replayed": 90,
+        "invalid_contract": 89
+      },
+      "recorded_tokens": 183477,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0
+    },
+    {
+      "run_id": "33207f18f267cc15c57f",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct:initial",
+      "source": "results/qwen-colab-full",
+      "run_status": "complete",
+      "counts": {
+        "observed": 360,
+        "completed": 360,
+        "reward_replayed": 360,
+        "invalid_contract": 357,
+        "unjustified_abstention": 2
+      },
+      "recorded_tokens": 729386,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0
+    },
+    {
+      "run_id": "90264d0e1e11cd890bce",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct:initial",
+      "source": "results/qwen-colab-tool",
+      "run_status": "complete",
+      "counts": {
+        "observed": 36,
+        "completed": 36,
+        "tool_gate_checked": 36,
+        "invalid_contract": 36
+      },
+      "recorded_tokens": 19548,
+      "accounted_api_usd": 0.0,
+      "confirmed_api_usd": 0
+    }
+  ],
+  "completed_outputs": 975,
+  "high_reward_outputs_inspected": 41,
+  "deterministic_exploit_flags": [],
+  "high_reward_transcript_references": [
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-d167a405d18c1b37276f",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "694c6d8e7e2639b0f4ffd07a9a06f465a5fa433360494ee900d39d5c24369c21",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-199220f67cfd29854916",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "38a9309af1408b00e8ff372adcd3521b6a45fd37733ec776924c5669f19658bf",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-16ccf44e25558cbba567",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "24daee33f676d900798fa1036f6c861da753568dd4529f1f89fd35788632c923",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "rollout": 2,
+      "score": 0.975,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "734741c0bc16f6e77bfffd1df55571dc286e87554f55cfb0e0ffddb3ad3275c0",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-d167a405d18c1b37276f",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "fe40f3dfcef090b901b336270b35681cffbe577b599c15c0c759332fe55c7e7b",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-199220f67cfd29854916",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "5ebeb360c5f9232af527f6b17eb873bc9f7c9253579db6f02f967705b29b13a8",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "c42569d4ecbf8b8c3d1430d75c06ff37c27c84653e727c25db85dee38c8c59d5",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "13938fa676f870c9c5aa",
+      "source": "results/gemini-3.5-comparison",
+      "task_id": "task-16ccf44e25558cbba567",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-comparison/transcript.jsonl",
+      "answer_sha256": "3c615c79d8fdfffc58de735ee03b24e048abe99667c50978f42c454d63c22f83",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "372b11aaf75af4302fb8",
+      "source": "results/gemini-3.5-final-full",
+      "task_id": "task-d167a405d18c1b37276f",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-final-full/transcript.jsonl",
+      "answer_sha256": "63663c1c936f6eeedbc26b9c2d1e0b847f08f713efb909b475c5fca47214b362",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-fa1562dc7f7a2c7d3bf7",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "ee63e9895574a6888bca4f87e2a09cbca9c42f41892d08d6bb639a3d655bce94",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-d167a405d18c1b37276f",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "bea2c5159609a0d772e98e010bbd59273c0bc0f68d131f73cba2f9cb6148f8df",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-25a39a21008ff1277832",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "a2df0930c783996d12f5b25b564d5f97d7d75f4fac222c880644ff354ba98af0",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-fa1562dc7f7a2c7d3bf7",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "c53e481f6ac08c11e00578550aafdb299e11f5a13f4e9f09b4dd503031ced197",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-04ca4d2b33e9c7bb134a",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "c3c59e66267d3aec30e0051dda37ed8ff8eafd8158460b834b67191903c27ab2",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-2c332045049aaa945334",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "7c495e8960ad419f940a5e836b0d1fbe227c141d1b69590cfd86eba51844b0e6",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-199220f67cfd29854916",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "5ebeb360c5f9232af527f6b17eb873bc9f7c9253579db6f02f967705b29b13a8",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "141f01774d18a6fb02f8444b21bc00b216accaf1f7e4ddaad3e7be2361462a53",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-fe18295da3eaddf14d8f",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "d5261ae0338a478c5dfde4bd5bf73879bb681328992297a53e63dce9a5198cc4",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-25a39a21008ff1277832",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "017fb90b644e032eb76589004ab8ccc38ed0573c67c32ee35466d03596fe116b",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "f4fefef11165d49d567992cfd2c60e6a29971137bc24e8bda2c2bdbb17f60e79",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-04ca4d2b33e9c7bb134a",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "dcc28f97ba28e8988496b5547040bd42f68f165efff676e1ad9e7312908d9a93",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-ffc70d18d29555b906fb",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "0878b87cf4a05a43a343a359fe381227682e9046ddeb7c44cea4867fc996a783",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-947fcb06bfeacf83992f",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "dc7a7be66995b03a03e47c4d126731165a402b0ecd0b6af52df65481b2e400b5",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-9533dba41f1dba8590ab",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "3b77b938f44e8b83a59a80e0f922730c392bfdbcf3900b2335f6f02582081eb7",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-6148e1e02bbd3cd5ec3d",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "2b29471ce122ab5724ad8f98a9d65287c050f12c01b71fdcfaf261db9c85610e",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-04ca4d2b33e9c7bb134a",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "04b8a2f66a3a23a575037cf82c9c1ee82e8bd0a64d78d093444ad8cde5126436",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-ffc70d18d29555b906fb",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "24daee33f676d900798fa1036f6c861da753568dd4529f1f89fd35788632c923",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-2c332045049aaa945334",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "f25778cd5e1cbd47f924577f11ac834e544fc04ae0b8293f6558127f6081aa7e",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-fe18295da3eaddf14d8f",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "52b6b5ebac7285804de24bc71396aca19e37088922daecc95515105433370977",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-fa1562dc7f7a2c7d3bf7",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "7512bf6ba6c483df022ffcea9b4338c818d6704c629933d8681c7edc6f09bd54",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-16ccf44e25558cbba567",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "7f853ab8fad56bf87269a13b2d6a7070c5c646b3c3eb5dc81f359869629e3a96",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-d167a405d18c1b37276f",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "d2d30dd0d0e251d25e3fd90aabcf2b6a1a0a94c7774d4d036544b2f208976351",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-5763a0e48af4cf14a58e",
+      "rollout": 0,
+      "score": 0.975,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "fbc8393cd49e86f1e8d171211ea513d081698732cf2c695ede53413094834f92",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-6148e1e02bbd3cd5ec3d",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "2b29471ce122ab5724ad8f98a9d65287c050f12c01b71fdcfaf261db9c85610e",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-25a39a21008ff1277832",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "2ab29c55d815ef6761d20ed9c7d443794f25cbddecf072630b6e287fae4a2fbd",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "7e91c1a16d83df93debc9c7902e019d0c5f7986c44df95b9d1159886e4be0ebd",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-947fcb06bfeacf83992f",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "4274f0fbbf56f17d47dcef3584441c58bbbccce5b6c8ea094164e54b39ac1c01",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-16ccf44e25558cbba567",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "3c615c79d8fdfffc58de735ee03b24e048abe99667c50978f42c454d63c22f83",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-947fcb06bfeacf83992f",
+      "rollout": 2,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "4274f0fbbf56f17d47dcef3584441c58bbbccce5b6c8ea094164e54b39ac1c01",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-fe18295da3eaddf14d8f",
+      "rollout": 0,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "52b6b5ebac7285804de24bc71396aca19e37088922daecc95515105433370977",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    },
+    {
+      "run_id": "f44ee40097b640a3eb45",
+      "source": "results/gemini-3.5-paced-full",
+      "task_id": "task-ffc70d18d29555b906fb",
+      "rollout": 1,
+      "score": 1.0,
+      "transcript": "results/gemini-3.5-paced-full/transcript.jsonl",
+      "answer_sha256": "35d7c75e7a4f69e2653b4a1f54dc0269195bec7f404c4a05bd64f02b8d16a994",
+      "deterministic_eligibility_verified": true,
+      "qualitative_judge_reassessment": "not independently human-reviewed"
+    }
+  ],
+  "limitations": [
+    "A passing deterministic check does not establish explanation quality or human validity",
+    "Not a trained-policy reward-gaming inspection",
+    "In-progress journals are a timestamped snapshot"
+  ]
+}

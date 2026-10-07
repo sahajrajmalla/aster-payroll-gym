@@ -48,7 +48,10 @@ async def run_study(packet_path: str | Path) -> dict[str, Any]:
             if row["task_input_hash"] != task.input_hash:
                 raise ValueError("JUDGE_TASK_FINGERPRINT_MISMATCH")
             ratings = row.setdefault("ratings", [])
-            complete_repeats = {r["repeat"] for r in ratings if r.get("status") == "complete"}
+            # A malformed judge response is an observed abstention, not a reason to
+            # sample again until a valid response conceals the reliability failure.
+            complete_repeats = {r["repeat"] for r in ratings if r.get("status") == "complete"
+                                or r.get("error_code") == "JUDGE_INVALID_OUTPUT"}
             for repeat in range(3):
                 if repeat in complete_repeats:
                     continue
@@ -56,13 +59,15 @@ async def run_study(packet_path: str | Path) -> dict[str, Any]:
                 graded = await score(task, row["candidate"], judge=UncachedJudge())
                 component = graded.components.get("judge")
                 label = int(component.score * 2) if component and component.code == "JUDGE_GRADED" else None
+                prior_ledger: list[dict[str, Any]] = next(
+                    (r.get("ledger", []) for r in ratings if r.get("repeat") == repeat), [])
                 ratings[:] = [r for r in ratings if r.get("repeat") != repeat]
                 ratings.append({"repeat": repeat, "status": "complete" if label is not None else "pending",
                                 "label": label, "scorer_status": graded.status, "gate": graded.gate,
-                                "error_code": graded.error_code, "ledger": judge.ledger[began:]})
+                                "error_code": graded.error_code, "ledger": prior_ledger + judge.ledger[began:]})
                 packet["reliability"] = judge_reliability(examples)
                 path.write_text(json.dumps(packet, indent=2, allow_nan=False) + "\n")
-                if graded.status == "pending":
+                if graded.status == "pending" and graded.error_code != "JUDGE_INVALID_OUTPUT":
                     return packet["reliability"]
         return packet["reliability"]
     finally:

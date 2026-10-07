@@ -28,7 +28,7 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P02.02 / 8 | Independent Python ground truth, never an LLM | src/aster_gym/reference.py | tests/test_core.py | implemented |
 | P02.03 / 8 | Seed recorded in each result artifact/provenance | src/aster_gym/eval.py | tests/test_harness.py | implemented |
 | P02.04 / 8 | Expose interacting-rule, distractor, lookup and missing-input knobs | src/aster_gym/generator.py | tests/test_core.py | implemented |
-| P02.05 / 8 | 100+ generated tasks with observed non-degenerate model distribution | data/evaluation.jsonl | results/qwen-colab-full/metrics.json: all-zero distribution; requirement unmet | external_evidence_pending |
+| P02.05 / 8 | 100+ generated tasks with observed non-degenerate model distribution | data/evaluation.jsonl | docs/nondegenerate-distribution.json | verified_real_evidence |
 | P02.06 / 8 | Unit-test reference, caps, precedence, precision and boundaries | src/aster_gym/reference.py | tests/test_core.py | implemented |
 | P02.07 / 8 | README unlimited grading and precise noncomputable limitations | README.md | docs/assumptions-and-tradeoffs.md | implemented |
 | P03.01 / 8 | Installable pyproject and load_environment -> vf.Environment | src/aster_gym/environment.py | docs/colab-final-preflight.json: real optional vf smoke passed on T4 | implemented |
@@ -49,7 +49,7 @@ Repository and dashboard URLs are verified. Genuine remote results are recorded;
 | P04.06 / 10 | Gate substantive rejection to a low maximum | src/aster_gym/scoring.py | tests/test_core.py | implemented |
 | P04.07 / 10 | Meaningful graded field/set partial credit | src/aster_gym/scoring.py | tests/test_core.py | implemented |
 | P04.08 / 10 | Constrained qualitative LLM judge from rules; version prompt | src/aster_gym/judge.py | tests/test_judge.py | implemented |
-| P04.09 / 10 | Judge 3 repeat ratings or 15 human labels; report agreement | reviews/judge-review-packet.json | real uncached judge calls and human labels | external_evidence_pending |
+| P04.09 / 10 | Judge 3 repeat ratings or 15 human labels; report agreement | reviews/judge-review-packet.json | results/judge-stability-study.json | verified_repeat_measurement |
 | P04.10 / 10 | Rule-grounded calibration; document why each trap unresolved | data/seeds.jsonl | tests/test_core.py | implemented |
 | P04.11 / 10 | Hand-check >=10 generated tasks and report divergence | reviews/task-review-packet.json | human independent calculations | human_review_pending |
 | P04.12 / 10 | Document and defend weights | docs/reward-spec.md | reward tests and review | implemented |

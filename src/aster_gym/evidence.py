@@ -68,14 +68,25 @@ def verify_transfer_freeze(tasks: list[Task],
 def judge_reliability(rows: list[dict[str, Any]]) -> dict[str, Any]:
     """Exact human agreement over completed ratings and three-repeat stability."""
     comparisons, consistent, completed_examples = [], 0, 0
+    attempted_repeats, malformed_repeats = 0, 0
+    outcome_examples, consistent_outcomes = 0, 0
     confusion: Counter[str] = Counter()
     for row in rows:
+        attempted_repeats += sum(r.get("status") == "complete" or r.get("error_code") == "JUDGE_INVALID_OUTPUT"
+                                 for r in row.get("ratings", []))
+        malformed_repeats += sum(r.get("error_code") == "JUDGE_INVALID_OUTPUT" for r in row.get("ratings", []))
         labels = [r.get("label") for r in row.get("ratings", []) if r.get("status") == "complete"]
         if any(type(label) is not int or label not in (0, 1, 2) for label in labels):
             raise ValueError("INVALID_JUDGE_LABEL")
         if len(labels) == 3:
             completed_examples += 1
             consistent += len(set(labels)) == 1
+        outcomes = [rating.get("label") if rating.get("status") == "complete" else "invalid_output"
+                    for rating in row.get("ratings", []) if rating.get("status") == "complete"
+                    or rating.get("error_code") == "JUDGE_INVALID_OUTPUT"]
+        if len(outcomes) == 3:
+            outcome_examples += 1
+            consistent_outcomes += len(set(outcomes)) == 1
         human = row.get("human_label")
         if human is not None:
             if type(human) is not int or human not in (0, 1, 2) or not row.get("reviewer"):
@@ -83,14 +94,22 @@ def judge_reliability(rows: list[dict[str, Any]]) -> dict[str, Any]:
             for label in labels:
                 comparisons.append(human == label)
                 confusion[f"human_{human}_judge_{label}"] += 1
-    return {"status": "complete" if completed_examples == len(rows) and len(rows) >= 15
-            and len(comparisons) == len(rows) * 3 else "partial_or_pending",
+    human_reviewed = sum(row.get("human_label") is not None and bool(row.get("reviewer")) for row in rows)
+    return {"status": "complete" if len(rows) >= 15 and human_reviewed == len(rows)
+            and attempted_repeats == len(rows) * 3 else "partial_or_pending",
             "examples": len(rows), "completed_three_repeat_examples": completed_examples,
+            "repeat_measurement_status": "complete" if len(rows) >= 15
+            and attempted_repeats == len(rows) * 3 else "partial_or_pending",
+            "attempted_repeats": attempted_repeats, "invalid_output_repeats": malformed_repeats,
+            "invalid_output_fraction": malformed_repeats / attempted_repeats if attempted_repeats else None,
             "human_comparisons": len(comparisons),
             "human_exact_agreement": statistics.mean(comparisons) if comparisons else None,
             "three_repeat_disagreement_fraction": 1 - consistent / completed_examples
-            if completed_examples else None, "confusion_counts": dict(confusion),
-            "note": "Stability is not validity. Each repeat must bypass the production cache."}
+            if completed_examples else None,
+            "three_repeat_outcome_disagreement_fraction": 1 - consistent_outcomes / outcome_examples
+            if outcome_examples else None, "confusion_counts": dict(confusion),
+            "note": "Agreement/stability condition on valid labels; malformed-output fraction is separate. "
+            "Stability is not validity. Each repeat must bypass the production cache."}
 
 
 def _ranks(values: dict[str, float]) -> dict[str, float]:
@@ -169,8 +188,24 @@ def analyze_results(results_dir: str | Path, review_dir: str | Path = "reviews")
                          "runs": {s: {n: by_split[s][n]["config"]["run_id"] for n in matched}
                                   for s in ("generated", "transfer")}})
     judge_path = reviews / "judge-review-packet.json"
-    judge = judge_reliability(json.loads(judge_path.read_text()).get("examples", [])) if judge_path.exists() else {
-        "status": "pending", "human_exact_agreement": None}
+    if judge_path.exists():
+        blind = json.loads(judge_path.read_text())
+        judged_rows = blind.get("examples", [])
+        measurement_path = root / "judge-stability-study.json"
+        if measurement_path.exists():
+            measured = json.loads(measurement_path.read_text())
+            identity_keys = ("example_id", "task_id", "task_input_hash", "candidate")
+            blind_ids = [{key: row.get(key) for key in identity_keys} for row in judged_rows]
+            measured_ids = [{key: row.get(key) for key in identity_keys} for row in measured.get("examples", [])]
+            if (stable_hash(blind_ids) != stable_hash(measured_ids)
+                    or any(blind.get(key) != measured.get(key)
+                           for key in ("rules_hash", "reward_version", "ruleset_version"))):
+                raise ValueError("JUDGE_BLIND_REVIEW_MEASUREMENT_MISMATCH")
+            judged_rows = [{**human, "ratings": rating.get("ratings", [])}
+                           for human, rating in zip(judged_rows, measured["examples"], strict=True)]
+        judge = judge_reliability(judged_rows)
+    else:
+        judge = {"status": "pending", "human_exact_agreement": None}
     failures_path = reviews / "failure-review-packet.json"
     failure_rows = json.loads(failures_path.read_text()).get("failures", []) if failures_path.exists() else []
     reviewed = [r for r in failure_rows if r.get("reviewed") is True and r.get("reviewer")]

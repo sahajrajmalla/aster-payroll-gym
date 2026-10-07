@@ -51,10 +51,12 @@ Show malformed-output and constant/always-abstain baseline evidence.
 > and caching are shared across evaluation, training and sandbox. An outage leaves
 > scoring pending; the rubric is never silently simplified.”
 
-Show reliability/fidelity results only if completed. Otherwise say:
+Show the actual judge study and independent numerical audit:
 
-> “Repeated judge reliability and independent rule-fidelity reviews are pending.
-> The tests establish programmed behaviour, not judge accuracy.”
+> “I measured 45 judge responses. One was malformed, and two of fourteen valid
+> triples disagreed. All nine injection ratings were zero. That measures stability,
+> not human accuracy. A separate rational-arithmetic implementation agrees with
+> all 27 review inputs; personal rule-fidelity checks remain a separate step.”
 
 ## 4:30–5:45 — read a genuine failure (at least one minute)
 
@@ -86,8 +88,10 @@ means. Qwen initial-policy inference completed 90/90 samples with reward
 cap. Its judge and seed differ, so this is a separate experiment group, not a
 controlled ranking against Gemini. The full Qwen evaluation has 360/360 scored
 samples across 120 tasks, reward 0 ± 0; the tool cohort has 36/36, also 0 ± 0,
-with no accepted tool calls. This does not satisfy the required varied score
-distribution, and warns of flat group-relative advantages during training.
+with no accepted tool calls. Qwen's all-zero rewards warn of flat group-relative advantages during training.
+A separate Gemini run completed all 120 tasks with three rollouts: 360 answers,
+reward .12049 ± .00732 and 32 passes. That supplies the required varied distribution.
+The models still require a compatible common-cohort ranking before claiming superiority.
 Gemini 3.8 and Gemini tool runs are partial. Setup checks are not model outcomes.
 
 > “Cloud training uses Qwen0.5B, LoRA and GRPO with four grouped completions.
@@ -97,9 +101,10 @@ Gemini 3.8 and Gemini tool runs are partial. Setup checks are not model outcomes
 
 If training remains skipped, say plainly:
 
-> “This Colab session has no judge credentials. RL sweeps and the judge study
-> were skipped; no training improvement is claimed. GPU inference is a separate
-> experiment. Correct explanations requiring the absent judge remain pending.”
+> “The remote judge study ran successfully, but this Colab session still needs
+> Notebook access to its judge key before mixed-tier training can start. RL sweeps
+> are pending; no training improvement is claimed. GPU inference is a separate
+> experiment.”
 
 If completed, show actual five curves, reference proof, selected beta, before/after
 results and counted reward-gaming observations. Never draw replacement curves.

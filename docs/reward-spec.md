@@ -38,7 +38,10 @@ and reliability studies, and recorded in each judge ledger. A changed setting
 requires a fresh experiment or blocker-task run. No alternative judge or renormalized weights are
 used on outages. Pending scores are excluded from mean rewards and counted in coverage.
 
-Judge reliability remains pending. Label 15 examples yourself, obtain three uncached
+Repeat reliability is measured in `results/judge-stability-study.json`: 45 actual
+responses, one malformed response (2.22%), two disagreements among fourteen valid
+triples (14.29%), or three among all fifteen triples counting invalid output as
+an abstention (20%). Human agreement remains pending. Label 15 examples yourself, obtain three uncached
 ratings each, report human agreement and fraction with inconsistent repeated labels.
 Stability alone is not validity. If prompt changes, version it and rerun evidence.
 

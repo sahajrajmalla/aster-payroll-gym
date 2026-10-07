@@ -1,0 +1,185 @@
+{
+  "status": "technical_review_complete_human_reading_pending",
+  "reviewed_at": "2026-10-07T07:40:41.927432+00:00",
+  "review_method": "AI-assisted technical reading of ten saved outputs against tasks, rules and diagnostic gates; every source hash and final answer verified",
+  "count": 10,
+  "category_counts": {
+    "omitted_required_citations": 2,
+    "payroll_arithmetic_mismatch": 1,
+    "incomplete_json": 2,
+    "noncanonical_blocker_field": 2,
+    "wrong_result_shape": 1,
+    "markdown_wrapped_json": 1,
+    "incorrect_issue_code": 1
+  },
+  "selection": "Purposive, not a population frequency estimate",
+  "limitations": [
+    "Does not claim applicant personal reading or human review",
+    "Citation-only penalties follow frozen scorer; written R11 explicitly names R8/R11 while generic R1/R10 obligations are less explicit. Treat this as a rubric ambiguity, not arithmetic failure."
+  ],
+  "rows": [
+    {
+      "example_id": "failure-01",
+      "run_id": "c697a5f3d20e737d05ae",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "rollout": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/12f24ab179680000075d9068.json",
+      "sha256": "d29db5fa3d3ef1d5b3a8cf526206df28e16fb274cfe997a033ca346f6962ab67",
+      "category": "omitted_required_citations",
+      "observation": "The requested allowance is numerically correct, but citations omit R1 and R10 required by the frozen answer.",
+      "clauses": [
+        "R1",
+        "R10"
+      ],
+      "remedy": "Enumerate applicable unit, answer-contract and retrieval clauses before emitting the final object.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-02",
+      "run_id": "c697a5f3d20e737d05ae",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "rollout": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/5633ee46a7f68e746e048290.json",
+      "sha256": "e3fa2be446a6f86294db4e15d04af5d4c757794ea457a5741d2a421e7c5d64f7",
+      "category": "payroll_arithmetic_mismatch",
+      "observation": "Only contribution_cents matches the reference; gross, taxable, tax and net differ.",
+      "clauses": [
+        "R1",
+        "R3",
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "remedy": "Use bounded calculator calls for proration and band arithmetic; verify all five integer-cent fields.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-03",
+      "run_id": "c697a5f3d20e737d05ae",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "rollout": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/76a0bf5ca7735ea4fe3942a9.json",
+      "sha256": "6ed5133a28a962aea2c001b0dff55368fea2d6cab537c36edbf73ccb2b7c05f4",
+      "category": "incomplete_json",
+      "observation": "The response ends inside its explanation string. The visible monetary fields match the reference, but the final object cannot be parsed.",
+      "clauses": [
+        "R10"
+      ],
+      "remedy": "Emit compact JSON with a short explanation within the existing completion budget; retain the strict parser.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-04",
+      "run_id": "c697a5f3d20e737d05ae",
+      "task_id": "task-0e33888836c453dcb91e",
+      "rollout": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/a1ebd38bc42320326ee210d8.json",
+      "sha256": "4e7c9ba53bad87c38fca86aa86eaa2e687fa78651ca857100180299a577ac862",
+      "category": "noncanonical_blocker_field",
+      "observation": "NO_SCHEDULE is correctly identified, but missing_fields contains schedule rather than the canonical input field schedules.",
+      "clauses": [
+        "R9",
+        "R10"
+      ],
+      "remedy": "Use the exact affected input field name schedules; retain zero assumed-payroll computation.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-05",
+      "run_id": "c697a5f3d20e737d05ae",
+      "task_id": "task-b18556242bce68d26e76",
+      "rollout": 0,
+      "source_record": "results/gemini-3.8-comparison/.records/e0ae8fcc123d2f5fe27e6bbf.json",
+      "sha256": "3e5eb40c73c159bd778982fb92c792d213d251f7ee2f3c2129e6f2e4cab2a944",
+      "category": "omitted_required_citations",
+      "observation": "The salary conflict and affected field are correct; the output omits the required R10 citation.",
+      "clauses": [
+        "R10"
+      ],
+      "remedy": "Cite the answer-contract clause together with the authority and abstention clauses.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-06",
+      "run_id": "13938fa676f870c9c5aa",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "rollout": 0,
+      "source_record": "results/gemini-3.5-comparison/.records/12f24ab179680000075d9068.json",
+      "sha256": "c825de0224d3a6296e51ae16b6ef60d523b18547f33d2edff044b4daa145e7f0",
+      "category": "wrong_result_shape",
+      "observation": "result is the scalar 8000 rather than an object keyed by allowance_cents, causing INVALID_CONTRACT.",
+      "clauses": [
+        "R10"
+      ],
+      "remedy": "Return result as an object containing exactly the requested field and integer cents.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-07",
+      "run_id": "13938fa676f870c9c5aa",
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "rollout": 2,
+      "source_record": "results/gemini-3.5-comparison/.records/1061f047ce14c9b7949a71a8.json",
+      "sha256": "52b98ed9f89c99e3d24bf1e24e6fe954cabfe6087cc49c22637cb23130f66e01",
+      "category": "incomplete_json",
+      "observation": "The output ends inside its explanation, uses net_pay_cents rather than net_cents, and its visible arithmetic differs from the reference. The stored gate is INVALID_CONTRACT.",
+      "clauses": [
+        "R10",
+        "R3",
+        "R6",
+        "R7"
+      ],
+      "remedy": "Prioritize valid compact JSON and canonical result fields; then check proration and marginal tax with the calculator.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-08",
+      "run_id": "13938fa676f870c9c5aa",
+      "task_id": "task-199220f67cfd29854916",
+      "rollout": 2,
+      "source_record": "results/gemini-3.5-comparison/.records/2b7314a25fb9582fd1eb6705.json",
+      "sha256": "c139398bb477328f4a00fb8fce1d1ec89d7a86b77762154dc2ae5c3685496d12",
+      "category": "markdown_wrapped_json",
+      "observation": "The model wraps its object in a markdown fence. Inside the fence it uses INVALID_INPUT for absent YTD evidence rather than MISSING_INPUT.",
+      "clauses": [
+        "R10",
+        "R4",
+        "R9"
+      ],
+      "remedy": "Emit one bare JSON object and distinguish absent evidence from an invalid supplied value.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-09",
+      "run_id": "13938fa676f870c9c5aa",
+      "task_id": "task-b18556242bce68d26e76",
+      "rollout": 1,
+      "source_record": "results/gemini-3.5-comparison/.records/2fb7f28239a86f984f827527.json",
+      "sha256": "5e287c4a6079a2e0a7f2ceaaf9c9ca11a44c9e65634676f4e120988fb007209e",
+      "category": "incorrect_issue_code",
+      "observation": "The model writes SALarly_CONFLICT instead of the defined SALARY_CONFLICT code, and omits R10.",
+      "clauses": [
+        "R9",
+        "R10"
+      ],
+      "remedy": "Copy issue codes exactly from R9 and cite R10; validate code spelling before submission.",
+      "human_reviewed": false
+    },
+    {
+      "example_id": "failure-10",
+      "run_id": "13938fa676f870c9c5aa",
+      "task_id": "task-299315e5e138e06d2863",
+      "rollout": 0,
+      "source_record": "results/gemini-3.5-comparison/.records/3077a81e75e27abc057b8eed.json",
+      "sha256": "f4b80ed0791c1998dfc07371c6f973b46d43421cc272c06fa231a53f6e22947b",
+      "category": "noncanonical_blocker_field",
+      "observation": "The response identifies NO_SCHEDULE, but calls the affected field schedule instead of schedules and omits R10.",
+      "clauses": [
+        "R9",
+        "R10"
+      ],
+      "remedy": "Use the exact affected input field name schedules and cite the diagnosis contract.",
+      "human_reviewed": false
+    }
+  ]
+}

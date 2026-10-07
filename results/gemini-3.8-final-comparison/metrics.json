@@ -1,0 +1,62 @@
+{
+  "aggregate": {
+    "mean": null,
+    "n": 0,
+    "sd": null
+  },
+  "budget": {
+    "accounted_usd": 0.0,
+    "confirmed_usd": 0.0,
+    "maximum_usd": 0.0,
+    "reserved_usd": 0.0
+  },
+  "by_tier": {
+    "1": {
+      "exact_score_rate": null,
+      "mean": null,
+      "n": 0,
+      "pass_rate": null,
+      "sd": null
+    },
+    "2": {
+      "exact_score_rate": null,
+      "mean": null,
+      "n": 0,
+      "pass_rate": null,
+      "sd": null
+    },
+    "3": {
+      "exact_score_rate": null,
+      "mean": null,
+      "n": 0,
+      "pass_rate": null,
+      "sd": null
+    }
+  },
+  "complete_replicates": 0,
+  "completed_samples": 0,
+  "components": {},
+  "confirmed_cost_usd": 0.0,
+  "cost_usd": 0.0,
+  "coverage": 0.0,
+  "expected_samples": 90,
+  "latency_s": {
+    "mean": 28.57422794091629,
+    "n": 12,
+    "sd": 48.692676605944015
+  },
+  "operational_failures": 12,
+  "per_task": {},
+  "replicate_means": [],
+  "retries": 26,
+  "sample_summary": {
+    "mean": null,
+    "n": 0,
+    "sd": null
+  },
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples",
+  "status_counts": {
+    "provider_error": 12
+  },
+  "tokens": 0
+}

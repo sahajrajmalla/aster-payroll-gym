@@ -1,6 +1,7 @@
 """All outputs below are fixtures; no model inference or network traffic occurs."""
 import asyncio
 import json
+import time
 from types import SimpleNamespace
 
 import httpx
@@ -18,6 +19,31 @@ from aster_gym.providers import (
     resolve_reasoning_effort,
 )
 from aster_gym.tools import ToolSession, calculate, parse_tool_arguments
+
+
+async def test_dispatch_interval_applies_across_concurrent_rollouts(tmp_path):
+    starts = []
+
+    class FixtureProvider:
+        budget = None
+        reasoning_effort = None
+
+        async def chat(self, messages, **kwargs):
+            starts.append(time.monotonic())
+            return ChatResult({"role": "assistant", "content": "{}"})
+
+    await run_evaluation(generate_taskset(2, seed=808), tmp_path, model="fixture",
+                         provider=FixtureProvider(), evidence_kind="fixture", rollouts=3,
+                         concurrency=3, request_interval_s=.02)
+    assert len(starts) == 6
+    assert all(b - a >= .015 for a, b in zip(starts, starts[1:]))
+    assert json.loads((tmp_path / "config.json").read_text())["request_interval_s"] == .02
+
+
+async def test_invalid_dispatch_interval_fails_before_provider_call(tmp_path):
+    with pytest.raises(ValueError, match="INVALID_REQUEST_INTERVAL"):
+        await run_evaluation(generate_taskset(1), tmp_path, model="fixture", provider=object(),
+                             evidence_kind="fixture", request_interval_s=float("nan"))
 
 
 @pytest.mark.parametrize("expression", ["__import__('os').system('echo bad')", "10**10000000", "1/0",

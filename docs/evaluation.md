@@ -48,12 +48,19 @@ and incorrect arithmetic. Ten exact outputs are prepared for independent reading
 in the [failure packet](../reviews/failure-review-packet.json). Strict formatting
 and substantive gates explain the low rewards; no evidence of model improvement
 or three-model superiority is claimed. The >=100-task generated distribution,
-transfer rankings and judge agreement study remain pending.
+transfer rankings and human judge agreement remain pending. The 2026-10-07
+follow-up below records the subsequent non-degenerate distribution and repeat study.
 
 The dashboard separates rankings by taskset, mode, rules/schema/reward versions,
 judge identity, prompt hashes, temperature, token limit, seed and rollout count. A no-key cloud
 run cannot silently share a ranking with a credentialed run. Cloud records report
 API spend; GPU hosting charges require separate runtime billing verification.
+
+The remote seed is an experiment identifier; the Gemini compatibility request
+does not send a provider RNG seed. Qwen explicitly seeds its Colab sampling.
+Matching seed fields prevents accidental run mixing but does not make API outputs
+bit-reproducible or synchronize RNG streams across different models. Full saved
+prompts, responses and stochastic replicate statistics are the reproducible evidence.
 
 ## Recorded Colab Qwen baseline — 2026-10-07
 
@@ -104,13 +111,10 @@ cohorts cost $0 in model API charges; GPU hosting billing remains unverified.
 Their recorded command durations sum to approximately 45m38s, including process
 startup and artifact writes, rather than GPU generation time alone.
 
-**The required non-degenerate distribution over >=100 tasks is not satisfied:**
-the larger Qwen run is entirely zero. The smaller mixed comparison is only 30
-tasks. A stronger configured policy on the same frozen 120 tasks is the next
-experiment; do not weaken the gates or count fabricated/fixture outputs as model
-success. Flat rewards also warn that GRPO groups may have zero advantages. No
-learning or optimizer-induced reward gaming is claimed from these initial-policy
-outputs.
+The Qwen distribution is entirely zero. The 2026-10-07 Gemini follow-up below
+now supplies the required non-degenerate distribution on all 120 tasks, without
+weakening gates or substituting fixtures. Flat Qwen rewards still warn that GRPO
+groups may have zero advantages. No learning is claimed from baseline inference.
 
 ## Running
 
@@ -217,3 +221,66 @@ Adapter behavior was checked against the pinned [ToolEnv implementation](https:/
 and [environment interfaces](https://raw.githubusercontent.com/PrimeIntellect-ai/verifiers/v0.1.14/verifiers/envs/environment.py).
 The [T4 preflight](colab-final-preflight.json) passed real optional-stack
 construction for both environments. Local tests do not install or import that stack.
+
+## Evidence follow-up — 2026-10-07
+
+[Independent rule cross-check](independent-rule-audit.json) uses a second Python
+implementation with exact integer/rational arithmetic and constants transcribed
+from R8. It agrees on substantive outputs for all 12 seeds, 10 generated review
+tasks and five transfer drafts: **0/27 numerical/disposition divergences**. This
+is an automated check; it does not replace hand review or approve transfer drafts.
+Citation fidelity is outside that numerical cross-check. The scorer's generic
+R1/R10 citation obligations are stricter than the explicit R8/R11 retrieval
+wording; the [technical review](failure-technical-audit.json) flags that ambiguity.
+
+The [judge study](../results/judge-stability-study.json) records 15 fixed examples,
+three uncached production-judge responses each: **45 actual responses**, 44 valid
+labels and one malformed fenced response (**2.22%** invalid). Two of the 14 valid
+triples vary (**14.29%** disagreement conditional on valid triples). The malformed
+response also makes its triple unstable: **3/15 (20%)** triples have differing
+outcomes when invalid output counts as an abstention. The malformed
+repeat is retained as an abstention, not rerun until valid. All nine ratings of
+three instruction-injection examples were 0. Repeated stability is not human
+validity; the blind human labels remain empty. Actual usage was **97,049 tokens**,
+confirmed API spend **$0**. Three additional 429 attempts are recovered from logs;
+an early resume overwrote their ledger before the preservation bug was fixed.
+That limitation is explicit in the study, and regression tests cover future resumes.
+
+A fresh [Gemini full run](../results/gemini-3.5-paced-full/config.json) uses seed
+20261002, temperature .7, 256 tokens and the production judge. Its complete first
+rollout covers **120 distinct tasks**, mean **.128125**, sample SD **.285533**,
+80 zero rewards, 40 positive rewards and 11 passes. These are task/sample
+statistics, not three-rollout error bars. [Frozen distribution proof](nondegenerate-distribution.json).
+The run is now **complete: 360/360**, three rollouts on all 120 tasks. Replicate
+mean±SD is **.120486 ± .007316**, with **32 passes** (all Tier 3), 247 zero rewards
+and no operational failures. Tier means are .011667/.006667/.343125. Actual
+usage is **832,143 tokens**, recorded API spend **$0**, mean end-to-end latency
+**5.016 seconds**; dispatch pacing is included. [Metrics](../results/gemini-3.5-paced-full/metrics.json)
+and [transcripts](../results/gemini-3.5-paced-full/transcript.jsonl).
+The interrupted unpaced trial remains a separate partial run with 17 completed
+answers. Changing dispatch pacing started a fresh execution configuration; no
+previous outputs were replaced or merged into these three complete replicates.
+This completes the non-degenerate 100-task requirement. Dispatches are spaced five
+seconds apart to respect free-tier limits. Source patches preserve the exact
+experiment hashes from revision af12c3a in `docs/evaluation-source-patches/`.
+
+The fresh frontier attempt has no completed answers: timeouts, 503s and 429s
+prevented a controlled comparison. Those are operational failures, not reward-zero
+answers. Neither an incomplete frontier run nor different judge configurations
+can establish a three-policy ranking. No paid fallback or fabricated scores were used.
+
+## Final audit of available experiments
+
+[Resource/provenance audit](final-experiment-audit.json) recomputes all nine model
+runs from raw records: **975 completed answers**, **2,166,928 recorded usage tokens**,
+plus **97,049** judge-study tokens. Recorded API spend is **$0**; total resource
+spend remains unknown until Colab billing is independently confirmed. Failed
+provider calls can have unavailable usage; the audit does not invent their tokens.
+It includes timestamps, checksums and the interrupted runs in resource accounting.
+
+[Reward replay](reward-gaming-audit.json) reproduces all **934** ordinary scoring
+records from saved answers and real recorded judge labels, and checks **41** tool
+termination gates. No missing judge evidence or score/component discrepancies
+were found. All **41 high-reward outputs** pass deterministic eligibility; no
+programmatic gate bypass was detected. This bounded audit covers initial policies;
+trained-policy gaming and independent human explanation validity remain pending.
