@@ -25,7 +25,7 @@ API switches off; enable only `START_INFERENCE=True` to run Qwen. Transfer tasks
 still require independent approval and a matching freeze.
 
 The updated notebook pins source revision
-`fdf06e8d3cefbd3911eeec695604fdbeedef4d0b` (256 local tests and clean installation passed), uses explicit `Path` arguments and
+`1da57cbfb78e698d80139bb6b4619a7098ee9f98` (256 local tests and clean installation passed), uses explicit `Path` arguments and
 records validation/cohort preparation. Inference requires both `GPU_READY` and
 `DATA_READY`. An absent transfer review is recorded as pending without a traceback.
 To evaluate approved transfer tasks later, select the exact commit containing
