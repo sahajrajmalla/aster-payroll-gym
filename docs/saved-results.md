@@ -74,3 +74,11 @@ Mean reward: None; replicate sample SD: None.
 Tier means: {"1": 0.2, "2": 0.025, "3": 0.1625}.
 Cost: $0.000000; mean latency: 8.446016857000007 seconds.
 
+## Qwen/Qwen2.5-0.5B-Instruct:initial
+
+Evidence kind: model_run.
+Completed records: 90/90.
+Mean reward: 0.001388888888888889; replicate sample SD: 0.0024056261216234406.
+Tier means: {"1": 0.0, "2": 0.0, "3": 0.004166666666666667}.
+Cost: $0.000000; mean latency: 5.809975147033333 seconds.
+

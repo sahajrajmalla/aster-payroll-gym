@@ -40,3 +40,19 @@ clauses, whether the reward caught the failure, and remedy. Then regenerate anal
 with `uv run aster-gym analyze`. Report reviewed category counts separately from
 the snapshot gate counts above. Multiple tags never create additional independent
 failures.
+
+## Qwen baseline observation
+
+The accepted Colab comparison contains 90 completed outputs: 89
+`INVALID_CONTRACT` and one `CORRECTNESS_CAP` (.125). All are below .975. These
+are automated gate counts, not independent human classifications.
+
+For example, task `task-04f13390131199f41682`, rollout 0, is a Tier-1 allowance
+retrieval. Its [raw transcript](../results/qwen-colab-comparison/transcript.jsonl)
+returns a Markdown-fenced `needs_information` object, claims `SALARY_CONFLICT`,
+and supplies citation objects instead of clause-ID strings. The salary value is
+irrelevant to this retrieval. R10 rejects the contract before substantive scoring.
+Removing fences alone would not correct the diagnosis or citation structure.
+The unchanged prompt already specified six properties and no Markdown. A revised
+prompt or training would require a new, separately recorded experiment; no
+improvement is inferred from this failure inspection.

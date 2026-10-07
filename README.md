@@ -11,8 +11,9 @@ ground truth and one auditable scorer shared by evaluation, cloud RL and a publi
 **Implementation checked; experimental submission incomplete.** The hosted sandbox
 passed correct Tier-2/3 submissions, both scoring 1.0, and persistence after restart.
 Gemini 3.5 Flash-Lite completed 90 comparison samples; Gemini 3.8 and tool runs are
-partial. Colab setup passed on a Tesla T4. Qwen evaluation is being collected;
-RL, judge reliability and independent reviews remain pending until recorded.
+partial. Qwen completed 90 comparison samples on a Colab Tesla T4 with zero
+passing answers; its full evaluation is still running. RL, judge reliability and
+independent reviews remain pending until recorded.
 See [readiness checklist](docs/submission-checklist.md) and [QA evidence](docs/final-qa.json).
 
 ## Run locally

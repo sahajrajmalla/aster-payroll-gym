@@ -81,8 +81,11 @@ Read/classify this failure yourself before signing the review packet.
 
 Show actual model coverage, mean±SD, tiers, cost and latency. Existing complete
 Gemini 3.5 comparison: 90/90 samples, reward .11444 ± .03845 across three rollout
-means. Gemini 3.8 and tool runs are partial. Read Qwen figures only after accepted
-results are imported; setup checks are not model outcomes.
+means. Qwen initial-policy inference completed 90/90 samples with reward
+.00139 ± .00241 and zero passes: 89 invalid contracts and one substantive-error
+cap. Its judge and seed differ, so this is a separate experiment group, not a
+controlled ranking against Gemini. Gemini 3.8 and Gemini tool runs are partial.
+Setup checks are not model outcomes.
 
 > “Cloud training uses Qwen0.5B, LoRA and GRPO with four grouped completions.
 > Relative rewards provide advantages; KL limits movement from a frozen initial

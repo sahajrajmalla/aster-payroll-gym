@@ -1,0 +1,5739 @@
+{
+  "records": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.839695139000014,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-04f13390131199f41682",
+      "tier": 1,
+      "tokens": 2045,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.7367009239999334,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 1990,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 7.787176950000003,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 2084,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.197285177999902,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 1986,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 11.100523307999993,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "tokens": 2144,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 11.003188637999983,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "tokens": 2160,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 7.1786214420001215,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "tokens": 2087,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.776094892999936,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3d6fc1da97df8498ba47",
+      "tier": 1,
+      "tokens": 2003,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 11.213249201999815,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "tokens": 2161,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.080832538000095,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 1989,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.286717724000027,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-63aec589237ae37648b5",
+      "tier": 1,
+      "tokens": 2003,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.060743526000124,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-659d4ed05f371da249fe",
+      "tier": 1,
+      "tokens": 1990,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.933007181000221,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "tokens": 1967,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.971644362000006,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 2023,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.1299918489999072,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 1968,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.4591243179997946,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 1977,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.311081431000048,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "tokens": 2079,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.2838666180000473,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 1982,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.5000478020001538,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "tokens": 1981,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.6377889369998684,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 1991,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.848296880000134,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "tokens": 2167,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.795977963000041,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "tier": 1,
+      "tokens": 2000,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.770717960999946,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "tokens": 2037,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.071096936999993,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 2047,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 8.437558101999912,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 2090,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.991155309000078,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "tokens": 1973,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.452586769000163,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "tokens": 1984,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.8082996589998857,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 1978,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 2.9001495850000083,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-db68cf633a2c9fb6a5b3",
+      "tier": 1,
+      "tokens": 1975,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.557025118999945,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 0,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "tokens": 2027,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 8.774572361000082,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-04f13390131199f41682",
+      "tier": 1,
+      "tokens": 2103,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.409027511999966,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 2038,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.0832114280001406,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 1973,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R9"
+          ],
+          "code": "WRONG_CONTENT",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10",
+            "R4",
+            "R9"
+          ],
+          "code": "SUBSTANTIVE_MISMATCH",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10",
+            "R4",
+            "R9"
+          ],
+          "code": "BLOCKER_SET_F1",
+          "score": 0.5,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R1",
+            "R10"
+          ],
+          "code": "VALID_CONTRACT",
+          "score": 1.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "CORRECTNESS_CAP",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.5808452090000173,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.125,
+      "status": "complete",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 1968,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.592697487999885,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "tokens": 1963,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 11.426990598999964,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "tokens": 2160,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.736656691999997,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "tokens": 1985,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.096514197000033,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3d6fc1da97df8498ba47",
+      "tier": 1,
+      "tokens": 2054,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.446969231999901,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "tokens": 2010,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.67928634399982,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 1999,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.340629827999919,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-63aec589237ae37648b5",
+      "tier": 1,
+      "tokens": 1989,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.909399920999931,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-659d4ed05f371da249fe",
+      "tier": 1,
+      "tokens": 1999,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.863080673000013,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "tokens": 1987,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.684725501000003,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 2011,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.5177858980000565,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 1982,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.445243225000013,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 1995,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.5375264340000285,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "tokens": 2048,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.4884767449998435,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 2056,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.734543808999888,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "tokens": 2159,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.515158303999897,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 2123,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 8.011030634000008,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "tokens": 2088,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.233909092000204,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "tier": 1,
+      "tokens": 2041,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.057710757999985,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "tokens": 2201,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.82668764500022,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 2178,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.134545826000021,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 1993,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.00190188900001,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "tokens": 1974,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.9930173740001464,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "tokens": 1980,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.036589142999901,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 1982,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.958687204000171,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-db68cf633a2c9fb6a5b3",
+      "tier": 1,
+      "tokens": 2017,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.449991941999997,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 1,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "tokens": 2041,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.021075825000025,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-04f13390131199f41682",
+      "tier": 1,
+      "tokens": 2062,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.552688662000037,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0e33888836c453dcb91e",
+      "tier": 3,
+      "tokens": 2144,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.3030184960000497,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-0ec7d48247ff1b45b74b",
+      "tier": 2,
+      "tokens": 1983,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.166685977000043,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-16ccf44e25558cbba567",
+      "tier": 3,
+      "tokens": 1980,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.361157329999969,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-199220f67cfd29854916",
+      "tier": 3,
+      "tokens": 2123,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.40726245399992,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-19b3314f712fb1128dab",
+      "tier": 2,
+      "tokens": 2028,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 7.426320869999927,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-299315e5e138e06d2863",
+      "tier": 3,
+      "tokens": 2073,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.425197160999915,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3d6fc1da97df8498ba47",
+      "tier": 1,
+      "tokens": 2021,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.931276275000073,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-3fbdbdfaa092d0c3cb93",
+      "tier": 2,
+      "tokens": 2041,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.242860952000001,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-622bcc18c6aab9cac92f",
+      "tier": 2,
+      "tokens": 2030,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.297640918999832,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-63aec589237ae37648b5",
+      "tier": 1,
+      "tokens": 2014,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.791121214999976,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-659d4ed05f371da249fe",
+      "tier": 1,
+      "tokens": 2058,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.148413514999902,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-7483470048e1f05dac08",
+      "tier": 2,
+      "tokens": 2044,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.3985125179999613,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-84bf67730258b67b84db",
+      "tier": 1,
+      "tokens": 1979,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.2900801910000155,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-8af3e60200e8bcdecf77",
+      "tier": 2,
+      "tokens": 1997,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.012738596999952,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a681f2646d5b2b138baa",
+      "tier": 1,
+      "tokens": 1988,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.9045705470000485,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-a7ab1f49900234508230",
+      "tier": 3,
+      "tokens": 2070,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 10.580753107999953,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b18556242bce68d26e76",
+      "tier": 3,
+      "tokens": 2189,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.866493199999923,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b1899a5d38bca94433e6",
+      "tier": 3,
+      "tokens": 1993,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.501345972000081,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b23f8b35a616a54a7824",
+      "tier": 1,
+      "tokens": 2016,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 3.0488102340000296,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b79e03c78d468e2e7b8f",
+      "tier": 2,
+      "tokens": 1962,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.352667492999899,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-b7aa12c715de9cf2cf51",
+      "tier": 1,
+      "tokens": 2020,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.642030821999924,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd024fbc60247051267a",
+      "tier": 3,
+      "tokens": 2054,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.765245660000119,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bd6044ef3b97fc1c5b8e",
+      "tier": 1,
+      "tokens": 2178,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 11.19852522500014,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-bebd0b9279f9479fb386",
+      "tier": 2,
+      "tokens": 2160,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 9.927447775000019,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-c54d48a71d61650b1fa6",
+      "tier": 2,
+      "tokens": 2167,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 6.186181839000028,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-cc6d8f204ccef2a44019",
+      "tier": 3,
+      "tokens": 2020,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.55
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        },
+        "judge": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 7.767474776999961,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-d167a405d18c1b37276f",
+      "tier": 3,
+      "tokens": 2053,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 5.560842241000046,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-db68cf633a2c9fb6a5b3",
+      "tier": 1,
+      "tokens": 2049,
+      "tool_calls": 0
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "provider": "colab_cuda",
+          "status": "complete",
+          "turn": 1
+        }
+      ],
+      "components": {
+        "action": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.1
+        },
+        "exact": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.6
+        },
+        "fields": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.25
+        },
+        "format": {
+          "clauses": [
+            "R10"
+          ],
+          "code": "NOT_EARNED",
+          "score": 0.0,
+          "weight": 0.05
+        }
+      },
+      "confirmed_cost_usd": 0,
+      "conservative_cost_usd": 0.0,
+      "cost_usd": 0.0,
+      "error_code": null,
+      "gate": "INVALID_CONTRACT",
+      "judge_cost_usd": 0.0,
+      "judge_retries": 0,
+      "latency_s": 4.131664232000048,
+      "mode": "single",
+      "model_turns": 1,
+      "rollout": 2,
+      "score": 0.0,
+      "status": "complete",
+      "task_id": "task-ef580457f684b7c10fe8",
+      "tier": 2,
+      "tokens": 1996,
+      "tool_calls": 0
+    }
+  ]
+}

@@ -11,7 +11,8 @@ its API-dependent experiments were skipped. Setup is not training evidence.
 - [x] Written rules, strict schemas, independent reference and frozen datasets.
 - [x] Single-turn/tool environments, shared scorer, gates and adversarial tests.
 - [x] Evaluation CLI, cost controls, transcripts and deterministic baselines.
-- [x] Genuine Gemini 3.5 comparison: 30 tasks × 3 rollouts.
+- [x] Genuine Gemini 3.5 and Qwen initial-policy comparisons: 30 tasks × 3 rollouts
+  each, reported separately because judge/sampling settings differ.
 - [x] Public dashboard, Render/Neon sandbox and hosted restart persistence.
 - [x] Guarded Colab workflows, resumable cloud checkpoints and safe result import.
 - [x] Required documentation, review worksheets, CI and lightweight QA.

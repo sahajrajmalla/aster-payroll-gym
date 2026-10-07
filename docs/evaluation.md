@@ -1,7 +1,7 @@
 # Evaluation harness
 
-Real remote results are now recorded; Qwen/GRPO and the final three-policy
-comparison remain pending Colab. Tests and fixtures are excluded from benchmarks.
+Real remote and Colab Qwen results are recorded; GRPO and the final three-policy
+comparison remain pending. Tests and fixtures are excluded from benchmarks.
 No local model inference, training or weight downloads have run.
 
 ## Recorded remote comparison — 2026-10-06
@@ -48,12 +48,36 @@ and incorrect arithmetic. Ten exact outputs are prepared for independent reading
 in the [failure packet](../reviews/failure-review-packet.json). Strict formatting
 and substantive gates explain the low rewards; no evidence of model improvement
 or three-model superiority is claimed. The >=100-task generated distribution,
-Qwen held-out evaluation, transfer rankings and judge agreement study remain pending.
+Qwen full evaluation, transfer rankings and judge agreement study remain pending.
 
 The dashboard separates rankings by taskset, mode, rules/schema/reward versions,
 judge identity, temperature, token limit, seed and rollout count. A no-key cloud
 run cannot silently share a ranking with a credentialed run. Cloud records report
 API spend; GPU hosting charges require separate runtime billing verification.
+
+## Recorded Colab Qwen baseline — 2026-10-07
+
+The initial Qwen2.5-0.5B-Instruct policy completed **90/90 samples** on the same
+30-task subset, with three rollouts, temperature .7 and 256 completion tokens.
+Reward was **.00139 ± .00241**, the sample SD across rollout means
+[0, .00417, 0]. No answer passed .975. The deterministic gates rejected 89 outputs
+as `INVALID_CONTRACT`; one received .125 under `CORRECTNESS_CAP`. Tier means
+were 0 / 0 / .00417. Mean inference latency was 5.810s, with 183,477 usage tokens
+and no provider retries. No output needed an explanation judge in this cohort.
+
+This was genuine initial-policy inference on a Tesla T4, **not training**. API
+spend was $0; GPU hosting billing was not independently verified. The pinned
+model revision and source revision are preserved in the
+[configuration](../results/qwen-colab-comparison/config.json), with
+[metrics](../results/qwen-colab-comparison/metrics.json),
+[raw transcripts](../results/qwen-colab-comparison/transcript.jsonl) and
+[checked import manifest](../results/qwen-colab-comparison/import_manifest.json).
+No model weights were imported onto the Mac.
+
+Judge identity is null and sampling seed is 20261002, unlike the Gemini runs.
+The dashboard therefore presents a separate experiment group: these scores do
+not establish a controlled cross-model ranking. The 120-task evaluation and
+12-task tool cohort are still running/queued; their results remain pending import.
 
 ## Running
 

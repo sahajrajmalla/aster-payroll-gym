@@ -1,0 +1,237 @@
+{
+  "aggregate": {
+    "mean": 0.001388888888888889,
+    "n": 3,
+    "sd": 0.0024056261216234406
+  },
+  "by_tier": {
+    "1": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 30,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "2": {
+      "exact_score_rate": 0,
+      "mean": 0.0,
+      "n": 30,
+      "pass_rate": 0,
+      "sd": 0.0
+    },
+    "3": {
+      "exact_score_rate": 0,
+      "mean": 0.004166666666666667,
+      "n": 30,
+      "pass_rate": 0,
+      "sd": 0.02282177322938192
+    }
+  },
+  "complete_replicates": 3,
+  "completed_samples": 90,
+  "components": {
+    "action": {
+      "mean": 0.0,
+      "n": 90,
+      "sd": 0.0
+    },
+    "exact": {
+      "mean": 0.0,
+      "n": 90,
+      "sd": 0.0
+    },
+    "fields": {
+      "mean": 0.005555555555555556,
+      "n": 90,
+      "sd": 0.05270462766947299
+    },
+    "format": {
+      "mean": 0.011111111111111112,
+      "n": 90,
+      "sd": 0.10540925533894598
+    },
+    "judge": {
+      "mean": 0.0,
+      "n": 30,
+      "sd": 0.0
+    }
+  },
+  "confirmed_cost_usd": 0,
+  "cost_usd": 0.0,
+  "coverage": 1.0,
+  "expected_samples": 90,
+  "latency_s": {
+    "mean": 5.809975147033333,
+    "n": 90,
+    "sd": 2.497423849179998
+  },
+  "operational_failures": 0,
+  "per_task": {
+    "task-04f13390131199f41682": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-0e33888836c453dcb91e": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-0ec7d48247ff1b45b74b": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-16ccf44e25558cbba567": {
+      "mean": 0.041666666666666664,
+      "n": 3,
+      "sd": 0.07216878364870322
+    },
+    "task-199220f67cfd29854916": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-19b3314f712fb1128dab": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-299315e5e138e06d2863": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-3d6fc1da97df8498ba47": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-3fbdbdfaa092d0c3cb93": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-622bcc18c6aab9cac92f": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-63aec589237ae37648b5": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-659d4ed05f371da249fe": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-7483470048e1f05dac08": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-84bf67730258b67b84db": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-8af3e60200e8bcdecf77": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-a681f2646d5b2b138baa": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-a7ab1f49900234508230": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b18556242bce68d26e76": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b1899a5d38bca94433e6": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b23f8b35a616a54a7824": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b79e03c78d468e2e7b8f": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-b7aa12c715de9cf2cf51": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-bd024fbc60247051267a": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-bd6044ef3b97fc1c5b8e": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-bebd0b9279f9479fb386": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-c54d48a71d61650b1fa6": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-cc6d8f204ccef2a44019": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-d167a405d18c1b37276f": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-db68cf633a2c9fb6a5b3": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    },
+    "task-ef580457f684b7c10fe8": {
+      "mean": 0.0,
+      "n": 3,
+      "sd": 0.0
+    }
+  },
+  "replicate_means": [
+    0.0,
+    0.004166666666666667,
+    0.0
+  ],
+  "retries": 0,
+  "sample_summary": {
+    "mean": 0.001388888888888889,
+    "n": 90,
+    "sd": 0.013176156917368247
+  },
+  "statistics_note": "aggregate SD is sample SD across complete rollout-replicate means; by_tier/sample SD is across samples",
+  "status_counts": {
+    "complete": 90
+  },
+  "tokens": 183477
+}
